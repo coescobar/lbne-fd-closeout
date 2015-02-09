@@ -1,4 +1,4 @@
-This repository holds the source for the LBNE Closeout document.
+The LBNE Far-Site Detector Closeout document.
 ====
 
 Related documents and links
