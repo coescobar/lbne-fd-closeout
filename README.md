@@ -1,7 +1,13 @@
 This repository holds the source for the LBNE Closeout document.
 ====
 
-Note, for the ELBNF (name subject to change) CDR see https://github.com/LBNE/lbn-cdr
+Related documents and links
+---
+
+* [The LBNE Far Detector Closeout](https://github.com/LBNE/lbne-fd-closeout)
+* [The ELBNF (name subject to change) CDR](https://github.com/LBNE/lbn-cdr)
+* [Proposal for a Full-Scale, Single-Phase Prototype at CERN](https://github.com/LBNE/cern-prototype-proposal)
+* [CD-1 Preparation Page](https://web.fnal.gov/project/LBNF/ReviewsAndAssessments/CD-1Preparation/SitePages/CD-1%20Preparation%20Home.aspx)
 
 Guidance
 ---
