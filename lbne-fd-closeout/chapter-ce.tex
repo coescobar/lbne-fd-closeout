@@ -16,7 +16,7 @@ mounted directly on the TPC front-end.
 This will minimize channel capacitance and noise by keeping the length of the connection between an anode wire
 and its corresponding electronics input to an absolute minimum.
 The CE will be implemented as ASIC chips using CMOS technology, which performs well at cryogenic temperatures,
-and will provide amplification, shaping, digitization, buffering and multiplexing of the signals.
+and will provide amplification, shaping, digitization, buffering and multiplexing (Mux) of the signals.
 The CE need to be self-triggering because no external trigger will be available for some important measurements,
 such as proton decay and supernova bursts.
 % since, unlike neutrino-oscillation measurements for which the pulsed beam 
@@ -95,24 +95,40 @@ with a maximum specified leakage current in 1-atm argon gas, and must be able to
 
 Figure~\ref{fig:ce-elec-schematic} shows the CE architecture that meets the requirements for the LAr-FD TPC.
 Except for the Digital ASIC, this has already been prototyped and tested,
-with a commercial FPGA performing the r\^ole of the Digital ASIC. 
-The 16-channel front-end is implemented as a mixed-signal (analog and digital) ASIC
-providing amplification, shaping, digitization, buffering,
-an 8:1 multiplexing stage (with two parallel readout lines), a driver and voltage regulators.
-The Digital ASIC provides clock and communication protocol, including a further 8:1 multiplexing
-and a high-speed serial link which transmits the data on two parallel low-voltage differential signaling (LVDS)
-output cables to a signal feedthrough and from there to an external crate mounted near the feedthrough.
-Under DAQ scope, further multiplexing and conversion to optical fiber prior to transmission to DAQ is done in those crates.
-Eight front-end ASICs plus a single Digital ASIC comprise a single 128-channel front-end readout board,
-referred to henceforth as a Cold Mother Board (CMB).
+using a commercial FPGA to perform the r\^ole of the Digital ASIC.  
+The Cold Front End Motherboard Assembly (CMB) consists of an Analog Mother Board with a Digital ASIC Mezzanine.  
+
+The Analog Motherboard is instrumented as a 128 channel board which uses eight 16-channel FE ASICs and
+eight 16-channel ADC ASICs as well as low voltage regulators.
+The 16-channel FE ASIC provides amplification and pulse shaping.
+The 16-channel ADC ASIC provides a 12 bit digitizer, local buffering and an 8:1 Mux stage with two serial readout lines in parallel.
+
+The Digital ASIC Mezzanine provides the board space for the Cold Digital Data ASIC (COLDATA) and required voltage regulators.
+The COLDATA ASIC provides the communication protocol with the warm data acquisition system (DAQ),
+the control required to download and readout the FE and ADC ASICs,
+the system clock interface and the data links and drivers to DAQ.
+The COLDATA ASIC will also provide up to four high speed links capable of driving 1~Gbps each.
+This will provide sufficient bandwidth for all the data (3.072~Gbps) plus an encoding scheme and frame data.
+Data will be driven off-board to DAQ through use of copper cable utilizing low-voltage differential signaling (LVDS).
+Output data cables will go to a signal feedthrough and from there to an external crate mounted nearby.
+Under DAQ scope, further data processing is done and data is transmitted via optical fiber to front-end computers.
+
 Each APA is instrumented with 20 CMBs, for a total of 2,560 channels per APA.
-A two-fold redundancy will minimize the probability of loss of any one CMB and its 128 channels.
 Because each CMB is read out separately and in parallel with all others,
 the data rates will not be high enough to require the use of optical fibers in the cold,
 nor is there a need for zero-suppression or data compression.
+
 \begin{editornote}
-  Is is correct that ``further multiplexing and conversion to optical fiber'' will be under DAQ scope?
-  It's not clearly costed in the latest CE schedule, though sufficient funds for this might be there.
+  The CE Architecture figure should show a more conservative 4:1 Mux for the Cold Digital ASIC.
+  Data rate will be 256~ch$\times$12~bits/ch every 500~ns for a rate of 3.072~Gbps.
+  With 8B10B encoding this is 3.84~Gbps, plus there will be some overhead for frame data.
+  This gives us a conservative rate of 1~Gbps per link, which can possibly increase to 2~Gbps
+  in the future if we find the design and cabling can support that rate.
+
+  Also note, we should put a picture of the actual FE board assembly into the CDR to show progress.
+
+  We need to be consistent in how we refer to ASICs -- I have tried to use FE ASIC, ADC ASIC and COLDATA ASIC.
+  --Terri
 \end{editornote}
 
 Figure~\ref{fig:ce-elec-asic-layout} shows a block diagram of the proposed 16-channel front-end ASIC.
@@ -121,20 +137,19 @@ Each channel includes a charge amplifier with a gain selectable from one of 4.7,
 a high-order anti-aliasing filter with adjustable time
 constant (peaking time 0.5, 1, 2, and 3 $\mathrm{\mu}$s),
 an option to enable AC coupling,
-baseline adjustment for operation with either the collecting or the non-collecting wires,
-and a 12-bit 2 MS/s ADC.
+and a baseline adjustment for operation with either the collecting or the non-collecting wires.
+The 16-channel FE ASICs then transmit the shaped pulse to a 12-channel 12-bit 2~MS/s ADC ASIC.
 Shared among the 16 channels are the bias circuits, programming registers,
 a temperature monitor, the digital multiplexer (8:1),
 an analog buffer for signal monitoring, and the digital interface.
-A 600-kb buffer will be included in this design, capable of storing a 1.5-ms 
+A 600-kb buffer is included in this design, capable of storing a 1.5-ms 
 event sampled at 2~MS/s in each channel.
-The layout size is on the order of $10 \times 5$~mm${^2}$, which would provide a yield in excess of 90\%.
 The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
+
 \begin{editornote}
-  The statement about ``layout size'' needs to be a little clearer.
-  Does that mean how the chips are laid out on the MOSIS wafer?
-  Why does that affect the yield?
-  Do we need to mention this at all?
+  Should we get separate power numbers for FE and ADC ASICs? --Terri
+
+  I don't think that is necessary.  Total power is all that matters in the CDR.  -- RWH.
 \end{editornote}
 
 \begin{figure}[htbp]
@@ -161,40 +176,34 @@ The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
 
 For neutrino-oscillation measurements the pulsed beam could provide a
 trigger for readout, but for other measurements, such as proton decay
-and supernova bursts, there will be no trigger.  Therefore the APAs will be
-self triggering.  
-
-Data rates will then
-be dependent on the event rates for background processes.  Dominant
-backgrounds are decays of radionuclides in the LAr,
-predominantly the naturally occurring Ar$^{39}$.  The cosmic-muon rate at the 4850 Level is approximately 2.3~mHz per APA.  Reading an APA (2,560 wires) for
-one drift time (4,625 samples) gives 142~Mb of data. At the cosmic-event rate,
-the net data rate is 0.3~Mb/s per APA.  For radioactive decay of Ar$^{39}$
-the rates are much higher: the specific activity is 1~Bq/kg which results in 183~kHz/APA.
+and supernova bursts, there will be no trigger.
+Therefore the APAs will be self triggering, and the
+data rates will dependend on the event rates for background processes.
+Dominant backgrounds are decays of radionuclides in the LAr, predominantly the naturally occurring Ar$^{39}$.
+The cosmic-muon rate at the 4850 Level is approximately 2.3~mHz per APA.
+Reading an APA (2,560 wires) for one drift time (4,625 samples) gives 142~Mb of data.
+At the cosmic-event rate, the net data rate is 0.3~Mb/s per APA.
+For radioactive decay of Ar$^{39}$ the rates are much higher: the specific activity is 1~Bq/kg which results in 183~kHz/APA.
 At this rate, the APA will be continuously read out,
 at a data rate of 1.5~Gb/s on each of its 40 parallel outputs;
 of course, since the ionization produced by these events is highly localized,
 most of the drift ``frame'' is empty.
-
 The mean range of the beta from Ar$^{39}$ decay is only 0.3~mm, so all
 of the signal is contained in a single over-threshold-sample of a single wire, for a true ``information''
 rate of 0.6~Mb/s.
-In order to
-reduce the rate (and volume) of recorded data to tolerable values, 
-data buffering must be provided.
-The simplest scheme is to do this at the APA level, deriving
-a write-enable from the logic OR of discriminators on all the charge
-collecting (Y) wires in an APA, and then writing all data to a buffer
-while the write-enable is true.
-Baseline samples could be recorded
-with reduced range (four bits) and compacted into full words.
-This mode would still record large volumes of data without useful
-information, particularly for simple event topologies and from low-energy 
-events (radioactive decays) and noise. 
-\begin{editornote}
-  Is this still true, about considering only saving four bits?
-  Indeed, is this whole paragraph still relevant and true?
-\end{editornote}
+
+% In order to
+% reduce the rate (and volume) of recorded data to tolerable values, 
+% data buffering must be provided.
+% The simplest scheme is to do this at the APA level, deriving
+% a write-enable from the logic OR of discriminators on all the charge
+% collecting (Y) wires in an APA, and then writing all data to a buffer
+% while the write-enable is true.
+% Baseline samples could be recorded
+% with reduced range (four bits) and compacted into full words.
+% This mode would still record large volumes of data without useful
+% information, particularly for simple event topologies and from low-energy 
+% events (radioactive decays) and noise. 
 
 %
 %%%%%%%%%%%%%%%%
@@ -333,9 +342,36 @@ confirm device models and design guidelines.
 \subsection{Cold Digital ASICs}
 \label{subsec:fe-CMOS-digital}
 
+The development of the COLDATA ASIC will follow the general guidelines developed for the cold analog ASICs.
+The COLDATA design will differ from the analog design in a couple of aspects.
+It is anticipated that the digital ASIC will make use of a 65~nm CMOS technology and require a
+digital library with accurate cold timing models allowing for high level language design and
+automated place and route for design blocks using extensive digital logic.  
+
 \begin{editornote}
-  Terri will provide some text for this new section.
+  Need a caption for the COLDATA figure, and the fonts need to be larger.
 \end{editornote}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=4in]{elec-COLDATAfig.pdf}
+\caption{Add a caption here.}
+\label{fig:elec-COLDATAfig}
+\end{figure}
+A block diagram of the COLDATA is presented in Fig.~\ref{fig:elec-COLDATAfig}.
+The major components of COLDATA include a downlink which is required to receive the system clock and
+the control/download information transmitted from the DAQ.
+The download data must be transmitted to the FE and ADC ASICs on the CMB.
+The system clock will provide a frequency-reference to a crystal based Phase Lock Loop (PLL)
+which will generate a low jitter stable clock to the high speed serializer. 
+
+A single COLDATA on each CMB will also be receiving the data from each of the eight ADCs on board.
+Each ADC will transmit two streams of data at 192~Mbps for a total data input of 3.072~Gbps.
+All data will be transmitted off board.
+It is anticipated that an encoding scheme, such as 8B10B, will be used and
+some frame data will be added to indicate event blocks.
+Thus, it is planned to drive four 1~Gbps links from each COLDATA.
+A line driver will be designed which is capable of driving a copper link for the approximate 20~m required
+to exit the LAr environment. 
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
