@@ -2,33 +2,83 @@
 \label{ch:photon}
 \section{Introduction}
 
-Liquid argon is an excellent scintillating medium. With an average energy needed to produce a photon of 19.5 eV (at zero field) a typical 1 MeV particle will generate 51,000 photons with 128 nm wavelength. At higher fields this will be reduced but at 500 V/cm the yield is still $\sim$40,000? %\fixme{What's with the ? Russ says to leave it for now. 1/5/15} 
-photons per MeV. Roughly 1/3 of the photons are prompt 2-6 ns and 2/3 are generated with a delay of 1100-1600 ns. LAr is highly transparent to the 128 VUV photons with a Rayleigh scattering length and absorption length of 95 cm and >200 cm respectively. The relatively large light yield makes the scintillation process an excellent candidate for determination of $t_{0}$ for non-beam related events. Detection of the scintillation light may also be helpful in background rejection.
+Liquid argon is an excellent scintillating medium. With an average
+energy needed to produce a photon of 19.5 eV (at zero field) a typical
+1 MeV particle will generate 51,000 photons with 128 nm wavelength. At
+higher fields this will be reduced but at 500 V/cm the yield is still
+$\sim$40,000?  photons per MeV. Roughly 1/3 of the photons are prompt
+2-6 ns and 2/3 are generated with a delay of 1100-1600 ns. LAr is
+highly transparent to the 128 VUV photons with a Rayleigh scattering
+length and absorption length of 95 cm and >200 cm respectively. The
+relatively large light yield makes the scintillation process an
+excellent candidate for determination of $t_{0}$ for non-beam related
+events. Detection of the scintillation light may also be helpful in
+background rejection.
 
 \section{Requirements and Goals}
 
 \subsection{Beam-based physics}
 
-There are no requirements for the beam-based physics program, as the machine clock will provide a $t_{0}$ with roughly 10 $\mu$s resolution. Given that the electron drift is 1.6 mm/$\mu$s the uncertainty to the electron lifetime correction is small is the beam timing is used. The photon system can be useful in determining the $t_{0}$ of cosmic ray events and events from radiological decays. The impact of this on the detector performance needs to be determined, but it is not expected that the reduction in backgrounds for the oscillation program will introduce additional requirements to the photon system design.
-
+There are no requirements for the beam-based physics program, as the
+machine clock will provide a $t_{0}$ with roughly 10 $\mu$s
+resolution. Given that the electron drift is 1.6 mm/$\mu$s the
+uncertainty to the electron lifetime correction is small is the beam
+timing is used. The photon system can be useful in determining the
+$t_{0}$ of cosmic ray events and events from radiological decays. The
+impact of this on the detector performance needs to be determined, but
+it is not expected that the reduction in backgrounds for the
+oscillation program will introduce additional requirements to the
+photon system design.
 
 \subsection{Proton decay and atmospheric physics}
 
-The photon detector system must provide the t0 for non-beam related physics channels if a correction for electron recombination during drift is to be applied. The requirements for electronics and hadronic energy resolution for the proton decay and the atmospheric neutrino program are $1\% / \sqrt{E(GeV)} \bigoplus 1\%$ and $30\% / \sqrt{E(GeV)}$  respectively. With these resolutions the collected charge must be accurately corrected for recombination. Therefore the photon system must provide a $t_{0}$ for particles with >100 MeV with >95\% efficiency in the fiducial volume of the detector. 
-
+The photon detector system must provide the t0 for non-beam related
+physics channels if a correction for electron recombination during
+drift is to be applied. The requirements for electronics and hadronic
+energy resolution for the proton decay and the atmospheric neutrino
+program are $1\% / \sqrt{E(GeV)} \bigoplus 1\%$ and $30\% /
+\sqrt{E(GeV)}$ respectively. With these resolutions the collected
+charge must be accurately corrected for recombination. Therefore the
+photon system must provide a $t_{0}$ for particles with >100 MeV with
+>95\% efficiency in the fiducial volume of the detector.
 
 \subsection{Low-energy physics}
 
-Supernova events will produce neutrinos down to about $\sim$5 MeV. Studies have estimated the momentum resolution for 5 MeV electrons to be 20\% using only TPC information and assuming a highly efficient trigger and an electron lifetime of 5 ms. The impact of various detector resolutions on the physics potential of LBNE has not been studied in detail. At present there is no strong requirement that the energy resolution must be better than 20\% so no requirement on the photon system trigger efficiency is set at this time. However it is clear that if a detector design can be found the energy resolution would greatly improve. A goal of the photon detection R\&D is to develop a system with the lowest possible threshold for a reasonable cost. At time of the start of final design a final decision as to the configuration will need to be made based on cost and added physics capability.
+Supernova events will produce neutrinos down to about $\sim$5
+MeV. Studies have estimated the momentum resolution for 5 MeV
+electrons to be 20\% using only TPC information and assuming a highly
+efficient trigger and an electron lifetime of 5 ms. The impact of
+various detector resolutions on the physics potential of LBNE has not
+been studied in detail. At present there is no strong requirement that
+the energy resolution must be better than 20\% so no requirement on
+the photon system trigger efficiency is set at this time. However it
+is clear that if a detector design can be found the energy resolution
+would greatly improve. A goal of the photon detection R\&D is to
+develop a system with the lowest possible threshold for a reasonable
+cost. At time of the start of final design a final decision as to the
+configuration will need to be made based on cost and added physics
+capability.
 
 \subsection{General Considerations}
-In the event that larger photon collection efficiencies can be achieved then it is possible to improve the energy resolution of the detector by adding the photon yield to the electron yield information.  However this requires several orders of improvement in light collection efficiency so it is beyond the scope of present designed.
+In the event that larger photon collection efficiencies can be
+achieved then it is possible to improve the energy resolution of the
+detector by adding the photon yield to the electron yield information.
+However this requires several orders of improvement in light
+collection efficiency so it is beyond the scope of present designed.
 
-\section{Cast or Bulk doped acrylic bars}
+\section{Photon Detector Prototype Designs}
 
-The reference design for the photon detection system is based on acrylic bars, which are either coated in TPB or doped in bulk. The 128 nm photons interact with the TPB on the surface and 430 nm light is re-emitted. 
+\subsection{Cast or Bulk doped acrylic bars}
 
-A PD module is made up of 4 light guides that capture, waveshift, and channel VUV photons to silicon photomultipliers (SiPMs) at one end.  A schematic drawing of a cast acrylic light guide with its photosensors is shown in Figure~\ref{fig:cast-acryl-lightguide}.
+The reference design for the photon detection system is based on
+acrylic bars, which are either coated in TPB or doped in bulk. The 128
+nm photons interact with the TPB on the surface and 430 nm light is
+re-emitted.
+
+A PD module is made up of 4 light guides that capture, waveshift, and
+channel VUV photons to silicon photomultipliers (SiPMs) at one end.  A
+schematic drawing of a cast acrylic light guide with its photosensors
+is shown in Figure~\ref{fig:cast-acryl-lightguide}.
 
 \begin{figure}[htbp]
 \centering
@@ -38,30 +88,82 @@ A PD module is made up of 4 light guides that capture, waveshift, and channel VU
 \end{figure}
 
 
-The light guides are made from cast acrylic bars that have wavelength shifter embedded in them.  The wavelength shifter converts VUV scintillation photons striking it to 430 nm photons inside the bar, with an efficiency of ~50\% of converting a VUV to an optical photon.  A fraction of the waveshifted optical photons are internally reflected to the bar's end where they are detected by SiPMs whose QE is well matched to the 430 nm waveshifted photons. The light guides were made with one of two wavelength shifters: the conventional TPB (1,1,4,4-tetraphenyl-1,3-butadiene) and the less expensive alternative bis-MSB (1,4-bis-(o-methyl-styryl)-benzene). Preliminary studies with a VUV monochromator show that the two wavelength shifters compare favorably in their waveshifting efficiency.  
-Several technologies have been investigated at Indiana University for incorporating the waveshifter into the acrylic (or in one case, polystyrene), including:  
+The light guides are made from cast acrylic bars that have wavelength
+shifter embedded in them.  The wavelength shifter converts VUV
+scintillation photons striking it to 430 nm photons inside the bar,
+with an efficiency of ~50\% of converting a VUV to an optical photon.
+A fraction of the waveshifted optical photons are internally reflected
+to the bar's end where they are detected by SiPMs whose QE is well
+matched to the 430 nm waveshifted photons. The light guides were made
+with one of two wavelength shifters: the conventional TPB
+(1,1,4,4-tetraphenyl-1,3-butadiene) and the less expensive alternative
+bis-MSB (1,4-bis-(o-methyl-styryl)-benzene). Preliminary studies with
+a VUV monochromator show that the two wavelength shifters compare
+favorably in their waveshifting efficiency.  Several technologies have
+been investigated at Indiana University for incorporating the
+waveshifter into the acrylic (or in one case, polystyrene), including:
 
 1.  Flash heated bars
 
-These light guides were made with TPB and bis-MSB using commercially available Lucite-UTRAN cast UVT acrylic sheet that was laser-cut into bars of the proper size. Lucite-UTRAN has an attenuation length of 2.5 m.  To embed the WLS in the acrylic, the bars coated with waveshifter are flash heated to rapidly melt the WLS into a thin outer layer of the bar. 
+These light guides were made with TPB and bis-MSB using commercially
+available Lucite-UTRAN cast UVT acrylic sheet that was laser-cut into
+bars of the proper size. Lucite-UTRAN has an attenuation length of 2.5
+m.  To embed the WLS in the acrylic, the bars coated with waveshifter
+are flash heated to rapidly melt the WLS into a thin outer layer of
+the bar.
 
 2.  Hand-dipped bars
 
-These light guides were made by dip-coating acrylic bars in a WLS solution, a process that was pioneered at MIT.  This process improves the clarity and uniformity of the coating, as well as its scalability to the manufacture of the large number of light guides needed for LBNE.  In this process, a solution is mixed with 2 parts TPB/bis-MSB to 100 parts DCM (dichloromethane, $CH_{2}Cl_{2}$).  Each acrylic bar is submerged in this solution, removed, and then left to air dry.
+These light guides were made by dip-coating acrylic bars in a WLS
+solution, a process that was pioneered at MIT.  This process improves
+the clarity and uniformity of the coating, as well as its scalability
+to the manufacture of the large number of light guides needed for
+LBNE.  In this process, a solution is mixed with 2 parts TPB/bis-MSB
+to 100 parts DCM (dichloromethane, $CH_{2}Cl_{2}$).  Each acrylic bar
+is submerged in this solution, removed, and then left to air dry.
 
 3.  Doped, cast acrylic bars
 
-These light guides were cut from a sheet of acrylic cast with TPB or bis-MSB mixed into the plastic. This sheet was manufactured commercially by Astra Products, Baldwin, NY.  The sheet had 1\% TPB or bis-MSB by mass added during their proprietary casting process, which distributes WLS throughout the volume.  Experiments show that 1\% WLS is the maximum that can be cast into the plastic without particles settling out.  Since VUV photons have a very short penetration depth in acrylic, this manufacturing method uses more WLS than necessary.  On the other hand, light guides function more efficiently when their surfaces are flat and the casting process results in very flat surfaces.  This is a strong mitigating factor when the prime consideration is efficiency for the detection of VUV photons. 
+These light guides were cut from a sheet of acrylic cast with TPB or
+bis-MSB mixed into the plastic. This sheet was manufactured
+commercially by Astra Products, Baldwin, NY.  The sheet had 1\% TPB or
+bis-MSB by mass added during their proprietary casting process, which
+distributes WLS throughout the volume.  Experiments show that 1\% WLS
+is the maximum that can be cast into the plastic without particles
+settling out.  Since VUV photons have a very short penetration depth
+in acrylic, this manufacturing method uses more WLS than necessary.
+On the other hand, light guides function more efficiently when their
+surfaces are flat and the casting process results in very flat
+surfaces.  This is a strong mitigating factor when the prime
+consideration is efficiency for the detection of VUV photons.
 
 4.  Doped, cast polystyrene
 
-These light guides are made commercially by Eljen Technologies, a `'world leader in the development and manufacturer of organic plastic scintillation material.''  These light guides were cut from a sheet of polystyrene cast with TPB or bis-MSB mixed into the plastic by a proprietary process.  The sheet had 1\% TPB or bis-MSB by mass added during their proprietary casting process, which distributes WLS throughout the volume. 
+These light guides are made commercially by Eljen Technologies, a
+`'world leader in the development and manufacturer of organic plastic
+scintillation material.''  These light guides were cut from a sheet of
+polystyrene cast with TPB or bis-MSB mixed into the plastic by a
+proprietary process.  The sheet had 1\% TPB or bis-MSB by mass added
+during their proprietary casting process, which distributes WLS
+throughout the volume.
  
-In addition to these designs a thin bar (or fiber) with dimensions 3 mm by 3 mm was developed by the CSU group. The square profile fiber-based prototype design was motivated by the fact that 4 fibers would exactly couple to the 6 mm by 6 mm active area of the SiPM currently under consideration for the photon detector system. The fiber size allowed 100\% areal acceptance to SiPM mapping, within efficiencies associated with photon conversion and transport. The fibers used in the prototype were custom fibers made by St. Gobain with a concentration of 1\%, by weight, of TPB mixed into the bulk during manufacture.   
+In addition to these designs a thin bar (or fiber) with dimensions 3
+mm by 3 mm was developed by the CSU group. The square profile
+fiber-based prototype design was motivated by the fact that 4 fibers
+would exactly couple to the 6 mm by 6 mm active area of the SiPM
+currently under consideration for the photon detector system. The
+fiber size allowed 100\% areal acceptance to SiPM mapping, within
+efficiencies associated with photon conversion and transport. The
+fibers used in the prototype were custom fibers made by St. Gobain
+with a concentration of 1\%, by weight, of TPB mixed into the bulk
+during manufacture.
 
 \subsection{Current status of design}
 
-The designs have been tested at two facilities, the local LAr at Indiana University and at the TallBo dewar in lab PAB at Fermilab.  The light guide designs are tested in a PD paddle frame designed and built at Colorado State U that holds 4 light guides.  
+The designs have been tested at two facilities, the local LAr at
+Indiana University and at the TallBo dewar in lab PAB at Fermilab.
+The light guide designs are tested in a PD paddle frame designed and
+built at Colorado State U that holds 4 light guides.
 
 Selected Results from IU dewar facility
 
@@ -72,7 +174,20 @@ Selected Results from IU dewar facility
 \label{fig:iu-dewar-paddle-frame}
 \end{figure}
 
-The IU dewar shown in Figure~\ref{fig:iu-dewar-paddle-frame} below can hold 1 paddle.  The IU dewar tests can be used for both studying cosmic muons and attenuation length measurements with a $^{241}$Am $\alpha$ source.  For the setup shown in Fig. 2, the $^{241}$Am $\alpha$ source is moved up the light guide and a set of waveforms are collected every 2 inches.  The distribution of the waveforms collected at each of the 10 positions for a hand-dipped bar with TPB is shown in the left side of Figure~\ref{fig:waveforms-and-fit}.  The individual photoelectron peaks are clearly visible.  The peak of the distribution nearest the SiPM is approximately 30 pe's.  At the farthest point, the peak is approximately 15 pe's.  The distributions have all been  normalized to have the same area.  Since the standard deviation of the waveform distribution nearest to the SiPM are larger than those farther away, the near distributions are less peaked and wider. 
+The IU dewar shown in Figure~\ref{fig:iu-dewar-paddle-frame} below can
+hold 1 paddle.  The IU dewar tests can be used for both studying
+cosmic muons and attenuation length measurements with a $^{241}$Am
+$\alpha$ source.  For the setup shown in Fig. 2, the $^{241}$Am
+$\alpha$ source is moved up the light guide and a set of waveforms are
+collected every 2 inches.  The distribution of the waveforms collected
+at each of the 10 positions for a hand-dipped bar with TPB is shown in
+the left side of Figure~\ref{fig:waveforms-and-fit}.  The individual
+photoelectron peaks are clearly visible.  The peak of the distribution
+nearest the SiPM is approximately 30 pe's.  At the farthest point, the
+peak is approximately 15 pe's.  The distributions have all been
+normalized to have the same area.  Since the standard deviation of the
+waveform distribution nearest to the SiPM are larger than those
+farther away, the near distributions are less peaked and wider.
 
 The distribution of waveforms at each position along the bar is shown in the right side of Figure~\ref{fig:waveforms-and-fit}.  Superposed is an exponential fit to the peak of these waveform distributions.  This fit shows that the attenuation length of the bar is $\sim$37 inches, the longest attenuation length yet seen for the light guide technology. 
 \begin{figure}[htbp]
@@ -84,14 +199,43 @@ The distribution of waveforms at each position along the bar is shown in the rig
 \end{figure}
 
 
-There were 3 bars made in this batch of hand-dipped bars.  One of those bars had an attenuation length of $\sim$31 inches, comparable to this result.  One, however, had an attenuation length of $\sim$14 inches  It will be one of the objectives of next year's R\&D efforts to understand how to make light guides with consistently long attenuation lengths. 
+There were 3 bars made in this batch of hand-dipped bars.  One of
+those bars had an attenuation length of $\sim$31 inches, comparable to
+this result.  One, however, had an attenuation length of $\sim$14
+inches It will be one of the objectives of next year's R\&D efforts to
+understand how to make light guides with consistently long attenuation
+lengths.
  
 Selected Results from the TallBo dewar facility
 
-The TallBo dewar facility at Fermilab is described more fully in section 2.8.1.  It is a 450 liter dewar in lab PAB at Fermilab.  It is large enough to hold 4 full PD paddle frames loaded with 20-inch light guides.  The TallBo dewar recirculates the LAr and maintains its purity for weeks at a time.  It is the test facility we use at IU for longer-term comparison  studies of many alternative technologies.  
-The IU group has run two experiments at TallBo so far, one in October-November 2013 and one in February-March 2014.  The goal of these experiments was to make inter-comparisons of several light guide technologies under uniform conditions.  In order to correct these comparisons for systematic effects, we constructed a Monte Carlo simulation of the experiment.  First we made a model of the light guides; then we put this model into a full simulation of the TallBo dewar; finally, we tracked scintillation photons generated by cosmic muons to the light guides, into the light guides, and then down the light guides to the SiPMs.  
+The TallBo dewar facility at Fermilab is described more fully in
+section 2.8.1.  It is a 450 liter dewar in lab PAB at Fermilab.  It is
+large enough to hold 4 full PD paddle frames loaded with 20-inch light
+guides.  The TallBo dewar recirculates the LAr and maintains its
+purity for weeks at a time.  It is the test facility we use at IU for
+longer-term comparison studies of many alternative technologies.  The
+IU group has run two experiments at TallBo so far, one in
+October-November 2013 and one in February-March 2014.  The goal of
+these experiments was to make inter-comparisons of several light guide
+technologies under uniform conditions.  In order to correct these
+comparisons for systematic effects, we constructed a Monte Carlo
+simulation of the experiment.  First we made a model of the light
+guides; then we put this model into a full simulation of the TallBo
+dewar; finally, we tracked scintillation photons generated by cosmic
+muons to the light guides, into the light guides, and then down the
+light guides to the SiPMs.
 
-The light guides were modeled as 20-inch acrylic bars with waveshifter embedded in their surfaces that convert 128 nm photons from LAr scintillation light to 430 nm light in the bar.  The simulation then propagates the optical photons to the SiPMs at the end of the bar.   The left side of Figure~\ref{fig:mc-sim-and-tallbo}. shows the results of one such simulation in which the waveshifted light has been separated into the fraction of the total that propagates directly to the SiPMs and the fraction that is internally reflected to the SiPMs.  Near the SiPM a significant fraction of the light propagates directly to the photodetectors.   After 5-10 cm, the light comes mostly from internally reflected light.  
+The light guides were modeled as 20-inch acrylic bars with waveshifter
+embedded in their surfaces that convert 128 nm photons from LAr
+scintillation light to 430 nm light in the bar.  The simulation then
+propagates the optical photons to the SiPMs at the end of the bar.
+The left side of Figure~\ref{fig:mc-sim-and-tallbo}. shows the results
+of one such simulation in which the waveshifted light has been
+separated into the fraction of the total that propagates directly to
+the SiPMs and the fraction that is internally reflected to the SiPMs.
+Near the SiPM a significant fraction of the light propagates directly
+to the photodetectors.  After 5-10 cm, the light comes mostly from
+internally reflected light.
 
 \begin{figure}[htbp]
 \centering
@@ -108,10 +252,523 @@ The light guides were modeled as 20-inch acrylic bars with waveshifter embedded 
 \label{fig:total-photons-per-hr}
 \end{figure}
 
+The TallBo simulation was designed to answer two basic questions.  The
+first of these questions is the way in which reflected light from the
+stainless steel walls Figure~\ref{fig:total-photons-per-hr} affects
+the measurements.  The results of that study are shown in the right
+side of Figure~\ref{fig:mc-sim-and-tallbo}.  Both the geometric
+corrections (black circles) and the corrections due to reflections
+(red circles) have been applied to the data.  The results of the
+comparisons for 11 light guides made with 8 different technologies,
+including the prototype fiber light guide from CSU, during the
+February-March 2014 TallBo run are shown in Fig. 7.  What seems to be
+clear from Fig. 7 is that the dipped technology pioneered by the MIT
+group has a better response than the flash heated bars manufactured by
+the technology developed at IU.  After these results were obtained we
+have moved away from the flash heated technology and invested our R\&D
+efforts into our development of the dipping technology.  These results
+have also motivated the CSU group to modify their fiber design and
+produce a substantially improved prototype fiber light guide.
 
-The TallBo simulation was designed to answer two basic questions.  The first of these questions is the way in which reflected light from the stainless steel walls Figure~\ref{fig:total-photons-per-hr} affects the measurements.  The results of that study are shown in the right side of Figure~\ref{fig:mc-sim-and-tallbo}.  Both the geometric corrections (black circles) and the corrections due to reflections (red circles) have been applied to the data.
-The results of the comparisons for 11 light guides made with 8 different technologies, including the prototype fiber light guide from CSU, during the February-March 2014 TallBo run are shown in Fig. 7.  What seems to be clear  from Fig. 7 is that the dipped technology pioneered by the MIT group has a better response than the flash heated bars manufactured by the technology developed at IU.  After these results were obtained we have moved away from the flash heated technology and invested our R\&D efforts into our development of the dipping technology.  These results have also motivated the CSU group to modify their fiber design and produce a substantially improved prototype fiber light guide. 
+\subsection{Fiber-embedded bulk acrylic plate}
 
+\subsection{Fiber bundle with WS-coated readiator}
+
+\section{SiPM}
+
+\section{Photon system readout electronics}
+\label{sec_elec}
+
+Scintillation light from LAr comes from the two different excited
+states with lifetimes of about 6 ns and 1.6 $\mu$s.  Only a limited
+amount of light is collected by this system, so the electronics must
+be designed to collect the light from both excited states. A summary
+of the general requirements for the system, including requirements
+from a physics performance perspective, are given in
+Table~\ref{tab:fee_req}.
+%
+\begin{table*}[ht]
+\centering
+%\vspace{4mm}
+\begin{tabular}{| l | l |} \hline
+ Performance Parameter       & Target   \cr   \hline
+ Time Resolution                   & Better than 30 nS wrt event time zero ("t0")      \cr  \hline
+ Charge Resolution               & 0.25\% photo-electron equivalent                     \cr \hline
+ Dynamic Range                   & $\sim$ x10 better than detector (1000:1)          \cr \hline
+ Linearity                               & Sufficient to resolve 1 photo-electron signals   \cr    \hline
+ Multi-Hit Capability              & Sufficient to measure Triplet (late) Photons          \cr   \hline
+ Dead Time                           & Live up to 2 drift times either side of beam spill          \cr    \hline
+ Bias Control                        & 0.1 V resolution up to 30 V per channel  \cr    \hline
+ Calibration                          & On-board Charge Injection  \cr    \hline
+ Timing                                 & Events time-stamped using NO$\nu$A Timing syst.  \cr    \hline
+\end{tabular}
+\caption{\label{tab:fee_req} Physics Requirements for the Photon Detector Electronics.}
+\end{table*}
+%
+The plans for the electronics for the photon detection subsystem
+include a baseline design with several options that remain R\&D
+activities.  There alternative implementations of electronics are
+described in Section~\ref{sec_alt}.
+%These options are identified in the description that follows.  
+%There are also some alternative implementations of electronics that remain under consideration.  These are described in Section~\ref{sec_alt}
+%These are described in Section 6.4.
+
+In the baseline plan, there are no front-end electronics in the cold
+volume.  Instead, the un-amplified signals from the SiPMs are
+transmitted to outside the cryostat on cables for processing and
+digitization, as shown in Fig.~\ref{fig:fig-e-1}.  There are
+advantages and disadvantages to this approach.  The advantages are
+that the infrastructure required for inside the cryostat is reduced
+(power, data cables, precision clocks, data protocols, etc.);
+reliability is improved (no single-point failures of multi-channel
+devices inside the cryostat); serviceability and accessibility to the
+front-end electronics are improved; and the need to develop cold
+electronics, possibly a custom ASIC, is eliminated.  The disadvantages
+are that the cable plant inside the detector is increased, which can
+create mechanical challenges and installation difficulties; the flange
+board (warm/cold interface) is more complex; there are generally more
+connectors in the system; and signal-to-noise considerations are more
+difficult.  Generally, the baseline design favors simplicity,
+reliability and reduced R\&D time and costs, and also meets the
+performance requirements of the electronics.
+%
+ \begin{figure}[h]
+  \centering
+%\includegraphics[angle=0,width=10cm,height=7cm]{fig1}
+\caption{Block diagram of the photon detector signal processing system.}
+\label{fig:fig-e-1}
+\end{figure}
+%
+In the 35-ton prototype, each SiPM signal was transmitted on an
+individual shielded twisted-pair cable fitted with individual
+LEMO-style connectors.  The bias voltage was coupled onto the signal
+cable, using AC-coupling on the receiving end to measure the SiPM
+signal.  The use of high-quality cable with point-to-point connections
+between an individual SiPM inside the cryostat and the front-end
+electronics residing outside the cryostat, combined with good
+differential signal processing on the receiving end, enabled the
+demonstration of the principle that single photo-electron signals
+could be measured accurately without the need for cold electronics.
+In order to address the problems with the cable plant as identified
+above, the following ideas are being pursued:
+\begin{itemize}
+\item Ganging together of several SiPM outputs from a given PD
+  detector into one output cable.  This increases the detector
+  capacitance, affects the pulse shape, and could spoil the timing
+  resolution of the measurement.  Also, the SiPMs may have to be
+  preselected, since there will be only one bias voltage for three
+  devices, and it may be important to match the over-voltage
+  characteristics.  Studies are in progress to find a compromise
+  between data precision and cabling issues. One approach is to add a
+  cold pre-amplifier if the ganging together of several SiPMs result
+  in performance that is too degraded to meet specifications.  The
+  infrastructure requirements (cables, connectors, power, cold
+  performance, reliability, mechanical mounting, etc.) would have to
+  be considered.
+
+\item Use of multi-conductor, individually shielded pair cable.  A candidate cable containing four individually-shielded twisted pairs has been 
+identified and tests are in progress.  The cable is in Teflon jacket, which should be acceptable for use in LAr.
+
+\item Use of mass-terminated connectors.  Several candidate connectors
+  for use with the cable described above are being pursued.
+\end{itemize}
+
+The baseline plan assumes that three SiPM signals can be ganged
+together into one readout channel.  By using the multi-conductor cable
+with four twisted pairs, this results in one cable per PD consisting
+of 12 SiPMs.  The diameter of this cable is ~xxx mm, which reduces the
+cable plant by $\sim$ x10 compared to that used in the 35 ton
+detector.  The cost of the connectors also decreases by $\sim$ x10.
+Lastly, the ease in making connections at the flange board will be
+improved by the use of a mass-terminated connector.
+
+In the baseline plan, the front-end electronics resides outside of the
+cryostat in instrumentation racks.  We have designed and built a
+custom module for receiving SiPM signals, and performing signal
+processing in the front-end as preprocessing for trigger and DAQ.  The
+module is called the SiPM Signal Processor (SSP).  An SSP consists of
+12 readout channels packaged in a self-contained 1U module.  Each
+channel contains a fully-differential voltage amplifier and a 14-bit,
+150 MSPS analog-to-digital converter (ADC) that digitizes the
+waveforms received from the SiPMs.  The front-end amplifier is
+configured as fully-differential with high common-mode rejection, and
+receives the SiPM signals into a termination resistor that matches the
+characteristic impedance of the signal cable.  Currently there is no
+shaping of the signal, since the SiPM response is slow enough relative
+to the speed of the digitization to obtain several digitized samples
+of the leading edge of the pulse for the determination of signal
+timing.
+
+The digitized data is stored in pipelines in the SSP, for up to $\sim$
+13 $\mu$s.  The processing is pipelined, and performed by a Xilinx
+Artix-7 Field-Programmable Gate Array (FPGA).  The FPGA implements an
+independent Data Processor (DP) for each channel.  The processing
+incorporates a leading edge discriminator for detecting events and a
+constant fraction discriminator (CFD) for sub clock timing resolution.
+Because the FPGA is programmable and accessible, it is possible to
+explore different data processing algorithms and techniques, and even
+customize the readout for a given type of event (supernova for
+example.)  A picture of the module is shown in Fig.~\ref{fig:fig-e-2}.
+A block diagram of the system is shown in Fig.~\ref{fig:fig-e-3}.
+%Fig. xx3.  Picture of the SSP module.
+%
+\begin{figure}[h]
+  \centering
+\includegraphics[angle=90,width=10cm,height=5cm]{fig-e-2.png}
+\caption{Picture of the SSP module.}
+\label{fig:fig-e-2}
+\end{figure}
+%
+%Fig. xx2.  Block diagram of the SSP.
+%
+\begin{figure}[h]
+  \centering
+\includegraphics[angle=0,width=12cm,height=7cm]{fig-e-3.png}
+\caption{Block diagram the SSP module.}
+\label{fig:fig-e-3}
+\end{figure}
+%
+In the simplest mode of operation, the module can perform waveform
+capture, using either an internal trigger or an external trigger.  Up
+to 2046 waveform samples may be read out for each event.  When
+waveform readouts overlap the device can be configured to offset,
+truncate or completely suppress the overlapping waveform.  Pile-up
+events can also be suppressed.
+
+As an alternative to reading full waveforms, the DP can be configured
+to perform a wide variety of data processing algorithms, including
+several techniques for measuring amplitude, and also timing of the
+event with respect to a reference clock.  All timing and amplitude
+values are reported in a compact event record.  Each data processing
+channel stores up to 340 event records when not storing waveforms.
+
+Generally, the SSP performs pipelined processing.  The module has been
+designed to support several different triggering schemes, including
+self-triggered, use of an external trigger, or use an external gate to
+readout all events within a time-window.  In order for the events
+measured in the photon detector to be matched up with the
+corresponding events in the TPC, the front-end electronics attaches a
+timestamp to the data as it is acquired.  The timestamp is unique, and
+has a correspondence with the timestamps in the TPC electronics
+processing.  The timestamp in the SSP is applied to the event data as
+it is digitized, and becomes part of the data as the processing
+proceeds.  In the case where zero-suppression and data sparsification
+are used, the timestamp on accepted data remains intact.  To achieve
+this, the TPC and PD electronics must be synchronized, including
+timestamp counter resets, and a known and stable calibration between
+the corresponding timing resolution of the ADC conversion in the two
+systems.  The electronics has been designed to support a full
+interface to the NO$\nu$A timing system, which is the baseline timing
+system for the experimental prototypes.
+
+A Xilinx Zynq FPGA, onboard the MicroZed system-on-module, handles the
+slow control and event data transfer.  The SSP has two parallel
+communication interfaces; USB 2.0 and 10/100/1000 Ethernet.  The 1
+Gb/s Ethernet supports full TCP/IP protocol.  The module includes a
+separate 12-bit high-voltage DAC for each channel to provide up to 30
+V of bias to each SiPM.  The module also feature charge injection for
+performing diagnostics and linearity monitoring, and also voltage
+monitoring.
+
+In tests to date, the SSP is capable of measuring single
+photo-electron signals coming from the SiPMs over a cable length of 30
+meters when the SiPMs are operated at LAr temperatures.  The timing
+resolution of the signals has been measured to be better than 3 ns.
+The full-differential signal processing in the front-end circuitry is
+important in achieving this result.
+ 
+The SSP is self-contained in that it receives 60 Hz, 120V power, and
+has internal linear and DC/DC power supplies for generating the DC
+voltages needed for the instrumentation, as well as the bias voltage
+for the SiPMs.  The SSP is packaged in a 1U, rack-mountable
+package. For the 35-ton prototype, the racks are located near the
+ports on the top of the cryostat.
+
+\subsection{Alternatives}
+\label{sec_alt}
+
+In the baseline design of the PD electronics, the approach was taken
+to have no electronics inside of the cold volume.  This results in a
+large number of cables and connectors.  Other experiments using liquid
+argon have successfully implemented cold TPC electronics, thereby
+significantly reducing the cable plant that must come through the
+cryostat.  This approach has challenges in power distribution, heat
+dissipation, and the performance of front-end electronics in LAr. To
+address serviceability, the cold electronics might be realized in a
+modular way and situated just below the flange in the cryostat so that
+it can be accessed in the event that repair is needed.  To this end
+the zero-suppression will be important to avoid high data rates
+depending on the number of readout channels needed. A way to realize
+the cold zero-suppression would be to implement a cold FPGA (or an
+ASIC, yet to be developed).  So far the cold FPGAs have had mixed
+results in tests. Alternative approach would be to perform an "analog
+zero suppression" with a constant-fraction discriminator and then gate
+the signal and digitize warm, in which case the complication with
+encoding the particular channel has to be addressed.  The significant
+challenges in this technique include power dissipation, the increased
+possibility of contamination of the LAr, and extended infrastructure
+requirements that must reside in the cold volume.  The virtue is that
+this can significantly reduce the number of signal penetrations into
+the cold volume.
+
+The electronics for the photon detector of LBNE uses fast (direct)
+digitization of the SiPM pulses. Another option for the front-end
+electronics is to use pulse shaping. Instead of digitizing the full
+bandwidth of the SiPM signal, the pulse is shaped using analog
+filtering techniques, generally producing a pulse with a prescribed
+shape with a peak that is proportional to the total amount of charge.
+By measuring the peak, both amplitude and pulse timing can be
+obtained.  Since the pulse response follows a known transfer function,
+the pulse peak can be obtained using slower synchronous sampling, or
+using asynchronous sampling through the use of peak detection and
+constant fraction discrimination.  In either case, the data can be
+processed by an FPGA, using algorithms optimized for the application.
+In particular, assuming that a sufficient number of samples are
+obtained of the shaped pulse, a chi-square comparison of the shape to
+the ideal pulse can be used to determine pulse corruption, or event
+identification.  As with direct digitization, the digitization clock
+and timestamp can be synchronized using an external clock source. The
+data can be read out in a similar manner, using USB 2.0 or 10/100/1000
+Ethernet.  The virtue of this approach is that a slower ADC can be
+used, reducing power consumption, and also reducing data load and the
+speed of readout links.  The technique does trade bandwidth for
+shaping, making timing and pile-up issues more important.  This can
+result in the interpretation of the pulse shape becoming more complex
+than direct digitization.  Generally, the pulse shaping circuitry is
+also less expensive than the direct digitization technique, assuming
+similar performance requirements.
+
+Another option for the photon system readout would include the use use
+of an Application Specific Integrated circuit (ASIC) as a way to
+reduce cost.  The large channel count in a real detector system is
+such that the production cost of the system could be greatly reduced.
+Often, the cost of development of an ASIC from scratch is quite high,
+of order $\sim$400K, and can take ~1-2 years for development, so cost
+and schedule must be weighed carefully.  However, other benefits from
+the ASIC approach include reduced space requirements for circuitry on
+the front-end, lower power dissipation, and specialized functionality
+in the front-end chip.  There exist several ASICs that have been
+designed over the last few years especially for SiPM readout.  One
+could potentially explore the functionality and performance of these
+designs, and evaluate their suitability for LBNE.  This option might
+be used either for warm or cold electronics.  Direct digitization has
+the virtue of being straight-forward from a circuit design
+perspective.  By taking advantage of modern high-bandwidth OP amps,
+high-speed, high-rate ADCs, and powerful FPGAs with high-speed serial
+links, it is possible to obtain 14-bit dynamic range digitization with
+$\sim$1 ns timing resolution.  By reading all of the samples into an
+FPGA having a deep buffer, digital signal processing techniques can be
+employed using the programmable logic, offering powerful analysis
+algorithms that can be developed in time.  The technique generally has
+higher power consumption and tends to be more expensive than simpler
+instrumentation techniques.
+
+\section{Photon Detector Calibration}
+\label{sec_pd_calib}
+
+The photon detector calibration is a part of a larger calibration plan
+that covers all aspects of an LAr detector calibration, and includes
+methods to convert collected charge to initial particle?s energy, as
+well as calibration techniques to convert collected scintillation
+light into estimate of particle's interaction time, energy, and a
+track/vertex location for each event.  As already described, the
+baseline for the scintillation photon detectors assumes employment of
+acrylic light collection paddles to reduce the required costly
+photo-cathode area. Several photon detector designs are presently
+being developed and are being tested in small dewars. Since each of
+these new elements has not yet been tested in a large-scale TPC, the
+35-ton LArTPC prototype is being constructed to provide essential
+design validation. The current FD designs are anticipated to have
+sufficient sensitivity to provide event timing information for
+atmospheric neutrino and proton decay channels. However, it will not
+provide high efficiency down to the 5 MeV neutrino energy level
+desired by the supernova program. This would have the impact that the
+event reconstruction energy resolution would be 20\% rather than 5\%
+achievable with the event time determination from a photon detector
+able to operate efficiently at a sufficiently low energy
+threshold. The improvement in physics will be studied in the near
+future but a substantial effort in development of improved detection
+techniques is desired. In the absence of precise physics requirements
+for the photon detector system and in order to support R\&D activities
+on the photon detector development it was decided that the photon
+detector should provide a time stamp to determine the time of
+occurrence of an event (so called ?time zero?) with an accuracy much
+better than 1 ?s.  Items relevant to the photon detector calibration
+are the fast and slow components of the light, photon propagation
+including scattering and reflections, impact of N2, E-field strength,
+as well as the energy range of interest. A calibration system that
+addresses the issues listed above has to be both comprehensive and
+cost-effective, and has to be tied to the overall calibration system
+that includes both charge and scintillation light calibration
+techniques. Such a system will be designed in the future.  To support
+the PD R\&D phase we designed a light-flasher based calibration system
+that will serve to monitor the relative performance and time
+resolution of the system. In particular, for anticipated 35-ton
+performance tests we need to evaluate relative efficiencies of
+multiple light collection techniques in order to be able to
+down-select an optimal light readout technology. The system that meets
+these requirements will consist of a set of LEDs as light sources or a
+laser with a VUV wave-length, coupled to quartz fibers, thus
+transmitting light from outside the detector volume to desired
+locations at the CPA within a TPC. Therefore we will equip the 35-ton
+detector with LEDs located and fired externally, with fibers running
+into the cryostat, to diffusers that will emit light from the CPA to
+the APA. For the 35-ton cryostat at the surface at Fermilab it will be
+complementary to cosmic ray muon tracks as means of calibration. In
+terms of light sources the measurements should be performed with an UV
+(245-375nm) light source. The UV light mimics physics starting from
+the wavelength shifter conversion, light guide propagation,
+photo-sensor detection and FEE readout.  The external light-flasher
+calibration system is designed under following assumptions:
+\begin{itemize}
+\item simple to implement (no active components within PD/APA, such as
+  LEDs or fibers mounted within APA).
+\item less-intrusive (less material within detector in terms of
+  fibers, then equipping each PD frame with individual fiber).?\item
+  provide a benchmark light-based reconstruction with the use of
+  localized light sources distributed throughout the detector volume.
+\item has a potential to be adapted for deployment in a large Far
+  Detector in the future
+\end{itemize}
+
+We describe the system in Fig.~\ref{fig:fig-c-1}. . The system
+consists of a 1U rack mount Photon Detector Calibration Module (PDCM)
+sitting outside the liquid argon cryostat. The module generates light
+pulses that propagate through a quartz fiber-optic cable to diffusers
+at cathode-plane (CPA) to distribute the light uniformly across the
+photon detectors mounted within anode plane (APA).  There are 5
+diffusers on the CPA plane: one in the center and four diffusers close
+to the CPA corners, as shown in Fig.~\ref{fig:fig-c-2}. .
+%
+ \begin{figure}[h]
+  \centering
+\includegraphics[angle=0,width=10cm,height=7cm]{fig-c-1.png}
+\caption{Concept of the UV-light calibration system for the photon
+  detector in liquid argon.}
+\label{fig:fig-c-1}
+\end{figure}
+%
+?%
+ \begin{figure}[h]
+  \centering
+\includegraphics[angle=0,width=10cm,height=7cm]{fig-c-2.png}
+\caption{The diffuse light is emitted from diffusers (top left figure)
+  mounted at five CPA locations, indicated by arrows (right figure).
+  The UV light from the PDCM to diffusers is transported through
+  quartz fiber (lower left figure).}
+\label{fig:fig-c-2}
+\end{figure}
+%
+
+The PDCM module layout is shown in Fig.~\ref{fig:fig-c-3}. The ANL
+photon calibration module is based on a re-purposed SSP unit.  An SSP
+board will be repackaged into a deeper rack mount chassis that will
+accommodate a new internal LED Pulser Module (LPM) and an additional
+bulk power supply. The LPM utilizes five digital outputs to control
+the LPM pulse and its duration (arrows in black).  These LVDS outputs
+are derived from the charge injection control logic within the SSP?s
+FPGA.  The even channel SiPM bias DACs are repurposed to control the
+LPM pulse amplitude (arrows in red).  The adjacent odd channels are
+used to readout a photodiode which is used for pulse-by-pulse
+monitoring of the LED light output.  The output of the monitoring
+diode is used to normalize the response of the SiPMs in the detector
+to the calibration pulse
+
+%
+ \begin{figure}[h]
+  \centering
+\includegraphics[angle=0,width=10cm,height=7cm]{fig-c-3.png}
+\caption{Photon detector calibration module (PDCM) layout.}
+\label{fig:fig-c-3}
+\end{figure}
+%
+
+For the 280 nm light we have performed a simulation of the designed
+diffuse light calibration system using TracePro, a generalized 3-D
+light ray-tracing program with the ability to include bulk optical
+properties such as absorption, fluorescence, birefringence in addition
+to surface properties such as scattering and
+reflection. Fig.~\ref{fig:fig-c-4} shows simulated light distributions
+of at the 35-ton APA for the cases of the VUV light emitted by either
+the central diffuser only (left figure), or by outer four diffusers
+simultaneously (right figure). A full Geant4 based simulation of the
+detector will be used in the future. Using the preliminary data with
+the 35-ton style light guides (indicating 0.5\% efficiency for number
+of photo-electrons per incident 128 nm LAr scintillation photon 50 cm
+from the light guide), we estimate for 280 nm light to observe ~15
+photo-electrons per single SiPM channel when the light is emitted from
+the single central diffuser in 13 ns long pulses. Similarly, we expect
+about ~100 photo-electrons observed by a single SiPM channel when 280
+nm light is emitted in 100 ns long pulses from the four outer
+diffusers at once.
+
+%
+ \begin{figure}[h]
+  \centering
+  \includegraphics[angle=0,width=6.5cm,height=3.5cm]{fig-c-4-L.png}\includegraphics[angle=0,width=6.5cm,height=3.5cm]{fig-c-4-R.png}
+\caption{Simulated light distributions of at the 35-ton APA for the
+  cases of the VUV light emitted by either the central diffuser only
+  (left figure), or by outer four diffusers simultaneously (right
+  figure).}
+\label{fig:fig-c-4}
+\end{figure}
+%
+
+In the LBNE prototypes (i.e. in 35-ton) and in Future Far Detector it
+will be important to check if photon-detector components are
+functioning properly at various stages of the detector
+operation. Periodic light source deployments will monitor the systems
+stability as a function of time. A change in relative difference of UV
+light responses will indicate towards potential wave-length shifter
+instability, changes in SiPM gain and collection efficiencies. Much of
+the same monitoring is expected to be doable with cosmic rays in the
+35-ton (at surface), with periodic LED/laser calibration runs
+complemented with cosmic-ray data tracked with an external
+hodoscope. With the 35-ton detector one could use a well-defined muon
+trajectory defined by the hodoscope geometry and monitor the number of
+PEs per MeV of deposited charge. The number of PEs per PD channel from
+the well-defined muon track could be used as a calibration
+constant. However, for the deep underground LBNE the cosmic ray flux
+may inadequate for timely monitoring of the photon detectors.  With
+the 35-ton detector we have planned two sets of calibration runs:
+\begin{enumerate}
+\item Calibration runs with four outer diffusers run simultaneously,
+  in order to\\ -measure response of PD channels in multi-PE range and
+  get integrated number of event samples for each channel (for maximum
+  light output)\\ -test of the dynamic range from 1PE to maximum
+  number of PEs. \\ -repeat runs periodically to trace any changes in
+  channel response.
+       
+\item Runs with central diffuser only, in order to\\ -perform initial
+  calibration runs that will reveal malfunctioning channels, if
+  any.\\ -timing measurements with the 10-50 ns pulses, verify time
+  resolution of the PD system.
+\end{enumerate}
+
+The controlled source of light described here will be used to perform
+a relative ?t0? calibration, where the ?t0? could be absolutely
+calibrated with the use of the cosmic ray triggers available with
+35-ton detector. Effects that contribute to a finite time resolution
+and relative time offset of PD channels include scintillation time
+constants, photon conversion with wave-length shifter, photon
+propagation through PD paddle, SiPM jitter, and FEE resolution. Most
+these effects are constant and can be individually measured on the
+bench, so the LED flasher system will monitor overall stability of the
+photon detector.  To go beyond the current R\&D phase one needs
+detailed MC simulations of light production, propagation, and
+detection to perform comparisons of reconstruction performance against
+prototype data in terms of calorimetric energy and position
+reconstructions for measured event tracks. Future light collection
+systems will aim to maximize the active area of the light guide bars,
+to achieve a high photon detection efficiency with an optimized timing
+and granularity required for improved position resolution. As in the
+case with the TPC charge calibration we will need to evaluate what may
+be achieved with expected cosmic ray muons and Michels, $\pi^0$, and
+natural radioactivity events (such as $^{39}$Ar with end-point energy
+of abut 500 keV).
+
+
+\section{Installation}
 
 
 
