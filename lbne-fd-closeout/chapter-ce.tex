@@ -93,9 +93,9 @@ with a maximum specified leakage current in 1-atm argon gas, and must be able to
 \section{Architecture}
 \label{sec:fe-arch}
 
-Figure~\ref{fig:ce-elec-schematic} shows the CE architecture that meets the requirements for the LAr-FD TPC.
+Figure~\ref{fig:elect_schem} shows the CE architecture that meets the requirements for the LAr-FD TPC.
 Except for the Digital ASIC, this has already been prototyped and tested,
-using a commercial FPGA to perform the r\^ole of the Digital ASIC.  
+using a commercial FPGA to perform the r\^ole of the Digital ASIC (Fig.~\ref{elec_CMBpix}).
 The Cold Front End Motherboard Assembly (CMB) consists of an Analog Mother Board with a Digital ASIC Mezzanine.  
 
 The Analog Motherboard is instrumented as a 128 channel board which uses eight 16-channel FE ASICs and
@@ -130,7 +130,7 @@ nor is there a need for zero-suppression or data compression.
   --Terri
 \end{editornote}
 
-Figure~\ref{fig:ce-elec-asic-layout} shows a block diagram of the proposed 16-channel front-end ASIC.
+Figure~\ref{fig:elec_asic_layout} shows a block diagram of the proposed 16-channel front-end ASIC.
 Each channel includes a charge amplifier with a gain selectable from one of 4.7, 7.8, 14 and 25~mV/fC
 (full scale charge of 55, 100, 180 and 300~fC),
 a high-order anti-aliasing filter with adjustable time
@@ -159,13 +159,31 @@ The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
   The basic unit is the 128-channel Front End Mother Board Assembly, also referred to as the Cold Mother Board (CMB).
   Each APA has 20 CMBs installed on its front end for a total of 2,560 channels per APA.
 }
-\label{fig:ce-elec-schematic}
+\label{fig:elect_schem}
 \end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{elec_CMBpix1.pdf}
+\includegraphics[width=\linewidth]{elec_CMBpix2.pdf}
+\includegraphics[width=\linewidth]{elec_CMBpix3.pdf}
+\caption{
+  The Cold Mother Board (CMB), as used in the early set of tests.
+  {\bf Top:} The bottom board, showing four ADC ASICs and four FE ASICs surface mounted.
+  The other side of the board has another four ADC and FE ASICs.
+  Except for a few anticipated small modifications, this board is essentially the final version.
+  {\bf Middle:} The FPGA mezzanine, used in place of the COLDATA ASCI for the early set of tests.
+  {\bf Bottom:} The complete CMB assembly as used in the early set of tests.
+  The upper mezzanine board is a test-connection.
+}
+\label{fig:elec_CMBpix}
+\end{figure}
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{v5c3-cel-ASIC-layout}
 \caption{Architecture and layout of the 16-channel front-end mixed-signal ASIC}
-\label{fig:ce-elec-asic-layout}
+\label{fig:elec_asic_layout}
 \end{figure}
 
 %
@@ -271,7 +289,7 @@ prototype samples throughout the development process to verify the long-term rel
 
 The development of the readout ASIC has begun by designing and fabricating in a commercial CMOS
 process (0.18~$\mu$m and 1.8V) a 16-channel
-ASIC implementing the complete analog front-end section of the scheme shown in Figure~\ref{fig:ce-elec-asic-layout}. 
+ASIC implementing the complete analog front-end section of the scheme shown in Figure~\ref{fig:elec_asic_layout}. 
 This process is expected to be available for at least another 10~years. 
 The charge amplifier input MOSFET is a p-channel biased at 2~mA with a L/W (channel length/width) ratio
 of 0.27~$\mu$m / 10~mm, followed by dual cascade stages.
@@ -352,11 +370,11 @@ automated place and route for design blocks using extensive digital logic.
 \end{editornote}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=4in]{elec-COLDATAfig.pdf}
-\caption{Add a caption here.}
-\label{fig:elec-COLDATAfig}
+\includegraphics[width=4in]{elec_COLDATAfig.pdf}
+\caption{Functional Block Diagram of the Cold Digital ASIC (COLDATA)}
+\label{fig:elec_COLDATAfig}
 \end{figure}
-A block diagram of the COLDATA is presented in Fig.~\ref{fig:elec-COLDATAfig}.
+A block diagram of the COLDATA is presented in Fig.~\ref{fig:elec_COLDATAfig}.
 The major components of COLDATA include a downlink which is required to receive the system clock and
 the control/download information transmitted from the DAQ.
 The download data must be transmitted to the FE and ADC ASICs on the CMB.
@@ -379,7 +397,7 @@ to exit the LAr environment.
 
 The TPC data rate per APA, using the full event-buffer scheme described earlier,
 appears sufficiently low that it is within the capability of a single LVDS channel on copper, with an overall 64:1
-multiplexing and 40 LVDS channels per APA or 80 channels including redundant channels.
+multiplexing and 40 LVDS channels per APA.
 In addition to the high-speed data-output channels,
 LVDS connections will be made to each APA to distribute a clock signal and control information.
 These data can be transmitted at a lower bit rate.
