@@ -9,39 +9,37 @@ to finish removal of CE material that still may be present in the TPC chapter bu
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-\label{sec:ce-intro}
+\label{sec:ce_intro}
 
-The TPC read-out electronics are referred to as the ``Cold Electronics" (CE) because they will reside in LAr,
-mounted directly on the TPC front-end.
+% This chapter describes the reference design for the
+% CE that meets the required performance for the LBNE liquid argon detector, LAr-FD.
+The TPC read-out electronics are referred to as the ``Cold Electronics'' (CE) because they will reside in LAr,
+mounted directly on the APA front-end.
 This will minimize channel capacitance and noise by keeping the length of the connection between an anode wire
 and its corresponding electronics input to an absolute minimum.
 The CE will be implemented as ASIC chips using CMOS technology, which performs well at cryogenic temperatures,
 and will provide amplification, shaping, digitization, buffering and multiplexing (Mux) of the signals.
-The CE need to be self-triggering because no external trigger will be available for some important measurements,
-such as proton decay and supernova bursts.
-% since, unlike neutrino-oscillation measurements for which the pulsed beam 
-% can provide a trigger for readout, other important measurements, such as proton decay
-% and supernova bursts, will have no trigger.  
-
+Because it is not possible to form a trigger for some important measurements,
+such as proton decay and supernova bursts, the CE will be continuously read out,
+with a digitized ADC sample from each APA channel (wire) every 500~ns.
 For each of the 80 APAs in a ten-kton cryostat, one cable bundle will connect to the outside of the cryostat through
 a feedthrough, with one feedthrough servicing two APAs.
-The bundle consists of wires for low-voltage power, TPC wire-bias voltages, data-out, clock-in,
+Each of these cable bundles consists of wires for low-voltage power, TPC wire-bias voltages, data-out, clock-in,
 digital-control IO and an analog-monitoring output.
+% The 2,560 channels from an APA are read out in 20 groups of 128 channels.
 
 The scope of the CE subsystem includes the design, procurement, fabrication, testing,
 delivery and installation of the CE:
 \begin{itemize}
-\item Front-end cards installed on the TPC
+\item Front-end cards installed on the APAs
 \item All electronics on those cards
 \item Feedthroughs (a single type, henceforth ``signal feedthroughs'') which handle the signal,
-low-voltage power, TPC bias voltage, and control lines.
+low-voltage power, TPC bias voltage, and control lines
 \item External interface crates
 \item Power supplies, including low-voltage supplies for the CE and bias-voltage supplies for the TPCs
 \item Signal, control, and power cabling between the front-end cards and the feedthroughs
 \item Signal, control, and power cabling between the feedthroughs and external power supplies and interface crates
 \end{itemize}
-This chapter describes the reference design for the CE that meets the required performance for the LBNE liquid argon detector,
-LAr-FD.
 \begin{editornote}
   The list above is probably not the best way to do this.  However, let's keep it there at least until the TPC chapter has been
   updated to remove unnecessary CE references and information.  Keeping the list (above) will make that a little easier, since the
@@ -51,34 +49,37 @@ LAr-FD.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Design Considerations} 
-\label{sec:ce-reqs-n-specs}
+\label{sec:ce_reqs_n_specs}
 
 The requirements for the CE can be found in the requirements documentation \cite{lar-fd-req}.
 The most significant ones are the following:
 
 \begin{itemize}	
-\item Provide the means to read out the TPCs and transmit their data in a useful format to the Data Acquisition System (DAQ)
-\item Operate for the life of the facility without significant loss of function
-\item Record the wire-signal waveforms continuously without dead time
-\item Use only materials that are compatible with high-purity liquid argon
+\item Provide the means to read out the TPCs and transmit their data in a useful format to the Data Acquisition System (DAQ).
+\item Operate for the life of the facility without significant loss of function.
+\item Record the channel waveforms continuously without dead time.
+Twelve bits of ADC data per APA channel every 500~ns yields a single-channel bit rate of 0.024~Gbps.
+With 8B10B encoding this increases to 0.03~Gbps, plus some overhead for frame data.
+Assuming a conservative serial-link transmission speed of 1~Gbps, a single link can therefore handle 32 channels.
+If a speed of 2~Gbps can be achieved, which is possible but not yet demonstrated,
+the number of serial links will be cut in half.
+\item Use only materials that are compatible with high-purity liquid argon.
 \item Provide sufficient precision and range in the digitization to:
 \begin{itemize}
-\item Discriminate electrons from photon conversions
-\item Optimize for high- and low-energy tracks from accelerator-neutrino interactions
-\item Distinguish a Minimum Ionizing Particle (MIP) from noise with a signal-to-noise ratio $>$ 9:1
-\item Measure the ionization up to 15 times that of a MIP particle;
-this is necessary to identify stopping kaons from proton decay
+\item Discriminate electrons from photon conversions;
+\item Optimize for high- and low-energy tracks from accelerator-neutrino interactions;
+\item Distinguish a Minimum Ionizing Particle (MIP) from noise with a signal-to-noise ratio $>$ 9:1;
+\item Measure the ionization up to 15 times that of a MIP particle, so that stopping kaons from proton decay can be identified.
 \end{itemize}
-\item All power supplies:
+\item All power supplies will have:
 \begin{itemize}
-\item Will be monitored and controlled locally
-\item Will be monitored and controlled remotely through the DAQ system
-\item Will have over-current and over-voltage protection circuits
-\item Will have an output-voltage ripple less than 10\% of the equivalent thermal noise from the front-end electronics
+\item Local monitoring and control;
+\item Remote monitoring and control through DAQ;
+\item Over-current and over-voltage protection circuits;
+\item An output-voltage ripple less than 10\% of the equivalent thermal noise from the front-end electronics.
 \end{itemize}
-\item The power supplies for the wire-plane bias voltages must provide sufficient current.
 \item The low-voltage (signal) feedthroughs must be able to withstand twice their nominal operating voltages 
-with a maximum specified leakage current in 1-atm argon gas, and must be able to deliver sufficient DC current.
+with a maximum specified leakage current in 1-atm argon gas.
 \end{itemize}
 
 \begin{editornote}
@@ -91,44 +92,69 @@ with a maximum specified leakage current in 1-atm argon gas, and must be able to
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Architecture}
-\label{sec:fe-arch}
+\label{sec:fe_arch}
 
-Figure~\ref{fig:elect_schem} shows the CE architecture that meets the requirements for the LAr-FD TPC.
-Except for the Digital ASIC, this has already been prototyped and tested,
-using a commercial FPGA to perform the r\^ole of the Digital ASIC (Fig.~\ref{elec_CMBpix}).
-The Cold Front End Motherboard Assembly (CMB) consists of an Analog Mother Board with a Digital ASIC Mezzanine.  
-
-The Analog Motherboard is instrumented as a 128 channel board which uses eight 16-channel FE ASICs and
-eight 16-channel ADC ASICs as well as low voltage regulators.
-The 16-channel FE ASIC provides amplification and pulse shaping.
-The 16-channel ADC ASIC provides a 12 bit digitizer, local buffering and an 8:1 Mux stage with two serial readout lines in parallel.
-
-The Digital ASIC Mezzanine provides the board space for the Cold Digital Data ASIC (COLDATA) and required voltage regulators.
-The COLDATA ASIC provides the communication protocol with the warm data acquisition system (DAQ),
-the control required to download and readout the FE and ADC ASICs,
-the system clock interface and the data links and drivers to DAQ.
-The COLDATA ASIC will also provide up to four high speed links capable of driving 1~Gbps each.
-This will provide sufficient bandwidth for all the data (3.072~Gbps) plus an encoding scheme and frame data.
-Data will be driven off-board to DAQ through use of copper cable utilizing low-voltage differential signaling (LVDS).
-Output data cables will go to a signal feedthrough and from there to an external crate mounted nearby.
-Under DAQ scope, further data processing is done and data is transmitted via optical fiber to front-end computers.
-
+The CE architecture is manifested in the Cold Mother Board assembly (CMB),
+which consists of an analog mother board with a digital ASIC mezzanine (Fig.~\ref{fig:elect_schem}).
 Each APA is instrumented with 20 CMBs, for a total of 2,560 channels per APA.
-Because each CMB is read out separately and in parallel with all others,
-the data rates will not be high enough to require the use of optical fibers in the cold,
+
+The analog mother board is instrumented as a 128-channel board which uses eight 16-channel FE ASICs,
+eight 16-channel ADC ASICs, low voltage regulators, and input-signal protection.
+The 16-channel FE ASIC provides amplification and pulse shaping.
+The 16-channel ADC ASIC comprises a 12-bit digitizer, local buffering,
+and an 8:1 Mux stage with two serial readout lines in parallel.
+This has already been prototyped and tested,
+using a commercial FPGA to perform the r\^ole of the digital ASIC (Fig.~\ref{fig:elec_CMBpix}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{elect_schem.pdf}
+\caption{
+  The CE Architecture.
+  The basic unit is the 128-channel CMB.
+}
+\label{fig:elect_schem}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\linewidth]{elec_CMBpix1.pdf}
+\includegraphics[width=0.65\linewidth]{elec_CMBpix2.pdf}
+\includegraphics[width=0.65\linewidth]{elec_CMBpix3.pdf}
+\caption{
+  The Cold Mother Board (CMB), as used in the early set of tests.
+  {\bf Top:} The analog mother board, showing four ADC ASICs and four FE ASICs surface mounted.
+  The other side of the board has another four ADC and FE ASICs.
+  Except for anticipated small modifications, this board is essentially the final version.
+  {\bf Middle:} The FPGA mezzanine, used in place of the digital ASIC mezzanine for the early set of tests.
+  {\bf Bottom:} The complete CMB assembly as used in the early set of tests.
+  The uppermost mezzanine board is the cable connection.
+}
+\label{fig:elec_CMBpix}
+\end{figure}
+
+The Cold Digital Data ASIC (COLDATA) and its voltage regulators are mounted on the digital ASIC mezzanine.
+The COLDATA ASIC provides:
+\begin{itemize}
+\item The communication protocol with the data acquisition system (DAQ);
+\item The control required to program and read out the FE and ADC ASICs;
+\item The system clock interface;
+\item Four 4:1 Muxs that combine 16 serial lines from the ADCs of eight channels each
+into four serial lines of 32 channels each;
+\item Four 1-Gbps serial drivers that form the data link to DAQ.
+\end{itemize}
+If it is demonstrated that the COLDATA ASIC can achieve 2~Gbps,
+then the 4:1 Mux will be increased to 8:1 and only two serial drivers will be implemented,
+with a subsequent reduction in cabling, etc.
+In either case, the data rates will not be high enough to require the use of optical fibers in the cold,
 nor is there a need for zero-suppression or data compression.
-
-\begin{editornote}
-  Data rate will be 256~ch$\times$12~bits/ch every 500~ns for a rate of 3.072~Gbps.
-  With 8B10B encoding this is 3.84~Gbps, plus there will be some overhead for frame data.
-  This gives us a conservative rate of 1~Gbps per link, which can possibly increase to 2~Gbps
-  in the future if we find the design and cabling can support that rate.
-
-  Also note, we should put a picture of the actual FE board assembly into the CDR to show progress.
-
-  We need to be consistent in how we refer to ASICs -- I have tried to use FE ASIC, ADC ASIC and COLDATA ASIC.
-  --Terri
-\end{editornote}
+This greatly reduces the complexity of the COLDATA ASIC, with a corresponding decrease in overall risk,
+including risk of failure-to-implement (within a fixed schedule and budget)
+and risk of device-failure during long-term operation.
+Data will be driven to DAQ through copper cable utilizing low-voltage differential signaling (LVDS).
+Output data cables will go to a signal feedthrough and from there to an external crate mounted nearby.
+Under DAQ scope, further data processing is done in the external crate
+and data is transmitted via optical fiber to front-end computers.
 
 Figure~\ref{fig:elec_asic_layout} shows a block diagram of the proposed 16-channel front-end ASIC.
 Each channel includes a charge amplifier with a gain selectable from one of 4.7, 7.8, 14 and 25~mV/fC
@@ -139,7 +165,7 @@ an option to enable AC coupling,
 and a baseline adjustment for operation with either the collecting or the non-collecting wires.
 The 16-channel FE ASICs then transmit the shaped pulse to a 12-channel 12-bit 2~MS/s ADC ASIC.
 Shared among the 16 channels are the bias circuits, programming registers,
-a temperature monitor, the digital multiplexer (8:1),
+a temperature monitor, an 8:1 Mux,
 an analog buffer for signal monitoring, and the digital interface.
 A 600-kb buffer is included in this design, capable of storing a 1.5-ms 
 event sampled at 2~MS/s in each channel.
@@ -153,34 +179,6 @@ The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{elect_schem.pdf}
-\caption{
-  The CE Architecture.
-  The basic unit is the 128-channel Front End Mother Board Assembly, also referred to as the Cold Mother Board (CMB).
-  Each APA has 20 CMBs installed on its front end for a total of 2,560 channels per APA.
-}
-\label{fig:elect_schem}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.65\linewidth]{elec_CMBpix1.pdf}
-\includegraphics[width=0.65\linewidth]{elec_CMBpix2.pdf}
-\includegraphics[width=0.65\linewidth]{elec_CMBpix3.pdf}
-\caption{
-  The Cold Mother Board (CMB), as used in the early set of tests.
-  {\bf Top:} The bottom board, showing four ADC ASICs and four FE ASICs surface mounted.
-  The other side of the board has another four ADC and FE ASICs.
-  Except for a few anticipated small modifications, this board is essentially the final version.
-  {\bf Middle:} The FPGA mezzanine, used in place of the COLDATA ASIC for the early set of tests.
-  {\bf Bottom:} The complete CMB assembly as used in the early set of tests.
-  The upper mezzanine board is a test-connection.
-}
-\label{fig:elec_CMBpix}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
 \includegraphics[width=\linewidth]{v5c3-cel-ASIC-layout}
 \caption{Architecture and layout of the 16-channel front-end mixed-signal ASIC}
 \label{fig:elec_asic_layout}
@@ -188,44 +186,29 @@ The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
 
 %
 %%%%%%%%%%%%%%%%
-\subsection{Data Rates}
-\label{subsec:fe-arch-rates}
+%\section{Data Rates}
+%\label{sec:fe_data_rates}
+%
+%For neutrino-oscillation measurements the pulsed beam could provide a
+%trigger for readout, but for other measurements, such as proton decay
+%and supernova bursts, there will be no trigger.
+%Therefore the APAs will be self triggering, and the
+%data rates will dependend on the event rates for background processes.
+%Dominant backgrounds are decays of radionuclides in the LAr, predominantly the naturally occurring Ar$^{39}$.
+%The cosmic-muon rate at the 4850 Level is approximately 2.3~mHz per APA.
+%Reading an APA (2,560 wires) for one drift time (4,625 samples) gives 142~Mb of data.
+%At the cosmic-event rate, the net data rate is 0.3~Mb/s per APA.
+%For radioactive decay of Ar$^{39}$ the rates are much higher: the specific activity is 1~Bq/kg which results in 183~kHz/APA.
+%At this rate, the APA will be continuously read out
+%at a data rate of 1.5~Gb/s on each of its 40 parallel outputs.
+%Since the ionization produced by these events is highly localized, most of the drift ``frame'' is empty.
+%The mean range of the beta from Ar$^{39}$ decay is only 0.3~mm, so all
+%of the signal is contained in a single over-threshold-sample of a single wire, for a true ``information''
+%rate of 0.6~Mb/s.
 
-For neutrino-oscillation measurements the pulsed beam could provide a
-trigger for readout, but for other measurements, such as proton decay
-and supernova bursts, there will be no trigger.
-Therefore the APAs will be self triggering, and the
-data rates will dependend on the event rates for background processes.
-Dominant backgrounds are decays of radionuclides in the LAr, predominantly the naturally occurring Ar$^{39}$.
-The cosmic-muon rate at the 4850 Level is approximately 2.3~mHz per APA.
-Reading an APA (2,560 wires) for one drift time (4,625 samples) gives 142~Mb of data.
-At the cosmic-event rate, the net data rate is 0.3~Mb/s per APA.
-For radioactive decay of Ar$^{39}$ the rates are much higher: the specific activity is 1~Bq/kg which results in 183~kHz/APA.
-At this rate, the APA will be continuously read out,
-at a data rate of 1.5~Gb/s on each of its 40 parallel outputs;
-of course, since the ionization produced by these events is highly localized,
-most of the drift ``frame'' is empty.
-The mean range of the beta from Ar$^{39}$ decay is only 0.3~mm, so all
-of the signal is contained in a single over-threshold-sample of a single wire, for a true ``information''
-rate of 0.6~Mb/s.
-
-% In order to
-% reduce the rate (and volume) of recorded data to tolerable values, 
-% data buffering must be provided.
-% The simplest scheme is to do this at the APA level, deriving
-% a write-enable from the logic OR of discriminators on all the charge
-% collecting (Y) wires in an APA, and then writing all data to a buffer
-% while the write-enable is true.
-% Baseline samples could be recorded
-% with reduced range (four bits) and compacted into full words.
-% This mode would still record large volumes of data without useful
-% information, particularly for simple event topologies and from low-energy 
-% events (radioactive decays) and noise. 
-
-%
 %%%%%%%%%%%%%%%%
 \section{CMOS Circuit Design}
-\label{sec:fe-CMOS}
+\label{sec:fe_CMOS}
 
 \begin{editornote}
   I think the ``CMOS 0.25~$\mu$m'' (etc.) needs to be updated.
@@ -249,7 +232,7 @@ Measurements of the properties of these structures at cryogenic temperatures
 have been used to refine the device models at 89~K. 
 \begin{editornote}
   Should we spell out in some small detail our plan for developing models?
-  Or does that belong in the Digital ASIC section, along with our plan for developing libraries?
+  Or does that belong in the digital ASIC section, along with our plan for developing libraries?
 \end{editornote}
 
 The lifetime of CMOS circuits is limited by several mechanisms which degrade 
@@ -285,7 +268,7 @@ prototype samples throughout the development process to verify the long-term rel
 %
 %%%%%%%%%%%%%%%%
 \subsection{Cold Analog ASICs}
-\label{subsec:fe-CMOS-analog}
+\label{subsec:fe_CMOS_analog}
 
 The development of the readout ASIC has begun by designing and fabricating in a commercial CMOS
 process (0.18~$\mu$m and 1.8V) a 16-channel
@@ -306,36 +289,36 @@ This ASIC has now been through four design/fabrication/testing revision cycles.
 Prototypes from each cycle have been evaluated and characterized at room (300~K) and liquid nitrogen (77~K) temperatures.
 During these tests the circuits have been cycled multiple times
 between the two temperatures and operated without any change in performance.
-Figure~\ref{fig:ce-elec-shaper-out} shows the measured pulse response, along with
+Figure~\ref{fig:ce_elec_shaper_out} shows the measured pulse response, along with
 details on the adjustability of the gain, peaking time and baseline.
 These results are in close agreement with the simulations and indicate
 that both the analog and the digital circuits and interface operate as
 expected in a cryogenic environment.
 Simulations and experimental results show that the pole-zero cancellation needs to be optimized,
 which will be done in the next revision of the design.
-Also reported in Figure~\ref{fig:ce-elec-shaper-out} are the outputs of the BGR and temperature sensor,
+Also reported in Figure~\ref{fig:ce_elec_shaper_out} are the outputs of the BGR and temperature sensor,
 which are in close agreement with the simulations as well.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{v5c3-cel-shaper-out.pdf}
 \caption[Measured pulse response with details]{Measured pulse response with details on gain, peaking time and baseline adjustments}
-\label{fig:ce-elec-shaper-out}
+\label{fig:ce_elec_shaper_out}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=4in]{v5c3-cel-enc.pdf}
 \caption[Measured ENC vs filter time constant]{Measured ENC vs filter time constant from the first two versions of the analog front end ASICs}
-\label{fig:ce-elec-enc}
+\label{fig:ce_elec_enc}
 \end{figure}
 
-Figure~\ref{fig:ce-elec-enc} shows the measured ENC versus filter-time constant (peaking time).
+Figure~\ref{fig:ce_elec_enc} shows the measured ENC versus filter-time constant (peaking time).
 At 1~$\mu$s about 650 e$^{-}$ was measured,
 to be compared to the simulated value of 500 e$^{-}$. The difference is
 mainly due to the thermal noise from a $\sim$
 11-ohm parasitic resistance of the input
-line (shown in the detail of Figure~\ref{fig:ce-elec-enc}), which contributes about 350
+line (shown in the detail of Figure~\ref{fig:ce_elec_enc}), which contributes about 350
 electrons at 77~K. The width of the line will be increased in a
 revision in order to make this contribution negligible. A second
 contribution, on the order of 100 e$^{-}$, was due to the dielectric
@@ -356,8 +339,8 @@ confirm device models and design guidelines.
 
 %
 %%%%%%%%%%%%%%%%
-\subsection{Cold Digital ASICs}
-\label{subsec:fe-CMOS-digital}
+\subsection{Cold Digital Data ASICs}
+\label{subsec:fe_CMOS_digital}
 
 The development of the COLDATA ASIC will follow the general guidelines developed for the cold analog ASICs.
 The COLDATA design will differ from the analog design in a couple of aspects.
@@ -365,13 +348,10 @@ It is anticipated that the digital ASIC will make use of a 65~nm CMOS technology
 digital library with accurate cold timing models allowing for high level language design and
 automated place and route for design blocks using extensive digital logic.  
 
-\begin{editornote}
-  Need a caption for the COLDATA figure, and the fonts need to be larger.
-\end{editornote}
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=4in]{elec_COLDATAfig.pdf}
-\caption{Functional Block Diagram of the Cold Digital ASIC (COLDATA)}
+\includegraphics[width=6in]{elec_COLDATAfig.pdf}
+\caption{Functional Block Diagram of the Cold Digital Data ASIC (COLDATA)}
 \label{fig:elec_COLDATAfig}
 \end{figure}
 A block diagram of the COLDATA is presented in Fig.~\ref{fig:elec_COLDATAfig}.
@@ -393,36 +373,35 @@ to exit the LAr environment.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Signal Feedthroughs, Cabling, and Power}
-\label{sec:ce-feedthrough}
+\label{sec:ce_feedthrough}
 
 The TPC data rate per APA, using the full event-buffer scheme described earlier,
-appears sufficiently low that it is within the capability of a single LVDS channel on copper, with an overall 64:1
-multiplexing and 40 LVDS channels per APA.
+appears sufficiently low that it is within the capability of a single LVDS channel on copper,
+with an overall 32:1 Mux and 80 LVDS channels per APA.
 In addition to the high-speed data-output channels,
 LVDS connections will be made to each APA to distribute a clock signal and control information.
 These data can be transmitted at a lower bit rate.
-The number of channels for these signals are on the order of thousands in the entire detector.
-A conceptual design of an APA signal/power feedthrough flange is shown in Figure~\ref{fig:ce-feedthrough}.
+A conceptual design of an APA signal/power feedthrough flange is shown in Figure~\ref{fig:ce_feedthrough}.
 Based on a standard 8-in conflat flange with all commercial off-the-shelf components,
 each of these feedthroughs will serve the bias/power/digital IO needs of two APAs.  
 
-All data, control, bias and power supply lines will be duplicated to
-provide redundancy to avoid the loss on an entire APA.
-Two APAs will be cabled to one feedthrough in ``chimneys'' in the roof of the cryostat that
-contain the support rods for the TPC planes.
+% All data, control, bias and power supply lines will be duplicated to
+% provide redundancy to avoid the loss on an entire APA.
+% Two APAs will be cabled to one feedthrough in ``chimneys'' in the roof of the cryostat that
+% contain the support rods for the TPC planes.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{v5c3-signal-FT.png}
 \caption[Conceptual design of signal/power feedthrough]{A conceptual design of a signal/power feedthrough using all off-the-shelf commercial components}
-\label{fig:ce-feedthrough}
+\label{fig:ce_feedthrough}
 \end{figure}
 
 There are two types of low-voltage power supplies:
 TPC wire-bias voltages and low-voltage DC power to the readout electronics.
 A single type of feedthrough will handle the signals, supply voltages, and control lines.
 All cables inside the cryostat will be copper.
-Optical fiber will be employed only external to the cryostat, and does not fall under the purview of the CE subsystem.
+Optical fiber will be employed externally to the cryostat, under DAQ scope.
 
 All cables inside the cryostat will be attached to their corresponding feedthroughs distributed throughout the cryostat roof.
 The other ends of the cables will be connected to the matching connectors on the APAs in the cryostat.
@@ -431,7 +410,7 @@ The cables will be strain-relieved on the  mounting rails above the APAs.
 
 Measurements in the Materials Test Stand at Fermilab (described in Section~\ref{sec:mts})
 have shown that impurities (principally O$_2$ and H$_2$O) embedded in objects submerged in the liquid argon do not result
-in a decrease in electron-drift lifetime, whereas impurities in objects located in the warmer gas phase do.
+in a decrease in electron-drift lifetime, whereas impurities in objects located in the warmer gas phase (ullage) do.
 This indicates the importance of minimizing the amount of material in the gas ullage at the top of the cryostat.
 Therefore it may be desirable to connect all cables to feedthroughs below the liquid surface,
 and then pass the cables out of the cryostat, through an evacuated volume that traverses the gas and cryostat insulation,
@@ -445,12 +424,18 @@ to a matching set of feedthroughs to the outside.
 %
 %%%%%%%%%%%%%%%%
 \subsection{Cabling for the Cold Electronics }
-\label{subsec:ce-feedthrough-cable}
+\label{subsec:ce_feedthrough_cable}
+
+\begin{editornote}
+  Text needed.
+  Something about: Commercial availability as opposed to our own cable factory;
+  arcing in Ar gase; connectors that work in LAr; contamination; and IR drop?
+\end{editornote}
 
 %
 %%%%%%%%%%%%%%%%
 \subsection{Power for the Cold Electronics }
-\label{subsec:ce-feedthrough-power}
+\label{subsec:ce_feedthrough_power}
 
 The power-per-channel for the front-end ASIC is designed to be about 15~mW and
 the total power requirement for each APA is expected to be about 65~W.
@@ -476,7 +461,7 @@ An optimum wire gauge can be chosen to minimize heat input to the cryostat.
 %
 %%%%%%%%%%%%%%%%
 \subsection{Wire-Bias Voltages}
-\label{subsec:ce-feedthrough-wirebias}
+\label{subsec:ce_feedthrough_wirebias}
 
 Each anode plane assembly requires three bias voltage connections 
 at $+$820V, $-$370V, and $-$665V.
@@ -495,15 +480,24 @@ feedthroughs capable of withstanding the maximum voltage are under investigation
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{CE Installation}
-\label{sec:ce-install}
+\label{sec:ce_install}
+
+\begin{editornote}
+  Text needed. An Installation preamble?
+\end{editornote}
 
 %%%%%%%%%%%%%%%%
 \subsection{Prototype Testing}
-\label{sec:ce-install-proto}
+\label{sec:ce_install_proto}
+
+\begin{editornote}
+  Text needed. Maybe something about all the tests we've done on the FE \& ADC ASICs, the CMBs, CLRs, etc.
+  Lifetime tests?
+\end{editornote}
 
 %%%%%%%%%%%%%%%%
 \subsection{Assembly Testing}
-\label{sec:ce-install-assembly}
+\label{sec:ce_install_assembly}
 
 The front-end readout boards will be thoroughly tested.
 \begin{itemize}
@@ -527,7 +521,7 @@ Significant differences in the cold and warm calibration results will be investi
 %
 %%%%%%%%%%%%%%%%
 \subsection{Commissioning } 
-\label{sec:ce-install-commission}
+\label{sec:ce_install_commission}
 
 During installation, the DAQ system will be running continuously.
 As soon as each stack of APAs is connected to the pre-routed cables, 
