@@ -223,23 +223,24 @@ permits the front-end electronics to reside in the LAr (henceforth ``cold electr
 as close to the anode wires as is practical.
 This minimizes capacitance and therefore signal noise,
 and benefits LAr purity by not residing in the ullage gas.
-Figure~\ref{fig:elect_schem} shows the cold electronics architecture,
+Figure~\ref{fig:elect_schem_intro_copy} shows the cold electronics architecture,
 which comprises a front-end shaping/filtering stage (FE ASIC),
-an analog-to-digital conversion stage (ADC ASIC), and a communication/control stage (Digital ASIC).
+an analog-to-digital conversion stage (ADC ASIC), and a communication/control stage (digital ASIC).
 The signal feedthroughs are all located on top of the cryostat, where they are most accessible,
 are at low hydrostatic pressure, and pose no risk of LAr leakage.
-The cold electronics multiplex at 1:64,
+The cold electronics multiplex at 1:32,
 which lowers the cable-count to what can be accomodated by the planned number of feedthroughs,
 and mitigates contamination from cable outgassing
 by reducing the volume of cables in the ullage gas.
 
+% This is a copy of a figure which also appears in the CE chapter.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{elect_schem.pdf}
 \caption{Front-end electronics architecture.
-         The ADCs multiplex at 8:1, while the serial link in the Digital ASICs multiplex at 4:1, together giving 32:1.
+         The ADCs multiplex at 8:1, while the digital ASICs multiplex at 4:1, together giving 32:1.
         }
-\label{fig:elect_schem}
+\label{fig:elect_schem_intro_copy}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
