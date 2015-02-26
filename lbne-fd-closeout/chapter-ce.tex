@@ -1,11 +1,6 @@
 \chapter{Cold Electronics}
 \label{ch:ce}
 
-\begin{editornote}
-  Editor's Note:  This is a new chapter, created from the ``In-Vessel Front-End Electronics'' section formerly in the TPC chapter.
-While the old section has been removed from the TPC chapter, some additional ``cleanup'' is still needed there,
-to finish removal of CE material that still may be present in the TPC chapter but perhaps no longer belongs there.
-\end{editornote}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -37,14 +32,9 @@ delivery and installation of the CE:
 low-voltage power, TPC bias voltage, and control lines
 \item External interface crates
 \item Power supplies, including low-voltage supplies for the CE and bias-voltage supplies for the TPCs
-\item Signal, control, and power cabling between the front-end cards and the feedthroughs
-\item Signal, control, and power cabling between the feedthroughs and external power supplies and interface crates
+\item Signal, control, and power cabling between the front-end cards and the feedthroughs,
+and between the feedthroughs and external power supplies and interface crates
 \end{itemize}
-\begin{editornote}
-  The list above is probably not the best way to do this.  However, let's keep it there at least until the TPC chapter has been
-  updated to remove unnecessary CE references and information.  Keeping the list (above) will make that a little easier, since the
-  list was taken from the old TPC chapter.
-\end{editornote}
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,12 +72,12 @@ the number of serial links will be cut in half.
 with a maximum specified leakage current in 1-atm argon gas.
 \end{itemize}
 
-\begin{editornote}
-  Again, the list above is may not be the best way to do this.
-  However, let's keep it there at least until the TPC chapter has been
-  updated to remove unnecessary CE references and information.
-  Keeping the list (above) will make that a little easier, since the list was taken from the old TPC chapter.
-\end{editornote}
+The responsibility and authority for the design, installation 
+and use of the detector quiet-power distribution and 
+detector-grounding system is held by the subproject electrical engineer. 
+This engineer has oversight responsibility for all electrical and electronics 
+design and installation tasks, including all attachments to the detector 
+that create an electrical connection. 
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,7 +123,7 @@ using a commercial FPGA to perform the r\^ole of the digital ASIC (Fig.~\ref{fig
 \label{fig:elec_CMBpix}
 \end{figure}
 
-The Cold Digital Data ASIC (COLDATA) and its voltage regulators are mounted on the digital ASIC mezzanine.
+The Cold Digital Data (COLDATA) ASIC and its voltage regulators are mounted on the digital ASIC mezzanine.
 The COLDATA ASIC provides:
 \begin{itemize}
 \item The communication protocol with the data acquisition system (DAQ);
@@ -171,12 +161,6 @@ A 600-kb buffer is included in this design, capable of storing a 1.5-ms
 event sampled at 2~MS/s in each channel.
 The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
 
-\begin{editornote}
-  Should we get separate power numbers for FE and ADC ASICs? --Terri
-
-  I don't think that is necessary.  Total power is all that matters in the CDR.  -- RWH.
-\end{editornote}
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{v5c3-cel-ASIC-layout}
@@ -210,9 +194,6 @@ The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
 \section{CMOS Circuit Design}
 \label{sec:fe_CMOS}
 
-\begin{editornote}
-  I think the ``CMOS 0.25~$\mu$m'' (etc.) needs to be updated.
-\end{editornote}
 To successfully design CMOS circuits that will operate at cryogenic 
 temperatures, two critical issues must be addressed and resolved. 
 The first issue is the need for realistic models at the operating temperature 
@@ -230,10 +211,6 @@ To refine these models, several
 single-transistor test structures were fabricated on the first prototype of the 0.18~$\mu$m device. 
 Measurements of the properties of these structures at cryogenic temperatures 
 have been used to refine the device models at 89~K. 
-\begin{editornote}
-  Should we spell out in some small detail our plan for developing models?
-  Or does that belong in the digital ASIC section, along with our plan for developing libraries?
-\end{editornote}
 
 The lifetime of CMOS circuits is limited by several mechanisms which degrade 
 the performance over time, eventually causing the circuit to fail to perform as specified. 
@@ -343,7 +320,7 @@ confirm device models and design guidelines.
 \label{subsec:fe_CMOS_digital}
 
 The development of the COLDATA ASIC will follow the general guidelines developed for the cold analog ASICs.
-The COLDATA design will differ from the analog design in a couple of aspects.
+The COLDATA ASIC design will differ from the analog design in a couple of aspects.
 It is anticipated that the digital ASIC will make use of a 65~nm CMOS technology and require a
 digital library with accurate cold timing models allowing for high level language design and
 automated place and route for design blocks using extensive digital logic.  
@@ -351,22 +328,22 @@ automated place and route for design blocks using extensive digital logic.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=6in]{elec_COLDATAfig.pdf}
-\caption{Functional Block Diagram of the Cold Digital Data ASIC (COLDATA)}
+\caption{Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC}
 \label{fig:elec_COLDATAfig}
 \end{figure}
-A block diagram of the COLDATA is presented in Fig.~\ref{fig:elec_COLDATAfig}.
-The major components of COLDATA include a downlink which is required to receive the system clock and
+A block diagram of the COLDATA ASIC is presented in Fig.~\ref{fig:elec_COLDATAfig}.
+The major components of the COLDATA ASIC include a downlink which is required to receive the system clock and
 the control/download information transmitted from the DAQ.
 The download data must be transmitted to the FE and ADC ASICs on the CMB.
 The system clock will provide a frequency-reference to a crystal based Phase Lock Loop (PLL)
 which will generate a low jitter stable clock to the high speed serializer. 
 
-A single COLDATA on each CMB will also be receiving the data from each of the eight ADCs on board.
+A single COLDATA ASIC on each CMB will also be receiving the data from each of the eight ADCs on board.
 Each ADC will transmit two streams of data at 192~Mbps for a total data input of 3.072~Gbps.
 All data will be transmitted off board.
 It is anticipated that an encoding scheme, such as 8B10B, will be used and
 some frame data will be added to indicate event blocks.
-Thus, it is planned to drive four 1~Gbps links from each COLDATA.
+Thus, it is planned to drive four 1~Gbps links from each COLDATA ASIC.
 A line driver will be designed which is capable of driving a copper link for the approximate 20~m required
 to exit the LAr environment. 
 
@@ -527,13 +504,6 @@ During installation, the DAQ system will be running continuously.
 As soon as each stack of APAs is connected to the pre-routed cables, 
 a suite of calibration runs will be performed to validate that all connections have been made properly.
 Repair or replacement at this stage will still be straightforward.
-
-The responsibility and authority for the design, installation 
-and use of the detector quiet-power distribution and 
-detector-grounding system is held by the subproject electrical engineer. 
-This engineer has oversight responsibility for all electrical and electronics 
-design and installation tasks, including all attachments to the detector 
-that create an electrical connection. 
 
 %
 
