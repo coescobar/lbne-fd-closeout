@@ -3,9 +3,12 @@
 \chapter{Installation and Commissioning}
 \label{ch:install}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-This chapter discusses the LAr-FD Installation and Commissioning system's activities and responsibilities.  
+\fixme{I did not replace this section; Joe's new one looked identical to the orig modulo the fixmes, which I added in. AH}
+
+This chapter discusses the LAr-FD Installation and Commissioning \fixme{(keep name or change to Integration? JH) } system's activities and responsibilities.  
 LAr-FD construction and installation will occur in a series of distinct phases:
 
 \begin{itemize}
@@ -23,13 +26,14 @@ The Installation and Commissioning system will accept responsibility for the LAr
 \begin{itemize}
 \item ventilation in accordance with OSHA standards
 \item electrical power sufficient for the HVAC, cryogenics plant cooling and general 110-V service
-\item quiet power for the electonics with a double Faraday-shielded transformer located some distance from the cavern to take advantage of the inductance of the power lines. The primary shield will be connected to the main substation via a grounded feed wire and the secondary shield will be connected to the Ufer ground.
+\item quiet power for the electonics with a double Faraday-shielded transformer located some distance \fixme{ (is this physical distance or cable length, also what is minimum distance?) JH} from the cavern to take advantage of the inductance of the power lines. The primary shield will be connected to the main substation via a grounded feed wire and the secondary shield will be connected to the Ufer ground.
 \item communications consisting of telephone lines and computer network
 \item cavern lighting in accordance with OSHA regulations for industrial use
 \item tunnel lighting with battery-powered backup or emergency circuit backup
 \item environmental monitoring of oxygen, carbon monoxide, smoke and temperature
 \item dual isolation bulkheads separating the cavern from the existing Far-Site facility
 \item sump pumps for groundwater removal
+\item \fixme{add over head conveyances? JH}
 \end{itemize}
 
 After beneficial occupancy of the completed cavern from the 
@@ -50,345 +54,438 @@ The Installation and Commissioning group will be responsible for all LAr-FD-rela
 
 On-project commissioning activities include the coordination of system-checkout activities, culminating in the approval to introduce LAr into the detector modules, and managing the steps required to meet the CD-4 goals. 
 
+\fixme{Where is reference in text to this figure?}
 \begin{figure}[htpb]
 \centering
-\includegraphics[width=\textwidth]{larfd-from-2794-slide9.png}
+%\includegraphics[width=\textwidth]{}
 \caption{Cutaway view of two cryostats with TPC detectors installed}
 \label{fig:tpc-in-two-cryostats}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Above-ground Pre-Installation}
+\section{Integration (Permanent Equipment}
+\label{fd:install:integ}
 
+The Installation and Commissioning system will provide some permanently installed equipment that is 
+used by multiple Detector systems or is integral to the installation process.  This equipment includes the 
+relay racks, cable management, support rails for the TPC and the remaining outfitting of the detector 
+cavern that was too detector-specific to be included with the conventional facilities work.
 
-\begin{editornote}
-  Editor's Note:  The number of shipping containers listed in this section may not be accurate as of January 2015.
-\end{editornote}
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Relay Racks and cable management (Howell)}
+\label{fd:install:integ:racks}
 
+A port is located above every other APA junction and each port will serve the two upper APAs located directly underneath it. Cables for the lower two APAs will be routed from ports adjacent to the outer edge 
+of the cryostat.  The cables will travel down enclosed cable trays on the two side walls of the cryostat to the floor and over to the closest rows of APAs.  Cables for the other row of APAs will be routed similarly 
+down the opposite side wall.  The horizontal portion of the cable run will be outside of the wire planes, so the use of double shielded cable such as Amphenol skew clear may be adequate. If not, then custom metal shields will be mounted on the front-end circuit boards. 
 
-Detector components will be delivered to the Far Site over a period of many months and will need to be stored in a surface-storage facility. This will allow the supply of material to be maintained ready for installation.  A facility for this purpose 
-will be identified and an agreement will be made for its use during LAr-FD construction. 
+The racks will be mounted either directly over the ports or adjacent to them with an extension to the rack that covers the port. All cables can be brought out of the cryostat into a grounded and shielded 
+enclosure.. The plan is to use 36-in-deep racks and construct a shielded area on the back side of the rack to hold and shield the excess cable. 28 racks will be required for each cryostat, and rack space will be shared between the TPC and photon-detection system readout and power supplies. 
 
-The initial surface-storage plan actually includes three facilities:  a 4,000 ft$^2$ warehouse structure for material receiving and unpacking, an on-site hardstand for storage of a small number of cargo containers and an off-site hardstand area for the storage of 
-a larger number of cargo containers. Material will be transferred from these areas to the cavern for installation, as required. Each system group is  
-responsible for delivery of  
-its components to the local storage at the Far Site or to the off-site location.  
-The Installation and Commissioning group will provide the management and labor resources for inventory control, material handling and transport from the off-site and on-site storage facilities to the cavern.
+A modest number of racks will be required for the DAQ. Two options are under consideration for the location main DAQ racks. One option would transport data on fibers to the surface as quickly as possible 
+with the main DAQ racks may be located on the surface near a control room. The second option locate all DAQ racks underground with an environmental enclosure for the rack. For the second option a small adjoining control room would also be located underground.
 
-\subsection{Cryostat Materials}
-The on-site warehouse storage space  will initially be made available to the cryogenics system contractor who will construct the cryostats. The cryostat insulation will comprise the largest bulk of material; approximately 2,500~m$^3$. Figure~\ref{fig:gtt_storage} shows membrane-cryostat components staged in the hull of an LNG tanker under construction. 
+All relay racks will be equipped with rack protection and monitoring. The racks will be supplied by the 
+detector installation effort along with the labor to develop the rack plan.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Detector Electrical Ground} 
+\label{fd:install:integ:elecgnd}
+\fixme{material from Marvin , docdb 7310}
+
+The LAr-FD will have approximately 200,000 channels of electronics with an intrinsic noise level of less than 1,000 electrons. These channels will be connected to wires that are seven meters long. Thus, 
+grounding, shielding and power distribution are critical to the success of the experiment. In the reference design the entire detector pit will be treated as the detector ground for the following reasons: 
+For the purpose of maintaining a low-noise performance within each of the proposed cryostat detectors, the construction of the LBNE far detectors’ grounding system requires that there be separate grounding 
+structures for the cryostat tank walls and for the cavern and its utilities. Both the cryostat detectors and the cavern structures will employ an Ufer ground, or concrete encased grounding electrodes, within the concrete construction. The guiding principle for the LBNE far detector’s grounding system is to minimize, 
+as much as possible, any ground currents from flowing between the AC power distribution system and the detector cryostats. Also, any flow of ground currents, both conducted and coupled, need to be 
+minimized between the individual detector cryostats. Therefore, there are specific requirements for the connection and spacing of the reinforcing metal bars (rebar) set in the concrete for the cryostats’ 
+construction and for the specific and controlled interconnections between these separate grounding structures.
+
+There shall be electrical separation between the cavern’s rebar/concrete/shot-crete construction and the cryostats’ rebar/concrete construction. The rebar of one structure and the rebar of the other structure 
+shall not come in direct contact with each other. The rebar for all four vertical walls and the cryostat floor concrete shall be integrated together in order to form a uniform grounding structure between all five 
+concrete cryostat surfaces. The top plate of each cryostat detector shall serve as the detector’s grounding point and be connected uniformly to the detector’s Ufer ground structure.
+
+Since the cavern will be cored out of solid rock, there will be no integrated metal “building” support structure as normally would occur for a building constructed above ground. In addition, some metal 
+supports for piping, water, cable trays, air ducts, etc. will be supported by anchors attached to rock. Therefore, there is the probability that various metal structures within the cavern will not be electrically 
+connected together. To maximize the low-impedance path (back to the source) for AC ground currents and to minimize the probability of these ground currents being coupled onto the cryostats’ grounding 
+structures, these cavern metal infrastructure components need to be electrically interconnected as much as possible. 
+
+The substation vault, housing the 12.47 kV transformers and associated switchgear, will be to the east side of the cavern and thus will not have appreciable distance from the detectors’ construction. All 
+concrete walls, floor and ceiling of the vault will employ a rebar Ufer ground system and will contain a metal ground mesh (similar to that used for surface substations’ buried ground grid) constructed of 
+copper, within these concrete surfaces. This ground mesh shall be electrically connected to the Ufer ground.
+
+The metal top plate for each of the cryostats serves as the grounding point of reference for their respective cryostat. Therefore, it is very important that the metal interconnections be as uniform as 
+possible and that any ground potentials along this top plate, and its components, be minimized. All components of the top plate, unless specifically designated, shall be electrically isolated from the cavern’s ground structure. All cryogenic piping, crossing over from the cavern ground structure to the 
+detector ground structure, shall implement dielectric breaks so as not to make metal-to-metal electrical contact between the ground structures through the piping. The top plate shall employ a uniform copper 
+sheeting beneath the steel plate’s construction. This copper sheeting shall be electrically bonded to the steel plate at multiple points where the distance between the bonding points does not exceed 4 feet. The cryostat’s stainless steel membrane must be electrically connected to the copper component of the 
+cryostat’s top plate. The hanger bolts or rods, used to support the weight of the detector frames, shall be 
+electrically bonded to both the top plate and to the stainless-steel membrane.
+
+\fixme{Where is reference in text to this figure?}
 \begin{figure}[htpb]
 \centering
-\includegraphics[width=\textwidth]{v5chIC_gtt_storage}
-\caption[Cryostat components staged in a LNG transport ship]{Membrane cryostat components staged in a LNG transport ship under construction.}
-\label{fig:gtt_storage}
+%\includegraphics[width=\textwidth]{}
+\caption[AC power for the detector modules with a saturable inductor]{Block diagram of the AC power for the detector modules with a saturable inductor to separate the grounds of the transformer shields}
+\label{fig:acpwr-det-modules}
 \end{figure}
-Cryostat materials will come from overseas in approximately 100 shipping containers that will be stored off-site. The containers will be brought to the shaft headframe building for unloading and transportation down the shaft.
 
-Control of the storage area will revert to the Installation and Commissioning group when the cryostat-construction contract is completed.
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{TPC support rails (Fowler)}
+\label{fd:install:integ:rails}
 
-\subsection{TPC Materials}
+A set of five support rails, shown in Figures~\ref{fig:support-rails} and x \fixme{which figure?}, permanently mounted in each cryostat, will provide the support for the APA and CPA panels and a track for moving the APA panels into position.  
+Rods spaced at 5-m intervals will support the rails.  This rail will be supported by rods from anchor points on the inner surface of the cryostat roof.  The rod lengths will be adjustable to enable level installation of the rails, which will be done in rail segments with the aid of a laser level.  The rails shrink 
+2.8 mm per meter of length or about 8.4 cm along the entire length during cool-down.  The rods will be installed with an angle bias that allows the rails to return to level after the cryostat and TPC is cooled.
 
-APAs and CPAs, referred to as ``TPC panels'' in this chapter, will be constructed  before arrival at the Far Site. The electronics will already be installed and the cold-testing performed. They will be shipped in sealed shipping containers to either the on- or off-site hardstand area, depending on the TPC production rate. No significant preparation or extensive testing of these components is required after arrival and prior to installation. The entire set of TPC panels for the two-cryostat detector will require approximately  fifty shipping containers. Figure~\ref{fig:apa_ship} shows a group of TPC panels in a shipping container.
+The mass of each stacked set of APA panels is 725 kg and the mass of each stacked set of CPA panels is 1280 kg.  The load on the TPC on the support rails comes to 315 kg/m for the APA rails and 555 kg/m 
+for the CPA rails.  The rail segments will be constructed from 20-cm-deep laser-welded, W-shaped, stainless-steel beams.  The rail segments will be joined end-to-end with large pin connections.  The 
+upper support rods will be made from 15-mm-diameter stainless steel.
 
+The rail installation can be completed most efficiently while the large scaffolding system used for cryostat construction is still in place, therefore it will be part of the cryostat-construction contract.
 
-Whereas general material will be lowered in a lift cage, the TPC panels are too long to fit in the lift cage and require special containers and special handling. The TPC panels, grouped in their enclosed, special containers, will be lowered down the Yates shaft since its lift has provisions to attach long objects to the bottom of the cage.
-They will descend the shaft in a vertical orientation (the same orientation as they will be installed), be rotated to a horizontal orientation, then moved along the access drift  on a cart or rail to the cavern.
-Figure~\ref{fig:install-yates} shows a TPC container exiting at the bottom of the shaft.  The 
-TPC panels may be transported to the Far Site in these special containers or transfered to them after arrival.
-
-TPC-panel containers will be transported to the cavern and unloaded every few days to supply the TPC components for installation. These containers may need to be moved during off-work hours to avoid conflicts with other users of the shaft lifts. TPC-panel containers may be stored in the cavern on the deck on top of the cryostat trusses. Enough parts will be stored in the cavern to ensure that a sufficient supply of TPC parts is always on hand for installation.
-
-
+Early estimates indicate that the cryostat roof will deflect 4-5cm with fluctuations in the ullage pressure.  If the TPC supports are connected to the roof, as described previously, the TPC will move and distort with 
+the roof.  An alternative configuration in which the TPC is supported independently from the roof with support rods passing through the roof would isolate the TPC from this roof motion. 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{v5chIC_apa_ship}
-\caption{Concept for APA shipping containers - cross section view}
-\label{fig:apa_ship}
-\end{figure}
-
-\begin{figure}[htpb]
-\centering
-\includegraphics[width=\textwidth]{v5chIC_Yates_exit}
-\caption{TPC-panel containers exiting the Yates shaft}
-\label{fig:install-yates}
-\end{figure}
-
-\subsection{Liquid Argon Receipt}
-
-Delivery of LAr will occur over a one-year period for each cryostat, with approximately six tank trucks arriving on site per day. Each tank truck will have been loaded with 18.8~tons of LAr  which will be purity-tested by the vendor before the truck departs. Minor losses of LAr will occur during shipment. The purity will be checked again during unloading. If the impurities are found to exceed the required specification, the partially emptied tank truck will be returned to the vendor.
-
-LAr will be transferred to a buffer-storage vessel that allows the tank truck to unload as quickly as possible. Under normal circumstances transfer of the LAr out of each tank truck will require 1 hour, including the time for making hose connections and purging the hoses. The storage vessel will deliver argon to the filtering loop that processes argon from the cryostat recirculation and condensing loops.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Below-ground Pre-Installation}
-
-The below-ground pre-installation activities  
-must be completed prior to the start of TPC installation into the cryostat. These activities include design, procurement and installation of detector-specific infrastructure such as man-lifts, lifting fixtures, catwalks, ladders, tools, and so on. The major items include the support rails for the TPC panels, the lower staging platform for joining two panels, installation monorails for moving the panels inside and outside of the cryostat, and a mobile scaffold for providing access to the top and middle of stacked  
-TPC panels.
-
-\subsection{Equipment Required for Detector Installation}
-
-Several items will be installed for use during TPC installation, and removed afterwards.
-\begin{itemize}
-\item A temporary lighting system inside the cryostat with emergency backup lighting for TPC installation
-\item A ventilation system and air-monitoring sensors with alarms connected to the cryostat to assure adequate air quality for the personnel working inside the cryostat. The system will also include a high-sensitivity smoke-detection system that is interlocked to the power for all devices inside the cryostat. 
-\item A raised-panel floor to protect the cryostat floor; see Figure~\ref{fig:raised_floor}. The raised-panel floor will have support spacers located between the convolutions in the stainless-steel primary membrane to provide  a flat surface for moving equipment around within the cryostat. The pressure limit for the insulation in the floor is 0.5~MPa and the load of the vacuum that will be used to monitor 
-leakage during installation reduces the effective limit to 0.4 MPa.  The stock round spacers in the raised-panel floor are 10-cm diameter and would support a load of  310~kg. The load can be increased by adding larger-diameter plates under the standard spacers.
-\item A transfer rail with motorized trolleys to move TPC 
-panels within the cryostat
-\end{itemize}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{v5chIC_raised_floor}
-\caption{Raised-panel floor to protect the cryostat's primary membrane }
-\label{fig:raised_floor}
-\end{figure}
-
-\subsection{Clean Area}
-A clean-area vestibule in the range of class 10,000 (ISO 7 equivalent) will be constructed in the septum area around the entrance to the cryostat to keep the area around the open hatch isolated from the drift access. The vestibule will have an area for personnel to gown with the appropriate clean-room clothing and safety shoes. A large, closable door, next to which the TPC-storage containers can be parked, will allow unloading of the TPC components directly from the container into the vestibule. 
-
-A crane that operates inside the clean-room vestibule enclosure will be used to transfer 
-TPC panels from the vestibule into the cryostat. The crane will have a clean-room-style hoist and trolley to prevent contamination of the cryostat or vestibule area. 
-
-The Double Chooz detector developed a cleanliness plan to ensure that dust contamination did not contribute more than a specified amount to the detector signal. Measurements were made of the activity of rock in the underground laboratory which was assumed to be the source of airborne dust. Maximum allowable dust concentrations  
-and the clean-room class and cleanliness practices were determined such as to meet the requirements for contamination. The cavern for LAr-FD and many of the access tunnels will involve new excavation with shotcrete 
-covering the native rock.  
-The Installation and Commissioning group will need to evaluate the dust sources in the 
-LAr-FD cavern and determine if a similar approach to setting the clean room requirements is appropriate.
-
-
-\subsection{Rails for TPC-Panel 
-Support and Transfer}
-
-A set of five support rails, shown in Figures~\ref{fig:work-zones} and~\ref{fig:support-rails}, permanently mounted  in each cryostat, will provide the support for the APA and CPA panels and a track for moving the panels into position. Rods spaced at 5-m intervals will support the rails. The rods will be hung from anchor points mounted in the top of the cryostat.  The rods will be adjustable to enable level installation of the rails, 
-which will be done in rail segments with the aid of a laser level.
-The rails shrink approximately 7~cm along their entire length during cool-down. The rods will be installed with an angle bias that allows the rails to return to level after the cryostat and TPC is cooled.
-
-The mass of each stacked set of APA panels is 600~kg and the mass of each stacked set of CPA panels is 250~kg. The load of the TPC on the support rails comes to 200 kg/m for the APA rails and 100 kg/m for the CPA rails. The rail segments will be constructed from 20-cm-deep laser-welded, W-shaped, stainless-steel beams. The rail segments will be joined end-to-end with large pin connections. The upper support rods will be made from 15-mm-diameter stainless steel.
-
-The rail installation can be completed most efficiently while the large scaffolding system used for cryostat construction is still in place, therefore it will be part of the cryostat-construction contract. 
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{v5chIC_support-rails}
+%\includegraphics[width=\textwidth]{}
 \caption{Support rails inside cryostat} 
 \label{fig:support-rails}
 \end{figure}
 
-Signal and power cables will be installed from the cryostat feedthrough ports next to the APA support rods, shown in Figure~\ref{fig:feedthroughs}, along the rails to the point where the connection to the APAs will be made. The cables will be preplaced and tested before APA installation begins. 
-\begin{editornote}
-Editor's Note: Figure~\ref{fig:feedthroughs} is for a 17-kton fiducial mass cryostat. The 5-kton cryostat is
-shorter and has fewer rows.
-\end{editornote}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Discussion of ports in the top of the cryostat (Fowler)}
+\label{fd:install:integ:topports}
 
-
-
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{v5chIC_feedthroughs}
-\caption{Feedthroughs }
-\label{fig:feedthroughs}
-\end{figure}
-
-The top and bottom TPC panels of a stacked pair will be moved into the cryostat separately, then connected together below the cryostat equipment hatch. The lower panel is held temporarily with a staging platform while the upper panel is connected.  After connection, a motorized trolley will move the stacked panels from the hatch area to the final position. Since the duty cycle of the trolley is rather low, the trolley could be battery-powered to avoid the need for cable festooning. The trolley initially moves along a transfer rail until it reaches the end where the stacked panel will be permanently mounted. An arrangement of transfer switches is used to connect the transfer rail to the final support rail. See Figure~\ref{fig:installation-monorail} for an example of a transfer rail.
-
-
-\begin{figure}[htpb]
-\centering
-\includegraphics[width=\textwidth]{v5chIC_installation-monorail}
-\caption{TPC installation monorail with APA moving to support rail}
-\label{fig:installation-monorail}
-\end{figure}
-
-A rolling scaffold with an integral stair tower will allow personnel to access the top of the stacked panel. Fixed scaffolds with stair towers will provide access into the cryostat. 
-
-\subsection{Detector Electrical Ground}
-
-The LAr-FD will have nearly a quarter million channels of electronics with an intrinsic noise level of less than 1,000 electrons.  These channels will be connected to wires that are seven meters long.  Thus, grounding, shielding and power distribution are critical to the success of the experiment. In the reference design the entire cavern will be treated as the detector ground for the following reasons.
-
-The cryostat has a large number of penetrations for supporting the APAs that extend to the support structure above the cryostat.   There are also 13 signal feedthrough ports which connect to racks located on the top of the cryostat.  Achieving and maintaining adequate AC isolation on such a large structure during construction will be difficult.  In addition, the cavern has very few connections to the outside world so it is much easier to isolate the cavern as  a whole than the individual pieces.
-
-Secondly, it is necessary to provide a conductive body with a large enough self-capacitance that its voltage changes only negligibly when electric charge flows onto it. In this way the cavern can serve as a sink of unwanted current without generating noise in the detector.   
-
-\subsubsection{Reference Design}
-
-Earth ground will be provided by the Ufer grounding system in the concrete walls and other concrete support structures.   This ground will be attached to the rock bolts in the cavern walls and augmented by the large amount of steel in the roof-support trusses and the upper metal floor.  To be an effective ground, all of the steel support structure will be welded together.  The welds need not be structural; their use is only to assure reliable long-term electrical connections.
-
-In order for this system to work, the cavern must be kept noise-free, i.e.,  all  connections, except AC power, between the cavern and the outside world must be electrically isolated either by dielectric breaks or optical isolators.  
-Electric motors will be restricted to three-phase induction motors except for special, well-controlled cases.  Electric heaters will be controlled by switches rather than SCRs.  Digital equipment such as network switches will 
-be run at frequencies of 30 MHz or higher whenever possible so that the noise remains outside the bandwidth of the TPC preamplifier.  Some equipment, such as switching power supplies, will still need special attention to ensure that they do not generate noise in the detector.  
-
-As the only conducting link to the outside world, the AC power must be filtered to eliminate any electrical noise.  Since the currents are large, it is most economical to implement a filter using the inductance of the power cable itself along with some capacitors to form a capacitor-inductor filter.  
-
-
-The reference design will keep the power for the conventional facilities and for each cryostat  independent of one another so that they can be operated independently. As shown in Figure~\ref{fig:Saturable_inductor} (top), one 500-KVA transformer for each cryostat along with a one-MVA transformer for the conventional facilities will be placed in a separate utility room located a short distance from the detector cavern. These transformers will have double faraday shielding with the primary shield returned on the ground wire to the substation.  The second shield will be connected to the local Ufer ground and to the cavern by the required grounding wire.  
-
-A saturable inductor between the two shields serves to isolate the primary and secondary shields and separate their grounds.  The secondary shield and transformer frame are connected to Earth ground at the transformer.  The ground wire running back to the substation is only locally grounded through the saturable inductor but it is fully grounded at the substation.  A fault between the secondary and primary shields would trip the substation breaker due to current flowing in the return ground wire.  If this wire were disconnected, the current would flow through the saturable inductor to Earth ground and also trip the substation breaker.  Figure~\ref{fig:Saturable_inductor} (bottom) shows an inductor used at D-Zero and the voltage developed across the inductor as a function of the fault current.  The inductance is completely saturated by 100~A and the developed voltage is still safe.
-
-
-The 480-V power will be transmitted from the utility room to a separate switch gear for each detector module. The switch gear, located adjacent to its module, will directly distribute power to all the 480-V loads. The switch gear will also feed up to three 50-KVA single-faraday-shielded transformers.  Two of these will provide 208-V power to the module and its associated cryogenic equipment, and the third will provide additional cavern power.  The number and size of the transformers may change depending on the final load. 
-
-The filter on the conventional-facilities transformer will be similar to the one for the detector modules.  In addition to the conventional facilities, this transformer will power all welding outlets.  This arrangement would allow some minor welding on one cryostat, if needed, while the other is taking data. 
-
-\begin{figure}[htpb]
-\centering
-\includegraphics[width=\textwidth]{v5chIC_Marvins_saturable_inductor}
-\caption[Block diagram of the AC power for one cryostat]{Block diagram of the AC power for one cryostat with a saturable inductor to separate the grounds of the transformer shields}
-\label{fig:Saturable_inductor}
-\end{figure}
-
-\subsubsection{Features}
-
-%Internal Detector Ground Connection:  
-It is important that all the components inside each detector module be connected to a common ground.  The  best candidate for this common ground, and the one chosen for the reference design, is the top of the cryostat.  The APAs will have ground braid connections to the roof at two points on each panel.  The lower APAs will be connected to the upper ones by their mechanical mounting connections.  The front-end boards, phototube ground and the reference ground for the bias voltages will all be connected to the APA frame.
-
-%Detector ground plane: 
-The top of each cryostat is made of 1.2-mm or 2.0-mm-thick stainless steel, a poor conductor, and therefore does not serve as an adequate ground plane.  The best solution would be to add a copper sheet directly on top of the cryostat, however this is difficult to do. Instead the copper sheet will be installed over the insulation that is on top of the cryostat membrane, about one meter from the cryostat, and connected to it via a grid of connections spaced 2.5~m apart.  This spacing will give good electrical performance up to 12~MHz -- well above the input bandwidth of the amplifier. The connections will be made with copper strips that fit in gaps in the insulation. Power supplies and power-supply filters (including the cathode supply) will all be grounded to this plane.
-
-%Cables and Racks: 
-A port is located above every other APA junction and each port will serve the four APAs located directly underneath it.  Cables for the bottom two APAs will be routed through the hollow cable frames to provide both mechanical support and electrical shielding.  The digital cables will be located in the left frame member, and the power and bias lines will be routed through the right frame member.  The horizontal portion of the cable run will be outside of the wire planes, so the use of doubly shielded cable such as Amphenol skew clear 
-%\fixme{the cable is called 'amphenol skew clear"? BB: Yes. Marvin is using it as an example of an existing commercially available cable. } 
-may be adequate.   If  not, then custom metal shields will be mounted on the front-end circuit boards.
-
-The racks will be mounted either directly over the ports or adjacent to them with an extension to the rack that covers the port. All cables can be brought out of the cryostat into a grounded and shielded enclosure.  %In order to have equal times to all APAs, 
-All cables to the APAs will be the same electrical length to ensure uniformity of signal travel time.  This will require storing an extra 14 meters of cable for each top  APA.  The plan is to use 36-in-deep racks and construct a shielded area on the back side of the rack to hold the excess cable.  Twenty-seven racks will be required for each cryostat, and rack space will be shared between the TPC and photon-detection system readout and power supplies. A modest number of racks will be required for the DAQ in the surface control room. All relay racks will be equipped with rack protection and monitoring. The racks will be supplied by the detector installation effort.
-
-%Digital Electronics: 
-The digital electronics does not present a grounding issue in the strict sense, but it does affect noise.  The plan is to operate the digital system with at least a 32-MHz clock that is well above the upper bandwidth of the input amplifier (the 3-db point is less than 1~MHz).
-
+\fixme{needs content}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Installation Equipment (Temporary Equipment)}
+\label{fd:install:tempeqp}
 
-\section{Below-ground Installation Activities}
+The below-ground pre-installation activities must be completed prior to the start of TPC installation into the cryostat. These activities include design, procurement and installation of detector-specific 
+infrastructure such as man-lifts, lifting fixtures, catwalks, ladders, tools, and so on. The major items include a clean space for the unpacking and preparation of the TPC components, the support rails for the 
+TPC panels, the staging platform for joining two panels, installation monorails (are these included in CF?) for moving the panels inside and outside of the cryostat, and a mobile scaffold for providing access to 
+the top and middle of stacked TPC panels. 
 
-The following list of detector components and systems % are installed in this WBS element.  
-will be installed below-ground:
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Clean Area Outside cryostat}
+\label{fd:install:tempeqp:cleanarea}
 
+A clean-area enclosure in the range of class 10,000 (ISO 7 equivalent) will be constructed near the entrance to the cryostat to keep the area around the open hatch isolated. The assembly practices used by 
+the MicroBooNe experiment may serve as an example of what is required for a surface detector. The enclosure will have an area for personnel to gown with the appropriate clean-room clothing and safety 
+shoes. A large, closable door, next to which the TPC-storage containers can be parked, will allow unloading of the TPC components directly from the container into the clean area. The TPC components 
+will be cleaned and protected to a level suitable for installation into the cryostat as part of the TPC production process and will be delivered to the Far Site in clean containers. 
+
+The Double Chooz detector developed a cleanliness plan to ensure that dust contamination did not contribute more than a specified amount to the detector signal. Measurements were made of the activity 
+of rock in that experiment’s underground laboratory which was assumed to be the source of airborne dust. Maximum allowable dust concentrations and the clean-room class and cleanliness practices were 
+determined such as to meet the requirements for contamination. The Installation and Commissioning group will need to evaluate the dust sources in the LAr-FD detector pit and determine if a similar 
+approach to setting the clean room requirements is appropriate. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Inside cryostat}
+\label{fd:install:tempeqp:inside}
+
+Several items will be installed in the cryostat for use during TPC installation, and removed before the cryostat is filled with argon. 
 \begin{itemize}
-\item Relay Racks with rack protection (10 on each cryostat plus a few in the control room)
-\item Cable trays and power distrbution to racks
-\item Cable inside and outside of the cryostat including cable feedthroughs
-\item DAQ crates and power supplies in the relay racks
-\item The 52 APAs per cryostat with integrated photon detectors
-\item The 78 CPAs per cryostat
-\item Any cryogenic instrumentation not installed by the cryostat construction vendor (e.g. purity monitors)
-\item Note: Support rails and hangers are installed during cryostat construction
+\item A temporary lighting system inside the cryostat with emergency backup lighting will be in place for TPC installation and removed in sections as the TPC is installed and be completely removed before filling the cryostat with Argon. This lighting system will also be filtered to the appropriate spectrum to protect the photon detection system installed in the APAs.  
+\item A ventilation system and air-monitoring sensors with alarms will assure adequate air quality for the personnel working inside the cryostat. The system will also include a high-sensitivity smoke-detection system that is interlocked to the power for all devices inside the cryostat. The blowers and temperature control will be located outside of the cryostat and polyester ducts will be located inside the cryostat to distribute the air properly. 
+\item A raised-panel floor to protect the cryostat floor; see Figure~\ref{fig:raised-floor-protect}. The raised-panel floor will have support spacers located between the convolutions in the stainless-steel primary membrane to provide a flat surface for moving equipment around within the cryostat. The pressure limit for the insulation in the floor is 0.5 MPa \fixme{(check value) }and the load of the vacuum that will be used to monitor leakage during installation reduces the effective limit to 0.4 MPa. The stock round spacers in the raised-panel floor are 10-cm diameter and would support a load of 310 kg. The load can be increased by adding larger-diameter plates under the standard spacers. Since the raised floor is modular, it can be removed in sections as the TPC installation progresses. A perforated pipe manifold will be located on the cryostat floor to distribute the argon during the gas piston purge and during liquid recirculation. Depending on the details of the membrane cryostat corrugation height, the distribution piping may fit under the temporary floor or be installed in sections as the floor is removed. 
+\item Tooling for APA and CPA panels including fixtures to insert the lower APA and CPA panels. The top and bottom TPC panels of a stacked pair will be moved into the cryostat separately and connected together below the cryostat equipment hatch. A lower panel holding fixture will temporarily hold the bottom APA and CPA panels when they are inserted into the cryostat. See Figure~\ref{fig:panels-lowered-hatch}. 
+\item Two fixed scaffolds with integral stair towers will be installed temporarily inside the cryostat. One tower will be located in the work area of the large hatches. This tower will provide access for personnel to make the connections between stacked panels and to connect stacked panels to the installation rail inside the cryostat. The second fixed tower will be located near the smaller hatch and will provide a second route of egress from the cryostat. 
+\item A rolling scaffold with an integral stair tower will allow personnel to access the top of the stacked panel after they are in the final position. The rolling scaffold will be moved around the cryostat floor as the TPC installation progresses. 
 \end{itemize}
 
-\begin{figure}[htpb]
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{v5chIC_tpc-panels-installed-in-cryostat}
-\caption{TPC panels installed in cryostat 
-}
-\label{fig:tpc-panels-installed}
+%\includegraphics[width=\textwidth]{}
+\caption{Raised-panel floor to protect the cryostat’s primary membrane } 
+\label{fig:raised-floor-protect}
 \end{figure}
-
-\section{TPC Installation}
-
-Each APA and CPA panel will be carefully tested after transport into the clean area at the septum and before installation into one of the cryostats.  Immediately after a panel is installed it will be rechecked. Throughout the installation period it will be checked periodically. The serial stacking of the APA and CPA panels along the rails means that removing and replacing one of the early panels in the row after several others are installed would be very costly in effort and time. Therefore, to minimize the risk of damage,  as much work around already-installed panels as possible will be completed before proceeding with further panels.
-
-The installation sequence is planned to proceed as follows:
-
-\begin{enumerate}
-\item Install the monorail or crane in the staging area outside the cryostat, near the equipment hatch.
-\item Install the relay racks on the top of the cryostat and load with the DAQ and power-supply crates.
-\item Dress cables from the DAQ on the top of the cryostat to remote racks.
-\item Construct the clean-room vestibule outside the cryostat hatch.
-\item Install the raised-panel floor inside the cryostat.
-\item Insert and assemble the stair tower and mobile scaffold.  
-\item Install the transfer rail with switches and the staging platform inside the cryostat
-\item Install protection on (or remove) existing cryogenics instrumentation in the cryostat.
-\item Install the cryostat feedthroughs and dress cables inside the cryostat along the support beams.
-\item Begin regular transport of TPC panels in shipping boxes into the cavern.
-\item Install TPC panels
-panels:
-\begin{enumerate}
-\item Install a connected APA-CPA panel pair.
-\item Connect power and signal cables.
-\item Test each APA wire for expected electronics noise. Spot-check electronics noise while cryogenics equipment is operating.
-\item Connect field cage in sections as the APA and CPA installation progresses.
-\item Perform electrical test on CPAs and field cage.
-\item Remove temporary floor sections as the TPC installation progresses.
-\item Install sections of argon-distribution piping as the TPC installation progresses.
-\end{enumerate}
-\item Complete the field cage.
-\item Remove the transfer rail, staging platform, moving platform and stair tower.
-\item Temporarily seal the cryostat and test all channels for expected electronics noise.
-\item Seal the access hatch.
-\item Perform final test of all channels for expected electronics noise.
-\end{enumerate}
-
-In general, APA and CPA panels will be installed in order starting with the panel furthest from the hatch side of the cryostat and progressing back towards the hatch. The field cage will be installed in stages as the installation of APA and CPA panels progresses. The only requirement for survey or alignment is to maintain the edges of a row of APA panels to 3-mm alignment along each beam. A laser guide or optical transit in combination with the adjustment features of the tie rods will be used to establish the alignment. After the stacked panel is attached to the support rods the electrical connections will be made to cables that were already dressed to the support beams and electrical testing will begin. Periodic electrical testing will continue to assure that nothing gets damaged during the additional work around the installed panel. 
-
-The TPC installation will be performed in three stages, each in a separate location; the locations, or zones, are shown in Figure~\ref{fig:work-zones}. 
-First, in the clean room vestibule, a crew will move the APA and CPA panels from storage racks, rotate to the vertical position and move them into the cryostat. 
-Secondly, in the panel-staging area immediately below the equipment hatch of the cryostat, a second crew will transfer the lower panels from the crane to the staging  platform, connect the upper and lower panels together, route cables to the top of stacked panels and finally transfer the stacked panels on to the monorail trolley that moves within the cryostat. 
-A third crew will reposition the movable scaffolding and use the scaffold to make the mechanical and electrical connections at the top for each APA and CPA as they are moved into position. The  monorails inside and outside the cryostat will each have two motorized trolleys so that work can be conducted by all three crews in parallel. 
-The steady-state rate for installation, given this work plan and a single-shift schedule, is estimated to be two stacked panels per day. 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{v5chIC_work-zones}
-\caption[The three main work zones for TPC Installation]{The three main work zones for TPC Installation. TPC components are lowered into the cryostat in zone 1. TPC components are connected together in zone 2, transferred to the support rails and then rolled into final position (zone 3).}
-\label{fig:work-zones}
+%\includegraphics[width=\textwidth]{}
+\caption{The bottom APA and CPA panels of the TPC are lowered through the cryostat hatch and held temporarily by a holding fixture } 
+\label{fig:panels-lowered-hatch}
 \end{figure}
 
-Wire integrity will be confirmed by measuring the Equivalent Noise Charge (ENC) of each electronics channel and comparing it with the expected noise for a properly connected wire. A properly connected wire provides an input capacitance of 240~pF to the front-end amplifier resulting in an ENC at room temperature of 1,100 electrons.
-The wire-integrity test also ensures that coherent noise sources, e.g., a mechanical connection between the detector ground and the Ufer ground, are discovered promptly. Error budgeting, regular noise monitoring and mitigation will ensure that the TPC reaches and maintains the required noise performance before the cryostat is cooled down.
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Full-scale Mockup}
+\label{fd:install:tempeqp:fsmockup}
 
+A full-height mock TPC section will be constructed as part of an installation prototype in a suitable location at Fermilab, e.g. the Wideband lab or D-zero assembly hall. See Figure 12 \fixme{need to find}. The installation 
+equipment prototype is intended to test and verify the key elements of the equipment and the process for TPC installation and to serve as a training tool for personnel who will perform the TPC installation. The initial testing of the equipment at Fermilab will be used to verify or refine the installation concepts. 
+Complete testing of the final equipment and operations will occur at Fermilab before the installation equipment is moved to the Far Site. 
 
-The detector installation system is also responsible for developing and implementing the procedure for monitoring the integrity of the membrane-cryostat primary liner during installation.  The space between the primary liner and the secondary liner will be held under vacuum during installation. The vacuum level will be automatically monitored and will alarm if any leaks develop in the primary membrane during TPC installation.
+This prototype will include APA and CPA rail supports and cable routing features. Multiple mock-ups of APA and CPA stacked panels will be installed. The APAs will include all mechanical mounting points and 
+some electrical connections such as optical-fiber readout cables and power cables. Prototype versions of the special equipment required for TPC installation will be used, including the trolley, lower-panel 
+staging platform, and a rolling-cart scaffolding. Scaffolding elements will be rented and the scaffolding will be erected by a contract or as part of a training program. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Initial tests, where appropriate, will be performed at a low elevation. For example, the installation trolley 
+and rail segment will be tested at a low elevation with a dummy weight. After successful demonstration of the features in this position, the components will be moved to a high elevation for testing with full-
+size mock-up panels. 
 
-\section{Installation Prototype} 
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Surface at SURF}
+\label{fd:install:tempeqp:surfsurface}
 
-The goals of the installation prototype are to test and verify the key elements of the equipment and process for TPC installation and to serve as a training tool for personnel who will perform the TPC installation. The initial testing of the equipment at Fermilab will be used to verify or refine the installation concepts. Complete testing of the final equipment and operations will occur at Fermilab before the installation equipment is moved to the Far Site. 
-
-For the installation prototyope, a similar, 70\%-height detector will be constructed in a suitable location at Fermilab, e.g. the Wideband lab or the CDF or DZero assembly hall. 
-The cryostat mock-up will include a representation of a roof hatch, APA and CPA rail supports and feedthroughs. 
-Multiple mock-ups of APA and CPA stacked panels will be installed. The APAs will include all mechanical mounting points and electrical connections such as optical-fiber readout cables and power cables.
-Prototype versions of the special equipment required for TPC installation will be used, including the lower panel staging platform, a transfer rail with trolley, and rolling-cart scaffolding. Scaffolding elements will be rented and the scaffolding will be erected by a contract or as part of a training program.
-
-Initial tests, where appropriate, will be peformed at a low elevation. For example, the installation trolley and single-switch rail segment will be tested at a low elevation with a dummy weight. After successful demonstration of the features  at low elevation, the components will be moved to a high elevation for testing with full size mock-up panels.
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Training and Access Control}
-
-Installation and Commissioning will be responsible for the personnel, equipment and procedures for providing cavern-access controls. These controls will include a mechanism for checking the training status of personnel, badge-in/badge-out procedures and closed-circuit-television monitoring of the entrance portal. Only trained personnel will be allowed below-ground. Members of the installation crew will be trained on specific installation tasks and must pass a qualification test. The training will likely use mock-up APAs constructed for the installation prototype. The training program will be modeled after the Fermilab ``NuMI underground training'' and will be developed in collaboration with Sanford Laboratory ES\&H personnel.
-
-Installation and Commissioning will provide all of the general tools and equipment needed to support the personnel in their installation work. It will include hand tools, power tools, material-handling equipment, ladders, lifts, electrical meters and personal protective equipment (PPE). The detector sytem groups will provide any special equipment to check out or debug the power and read-out chain of the detectors.
+\fixme{needs content}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Far Site Installation}
+\label{fd:install:fsinstall}
 
-\section{Detector Commissioning}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Far site activities (an overview of activities) (Howell)}
+\label{fd:install:fsactivities}
 
-The construction  of the two cryostats and the installation and commissioning activities will be staged such that both TPCs can be tested cold while one cryostat still remains available as a potential storage vessel. The LAr in one cryostat can be transferred to the other, and back again, if necessary. Once both TPCs are known to work properly at LAr temperature, the second fill will take place.
+Local storage in the SURF region will be required because Detector installation is much shorter duration than the detector fabrication/assembly time. The local storage facility will also be used for checkout and 
+testing of Detector components. The installation space in the cavern is very limited and so material will be moved from the local storage to the cavern at the rate of installation. Prior to installation clean area 
+will need to be setup in the cavern just outside of the cryostat. After the clean area is configured temporary installation equipment will be installed in the first cryostat. TPC installation will proceed in the 
+first cryostat and as temporary equipment is removed from the first cryostat it will be installed into the second cryostat to prepare for installing the second TPC.
 
-The commissioning sequence, illustrated in Figure~\ref{fig:startup_sequence}, will start with the installation of the TPC in the east cryostat. During this time, construction of the west cryostat will be 
-completed.  The east cryostat will be filled initially with room-temperature GAr, injected from the bottom 
-in order to displace the air upward through the top ports. The procedure used for this gas purge will be developed during prototype work. Following that, the LAr fill of the east cryostat will take four to six months, 
-assuming continuous LAr deliveries.  LAr purification will begin when the liquid level is high enough to start the recirculation pumps. The commissioning of the cryogenics system can also begin at this point but its full commissioning will require a fully loaded cryostat. When the cryostat is full, the TPC will undergo testing for about one month. In-vessel purity monitors will operate during this time.
+The following list of detector components and systems will be installed in the Detector Hall and cryostats: 
 
-\begin{figure}[htpb]
+\begin{itemize}
+\item Relay Racks with rack protection (28 on each cryostat plus a few in the control room) 
+\item Cable trays and power distribution to racks from power panels provided by CF 
+\item Cable inside and outside of the cryostat including cable feedthrough flanges 
+\item DAQ crates and power supplies in the relay racks 
+\item The 52 APAs per cryostat with integrated photon detectors 
+\item The three times the equivalent active area of the APAs of CPAs per cryostat 
+\item Cryogenic instrumentation not installed by the cryostat construction vendor (e.g. purity monitors) 
+\item Temporary ventilation, lighting and access equipment 
+\item Note: Support rails and hangers are installed during cryostat construction 
+\end{itemize}
+
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=\textwidth]{v5chIC_startup_sequence}
-\caption{Startup and Commissioning Sequence}
-\label{fig:startup_sequence}
+%\includegraphics[width=\textwidth]{}
+\caption{TPC panels installed in cryostats } 
+\label{fig:tpc-panels-in-cryostat}
 \end{figure}
 
-Construction of the west cryostat is expected to finish during the LAr fill of the east cryostat. After the west cryostat is leak-checked and cleaned, its TPC installation will begin. After TPC installation and testing, the purging and cooling phases will proceed. Then the LAr from the east cryostat will be transferred to the west one, at which point the west TPC will begin a month of testing. During this time the east cryostat will be maintained cold via continuous GAr circulation. Once tests on the west cryostat are completed successfully, the east cryostat will be refilled with LAr, and its roughly five-month commissioning period begins. 
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Detector material storage /testing above ground (Howell)}
+\label{fd:install:fsinstall:mat:storage}
 
-\section{ES\&H}
+Detector components will be delivered to the Far Site over a period of many months and will need to be stored in a storage facility. This will allow the supply of material to be maintained ready for installation. The facility will 
+also be used for testing and checkout of the APA after the shipment from the manufacturing sites. Depending on the APA design and assembly flow the storage/testing facility may also be used for installation of the photon 
+detectors and/or the installation of cold electronics on to the APAs.  A facility for this purpose will be identified in the SURF region and arrangements will be made for its use during LAr-FD construction. Each system group is 
+responsible for delivery of its components to the storage/testing facility. The Installation and Commissioning group will provide the management and labor resources for inventory control, material handling and transport from the off-site facility to the Detector Cavern. 
 
-Careful consideration for ES\&H will be demonstrated in the planning and execution of the installation and commissioning. Safety professionals will be involved in all phases. Hazards of note for the TPC installation are work at elevated heights and working in the confined space of the cryostat. 
+The majority of the storage/testing facility space will be required for storage and testing of APAs. The APA will be shipped from the APA assembly sites to the SURF area in semitrailers or 40 ft long cargo containers. The APAs 
+will be held in a vertical plane in a rack with one rack of about 10 APAs fitting in each trailer or container. It will expected that the racks can be removed from shipping container and the APAs can remain in the racks as they are 
+moved and stored.  The racks will have an approximate footprint of 8’ x 22. About 6 such racks will be needed for each cryostat approximately with 2500 ft2 required for all APA storage. The CPA and field cages material can be packed more compactly and will required additional space of approximately 2500 ft2.
 
+The facility will also be used for checkout and testing of the APAs after the long distance shipment from the assembly sites. In addition the facility may also be used for some assembly tasks such as installing the photon 
+detectors. Since the APAs will be exposed during these operations the work lighting will have UV filters installed and air recirculation units will be used to maintain a clean area in the range of class 10,000 (ISO 7 equivalent). 
+There will be a few of stations for check out , inspection and transfer of the APAs. Approximately 5000 ft2 will be required for these functions with a clear height of approximately 20ft to allow the APAs to be lifted out of storage 
+racks and stations. With a modest weight less than ½ ton, a free standing workstation crane would be sufficient for lifting the APAs.
+
+The storage/testing facility should be located with a one hour drive of SURF. The facility could be in Rapid City or in the area close to SURF. The final choice of location will be a compromise of many factors including available 
+lease space, workforce availability and cost.
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Material movement to cavern (Howell)}
+\label{fd:install:fsinstall:mat:movement}
+
+Material will be transferred from the storage facility to the Detector Hall for installation, as required to sustain the installation rate. The Ross shaft which will be used to move material underground. The CPA and field cage 
+materials will fit into the Ross shaft cage.  However the APAs are two long and must be slung underneath the Ross cage. 
+
+A conceptual design for a special APA transportation container has been developed that will hold 4 APAs in horizontal and vertical orientations for movement in the Ross shaft. The 60” distance between the rails of the 
+Ross shaft limits the width of objects lowered down the shaft. .The Ross shaft lift has provisions to attach long objects to the bottom of the cage. The APA in a special container will descend the shaft in a vertical orientation 
+(the same orientation as they will be installed), be rotated to a horizontal orientation as they are extracted from the shaft, then moved along the access drift on a cart to the cavern. The APA transportation container consists of 
+an internal rack that can be extracted from the outer container thus avoiding moving the outer container into the clean area used for installation. The internal rack will be used to hold the APA in the installation area until they 
+are installed. Empty racks will be returned to the warehouse for reloading in the transportation container.
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Setup and equipment arrangement in clean area (Fowler)}
+\label{fd:install:fsinstall:setup:cleanarea}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{TPC installation (details of steps) (Fowler)}
+\label{fd:install:fsinstall:tpc:install:steps}
+
+Each APA and CPA panel will be carefully tested after transport into the clean area at the septum and before installation into one of the cryostats. Immediately after a panel is installed it will be rechecked. Throughout the 
+installation period it will be checked periodically. The serial stacking of the APA and CPA panels along the rails means that removing and replacing one of the early panels in the row after several others are installed would be 
+very costly in effort and time. Therefore, to minimize the risk of damage, as much work around already-installed panels as possible will be completed before proceeding with further panels. 
+
+The installation sequence is planned to proceed as follows: 
+\begin{enumerate}
+\item Install the monorail or crane in the staging area outside the cryostat, near the equipment hatch. 
+\item Install the relay racks on the top of the cryostat and load with the DAQ and power-supply crates. 
+\item Dress cables from the DAQ on the top of the cryostat to remote racks. 
+\item Construct the clean-room vestibule outside the cryostat hatch. 
+\item Install the raised-panel floor inside the cryostat. 
+\item Insert and assemble the stair tower and mobile scaffold. 
+\item Install the transfer rail with switches and the staging platform inside the cryostat 
+\item Install protection on (or remove) existing cryogenics instrumentation in the cryostat. 
+\item Install the cryostat feedthroughs and dress cables inside the cryostat along the support beams. 
+\item Begin regular transport of TPC panels in shipping boxes into the cavern. 
+\item Install TPC panels: 
+\begin{enumerate}
+\item Install a connected APA-CPA panel pair. 
+\item Connect power and signal cables. 
+\item Test each APA wire for expected electronics noise. Spot-check electronics noise while cryogenics equipment is operating. 
+\item Connect field cage in sections as the APA and CPA installation progresses. 
+\item Perform electrical test on CPAs and field cage. 
+\item Remove temporary floor sections as the TPC installation progresses. 
+\item Install sections of argon-distribution piping as the TPC installation progresses. 
+\end{enumerate}
+\item Complete the field cage. 
+\item Remove the transfer rail, staging platform, moving platform and stair tower. 
+\item Temporarily seal the cryostat and test all channels for expected electronics noise. 
+\item Seal the access hatch. 
+\item Perform final test of all channels for expected electronics noise.
+ \end{enumerate}
+ 
+In general, APA and CPA panels will be installed in order starting with the panel furthest from the hatch side of the cryostat and progressing back towards the hatch. The field cage will be installed in stages as the installation 
+of APA and CPA panels progresses. The only requirement for survey or alignment is to maintain the edges of a row of APA panels to 3-mm alignment along each beam. A laser guide or optical transit in combination with the 
+adjustment features of the tie rods will be used to establish the alignment. After the stacked panel is attached to the support rods the electrical connections will be made to cables that were already dressed to the support beams 
+and electrical testing will begin. Periodic electrical testing will continue to assure that nothing gets damaged during the additional work around the installed panel. 
+
+The TPC installation will be performed in three stages, each in a separate location; the locations, or zones, are shown in Figure~\ref{fig:tpc-install-workzones}. First, in the clean room vestibule, a crew will move the APA and CPA panels from storage 
+racks, rotate to the vertical position and move them into the cryostat. Secondly, in the panel-staging area immediately below the equipment hatch of the cryostat, a second crew will transfer the lower panels from the 
+crane to the staging platform, connect the upper and lower panels together, route cables to the top of stacked panels and finally transfer the stacked panels on to the monorail trolley that moves within the cryostat. A third 
+crew will reposition the movable scaffolding and use the scaffold to make the mechanical and electrical connections at the top for each APA and CPA as they are moved into position. The monorails inside and outside 
+the cryostat will each have two motorized trolleys so that work can be conducted by all three crews in parallel. The steady-state rate for installation, given this work plan and a single-shift schedule, is estimated to be two stacked panels per day. 
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[width=\textwidth]{}
+\caption[The three main work zones for TPC Installation]{The three main work zones for TPC Installation. TPC components are lowered into the cryostat in zone 1. TPC components are connected together in zone 2, 
+transferred to the support rails and then rolled into final position (zone 3).} 
+\label{fig:tpc-install-workzones}
+\end{figure}
+
+Signal and power cables will be installed from the cryostat feedthrough ports next to the APA support rods, shown in Figure~\ref{fig:tpc-install-feedthroughs}, along the rails to the point where the connection to the APAs will be made. The cables will be 
+preplaced and tested before APA installation begins.  Editor’s Note: Figure~\ref{fig:tpc-install-feedthroughs} is for a 17-kton fiducial mass cryostat. The 5-kton cryostat is shorter and has fewer rows.  
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[width=\textwidth]{}
+\caption{Feedthroughs} 
+\label{fig:tpc-install-feedthroughs}
+\end{figure}
+
+The top and bottom TPC panels of a stacked pair will be moved into the cryostat separately, and then connected together below the cryostat equipment hatches. The lower panel is held temporarily with a staging platform while 
+the upper panel is connected. After connection, a motorized trolley will move the stacked panels from the hatch area to the final position. Since the duty cycle of the trolley is rather low, the trolley could be battery-powered to 
+avoid the need for cable festooning. The trolley initially moves along a transfer rail until it reaches the end where the stacked panel will be permanently mounted. 
+
+
+\fixme{ figure caption  6. TPC installation monorail ... Where is reference to it?} 
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[width=\textwidth]{}
+\caption[TPC installation monorail with APA moving to support rail]{TPC installation monorail with APA moving to support rail. A rolling scaffold with an integral stair tower will allow personnel to access the top of the stacked panel. Fixed scaffolds with stair towers will provide access into the cryostat.} 
+\label{fig:tpc-install-monorail}
+\end{figure}
+
+Wire integrity will be confirmed by measuring the Equivalent Noise Charge (ENC) of each electronics channel and comparing it with the expected noise for a properly connected wire. A properly connected wire provides an input 
+capacitance of 240 pF to the front-end amplifier resulting in an ENC at room temperature of 1,100 electrons. The wire-integrity test also ensures that coherent noise sources, e.g., a mechanical connection between the detector 
+ground and the Ufer ground, are discovered promptly. Error budgeting, regular noise monitoring and mitigation will ensure that the TPC reaches and maintains the required noise performance before the cryostat is cooled down. 
+
+The detector installation system is also responsible for developing and implementing the procedure for monitoring the integrity of the membrane-cryostat primary liner during installation. The space between the 
+primary liner and the secondary liner will be held under vacuum during installation. The vacuum level will be automatically monitored and will alarm if any leaks develop in the primary membrane during TPC installation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Training (Howell)}
+\label{fd:install:training}
+
+Installation and Commissioning will be responsible for the personnel, equipment and procedures for providing Detector Hall access controls after cryostat construction is complete. Members of the installation crew will be 
+trained on specific installation tasks and must pass a qualification test. The training will use mock-up APAs constructed for the installation equipment prototype. The training program will be developed in collaboration with Fermilab and SURF ES\&H personnel. 
+
+Installation and Commissioning will provide all of the general tools and equipment needed to support the personnel in their installation work. It will include hand tools, power tools, material-handling equipment, ladders, 
+lifts, electrical meters and personal protective equipment (PPE). The detector system groups will provide any special equipment to check out or debug the power and read-out chain of the detectors. The detector groups will also provide system experts at the far site to check out the detector systems before and after installation. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Far Detector commissioning}
+\label{fd:install:commissioning}
+
+The detector installation and commissioning activities will be staged such that both TPCs can be tested cold while one cryostat still remains available as a potential storage vessel in case a repair is needed. to the other and back again, if necessary, to allow access for a repair. Once both TPCs are known to work properly at LAr temperature, the second fill will take place. 
+
+Commissioning Sequence
+
+The commissioning sequence, illustrated in Figure~\ref{fig:tpc-install-commissioning-seq}, will start with the installation of the TPC into cryostat 1 (installed on the north side). During this time, the leak testing and cleaning of cryostat 2 will be completed and, 
+where possible, the setup for TPC installation will begin. After the TPC is completely installed in cryostat 1, its purge and cool-down can begin. These processes are described in Section ?. Filling the cryostat with room-
+temperature gaseous Ar, injected from the bottom in order to displace the air upward through the top ports. 
+
+Following the purge and cool-down, the LAr fill of cryostat 1 will take approximately two months, assuming continuous LAr deliveries. LAr purification will begin when the liquid level is high enough to start the recirculation 
+pumps. The commissioning of the cryogenics system can also begin at this point, but its full commissioning will require a fully loaded cryostat. In-vessel purity monitors will operate during this time. 
+
+When the cryostat is full with LAr, the TPC will undergo testing for approximately one month to establish that the TPC will be able to achieve the tracking requirements and to confirm that no further access will be needed to the 
+cryostat and TPC. Additional testing will occur after the other cryostat is filled and is thus no longer available as a storage vessel. 
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[width=\textwidth]{}
+\caption{Startup and Commissioning Sequence} 
+\label{fig:tpc-install-commissioning-seq}
+\end{figure}
+
+Installation of the TPC in cryostat 2 will begin during the LAr fill of cryostat 1. After TPC installation and electronics testing, the purging and cooling for cryostat 2 can proceed. The LAr from cryostat 1 will be 
+transferred to cryostat 2, and once it is full, its TPC will undergo a month of initial testing. During this time, cryostat 1 will be maintained cold via continuous circulation of gaseous Ar. After it is established that sfully and 
+no further access will be required, cryostat 1 will be refilled with LAr and begin a five-month commissioning period. Testing during the commissioning period will demonstrate that the detector performance parameters for CD-4 have been achieved. 
+
+This sequence provides for a continuous flow of work and optimizes the use of the crews that will install the detectors and maintain the cryogenics systems. The operations crew is required from the start of the purge and 
+cool down of the first cryostat through the commissioning phase. possible but these in general will require breaks in the work for the installation crew and a longer duration for the work of the operations crew. The cost/risk 
+management benefit of other sequences will be evaluated as more experience is gained with the detector systems. 
+
+Several opportunities for system checkout arise throughout the detector installation, startup and commissioning phases as illustrated in Figure~\ref{fig:tpc-install-checkout-duration}. Since the full DAQ system will be operational at the start of TPC installation, a 
+full suite of tests can be made within the HV operating limits. 
+
+\begin{figure}[htbp]
+\centering
+%\includegraphics[width=\textwidth]{}
+\caption[Checkout of the detector systems, durations]{Several opportunities exist for checkout of the detector systems as the installation and startup progresses. The approximate durations are listed with each opportunity.} 
+\label{fig:tpc-install-checkout-duration}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{TPC installation (details of steps) (Fowler)}
+\label{fd:install:Argon receipt (Fowler)}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Detector startup (including sloshing) (Fowler)}
+\label{fd:install:startup}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Testing (Fowler)}
+\label{fd:install:testing}
+
+After delivery to the Far Site and before installation, the following tests will be performed on the TPCs: 
+\begin{itemize}
+\item The wires of the APA will be visually inspected for breakage or sagging. 
+\item The leakage current will be measured on the APA wire bias terminals. 
+\item A DAQ station will be connected to the APA cables to run electronics calibration to identify bad channel/wire connections. 
+\item The CPA and field cages will be visually inspected. The resistance will be measured between the frame and the bias electrodes. 
+\item The integrity of the resistors and the resistance between the field-cage strips will be measured. 
+\end{itemize}
+
+These tests will be repeated and the mechanical connections will be checked after the APA and CPA are installed in a cryostat and the field cage is connected. The resistance between the field cage and the APA will be measured, 
+and any individual broken or sagging APA wires will be removed. Wire integrity will be confirmed by measuring the Equivalent Noise Charge (ENC) of each electronics channel and comparing it with the expected noise for a 
+properly connected wire. input capacitance of 240 pF to the front-end amplifier, resulting in an ENC at room temperature of 1,100 electrons. The wire-integrity test also ensures that coherent noise sources, e.g., a 
+mechanical connection between the detector ground and the Ufer ground, are discovered promptly. As the TPC installation progresses, periodic electrical testing will continue on previously installed panels to ensure the wire 
+and electronics integrity and the collective noise performance. Error budgeting, regular noise monitoring and mitigation will ensure that the TPC reaches and maintains the required noise performance before the cryostat is 
+cooled down. 
+
+After cool-down and during LAr filling the electronics and wire integrity will be tested to ensure that no damage occurred during the temperature drop. Once the fill is complete, the TPC can be tested at full high voltage for the 
+first time. The electronics testing at this point will be relatively quick, however, a demonstration that the TPC is fully operational, i.e., observation of tracks in each drift cell, requires achieving sufficient electron lifetimes in the 
+LAr, which may take some time. Information from operation of the 35-ton prototype (Section ?) is expected to inform and confirm the simulations and to help estimate the time required to achieve sufficient LAr purity for testing operations. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{ES\&H (Howell)}
+\label{fd:install:esh}
+
+Careful consideration for ES\&H will be demonstrated in the planning and execution of the installation and commissioning. Safety professionals will be involved in all phases. Hazards of note for the TPC installation 
+include work at elevated heights and work in the confined space of the cryostat. During the detector installation no atmospheric hazards are expected inside the cryostat, thus for normal TPC installation work the cryostat 
+should not require any special access permits. Procedures for access and egress will be prepared that include sign-in and sign-out for cryostat entry and for two-person work. Communication equipment will be available that 
+works within the cryostat and between the interior and exterior of the cryostat. Emergency response procedures will be developed that include provisions for evacuation and rescue from the cryostat. Temporary ventilation and 
+light systems will include air monitoring and high-sensitivity smoke detection. Crane operation and operator certification methods will be established. In general the detector installation operations are such that most of the installation tasks will involve preparing a written hazard analysis. 
