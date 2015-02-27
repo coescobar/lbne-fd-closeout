@@ -153,7 +153,7 @@ a high-order anti-aliasing filter with adjustable time
 constant (peaking time 0.5, 1, 2, and 3 $\mathrm{\mu}$s),
 an option to enable AC coupling,
 and a baseline adjustment for operation with either the collecting or the non-collecting wires.
-The 16-channel FE ASICs then transmit the shaped pulse to a 12-channel 12-bit 2~MS/s ADC ASIC.
+The 16-channel FE ASICs then transmit the shaped pulse to a 16-channel 12-bit 2~MS/s ADC ASIC.
 Shared among the 16 channels are the bias circuits, programming registers,
 a temperature monitor, an 8:1 Mux,
 an analog buffer for signal monitoring, and the digital interface.
@@ -227,7 +227,7 @@ These design guidelines also provide information for designing test conditions t
 deterioration mechanism and to extrapolate from accelerated deterioration rates, 
 measured under stressed conditions within practical times, to the ultimate lifetime under normal operation.
 
-A monitor of the impact ionization is the bulk current, which reaches a maximum at $V_DS = V_DD$ and at $V_GS = 0.5 V_DD$. 
+A monitor of the impact ionization is the bulk current, which reaches a maximum at $V_{DS} = V_{DD}$ and at $V_{GS} = 0.5 V_{DD}$. 
 When operating constantly in this condition at room temperature, a properly designed device 
 will typically have a lifetime (defined as a 10\% degradation in $g_m$) of about 10~years. 
 The bulk current (i.e., the impact ionization) increases by roughly a factor of four from 300~K to 77~K 
@@ -236,10 +236,10 @@ a proportionately shorter useful life at cryogenic temperature. As stated above,
 the required lifetime at cryogenic temperatures, design guidelines must be modified for both analog 
 and digital circuits. For analog circuits, this is done by operating the devices at moderate-to-low 
 drain current densities, where impact ionization becomes negligible. For digital circuits, 
-operating the devices with reduced $V_DD$ (about 20\%) and using non-minimum channel length L, 
+operating the devices with reduced $V_{DD}$ (about 20\%) and using non-minimum channel length L, 
 which is easily accommodated since at cryogenic temperature the speed of the digital circuit increases, 
 compensating for the increased L. These guidelines will be verified with accelerated aging tests, 
-at increasing values of $V_DD$, on dedicated structures. Such tests also will be conducted on 
+at increasing values of $V_{DD}$, on dedicated structures. Such tests also will be conducted on 
 prototype samples throughout the development process to verify the long-term reliability of the final ASICs.
 
 %
@@ -374,7 +374,7 @@ each of these feedthroughs will serve the bias/power/digital IO needs of two APA
 \label{fig:ce_feedthrough}
 \end{figure}
 
-There are two types of low-voltage power supplies:
+There are two types of power supplies:
 TPC wire-bias voltages and low-voltage DC power to the readout electronics.
 A single type of feedthrough will handle the signals, supply voltages, and control lines.
 All cables inside the cryostat will be copper.
