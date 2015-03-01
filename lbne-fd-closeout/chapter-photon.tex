@@ -193,7 +193,7 @@ address this reduction is to populate the PD system with half-length
 paddles. Of course this leads to an increase in the number of readout
 channels. While it may be possible to combine readout channels to
 mitigate the increase in overall number a more desirable soultion
-would be to address the attenuaton legth issue.   
+would be to address the attenuaton length issue.   
 
 To mitigate the reduced attenuation length of acrylic and polystyrene
 that have been either doped with or coated with TPB the CSU group has
@@ -203,9 +203,9 @@ thin TPB coated acrylic radiator located in front of a close packed
 array of WLS fibers. Figure~\ref{fiber_bundle} is a photograph of the
 fiber-bundle prototype. 
 
-\begin{figure}[h]
+\begin{figure}[hp!]
   \centering
-  \includegraphics[width=.6\columnwidth]{fiber_bundle_1.png}
+  \includegraphics[width=.4\columnwidth]{fiber_bundle_1.png}
 \caption{Photograph of fiber-bundle PD prototype (early 1-sided
   version). The thin TPB-coated radiator is mounted on top of the
   prototype in the image.}
@@ -213,24 +213,64 @@ fiber-bundle prototype.
 \end{figure}
 
 The VUV photons are incident on the TPB-coated plastic radiator and
-roughly ½ of the photons converted in the radiator are incident on the
-bundle of fibers, which are directed onto SiPMs at one end. The Y11
-fiber (from Kuraray ) have mean absorption and emission wavelengths of
-about 440 nm and 480 nm respectively.  The attenuation length of the
-Y11 fibers is given to be greater than 3.5 m at the mean emission
-wavelength, which allows production of full-scale (2.2 m length)
-photon detector paddles.  
+roughly half of the photons converted in the radiator are incident on
+the bundle fiber bundle. The photons in the Y11 fiber are then which
+are directed onto SiPMs at one end. The Y11 fiber (from Kuraray ) have
+mean absorption and emission wavelengths of about 440 nm and 480 nm
+respectively.  The attenuation length of the Y11 fibers is given to be
+greater than 3.5 m at the mean emission wavelength, which allows
+production of full-scale (2.2 m length) photon detector paddles.
 
-Another benefit of this design is that the fibers could be arranged
-into two rows with each row of fibers collected onto individual
-SiPMs. If back-to-back reflectors were to be inserted between the rows
-of fibers each row would then face into different TPC cells allowing
-additional information to be used in the disambiguation of the TPC
-signals coming from wire wrapping on the APA frames. A further benefit
-of the design could be compatibility with concepts where the walls of
-the detector are covered with TPB coated material shifting the VUV
-photon to blue and then the WS-fiber can capture the emitted light.
+First prototypes of this design utilized two rows of fibers with a
+reflecter behind the doubled row to redirect the ~400~nm photons back
+through the two rows if they weren't absorbed on the first pass
+through. Based on data taken at the CSU Cryogenic Detector Development
+Facility (CDDF) and the Fall 2014 FNAL Tallbo test, only a single row
+design could be considered - and is currently under development. Data
+taken at both tests showed that the front row of fibers collected
+twice as much light as the back row of fibers. The current design
+utilizes teo single rows of fibers back-to-back with layers of Tyvek
+diffuse reflector in between.
 
+Another benefit of this design is that an arragement with back-to-back
+rows of fibers separated by an opaque relector arranged would then
+face into different TPC cells allowing additional information to be
+used in the disambiguation of the TPC signals coming from wire
+wrapping on the APA frames. A further benefit of the design could be
+compatibility with concepts where the walls of the detector are
+covered with TPB coated material shifting the VUV photon to blue and
+then the WS-fiber can capture the emitted light. Further study is
+required to determine the effect of these enhancements on physics
+reach of the detector. 
+
+To fully exploit this approach several design optimizations need to be
+be examined including the following:
+
+\begin{itemize}
+
+\item{TPB coating thickness on thin radiator}
+
+\item{Double-ended readout. If the fibers are readout out from both
+  ends and the corresponding channels are ganged onto one readout
+  channel an increase in channel output can be obtained without
+  significant cost.}
+
+\item{Use of custom doped fibers to best match the QE response of the
+  SiPMs and the emission sepctrum of the TPB.}
+
+\item{Remove the radiator and coat the TPB directly onto the outer
+  fiber cladding of the Y11 fibers. Since the fibers are double-clad
+  it may be the case that the attenuation lenth of the fibers is not
+  altered byt the TPB application. The geometry of the close-packed
+  fiber row may lead to increased photon (400~nm) collection}
+
+\end{itemize}
+
+The cost of this design is comparable to that of the bar-based design
+but is slightly more complex to fabricate - although the Y11 fibers
+are commercially available which is an attractive feature. The
+engineering aspects of the design will be discussed in the approariate
+section of this chapter. 
 
 \section{SiPM}
 
@@ -324,8 +364,10 @@ above, the following ideas are being pursued:
   performance, reliability, mechanical mounting, etc.) would have to
   be considered.
 
-\item Use of multi-conductor, individually shielded pair cable.  A candidate cable containing four individually-shielded twisted pairs has been 
-identified and tests are in progress.  The cable is in Teflon jacket, which should be acceptable for use in LAr.
+\item Use of multi-conductor, individually shielded pair cable.  A
+  candidate cable containing four individually-shielded twisted pairs
+  has been identified and tests are in progress.  The cable is in
+  Teflon jacket, which should be acceptable for use in LAr.
 
 \item Use of mass-terminated connectors.  Several candidate connectors
   for use with the cable described above are being pursued.
