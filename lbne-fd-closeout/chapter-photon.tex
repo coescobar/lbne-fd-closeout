@@ -3,17 +3,18 @@
 \section{Introduction}
 
 Liquid argon is an excellent scintillating medium. With an average
-energy needed to produce a photon of 19.5 eV (at zero field) a typical
-1 MeV particle will generate 40,000 photons with 128 nm wavelength. At
-higher fields this will be reduced but at 500 V/cm the yield is still
-about $\sim$20,000 photons per MeV. Roughly 1/3 of the photons are
-promptly emitted at around 6 ns and while the rest are are emitted
-with a delay of 1100-1600 ns. LAr is highly transparent to the 128 VUV
-photons with a Rayleigh scattering length and absorption length of 95
-cm and >200 cm respectively. The relatively large light yield makes
-the scintillation process an excellent candidate for determination of
-$t_{0}$ for non-beam related events. Detection of the scintillation
-light may also be helpful in background rejection.
+energy needed to produce a photon of 19.5~eV (at zero field) a typical
+particle depositing 1~MeV in liquid argon will generate 40,000~photons
+with wavelength of 128~nm. At higher fields this will be reduced but
+at 500~V/cm the yield is still about $\sim$20,000~photons per
+MeV. Roughly 1/3 of the photons are promptly emitted after about 6~ns
+while the rest are are emitted with a delay of 1100-1600~ns. LAr
+is highly transparent to the 128~VUV photons with a Rayleigh
+scattering length and absorption length of 95~cm and >200~cm
+respectively. The relatively large light yield makes the scintillation
+process an excellent candidate for determination of $t_{0}$ for
+non-beam related events. Detection of the scintillation light may also
+be helpful in background rejection.
 
 \section{Requirements and Goals}
 
@@ -24,15 +25,17 @@ machine clock will provide a $t_{0}$ with roughly 10 $\mu$s
 resolution. Given that the electron drift is 1.6 mm/$\mu$s the
 uncertainty to the electron lifetime correction is small is the beam
 timing is used. The photon system can be useful in determining the
-$t_{0}$ of cosmic ray events and events from radiological decays. The
-impact of this on the detector performance needs to be determined, but
-it is not expected that the reduction in backgrounds for the
-oscillation program will introduce additional requirements to the
-photon system design.
+$t_{0}$ of cosmic ray events and events from radiological decays as
+well as giving a handle to the location of beam events in the LAr
+volume wuth respect to fiducial boundaries. The impact of the LAr
+scintillaiton light on the detector performance needs to be
+determined, but it is not expected that the reduction in backgrounds
+for the oscillation program will introduce additional requirements to
+the photon system design.
 
 \subsection{Proton decay and atmospheric physics}
 
-The photon detector system must provide the t0 for non-beam related
+The photon detector system must provide the t$_0$ for non-beam related
 physics channels if a correction for electron recombination during
 drift is to be applied. The requirements for electronics and hadronic
 energy resolution for the proton decay and the atmospheric neutrino
@@ -44,8 +47,8 @@ photon system must provide a $t_{0}$ for particles with >100 MeV with
 
 \subsection{Low-energy physics}
 
-Supernova events will produce neutrinos down to about $\sim$5
-MeV. Studies have estimated the momentum resolution for 5 MeV
+Supernova events will produce neutrinos down to about
+$\sim$5~MeV. Studies have estimated the momentum resolution for 5 MeV
 electrons to be 20\% using only TPC information and assuming a highly
 efficient trigger and an electron lifetime of 5 ms. The impact of
 various detector resolutions on the physics potential of LBNE has not
@@ -59,9 +62,88 @@ cost. At time of the start of final design a final decision as to the
 configuration will need to be made based on cost and added physics
 capability.
 
+\subsection{Required Performance}
+
+To achieve the physics goals in the previous section the performance
+of the photon detection system must be understood. The prototype
+readout electronics described in section~\ref{sec_elec} have been
+shown to detect the single p.e. signals associated with the late
+scintillation light but future versions may sacrifice this ability to
+mitigate high channel costs. It is assumed that the physics goals of
+the photon detection system will be met using on the prompt
+scintillation light.
+
+The performance, or overall photon collection efficiency, is given by
+the following, where it is assumed only prompt light is collected:
+
+\begin{equation}\label{eff_eqn}
+\frac{N_{pe}}{MeV} = N_{128}\cdot \epsilon_{geom} \cdot \epsilon_{E} \cdot
+\epsilon_{mesh} \cdot \epsilon_{conv} \cdot \epsilon_{capt}
+\epsilon_{tran} \cdot \epsilon_{QE} 
+\end{equation}
+
+The efficiencies leading to the overall number of photo-electrons
+collected by the photon detection system, $\frac{N_{pe}}{MeV}$, are given
+in table~\ref{Table-Eff}.
+
+\begin{table}[ht]
+  \begin{center}
+    \caption{Individual photon collection efficiencies.}
+    \label{Table-Eff}
+    \begin{tabular}{ c | l | c | l }
+      \hline
+      \hline
+      Factor & Description & Value & Comments  \\
+      \hline
+      $\epsilon_{geom}$ & geometric acceptance & 0.0036 & historical
+      average  \\
+      $\epsilon_{E}$ & field correction & 0.6 & 500~V/cm  \\
+      $\epsilon_{mesh}$ & TPC wire shadowing & .83 (30-150$^{\circ}$)
+      & falls off sharply~\cite{HimmelMesh}  \\
+      $\epsilon_{conv}$ & TPB conversion & 1 & see
+      ref.~\cite{bib:gehman}  \\
+      $\epsilon_{capt}$ & waveguide incident & 0.5 & about half
+      converted photons\\
+      &  & & travel into waveguide  \\
+      $\epsilon_{tran}$ & waveguide transmission & TBD  & prototype
+      dependent  \\
+     $\epsilon_{QE}$ & SiPM QE & .31  & SensL b-series  \\
+      \hline
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Using equation~\ref{eff_eqn} it is seen that to detect a
+2~p.e. signal, likely to be discriminated from noise, the transport
+efficiency of 1.2\%. Of course this value is very position dependent
+as the geometric acceptance, wire shadowing, and transport corrections
+all depend on the location of the event. Figure~\ref{photon_map}
+shows the probability of (?) MeV energy deposition neing detected in
+the photon detectors. 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.4\columnwidth]{35t_map.jpg}
+\caption{Photon map giving the probability of photon being detected in
+  the photon detectors when depositing energy at map location. (need
+  general TPC cell map with better descritpion)}
+\label{photon_map}
+\end{figure}
+
+The TPC wire mesh shadowing is also quite location dependent as photon
+angles, relative to the wire plane, lead to rapid loss in transmission
+below 30$^{\circ}$ and greater than 150$^{\circ}$. Lastly the photon
+detector paddles themselves can have position dependent response to
+incident photons due to the attenuation length of the waveguide. The
+photon detector simulation, which is nearing stable operation, will be
+able to better estimate the efficiencies coming from geometric
+acceptance correction.
+
+
 \subsection{General Considerations}
-In the event that larger photon collection efficiencies can be
-achieved then it is possible to improve the energy resolution of the
+In the event that higher photon collection efficiencies can be
+achieved it should be possible to improve the energy resolution of the
 detector by adding the photon yield to the electron yield information.
 However this requires several orders of improvement in light
 collection efficiency so it is beyond the scope of present designed.
@@ -74,7 +156,6 @@ materials coupled to silicon photomultipliers (SiPMs). The reference
 design~\ref{sec_bars} utilizes a coated acrylic waveguide coupled to
 SiPMs. Alternatate designs, desribed in the following section, have
 been developed to optimize coverage, cost, and attenuation length. 
-
 
 \subsection{Cast or Bulk doped acrylic bars}
 \label{sec_bars}
@@ -203,7 +284,7 @@ thin TPB coated acrylic radiator located in front of a close packed
 array of WLS fibers. Figure~\ref{fiber_bundle} is a photograph of the
 fiber-bundle prototype. 
 
-\begin{figure}[hp!]
+\begin{figure}[h!]
   \centering
   \includegraphics[width=.4\columnwidth]{fiber_bundle_1.png}
 \caption{Photograph of fiber-bundle PD prototype (early 1-sided
