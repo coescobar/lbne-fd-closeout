@@ -114,72 +114,10 @@ The major conclusions of the studies to-date are summarized here. No material ha
 
 These results are taken into account in the design of both MicroBooNE and LAr-FD. For LBNE they have been cast as detector requirements. The MTS will continue to be used by MicroBooNE and LBNE to test detector materials such as cables that will reside in the ullage.
 
-\subsection{Electronics Test Stand}
-The Electronics Test Stand is also installed in the Proton Assembly Building at Fermilab. It consists of a cryostat, served by the same argon source as the Materials Test System, and a TPC with a 50-cm vertical drift terminating in three planes of 50 wires each, arranged at 120 degrees. Figure~\ref{TPC} shows the TPC being inserted into the cryostat.Two sets of small scintillation counters outside the cryostat are used to trigger the system on cosmic rays. The data from this system provide a crucial check of simulations of the electron drift and the signals induced on the wires. 
-
-\begin{figure}
-%\begin{center}
-%\vspace{-1.2in}
-%\scalebox{0.38}
-\centering 
-{\includegraphics[width=0.38\textwidth]{TPC_into_Bo}}
-%\end{center}
-%\vspace{-0.25in}
-\caption{Electronics test TPC insertion into cryostat%, Bo
-}
-\label{TPC}
-\end{figure}
-
-The front-end electronics and the crucial shaping filters for the ArgoNeuT experiment were developed on this system from the sort of data shown in Figure~\ref{BoData}. These data also led to the development of the FFT technique for reconstructing track hits. A hybrid pre-amplifier has been successfully tested in LAr and has demonstrated excellent noise performance. 
-
-The ASIC front-end amplifiers for LBNE will also be tested, providing assurance that bench measurements are reproducible in a functional TPC.
-
-\begin{figure}
-%\vspace{-1.0in}
-%\scalebox{0.5}
-\centering 
-{\includegraphics[width=0.9\textwidth]{BoEventNotated3}}
-%{\includegraphics[width=0.9\textwidth]{BoEventNotated}}
-%{\includegraphics{BoEventNotated}}
-%\vspace{-1.2in}
-\caption[Cosmic ray with a delta electron as seen in the Electronics Test Stand TPC]{A cosmic ray with a delta electron as seen in the Electronics Test Stand TPC. Note the different width of the shaded portions along the tracks in the left panels. These are due to the two shaping circuits being tested. 
-The readout scheme for MicroBooNE and LBNE uses digital signal processing and has minimal filtering before the ADC.}
-\label{BoData}
-\end{figure}
-
-
-\subsection{Liquid Argon Purity Demonstrator}
-\label{sec:lapd}
-The Liquid Argon Purity Demonstrator (LAPD) is a significant-scale system, 
-30~tons, consisting of a complete cryogenic recirculation system and a vessel capable of achieving large-drift LArTPC purity specifications without initial evacuation.
-While large cryogenic systems have been built by U.S. groups,  
-this is the first with a purification system intended specifically for an LArTPC.
-As such it is providing valuable experience and data for the construction of future systems. Figure~\ref{LAPD} shows the filtration system and the LAPD tank in place at Fermilab's PC-4 facility.
-
-\begin{figure}
-%\begin{center}
-%\vspace{-0.8in}
-%\scalebox{0.2}
-\centering 
-{\includegraphics[width=0.7\textwidth]{LAPD_All}}
-%{\includegraphics{LAPD_All}}
-%\end{center}
-\caption{Liquid Argon Purity Demonstration filtration and tank at the PC-4 facility}
-\label{LAPD}
-\end{figure}
-
-The tank is instrumented with several systems. An array of sniffers measures the oxygen concentration at six heights during the gas-purge; a system of temperature monitors can be lowered and raised inside the tank to measure temperature gradients; an ICARUS-style purity monitor is deployed on the input line to the tank; and four ICARUS-style purity monitors measure electron-drift lifetime within the tank. 
-
-Analytic instrumentation includes a water meter and an oxygen meter, both with ppb sensitivity, and a nitrogen meter with 10-ppb sensitivity, installed for the purpose of taking measurements throughout the system. The scheme for 
-displacing the air (at atmospheric pressure) in  the cryostat interior volume by introducing and purifying LAr consists of several steps: a gas purge with argon,  gas recirculation with purification, an LAr fill while venting (to drive out any contaminants remaining in the gas) and recirculation of the LAr through the purification system. 
-
-The primary motivation of LAPD is to demonstrate an electron-drift lifetime of several milliseconds, which has now been accomplished. LAPD began purging with argon gas in September 2011. The tank was filled with LAr to the 40\% level on November 1. A drift electron lifetime of 3~ms was achieved in late November after some re-work was done on the filter material containment system. The filters became saturated (with water) in mid December, were regenerated and were returned to service in late January 2012. The drift-electron lifetime reached 3~ms after four days of operation and has continued to improve as of February 2.
-
-Now that high purity has been achieved, the effect of varying the conditions (gas and/or liquid recirculation, different recirculation rates, no recirculation) can be investigated. The size of the tank allows us to use the measurements from the temperature-monitor system to check the accuracy of ANSYS simulations of the temperature profile within the tank. This will check the simulations and should confirm the small temperature gradients and resulting low velocities of the convection flows predicted for large LArTPCs.
-
-A problem was found with the building electrical system in early March 2012 that necessitated ending the planned suite of LAPD tests prematurely. The current plan is to perform additional re-work on the filter material containment system over the next few months, followed by a second phase of testing. At this time, LAPD management and operations will be transferred to LBNE to support the 35-ton membrane-cryostat prototype described in Section~\ref{35tonprototype}.
 
 \subsection{Photon Detection R\&D}
+
+\fixme{Move to Photon chapter?}
 
 The R\&D program  for Photon Detection is based on a promising, new, cost-effective scheme for light collection in LArTPCs as described in a NIM article by Bugel et al~\cite{lightGuides}. The design is based upon lightguides fabricated from extruded or cast acrylic and coated with a wavelength-shifter doped skin.  Multiple acrylic bars are bent to guide light adiabatically to a single cryogenic PMT. Prototypes of the basic detector elements have been shown to perform well.  These lightguides have a thinner profile than the usual TPB-coated PMT-based system, occupying less space in an LAr vessel and resulting in more fiducial volume.  Another advantage of this system is that the bars are inexpensive to produce. The most convenient place for the paddles is between the wire planes that wrap around the APAs.
 
@@ -194,6 +132,8 @@ A significant effort has been focused on minimizing the dead space between detec
 the fiducial versus total LAr-volume ratio. The APA reference design accomplishes this goal but requires making $\sim$2 million high-quality wire terminations. The wire-termination scheme used by ICARUS has proven to be very reliable but it is too labor-intensive to fabricate for a million-channel detector system. We have adopted the wire-solder + wire-epoxy termination scheme that has been used for decades on drift chambers and proportional wire chambers to mount Cu-Be wires. The termination scheme was used to terminate 2.5 million  anode wires in the CMS end-cap muon system. Cu-Be wires have excellent mechanical properties and the advantage of low resistance compared to stainless steel. A study is currently underway within the LAr-FD subproject to identify the optimum wire-bonding parameters. The focus is currently on finding a commercial epoxy that optimizes the qualities of bond strength, cure time and low-temperature operation.
 
  \subsection{Electronics Development}
+ \fixme{Mark C asks: remove, or move to Electronics section?}
+ 
  The work to-date on cold electronics has established that no show-stoppers exist. The remaining activities outlined here concern performance optimization of the CMOS ASICs, the evaluation of several widely available CMOS technologies, and the development of readout architectures appropriate and timely for various scenarios of very large detectors.
 
 \subsubsection{CMOS Transistors: Lifetime Verification and Technology Evaluation}
@@ -259,38 +199,6 @@ A 3-m $\times$ 3-m wall panel shown in Figure~\ref{3panel} was constructed at Fe
 \end{figure}
 
 
-\subsection {One-kiloton Engineering Prototype: LAr1}
-
-\begin{editornote}
-Editor's Note: The far detector prototyping plan known as LAr1 has been replaced by a plan to build and test a prototype with full-size TPC components at CERN.
-\end{editornote}
-
-
-The last major project of the development program is the construction of a 1-kton cryostat, called LAr1, to be equipped with %proposed 
-the same TPC and electronics as LAr-FD.  The proposed cryostat will reside at Fermilab's D-Zero Assembly Hall using the LAr and LN infrastructure already existing for the D-Zero detector, which is no longer operating.  The end of the Tevatron era %, the ability to use an existing building and existing cryogenic processes will 
-allows LBNE to make immediate use of %the facility 
-this existing building and the existing cryogenic processes it houses. % to build a prototype. 
- This prototype will serve to % incorporate and 
-test all the major components of LAr-FD, in particular:
-
-\begin{itemize}
-%\noindent
-\item Gain further experience in cryostat construction and procurement
-\item Exercise the assembly and testing procedures for all the individual components
-\item Test the integration features of the detector design including:
-\begin{itemize}
-\item the TPC supports
-\item the cold electronics, signal feedthroughs and power feedthroughs
-\item the grounding scheme and control of electrical noise
-\item the purification system
-\item the cryogenic system and the cryogenic control system
-\end{itemize}
-\item  Exercise the installation procedure
-\end{itemize}
-
-The means of demonstrating that these goals have been met is via the acquisition and reconstruction of a sample of through-going cosmic rays. LAr1 is being managed as a semi-independent subproject. See Chapter~\ref{ch:LAr1} for further details. The subproject was subjected to a CD-1-style technical, cost, schedule and management review in August 2011.  LAr1 construction could be completed in early 2014 if both funding and resources are available.
-
-An attractive extension of the LAr1 goals would be to measure the cosmic-ray spallation background rates expected in LAr-FD. A sample of cosmic-ray spallation interactions in the LAr1 volume could be acquired in a relatively short period of time. Charged kaons associated with the interaction could be identified and their momentum measured. Charged kaons produced by K$^o$ charge-exchange could also be identified and their rate and angular distribution measured. 
 
 \subsection{Physics Experiments with Associated Detector-Development Goals}
 Two projects, ArgoNeuT and MicroBooNE,  which are physics experiments in their own right, are also contributing to the development of the LBNE experiment. Their most important role is in providing data and motivation for the development of event reconstruction and indentification software.
