@@ -227,7 +227,7 @@ After the grid plane wires are placed on the APA, and fiberglass cover sheets pl
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{tpc_apa_module_corner.png}
-\caption[Closeup view of a partially assembled corner of an APA]{A close-up view of a partially assembled corner of an APA.  The wire boards and CR boards are shown but the “cold electronics boards”, for data acquisition, are not shown.  They mount on the electronics plate and connect electrically to the CR boards. }
+\caption[Closeup view of a partially assembled corner of an APA]{A close-up view of a partially assembled corner of an APA.  The wire boards and CR boards are shown but the ``cold electronics boards'', for data acquisition, are not shown.  They mount on the electronics plate and connect electrically to the CR boards. }
 \label{fig:tpc-APA-corner}
 \end{figure}
 
@@ -406,8 +406,6 @@ forming the field cage.  The TPC installation procedure
 is discussed in Chapter~\ref{ch:install}.
 
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{TPC Prototyping, Test and  Checkout}
 \label{sec:v5-tpc-checkout}
@@ -416,47 +414,40 @@ is discussed in Chapter~\ref{ch:install}.
 \subsection{TPC Prototyping}
 \label{sec:v5-tpc-checkout-prototype}
 
-Several prototype TPC modules will be constructed during the 
-design phase.  The initial prototypes will be fraction scale or 
-partial models of the APA and CPA.  The CPA prototype will be used 
-to evaluate the wire-mesh tension and field-shaping electrode 
-attachment techniques.   The APA prototype will be used to study 
-the placement of the wire-wrapping boards and wire-support structures.  
-It will also be used to develop the prototype winding machines.  
-The prototypes will undergo numerous thermal cycles down to 
-liquid-nitrogen temperature to test the integrity of the wire-to-board
-and board-to-frame bonds.
+Several prototype TPC modules were constructed during the design phase. The initial prototypes were fractional scale or partial models of the APA and CPA. The CPA prototype was used to evaluate field-shaping electrode attachment techniques. The APA prototype that was used to study the placement of the wire-wrapping boards and wire-support structures is shown in Fig~\ref{fig:tpc-apa-40percent}. It was also used to develop the prototype winding machines. The prototypes were subjected to numerous thermal cycles down to liquid-nitrogen temperature to test the integrity of the wire-to-board and board-to-frame bonds. 
 
-The second set of prototypes will be scale models of the 
-APA and CPA.  They will be used to validate the designs and 
-to evaluate production procedures.  Prototype front-end electronics 
-boards are expected to be available at this stage.  This TPC will be assembled in the 35-t prototype cryostat, expected to be operational in 2015.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{tpc_apa_40percent.jpg}
+\caption{APA prototype that was used to study the support structure and wire wrapping}
+\label{fig:tpc-apa-40percent}
+\end{figure}
 
-A prototype that is proposed to go into the CERN neutrino beamline requires three full-size APAs with fully instrumented readout electronics, six full-size CPAs, and complete field-cage coverage.  The TPC will be constructed using identical APAs, CPAs and field-cage panels as designed for the LAr-FD.  Additional features will be installed to ensure proper TPC operation given the half-height cryostat configuration. The construction and assembly of all TPC mechanical components will use the same materials and techniques as designed for LAr-FD, with the exception of a reduced degree of automation that will be used to wire APAs for the LAr-FD.
 
-A complete set of cold electronics will be installed on the APAs.  The electronics components will closely resemble those designed for the LAr-FD. All key features of the LAr-FD electronics chain, including preamp, shaper, ADC, digital buffer, zero suppression and multiplexing will be implemented.  Some  electronics  may be in prototype or functional-equivalent form.
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{tpc_35ton_trial_assembly.jpg}
+\caption{Trial assembly of the APAs, CPAs and field cage panels into the 35-t TPC.}
+\label{fig:tpc-35ton-trial}
+\end{figure}
+
+
+The second set of prototypes are scale models of the APA and CPA. They are being used to validate the designs and to evaluate production procedures. Prototype front-end electronics boards for the scale APAs are currently being tested. Figure~\ref{fig:tpc-35ton-trial} shows the trial assembly of these functional prototypes into the TPC that will be installed in the 35 ton prototype cryostat. This TPC is expected to be operational in 2015.
+
+A TPC prototype that is proposed to go into the CERN neutrino beamline requires three full-size APAs with fully instrumented readout electronics, six full-size CPAs, and complete field-cage coverage. The TPC will be constructed using identical APAs, CPAs and field-cage panels as designed for the LAr-FD. Additional features will be installed to ensure proper TPC operation given the half-height cryostat configuration. The construction and assembly of all TPC mechanical components will use the same materials and techniques as designed for LAr-FD, with the exception of a reduced degree of automation than will be used to wire APAs for the LAr-FD. 
+
+A complete set of cold electronics will be installed on the APAs. The electronics components will closely resemble those designed for the LAr-FD. All key features of the LAr-FD electronics chain, including preamp, shaper, ADC, digital buffer, zero suppression and multiplexing will be implemented. Some electronics may be in prototype or functional-equivalent form.
+
 
 %%%%%%%%%%%%%%%%
 \subsection{Assembly Testing}
 \label{sec:v5-tpc-checkout-test}
 
-The front-end readout boards will be thoroughly tested.
+The components and the completed APAs will undergo thorough testings to ensure they meet the spec:
 \begin{itemize}
-\item A small number of the ASICs will undergo a complete suite 
-of tests, including thermal cycling to determine the batch yield.
-\item If the yield is high ($>$ 95\%), all ASICs will be mounted 
-on the front-end boards.  Tests will be performed on each board  
-and bad chips replaced as needed.
-\item If the yield is not high, an automated test fixture will be 
-fabricated to validate every ASIC chip before mounting on the 
-readout boards.  Board-level tests after mounting the
-ASICs will be conducted.
-\item The fully assembled front-end boards will be thermally cycled multiple times while connected to a simple DAQ system to ensure reliable operation.
-\item The wire-carrier boards will be thermally cycled and HV stressed.
-\end{itemize}
 
-The APAs will also undergo testing.
-\begin{itemize}
+\item The wire-carrier boards will be thermally cycled and HV stressed to check for excess leakage current.
+\item The CR boards will be fully tested at the rated bias voltages of the capacitors at warm and cold.  Components showing excess leakage current at bias will be replaced.
 \item The tension and electrical continuity of each wire will be 
 measured after the plane of wires is bonded to the frame.
 \item After the front-end electronics boards have been installed on 
@@ -471,43 +462,23 @@ results will be investigated and remediated.
 \end{itemize}
 
 For the CPAs, a cool-down stress test will be performed on each completed 
-CPA in a LN2 environment.  After warming up, 
- the tension of the wire mesh will be checked.
-
+CPA in a LN$_2$ environment to verify its flatness at cryogenic temperature. If resistive surfaces are used on the cathode, its contact resistivity to the outer metal frame at warm and cold will be verified to be within spec. 
 
 For the field cages,  the resistance will be measured along each copper strip,  
 and between strip pairs.  The resistance between two 
-strips should exceed 1 G$\Omega$, without the resistive divider. 
+strips should exceed 50 G$\Omega$, without the resistive divider.  All resistor will be thermal cycled before installing on the divider.  Any resistor with resistance beyond spec in the cold will be rejected. All varistor will be also be thermal cycled, and their leakage current at nominal operating voltage as well as their clamping voltages at cold verified.  High voltage tests may be performed on all field cage assembles to identify manufacturing defects on the surfaces. 
 
 %%%%%%%%%%%%%%%%
 \subsection{Checkout } 
 \label{sec:v5-tpc-checkout-checkout}
 
-After passing the tests at the assembly level, the APAs will be 
-put into storage, and later transported to the LBNE Far Site.  
-Prior to installation, another round of electronic calibration will be 
-performed on the APAs to validate their acceptable status.  
+After passing the tests at the assembly level, the APAs will be put into storage, and later transported to the LBNE Far Site. Prior to installation, another round of electronic calibration will be performed on the APAs to validate their acceptable status. 
 
-During installation, the DAQ system will be running continuously.  As soon 
-as each stack of APAs is connected to the pre-routed cables, 
-a suite of calibration runs will be performed to validate that all connections have
-been made properly.  Repair or replacement at this stage will 
-still be straightforward.
+During installation, the DAQ system will be running continuously. As soon as each stack of APAs is connected to the pre-routed cables, a suite of calibration runs will be performed to validate that all connections have been made properly. Repair or replacement at this stage will still be straightforward. 
 
-After the entire TPC is assembled, a system-wide calibration 
-will be performed at room temperature and again at cryogenic 
-temperature in argon gas.  Repair or replacement would
-require partial disassembly of the TPC and should be avoided 
-unless absolutely necessary.  
+After the entire TPC is assembled, a system-wide calibration will be performed at room temperature and again at cryogenic temperature in argon gas. Repair or replacement would require partial disassembly of the TPC and should be avoided unless absolutely necessary. 
 
-The responsibility and authority for the design, installation 
-and use of the detector quiet-power distribution and 
-detector-grounding system is held by the  
-subproject electrical engineer. 
-This engineer 
-has oversight responsibility for all electrical and electronics 
-design and installation tasks, including all attachments to the detector 
-that create an electrical connection. 
+The responsibility and authority for the design, installation and use of the detector quiet-power distribution and detector-grounding system is held by the subproject electrical engineer. This engineer has oversight responsibility for all electrical and electronics design and installation tasks, including all attachments to the detector that create an electrical connection. 
 
 
 
