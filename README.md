@@ -24,6 +24,8 @@ Releases
 
 Fixed releases of this document with PDFs are available from the [release area](https://github.com/LBNE/lbne-fd-closeout/releases) as zip or tar.gz archives.
 
+A [shareLaTeX autobuilder](https://www.sharelatex.com/github/repos/LBNE/lbne-fd-closeout) is updated on each pushed commit.
+
 Getting started
 ---
 
