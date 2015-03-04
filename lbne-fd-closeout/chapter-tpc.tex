@@ -1,24 +1,23 @@
 \chapter{Time Projection Chamber}
 \label{ch:tpc}
 
-The scope of the Time Projection Chamber (TPC) subsystem includes the design, procurement, fabrication, testing, delivery and installation of the mechanical components of the TPC: 
+The scope of the Time Projection Chamber (TPC) subsystem includes the design, procurement, fabrication, testing, delivery and installation of the mechanical and high voltage components of the TPC: 
 \begin{itemize}
 \item anode plane assemblies 
 \item cathode plane assemblies
 \item field cage
+\item feedthroughs, filtering networks, cables and power supplies for the cathode high voltage system
 \end{itemize}
-and of all the in-vessel electronics, signal and power cables, their feedthroughs, as well as the 
-low- and high-voltage power supplies feeding the electronics.  This chapter describes the reference design for the TPC that meets the required performance for charge collection in the LBNE liquid argon detector, LAr-FD.
+This chapter describes the reference design for the TPC that meets the required performance for charge collection in the LBNE liquid argon detector, LAr-FD.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
 The Time Projection Chamber (TPC) is the active detector element of LAr-FD. It is located inside the cryostat 
 vessel and is completely submerged in liquid argon at 89~K. The TPC consists of alternating anode plane assemblies (APAs) and cathode plane assemblies (CPAs), with field-cage panels enclosing the four open sides between the anode and cathode planes.
-A uniform electric field is created in volume between the anode and cathode planes. A charged particle traversing this volume leaves a trail of ionization.  The electrons drift toward the anode wire planes, inducing electric current signals in the front-end electronic circuits connected to the sensing wires.
+When proper bias voltages are applied to the APAs and CPAs, a uniform electric field is created in volume between the anode and cathode planes. A charged particle traversing this volume leaves a trail of ionization in the ultra pure liquid argon.  The electrons drift toward the anode wire planes, inducing electric current signals in the front-end electronic circuits connected to the sensing wires.  The current signal waveforms from all sensing wires are amplified and digitized by the front-end electronics, and transmitted to the data acquisition system outside of the cryostat
 
-TPC subsystem interfaces to the cryostat and cryogenic subsystem through the TPC mounting fixtures, 
-and it interfaces with the DAQ subsystem through the signal feedthroughs.
+The front-end mother boards and digital multiplexer boards from the Cold Electronics subsystem are directly mounted on the APAs as part of the APA assembly.  The Photon Detector are also mounted inside the APA's frame openings before the APAs are installed into the cryostat. The TPC subsystem also interfaces to the cryostat and cryogenic subsystem through the TPC mounting fixtures, and to the DAQ subsystem through the signal feedthroughs.  The installation of the TPC inside the cryostat is the responsibility of the Installation subsystem.
 
 \begin{figure}
 \centering
@@ -32,12 +31,12 @@ Its three rows of CPA planes interleaved with two rows of APA planes
 are oriented vertically, parallel to the beamline with the  
 electric field applied perpendicular to the planes.
 The maximum electron-drift distance between a cathode and an adjacent 
-anode is 3.4~m. Both the cathode and anode plane assemblies are 
-2.3~m wide and 6~m high. Two 6-m modules (either APA or CPA)  stack vertically to 
+anode is 3.4~m. The anode plane assemblies are 
+2.3~m wide and 6~m high. Two 6-m modules stack vertically to 
 instrument the 12~m active depth. In each row, 13~such stacks are placed 
 edge-to-edge 
-along the beam direction, forming the 30~m active length of the detector.
-Each cryostat houses a total of 52~APAs and 78~CPAs.
+along the beam direction, forming the 30~m active length of the detector.  Each CPA has the same width, but half the height ($\sim$3~m) as an APA for ease of assembly and transportation.  4 CPAs will be stacked vertically to form the full 12~m active height. 
+Each cryostat houses a total of 52~APAs and 156~CPAs.
 Each facing pair of cathode and anode rows are surrounded by a 
 ``field cage,'' assembled from panels of FR-4 sheets with parallel copper strips connected to resistive divider networks. 
 
@@ -48,11 +47,7 @@ The wires on the outermost plane are oriented vertically, and are not connected 
 At a nominal wire pitch (center-to-center separation) of 4.8~mm,
 the total number of readout channels in an APA is 2560, for a total of 133,120 in each cryostat.
  
-
-One cable bundle is planned for each APA to connect to the outside of the cryostat. The bundle will consist of wires for low-voltage power, wire-bias voltages, data out, clock in, digital control IO and an analog monitoring output. Redundant cables will be provided for many of these functions. The 52 cable bundles will be connected through 26 feedthroughs distributed on the roof of the cryostat. Additional feedthroughs will be required for redundant high-voltage connections to the CPAs. 
-
-
-
+As shown in Fig.~{\ref:tpc-wire-frame-xsect}, the readout electronics reside only along one narrow edge of an APA. During installation, 2 APAs are interconnected on their non-readout ends, leaving the readout ends completely outside of the TPC's active volume.  Cables from the bottom APAs can either routed through the hollow vertical APA frames, or down along the floor and up along a side wall of the cryostat.
 
 \begin{figure}[htpb]
 \centering
@@ -80,6 +75,11 @@ The requirements for the TPC can be found in the requirements documentation \cit
 \item Use only materials that are compatible with high-purity liquid argon
 
 \end{itemize}
+
+The TPC is comprised of several interconnected subsystems – APAs, CPAs, Field Cage, and High Voltage Feed-throughs. A system engineering design and development approach will be taken to ensure that the various subsystems are properly integrated and the system is designed end-to-end to meet performance requirements. This approach will be led by a system engineer that will ensure that interfaces are defined and managed, that requirements for each subsystem and the TPC as a whole are defined and understood, analyses are performed where needed, prototyping is performed to retire or mitigate risk, and that test plans meet verification and validation requirements. The most significant challenge for the TPC is the LAr cryogenic environment. The TPC architecture will handle the cryogenic thermal cycles, accommodate the cryostat roof motion, and mitigate potential microphonics noise generated by wire vibrations.
+
+The design approach will take inputs from several sources.  These sources include requirements from the scientific collaboration to ensure integrity of the physics data, studies of what has been successful in smaller scale TPC's, sharing of knowledge, ideas, and concepts with others in the LAr TPC community, and analysis and evaluation of the performance of the 35ton prototype.  These inputs will be distilled into functional requirements.  These functional requirements will be used to define alternative concepts or architectures for the TPC.  These concepts will drive preliminary requirements for the TPC interface with the cryostat and the conventional facilities.  They will also be used to define the preliminary interface requirements between the structural components and the modular subassemblies of the TPC.  These alternate concepts will be tested and analyzed as needed and reviewed with the physicists, conventional facilities, the cryostat manufacturer, and TPC engineers.  Based on analysis and feedback, the preferred concept will be further developed and detailed into final requirements and specifications for the physical internal and external interfaces.  These requirements and specifications will be clearly communicated to the responsible engineering groups.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Anode Plane Assemblies}
@@ -285,7 +285,7 @@ with panels of solid stainless steel sheets mounted between the from openings.  
 The impact of the square tube frame on the drift field near the cathode will be evaluated in the 35ton TPC study.  If necessary, we can attach strips of field shaping electrodes with a suitable bias voltage on the raised square tube surfaces to correct the field distortions.  
 
 
-This CPA design forms a highly conductive wall at $-$175~kV facing the grounded cryostat wall with a $\sim$ 0.6~m clearance.  As a results, the stored energy on this cathode is more than 100~joules.  There is a risk of damage to the cryostat membrane or other TPC components if a high voltage discharge develops, and dumps all the energy quickly at a very small surface area. To mitigate this risk, we are currently analyze the electrical properties of the cathode, and developing cathode designs that will substantially slowdown the total energy release in case of a discharge.  Possible choices include a highly resistive coating on all non-conductive cathode surface panels as well inner frame members; or conductive panels with robust resistive coupling to the frame structures.
+This CPA design forms a highly conductive wall at $-$170~kV facing the grounded cryostat wall with a $\sim$ 0.6~m clearance.  As a results, the stored energy on this cathode is more than 100~joules.  There is a risk of damage to the cryostat membrane or other TPC components if a high voltage discharge develops, and dumps all the energy quickly at a very small surface area. To mitigate this risk, we are currently analyze the electrical properties of the cathode, and developing cathode designs that will substantially slowdown the total energy release in case of a discharge.  Possible choices include a highly resistive coating on all non-conductive cathode surface panels as well inner frame members; or conductive panels with robust resistive coupling to the frame structures.
 
 
 
@@ -361,7 +361,7 @@ group for the 35ton TPC.  It was tested up to 150 kV.  Bottom: a conceptual desi
 \label{fig:tpc-UCLA-feedthrough}
 \end{figure}
 
-The cathode planes are biased at $-$175~kV to provide the required 
+The cathode planes are biased at $-$170~kV to provide the required 
 500~V/cm drift field. At a minimum, three high-voltage power 
 supplies, each connecting through their own feedthroughs, will be used. Each supply will
 provide high voltage to one of the three rows of the cathode plane assemblies.
@@ -395,15 +395,9 @@ of the feedthrough and filter box made by the UCLA group for the 35ton TPC, as w
 \label{fig:tpc-partial-assembly}
 \end{figure}
 
-Figure~\ref{fig:tpc-partial-assembly} shows a partial assembly of a section of the TPC.
-The finished cryostat has five rows of anchor points distributed along the ceiling (not shown in the figure). 
-A mounting rail is suspended through stainless-steel rods to each row of the anchor points.  Under these five mounting rails, 
-rows of CPAs and APAs are suspended in an interleaved fashion. 
-Because the cathodes are at a high voltage, the CPAs are attached to their 
-mounting rails through G10 rods. The distance between the facing anode and 
-cathode is maintained by the pultruded fiberglass I-beams holding the FR4 sheets 
-forming the field cage.  The TPC installation procedure 
-is discussed in Chapter~\ref{ch:install}.
+Figure~\ref{fig:tpc-partial-assembly} shows a partial assembly of a section of the TPC. The finished cryostat has five rows of anchor points distributed along the ceiling (not shown in the figure). A mounting rail is suspended through stainless-steel rods to each row of the anchor points. Under these five mounting rails, rows of CPAs and APAs are suspended in an interleaved fashion. Because the cathodes are at a high voltage, the CPAs are attached to their mounting rails through G10 rods. The distance between the facing anode and cathode is maintained by the pultruded fiberglass I-beams holding the FR4 sheets forming the field cage. The TPC installation procedure is discussed in  Chapter~\ref{ch:install}.
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
