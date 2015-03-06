@@ -53,7 +53,7 @@ The wires on the outermost plane are oriented vertically, and are not connected 
 At a nominal wire pitch (center-to-center separation) of 4.8~mm,
 the total number of readout channels in an APA is 2560, for a total of 133,120 in each cryostat.
  
-As shown in Figure~{\ref:tpc-wire-frame-xsect}, the readout electronics reside only along one narrow edge of an APA. During installation, two APAs are interconnected on their non-readout ends, leaving the readout ends completely outside of the TPC's active volume.  Cables from the bottom APAs can be routed either through the hollow vertical APA frames, or down along the floor and up along a side wall of the cryostat.
+As shown in Figure~\ref:{tpc-wire-frame-xsect}, the readout electronics reside only along one narrow edge of an APA. During installation, two APAs are interconnected on their non-readout ends, leaving the readout ends completely outside of the TPC's active volume.  Cables from the bottom APAs can be routed either through the hollow vertical APA frames, or down along the floor and up along a side wall of the cryostat.
 
 \begin{figure}[htpb]
 \centering
@@ -82,7 +82,7 @@ The requirements for the TPC can be found in the requirements documentation \cit
 
 \end{itemize}
 
-The TPC is composed of several interconnected subsystems –- APAs, CPAs, a Field Cage, and High Voltage 
+The TPC is composed of several interconnected subsystems --- APAs, CPAs, a Field Cage, and High Voltage 
 Feedthroughs. A systems-engineering design and development approach will be taken to ensure that the 
 various subsystems are properly integrated and the system is designed end-to-end to meet performance 
 requirements. This approach will be led by a systems engineer who will ensure that interfaces are defined 
@@ -153,7 +153,7 @@ respectively.  A grounded mesh plane, located 4.8~mm behind the collection plane
 
 The V wire plane is directly connected to the front-end electronics, i.e. $V_V=0$V, to simplify the coupling and 
 reduce the maximum bias voltages on the other planes. The wires on the two induction planes (U and V) are wrapped in a helical pattern around the long edges of the wire frame 
-(Figure\ref{fig:tpc-wire-frame-xsect}a). This technique makes it possible to place readout 
+(Figure~\ref{fig:tpc-wire-frame-xsect}a). This technique makes it possible to place readout 
 electronics only at one short edge of a wire frame, enabling joining the APAs on the other three sides with minimal dead space.  It slightly complicates 
 the track reconstruction because the U and V wires are sensitive to tracks on 
 both sides of the APA.  The upper APAs in the cryostat will have their readouts
@@ -170,10 +170,10 @@ The wire angle and overall APA length are chosen so that the angled wires wrap l
 \end{figure}
 
 
-Precise values of wire angle and wire pitch were chosen to give an integral number of wires across the boards at the electronics end of the APA as well as an integral number of wire slots in the boards along the sides of the APA.  A solder pad spacing at the electronics end of 5.75~mm and a wire slot spacing along the sides of 8.00~mm results in a wire-to-wire pitch of $\sim$4.67~mm and a wire angle of 35.71$^\circ$ to the long axis of the APA.
+Precise values of wire angle and wire pitch were chosen to give an integral number of wires across the boards at the electronics end of the APA as well as an integral number of wire slots in the boards along the sides of the APA.  A solder pad spacing at the electronics end of 5.75~mm and a wire slot spacing along the sides of 8.00~mm results in a wire-to-wire pitch of 4.67~mm and a wire angle of 35.71$^\circ$ to the long axis of the APA.
 
 
-The 5.75~mm pitch of solder pads across the electronics boards of the U and V layers results in 40 channels per 230~mm wide board.  The $\sim$4.79~mm pitch in the X layer gives 48 channels per 230~mm wide board.  Each 230-mm wide stack of boards has, therefore, 40+40+48=128 channels.  There are 10 of these board distributed per side along the readout edge of an APA for a total of 2560 signal wires on the APA.  With the additional 48 G wires per board stack, the total number of wires per APA is 3520.
+The 5.75~mm pitch of solder pads across the electronics boards of the U and V layers results in 40 channels per 230~mm wide board.  The 4.79~mm pitch in the X layer gives 48 channels per 230~mm wide board.  Each 230~mm wide stack of boards has, therefore, 40+40+48=128 channels.  There are 10 of these board distributed per side along the readout edge of an APA for a total of 2560 signal wires on the APA.  With the additional 48 G wires per board stack, the total number of wires per APA is 3520.
 
 %%% AH reviewed to here 5/6
 
@@ -181,7 +181,7 @@ The 5.75~mm pitch of solder pads across the electronics boards of the U and V la
 \begin{figure}[htpb]
 \centering
 \includegraphics[width=\linewidth]{tpc_apa_frame.png}
-\caption[Conceptual design of a wire frame]{The stainless steel APA frame (shown without wires or boards). The photon detectors are shown in place – although the APA is designed so that the photon detectors can be inserted into the APA after the wires are wound. }
+\caption[Conceptual design of a wire frame]{The stainless steel APA frame (shown without wires or boards). The photon detectors are shown in place --- although the APA is designed so that the photon detectors can be inserted into the APA after the wires are wound. }
 \label{fig:tpc-wire-frame}
 \end{figure}
 
@@ -222,7 +222,7 @@ Figure~\ref{fig:tpc-wire-board-x} shows one of the X boards and an intermediate 
 
 In this way the wire board are connected to the bias voltage supply through the resistor-capacitor network on the CR board. The resistors in this network have values around 20 M$\Omega$, so that in the event that a wire from a different plane breaks and is shorted to these wires, the bias voltages on the rest of the wires will not be affected. The AC-coupled signals from the RC network are connected to sockets that will mate with the front-end readout boards.
 
-These readout boards, as described in Section ?, process the analog signals from the wires and transmit the digital information via feedthroughs to the DAQ system outside the cryostat. The electronics on the readout boards generate an estimated 60 W of heat per APA which may produce a small quantity of argon bubbles.  Stainless-steel covers are placed over the readout boards to contain the bubbles and direct them to the gas volume of the cryostat. In the case of the lower APAs, the bubbles, if not already re-condensed, will be funneled through the vertical hollow frame members to the top of the cryostat.
+These readout boards, as described in Chapter~\ref{ch;ce}, process the analog signals from the wires and transmit the digital information via feedthroughs to the DAQ system outside the cryostat. The electronics on the readout boards generate an estimated $\sim$160 W of heat per APA which may produce a small quantity of argon bubbles.  Stainless-steel covers are placed over the readout boards to contain the bubbles and direct them to the gas volume of the cryostat. In the case of the lower APAs, the bubbles, if not already re-condensed, will be funneled through the vertical hollow frame members to the top of the cryostat.
 
 
 Figure \ref{fig:tpc-APA-corner} is a close-up view of a corner of an APA frame with some wires and various wire boards to demonstrate the assembly.
@@ -264,7 +264,7 @@ The support structure is composed of strips of thin G10 sheet, with notches mach
 \begin{figure}[htpb]
 \centering
 \includegraphics[width=\linewidth]{tpc_apa_winding_machine.png}
-\caption[Winding machine concepts]{The tensioner head is passed from one side of the APA to the other as it’s moved around the APA to wind wire onto the APA frame.  The horizontal/vertical positioning systems on each side of the APA are made of commercial linear motion components.  Much or all of the positioning systems should be available from commercial vendors}
+\caption[Winding machine concepts]{The tensioner head is passed from one side of the APA to the other as it is moved around the APA to wind wire onto the APA frame.  The horizontal/vertical positioning systems on each side of the APA are made of commercial linear motion components.  Much or all of the positioning systems should be available from commercial vendors}
 \label{fig:tpc-winding-machine}
 \end{figure}
 
@@ -274,7 +274,7 @@ The support structure is composed of strips of thin G10 sheet, with notches mach
 A winding machine will be constructed to lay the 3520 wires onto each APA. It has sufficient versatility that the same mechanism can wind both the angled and the longitudinal layers.  This was not a deliberate goal in the beginning but it has turned out that the method chosen for winding the angled layers will work for the longitudinal layers as well.
  
 Its working concepts are illustrated in Figure~\ref{fig:tpc-winding-machine}. 
-The wire tensioner is a self-contained unit that includes the wire spool.  It is designed so that tension is maintained, not just when wire is pulled out, but also if wire is let back into the tensioner.  The APA is held off the ground by a couple posts, with one of its long edges down.  There are X-Y positioners on either side of the APA; the tensioner is moved across the face of the APA by one of these positioners – unspooling tensioned wire as it moves.  When the tensioner arrives at the edge of the APA it is passed across to the positioner on the other side of APA.  This is done in the correct position so that wire is placed into the appropriate slots of the edge boards. The new positioner then moves it to the next location on the edge - where it is passed back around the edge of the APA.  In this way the entire layer of wire can be placed on the frame.  There will be a couple supports on the long side of the APA nearest the floor and one or two on the long side at the top.  At some point in the winding of the angled layers, the machine will have to be stopped and the supports moved out of the way -- to locations that have already been covered with wire.
+The wire tensioner is a self-contained unit that includes the wire spool.  It is designed so that tension is maintained, not just when wire is pulled out, but also if wire is let back into the tensioner.  The APA is held off the ground by a couple posts, with one of its long edges down.  There are X-Y positioners on either side of the APA; the tensioner is moved across the face of the APA by one of these positioners -- unspooling tensioned wire as it moves.  When the tensioner arrives at the edge of the APA it is passed across to the positioner on the other side of APA.  This is done in the correct position so that wire is placed into the appropriate slots of the edge boards. The new positioner then moves it to the next location on the edge - where it is passed back around the edge of the APA.  In this way the entire layer of wire can be placed on the frame.  There will be a couple supports on the long side of the APA nearest the floor and one or two on the long side at the top.  At some point in the winding of the angled layers, the machine will have to be stopped and the supports moved out of the way -- to locations that have already been covered with wire.
 
 Although a large part of an entire plane of wires can be wound in one continuous process, a more fault-tolerant procedure would be to pause the winding machine periodically and solder the last wire. This intermediate soldering step will prevent the unwinding of a large section due to an accidental broken wire.  An automatic soldering robot will solder the wire ends after the wires have been laid down on the APA. A wire-tension measuring device will scan the newly placed wires and record the wire tension of each wire. Any wires with abnormal tension will be replaced manually.
 
