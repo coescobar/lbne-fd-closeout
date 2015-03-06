@@ -12,7 +12,7 @@ the operation of the facility and experimental program is to measure fundamental
 parameters, explore physics beyond the Standard Model and better elucidate the nature of matter
 and antimatter. 
 
-\subsection{Overview}
+\section{Overview}
 
 The reference design Far Detector for LBNE is a liquid argon time projection chamber (LArTPC). 
 The basic components of this detector type are a cryostat to contain the liquid argon (LAr), 
@@ -201,6 +201,9 @@ initial maximum flow rate will be 51~m$^3$/hr (224~gpm).  The liquid-argon volum
 
 The purification of LAr is accomplished with standard industrial equipment, using molecular sieves and chemically reducing materials, which are scalable within the contemplated range to accommodate the estimated irreducible material-outgassing from warm materials in the vapor space above the liquid argon, called the ullage. 
 
+\section{LAr-FD Components}
+\label{sec:larfd-components}
+
 
 \subsection{Time Projection Chamber}
 
@@ -226,7 +229,7 @@ Each APA has three wire planes that are connected to readout electronics; two in
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{TPC_summary_figure}
-\caption{TPC modular construction concept; the APA and CPA arrangement has been changed to two APAs and three CPAs as of 2014, see Figure~\ref{fig:cpa-apa-arrangement-2014}.}
+\caption[TPC modular construction concept]{TPC modular construction concept; the APA and CPA arrangement has been changed to two APAs and three CPAs as of 2014, see Figure~\ref{fig:cpa-apa-arrangement-2014}.}
 \label{fig:tpc-concept}
 \end{figure}
 
@@ -240,6 +243,8 @@ Each APA has three wire planes that are connected to readout electronics; two in
 
 \subsection{Electronics, Readout and Data Acquisition}
 \label{sec:det_electronics}
+
+\fixme{Separate into CE and DAQ?}
 
 CMOS technology, with a noise minimum at 89~K,
 permits the front-end electronics to reside in the LAr (henceforth ``cold electronics''),
@@ -260,7 +265,7 @@ by reducing the volume of cables in the ullage gas.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{elect_schem.pdf}
-\caption{Front-end electronics architecture.
+\caption[Front-end electronics architecture]{Front-end electronics architecture.
          The ADCs multiplex at 8:1, while the digital ASICs multiplex at 4:1, together giving 32:1.
         }
 \label{fig:elect_schem_intro_copy}
@@ -294,7 +299,7 @@ Twenty light-guide and SiPM assemblies, or ``paddles'', will be installed within
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Detector Installation and Operation}
+\section{Detector Installation and Operation}
 \label{sec:det-install}
 
 Detector components will be shipped in sealed containers to the Far Site by truck and lowered to the cavern. Shipping containers will be moved to a clean area over the septum area between the cryostats. There the components will be unpacked from the sealed container and lowered  through an access hatch into the cryostat. 
@@ -344,7 +349,7 @@ Maximum Drift Time & 2.1~ms \\
 \end{tabular} 
 \end{table}
 
-\subsection{Design Considerations}
+\section{Design Considerations}
 
 TPCs operated to date have been constructed with an anode wire spacing in the range of 3~mm (ICARUS) to 4.8~mm (Fermilab cosmic-ray stand). The amount of ionization charge collected on the wires increases with larger wire spacing, resulting in a better signal-to-noise ratio without serious consequences (the radiation length of LAr is $\sim$~30 times larger than the typical wire spacing). The electron-$\pi^0$ separation efficiency of a TPC with 5-mm wire spacing is only a few percent lower than one with 3-mm wire spacing. It is also clear that a TPC with larger wire spacing requires fewer wires and readout channels, resulting in lower cost. % could put this later
 
@@ -374,6 +379,8 @@ The cloud of drifting ionization electrons will spread out in space due to the e
 
 \section{Detector Development Program}
 
+\fixme{needs update}
+
 As mentioned above, the design of the LAr-FD has benefited greatly from other experiments and related development activities. Development activities in the U.S. are described in the  {\em Integrated Plan for LArTPC Neutrino Detectors in the US}~\cite{IP}. This program includes non-LBNE activities such as the Fermilab Materials Test Stand, Fermilab electronics test stand, LAPD, photon detection, ArgoNeuT and MicroBooNE as well as LBNE activities such as the 35-ton prototype and LAr1. The development plan is described in detail in Chapter \ref{ch:randd}.
 
 
@@ -383,6 +390,8 @@ As mentioned above, the design of the LAr-FD has benefited greatly from other ex
 
 
 \section{Participants}
+
+\fixme{What to say here depends on perspective: LBNE or not. If we don't want to say it's LBNE, maybe we should drop this section altogether rather than update it?}
 
 The design for the LBNE Far Detector is being carried out by an LBNE subproject team, headed at Fermilab  but with participants also from Brookhaven National Laboratory, Argonne National Laboratory and Indiana  University, in conjunction with an engineering design firm, Arup USA, Inc.  This firm has assisted with cryostat and cryogenic-plant design.  The detector is planned for construction at the  Sanford Laboratory site, which is managed by the South Dakota Science and Technology Authority  (SDSTA).
 
