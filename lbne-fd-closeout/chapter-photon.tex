@@ -355,6 +355,121 @@ section of this chapter.
 
 \section{SiPM}
 
+\section{Menchanical Support}
+
+Mechanically supporting the photon detector systems in the APA frames
+presented several challenges, including the need to support three
+different light collecting and wavelength shifting technologies in a
+package utilizing the same mounting features in the APA frames, and
+the effects of varying thermal contraction of various materials at 80
+degrees Kelvin which complicated both light collector and SiPM
+mounting.
+
+The baseline design for mounting the PDs into the APA frames calls for
+ten PD modules, approximately 2.2m long, mounted roughly equally
+spaced along the full length of the APA frame (Fig.~\ref{fig5.5-1}).  The
+PD modules are read out using individual twisted pair cable, one per
+SiPM.  These cables (120 of them in the original baseline design) are
+routed through the APA side tubes to a connector at the cold
+electronics readout end of the APA.  Initially it was decided that it
+would be too complicated to design the APA frames to allow PD module
+installation following APA wire-wrapping, so the PD modules were
+installed prior to this step in the installation process.  The
+Wavelength shifting elements in the light collectors of the PD modules
+are sensitive to heat, humidity and most critically to exposure to
+ambient light, which places significant requirements on the
+environment the APAs are assembled and stored in this way, but
+initially it was decided this was the best option.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\columnwidth]{fig5-5-1.png}
+\caption{One full APA fram with photon 10 photon detectors mounted
+  inside the frame.}
+\label{fig5.5-1}
+\end{figure}
+
+A universal PD frame assembly was devised to hold all three PD design
+variations under consideration.  Figure~\ref{fig5.5-2} shows an example of a
+short (400~mm long active area) version of this frame manufactured for
+the 35t test, and figure~\ref{fig5.5-3} shows a mechanical assembly drawing of
+the frame system for one of the candidate light collector choices.
+The frame consists of two plastic (acetal) end caps mounted to the
+inside of the APA frame, joined by 10~mm diameter stainless steel tubes
+which run the full width of the APA frame, providing intermediate
+support for the PD modules as needed.  The SiPM mount PCBs are
+incorporated into one of the end blocks, along with the cable
+connections for the twisted pair cables.  Due to the significant
+variations in coefficient of thermal expansion between the stainless
+steel frame and the plastic WLS elements, we expect a relative
+difference in thermal contraction of ~1\% at LAr temperatures.  The
+far endblock assembly provides balancing forces to the light collector
+elements as required to ensure these elements remain in straight and
+in good contact with the SiPMs.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.3\columnwidth]{fig5-5-2.png}
+\caption{Photograph of 40~cm long bar-based prototype mounted in test frame.}
+\label{fig5.5-2}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\columnwidth]{fig5-5-3.png}
+\caption{Mechanical assembly drawing of frame system.}
+\label{fig5.5-3}
+\end{figure}
+
+Testing of the PD mount scheme in many test setups (at IU, CSU and
+FNAL), as well as experience APA assembly, have led to a re-evaluation
+of the PD mounting scheme.  The revised baseline has PD installation
+occurring following APA wire wrapping, through slots left in the side
+of the APA frame (Fig.~\ref{fig5.5-4}).  As shown in the figure, the
+plan still calls for ten PDs per APA frame.  Five of the PDs will be
+installed through each side of the APA frame, and the cables for each
+of the PDs will be routed to the cold electronics end of the APA
+inside the side tube the PD was inserted through.  Stainless steel
+c-channels mounted into the APA frames prior to wire wrapping will
+guide and support the PDs during and after installation.  The PD will
+only be attached to the APA frame at one end, so the purely-plastic PD
+module will be free to slide in the track to allow for the
+differential contraction (Fig~\ref{fig5.5-5}).  Tests of 2.2m prototype
+assemblies of both fiber hybrid and the LSU-proposed monolithic
+acrylic bar design in the CSU CDDF have demonstrated significant
+promise.  This installation scheme
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\columnwidth]{fig5-5-4.png}
+\caption{Blow up of APA fram showing PD insertion location.}
+\label{fig5.5-4}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=.6\columnwidth]{fig5-5-5.png}
+\caption{Slot and rail showing mounting location of photon detector.}
+\label{fig5.5-5}
+\end{figure}
+
+Thermal contraction at cryogenic temperatures also complicates the
+mounting of the SiPMs in the PD modules.  The baseline sensL SiPMs are
+surface mount components, with 4 0.5~X~0.5mm pads for making
+electrical contact.  Reliability and elevated dark count rate
+problems, as well as physical delamination of the SiPM front face from
+the silicone substrate, were observed early in cryogenic testing of
+SiPMs, and suspicion fell on the mechanical contact between the
+mounting PCB and the SiPM itself.
+
+Three different methods of making these electrical contacts: Soldering
+the SiPMs directly to the PCBs (fig 5.5-6a), using commercial
+spring-loaded electrical contacts or “Pogo pins” (fig 5.5-6b), and
+soldering short wires to the SiPM pads and thence to the PCB
+(fig. 5.5-6c).  Each of these methods provides assembly challenges,
+and cryogenic testing has not suggested a clear choice so far.
+Testing and development are still underway to resolve this issue.
+
 \section{Photon system readout electronics}
 \label{sec_elec}
 
@@ -848,9 +963,49 @@ be achieved with expected cosmic ray muons and Michels, $\pi^0$, and
 natural radioactivity events (such as $^{39}$Ar with end-point energy
 of abut 500 keV).
 
-
 \section{Installation}
 
+Installation of the photon detectors is one of the most significant
+factors driving the mechanical design.  As discussed above, out
+initial thought was to install the PDs and run the SiPM twisted pair
+cable down the frame side tube prior to wire-wrapping the APA.
+Following our experience with the environmental controls (primarily UV
+filtered light) required by the PDs, as well as the difficulties in
+dealing with the PD readout cable ends during wire-wrapping, it was
+decided to change the baseline to include inserting the PDs following
+wire wrapping.  In addition to relaxing the physical constraints on
+the wire wrapping, this also relaxes a schedule connection between the
+APA and PD fabrication.  It is not necessary to install the PDs into
+the APA frames until shortly prior to installation of the APAs into
+the cryostat.
+
+As noted above, and shown in figure 5.5-4, a total of 10 PDs are
+installed into each APA frame, with 5 coming in from each side.  The
+installation will occur with the fully-assembled APA frame lying flat
+on an insertion station table.  Prior to installation, the PD cable
+bundle will be inserted into the APA side tubes.  The cable bundle
+will be pre-assembled prior to installation such that the end of each
+cable will terminate at the correct slot for the PD to be connected.
+Our baseline cable design has also been modified to a single cable
+with 4 individual twisted pairs in a single jacket, so each APA side
+tube will only require 15 cables (3 per PD, 30 per APA).  These cables
+extend approximately 30cm past the end of the APA tubes at the cold
+electronics end of the APA, and following installation of the APA into
+the cryostat are connected to long-haul cables for the run to the
+readout electronics (see fig. 5.8-1-- cable diagram.  Needs to be
+made)
+
+Following this step, 5 PDs will be inserted into the APA through one
+side frame, with connections being made between the twisted pair
+cables and the SiPM PCB just as the readout end of the detector enters
+the tube (See fig. 5.8-2).  The PD is then inserted the last 10cm into
+the frame, and affixed to the inner surface of the APA tube (See
+fig. 5.8-3).  The process is then completed for the 5 PDs to be
+inserted from the opposite side.
+
+Following insertion of the PDs, the environmental controls required
+for the PD WLS materials (UV filtering, temperature and humidity
+control) will need to be observed for the entire APA.
 
 
 
