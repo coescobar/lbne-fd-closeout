@@ -1,8 +1,16 @@
 \chapter{Introduction}
-\input{common/fd-closeout-intro}
+%\input{common/fd-closeout-intro}
 
-\section{Introduction to the Liquid Argon Far Detector}
-\label{ch:detector}
+%\section{Introduction to the Liquid Argon Far Detector}
+%\label{ch:detector}
+
+The former LBNE Far Detector Project team has prepared this conceptual design document which 
+describes a single-phase liquid argon time projection chamber (LArTPC) of fiducial mass 40~kt. It is a proposed design for the far detector to be placed in
+the world-class Long-Baseline Neutrino Facility (LBNF), and would enable a compelling 
+research program in neutrino physics. The ultimate goal in
+the operation of the facility and experimental program is to measure fundamental physical
+parameters, explore physics beyond the Standard Model and better elucidate the nature of matter
+and antimatter. 
 
 \subsection{Overview}
 
@@ -11,7 +19,17 @@ The basic components of this detector type are a cryostat to contain the liquid 
 a TPC detection mechanism immersed in the LAr, readout electronics and
 a cryogenic system to keep the LAr temperature at 89~K and maintain the required purity. 
 
+\fixme{change above to...? Wait till we know what perspective we're writing this from...}
+This document describes the 
+The reference design Far Detector for \expshort is a single-phase liquid argon time projection chamber (LArTPC).
+The basic components of this detector type are a cryostat to contain the liquid argon (LAr), 
+a TPC detection mechanism immersed in the LAr, readout electronics and
+a cryogenic system to keep the LAr temperature at 89~K and maintain the required purity. 
+The cryostat and cryogenics systems will be managed by LBNF, thus independently of the detector, 
+and therefore descriptions of these systems are not included in this document.
 
+\fixme{This needs to change once iEFIG decides. Do we need to describe the caverns and config or just 
+stick to the detector elements?}
 As of 2014 the LBNE LArTPC, referred to as the LAr-FD, has been altered to consist of two massive detectors in
 separate, parallel caverns, oriented end-to-end along the beam direction (roughly east-to-west), and located at the 4850 level (4850L) of the Sanford Laboratory. The fiducial mass of first one to be built will be 10 ktons, the second, 30 ktons. 
 %The fiducial mass of each, as defined for neutrino-oscillation studies, is 16.3~kton and the active (instrumented) mass is 20~kton, resulting in a total active mass of 40~kton.
@@ -32,7 +50,7 @@ layout of the Far Site, and Figure~\ref{fig:LAr-FD-config-cavern} shows the dete
 \includegraphics[width=\textwidth]{larfd-from-2794-slide9.png}
 \caption[Detector configuration within the cavern]{Detector configuration within the cavern. The TPC is located within a membrane cryostat, shown in orange. 
 %The interior dimensions of each cryostat are 15.6~m wide $\times$ 16~m high $\times$ 28.6~m long. The highbay is 144.3~m long and has a 18.2~m span. 
-Cryogenic equipment is located at the far end of the upper cavern and the filtration equipment is in the septum area between the two cryostats. }
+Cryogenic equipment is located at the far end of the upper cavern and the filtration equipment is in the septum area between the two cryostats. \fixme{needs to change}}
 \label{fig:LAr-FD-config-cavern}
 \end{figure}
 
@@ -76,6 +94,8 @@ LArTPC detector technology, namely cryostat construction, LAr purification
 and electronics readout has been incorporated into the design.
 
 \subsection{Cavern Layout}
+
+\fixme{Looks like it'll be 4 times 10 in config of iEFIG; need new dimensions. Or do we just do away with this section?}
 
 \begin{editornote}
   Editor's Note: The current plan is to create space for a 40-kton detector in two separate, parallel caverns, one for 10 kton and one for 30 kton, instead of excavating a single cavern. The smaller cavern would be outfitted as soon as possible and the larger would be outfitted in a later phase of work. 
@@ -138,6 +158,7 @@ through the cryostat and highbay.
 \subsection{Cryostat Construction}
 \label{ch1:cryo-constr}
 %added from ch 2, 2/23/12
+\fixme{Can we delete this section?}
 
 The 10-kton cryostat construction uses commercial stainless-steel membrane technology engineered and produced by 
 industry. These vessels are widely deployed in liquefied natural gas (LNG) tanker ships and 
@@ -154,6 +175,7 @@ The LAr-FD membrane cryostats are sealed containers supported by the surrounding
 
 \subsection{Cryogenic Systems}
 \label{sec:det_cryogenics}
+\fixme{Can we delete this section?}
 
 Cryogenic systems are needed to manage the LAr, i.e., to keep it cold, pure and circulating smoothly during operations in order to maintain a sufficiently long drift lifetime for the ionization electrons. The major cryogenic systems used to perform these functions are the cryogen supply for cool-down and fill, gas filtration, argon condensing, liquid filtration and circulation and argon purity analysis.
 
@@ -175,6 +197,7 @@ initial maximum flow rate will be 51~m$^3$/hr (224~gpm).  The liquid-argon volum
  Longer term, the rate will decrease to 25~m$^3$/hr with a turn-over rate of 11 days.  As a point of comparison, ICARUS T600 has a maximum turn-over rate of eight to ten days.
 
 \subsection{LAr Purification}
+\fixme{Can we delete this section?}
 
 The purification of LAr is accomplished with standard industrial equipment, using molecular sieves and chemically reducing materials, which are scalable within the contemplated range to accommodate the estimated irreducible material-outgassing from warm materials in the vapor space above the liquid argon, called the ullage. 
 
