@@ -110,7 +110,7 @@ using a commercial FPGA to perform the r\^ole of the digital ASIC (Fig.~\ref{fig
 \includegraphics[width=0.65\linewidth]{elec_CMBpix1.pdf}
 \includegraphics[width=0.65\linewidth]{elec_CMBpix2.pdf}
 \includegraphics[width=0.65\linewidth]{elec_CMBpix3.pdf}
-\caption[The Cold Mother Board (CMB), as used in the early set of tests.]{
+\caption{
   The Cold Mother Board (CMB), as used in the early set of tests.
   {\bf Top:} The analog mother board, showing four ADC ASICs and four FE ASICs surface mounted.
   The other side of the board has another four ADC and FE ASICs.
@@ -420,13 +420,12 @@ LVDS connections will be made to each APA to distribute a clock signal and contr
 These data can be transmitted at a lower bit rate.
 Optical fiber will be employed externally to the cryostat, under DAQ scope.
 
-
 %
 %%%%%%%%%%%%%%%%
 \subsection{Signal Feedthroughs }
 \label{subsec:ce_feedthroughs}
 
-No specific design for the signal feedthroughs exists at this time.
+No specific design for the Far Detector signal feedthroughs exists at this time.
 We are currently exploring the possibility of working in tandem with the Near Detector group, who have
 similar feedthrough needs, and are starting with a concept based on the feedthrough design which has been successfully
 running in the Atlas experiment for about 15 years, and has therefore demonstrated both longevity and reliability.
@@ -451,18 +450,44 @@ The cables will be strain-relieved on the  mounting rails above the APAs.
 \label{fig:ce_feedthrough}
 \end{figure}
 
+The 35 Ton prototype detector requires a feedthrough and cable plant similar to what a single full size APA
+will require and can serve as a model for at least one possible solution to the feedthrough problem.
+In the 35 Ton case, a custom printed circuit embedded in a single 10'' Conflat flange handles all the cabling
+associated with the TPC and photon detector cabling as well as a small number of cables for a specialized
+camera system to monitor the Cathode connection.
+For the 35 Ton APAs there are, in addition to the TPC bias voltages, 16 cold electronics boards with data,
+power and control wires plus some 74 photon detector signals on individual cables.
+For a full size Far Detector APA there would be 20 electronics boards with simpler control and power wiring
+requirements and rather fewer photon detector cables so the 35 Ton feedthrough will serve as a good model
+for what might be done for the Far Detector.
+While the electrical connection requirements are straightforward,
+the reliable gas tightness of the flange with an embedded circuit board needs to be fully verified
+and the planned method of reducing contamination from the cable plant in the ulage
+(and the 35 Ton cryostat has a much larger ulage than planned for the far detector) needs to be studied carefully.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{FlangeBoard.jpg}
+\caption{Photograph of the 35 Ton ``Flange Board'', without the Conflat flange which will be epoxy potted near
+  the center of the printed circuit.
+  This board carries all the electrical connections for the four small APAs in the 35 Ton
+  test cryostat and is similar to the number of connections needed for a Far Detector APA
+}
+\label{fig:ce_feedthrough}
+\end{figure}
+
+
 Measurements in the Materials Test Stand at Fermilab (described in Section~\ref{sec:mts})
 have shown that impurities (principally O$_2$ and H$_2$O) embedded in objects submerged in the liquid argon do not result
 in a decrease in electron-drift lifetime, whereas impurities in objects located in the warmer gas phase (ullage) do.
 This indicates the importance of minimizing the amount of material in the gas ullage at the top of the cryostat.
-Therefore it may be desirable to connect all cables to feedthroughs below the liquid surface,
+Therefore it would be desirable to connect all cables to feedthroughs below the liquid surface,
 and then pass the cables out of the cryostat, through an evacuated volume that traverses the gas and cryostat insulation,
-to a matching set of feedthroughs to the outside. 
-
-\begin{editornote}
-  Have we given up on this scheme, of making connections below the liquid surface?
-  If so, some of the text above should be removed.
-\end{editornote}
+to a matching set of feedthroughs to the outside.
+In the 35 Ton design, a stainless tube surrounds the cable bundle in the ulage and is partially sealed off below the
+liquid level to limit contamination.
+Understanding whether a scheme like this would be sufficient for the longer drift lengths in the far detector
+is an important question to be addressed.
 
 %
 %%%%%%%%%%%%%%%%
