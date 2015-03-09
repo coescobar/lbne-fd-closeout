@@ -8,16 +8,22 @@ The scope of the Time Projection Chamber (TPC) subsystem includes the design, pr
 \item field cage
 \item feedthroughs, filtering networks, cables and power supplies for the cathode high voltage system
 \end{itemize}
-This chapter describes the reference design for the TPC that meets the required performance for charge collection in the LBNE liquid argon detector, LAr-FD.
+This chapter describes the reference design for the TPC that meets the required performance for charge 
+collection in the single-phase liquid argon far detector, LAr-FD, developed for the former LBNE experiment.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
 The Time Projection Chamber (TPC) is the active detector element of LAr-FD. It is located inside the cryostat 
-vessel and is completely submerged in liquid argon at 89~K. The TPC consists of alternating anode plane assemblies (APAs) and cathode plane assemblies (CPAs), with field-cage panels enclosing the four open sides between the anode and cathode planes.
-When proper bias voltages are applied to the APAs and CPAs, a uniform electric field is created in volume between the anode and cathode planes. A charged particle traversing this volume leaves a trail of ionization in the ultra pure liquid argon.  The electrons drift toward the anode wire planes, inducing electric current signals in the front-end electronic circuits connected to the sensing wires.  The current signal waveforms from all sensing wires are amplified and digitized by the front-end electronics, and transmitted to the data acquisition system outside of the cryostat
+vessel and is completely submerged in liquid argon at 89~K. The TPC consists of alternating anode plane 
+assemblies (APAs) and cathode plane assemblies (CPAs), with field-cage panels enclosing the four open sides between the anode and cathode planes.
+When proper bias voltages are applied to the APAs and CPAs, a uniform electric field is created in volume between the anode and cathode planes. A charged particle traversing this volume leaves a trail of 
+ionization in the ultra pure liquid argon.  The electrons drift toward the anode wire planes, inducing electric current signals in the front-end electronic circuits connected to the sensing wires.  The current 
+signal waveforms from all sensing wires are amplified and digitized by the front-end electronics, and transmitted to the data acquisition system outside of the cryostat
 
-The front-end mother boards and digital multiplexer boards from the Cold Electronics subsystem are directly mounted on the APAs as part of the APA assembly.  The Photon Detector are also mounted inside the APA's frame openings before the APAs are installed into the cryostat. The TPC subsystem also interfaces to the cryostat and cryogenic subsystem through the TPC mounting fixtures, and to the DAQ subsystem through the signal feedthroughs.  The installation of the TPC inside the cryostat is the responsibility of the Installation subsystem.
+The front-end mother boards and digital multiplexer boards from the Cold Electronics subsystem are directly mounted on the APAs as part of the APA assembly.  The Photon Detectors are also mounted 
+inside the APAs' frame openings before the APAs are installed into the cryostat. The TPC subsystem also interfaces to the cryostat and cryogenic subsystem through the TPC mounting fixtures, and to the DAQ 
+subsystem through the signal feedthroughs.  The installation of the TPC inside the cryostat is the responsibility of the Installation subsystem.
 
 \begin{figure}
 \centering
@@ -28,26 +34,26 @@ The front-end mother boards and digital multiplexer boards from the Cold Electro
 
 The TPC's active volume (Figure~\ref{fig:tpc-xsect1}) is 12~m high, 14~m wide and 30~m long in the beam direction. 
 Its three rows of CPA planes interleaved with two rows of APA planes 
-are oriented vertically, parallel to the beamline with the  
-electric field applied perpendicular to the planes.
+are oriented vertically, with the planes parallel to the beamline. The  
+electric field is applied perpendicular to the planes.
 The maximum electron-drift distance between a cathode and an adjacent 
 anode is 3.4~m. The anode plane assemblies are 
 2.3~m wide and 6~m high. Two 6-m modules stack vertically to 
-instrument the 12~m active depth. In each row, 13~such stacks are placed 
+instrument the 12-m active depth. In each row, 13~such stacks are placed 
 edge-to-edge 
-along the beam direction, forming the 30~m active length of the detector.  Each CPA has the same width, but half the height ($\sim$3~m) as an APA for ease of assembly and transportation.  4 CPAs will be stacked vertically to form the full 12~m active height. 
+along the beam direction, forming the 30-m active length of the detector.  Each CPA has the same width, but half the height ($\sim$3~m) as an APA, for ease of assembly and transportation.  Four CPAs will be stacked vertically to form the full 12-m active height. 
 Each cryostat houses a total of 52~APAs and 156~CPAs.
-Each facing pair of cathode and anode rows are surrounded by a 
+Each facing pair of cathode and anode rows is surrounded by a 
 ``field cage,'' assembled from panels of FR-4 sheets with parallel copper strips connected to resistive divider networks. 
 
 On each APA, four planes of wires cover each side of a frame (the ``wire frame''). See Figure~\ref{fig:tpc-wire-frame-xsect}.
-The inner three planes of wires are oriented, going from the inside out: vertically, and at $\sim\pm$36$^\circ$ 
+The inner three planes of wires are oriented, in order from the inside out, vertically, and at $\sim\pm$36$^\circ$ 
 to the vertical, respectively. Each wire is connected to a front-end readout channel.
 The wires on the outermost plane are oriented vertically, and are not connected to the readout electronics.
 At a nominal wire pitch (center-to-center separation) of 4.8~mm,
 the total number of readout channels in an APA is 2560, for a total of 133,120 in each cryostat.
  
-As shown in Fig.~{\ref:tpc-wire-frame-xsect}, the readout electronics reside only along one narrow edge of an APA. During installation, 2 APAs are interconnected on their non-readout ends, leaving the readout ends completely outside of the TPC's active volume.  Cables from the bottom APAs can either routed through the hollow vertical APA frames, or down along the floor and up along a side wall of the cryostat.
+As shown in Figure~\ref:{tpc-wire-frame-xsect}, the readout electronics reside only along one narrow edge of an APA. During installation, two APAs are interconnected on their non-readout ends, leaving the readout ends completely outside of the TPC's active volume.  Cables from the bottom APAs can be routed either through the hollow vertical APA frames, or down along the floor and up along a side wall of the cryostat.
 
 \begin{figure}[htpb]
 \centering
@@ -60,7 +66,7 @@ As shown in Fig.~{\ref:tpc-wire-frame-xsect}, the readout electronics reside onl
 \section{Design Considerations} 
 \label{sec:v5-tpc-reqs-n-specs}
 
-The requirements for the TPC can be found in the requirements documentation \cite{lar-fd-req}. The most significant ones are the following:
+The requirements for the TPC can be found in the requirements documentation \cite{lar-fd-req}. The most significant ones are the following. The TPC must:
 
 \begin{itemize}	
 \item Provide the means to detect charged particles in the detector and transmit the detector signals to the Data Acquisition System (DAQ)
@@ -76,12 +82,20 @@ The requirements for the TPC can be found in the requirements documentation \cit
 
 \end{itemize}
 
-The TPC is comprised of several interconnected subsystems – APAs, CPAs, Field Cage, and High Voltage Feed-throughs. A system engineering design and development approach will be taken to ensure that the various subsystems are properly integrated and the system is designed end-to-end to meet performance requirements. This approach will be led by a system engineer that will ensure that interfaces are defined and managed, that requirements for each subsystem and the TPC as a whole are defined and understood, analyses are performed where needed, prototyping is performed to retire or mitigate risk, and that test plans meet verification and validation requirements. The most significant challenge for the TPC is the LAr cryogenic environment. The TPC architecture will handle the cryogenic thermal cycles, accommodate the cryostat roof motion, and mitigate potential microphonics noise generated by wire vibrations.
+The TPC is composed of several interconnected subsystems --- APAs, CPAs, a Field Cage, and High Voltage 
+Feedthroughs. A systems-engineering design and development approach will be taken to ensure that the 
+various subsystems are properly integrated and the system is designed end-to-end to meet performance 
+requirements. This approach will be led by a systems engineer who will ensure that interfaces are defined 
+and managed, that requirements for each subsystem and the TPC as a whole are defined and understood, 
+that analyses are performed where needed, that prototyping is performed to retire or mitigate risk, and that test 
+plans meet verification and validation requirements. The most significant challenge for the TPC is the LAr 
+cryogenic environment. The TPC architecture will handle the cryogenic thermal cycles, accommodate the 
+cryostat roof motion, and mitigate potential microphonics noise generated by wire vibrations.
 
-The design approach will take inputs from several sources.  These sources include requirements from the scientific collaboration to ensure integrity of the physics data, studies of what has been successful in smaller scale TPC's, sharing of knowledge, ideas, and concepts with others in the LAr TPC community, and analysis and evaluation of the performance of the 35ton prototype.  These inputs will be distilled into functional requirements.  These functional requirements will be used to define alternative concepts or architectures for the TPC.  These concepts will drive preliminary requirements for the TPC interface with the cryostat and the conventional facilities.  They will also be used to define the preliminary interface requirements between the structural components and the modular subassemblies of the TPC.  These alternate concepts will be tested and analyzed as needed and reviewed with the physicists, conventional facilities, the cryostat manufacturer, and TPC engineers.  Based on analysis and feedback, the preferred concept will be further developed and detailed into final requirements and specifications for the physical internal and external interfaces.  These requirements and specifications will be clearly communicated to the responsible engineering groups.
+The design approach will take inputs from several sources.  These sources include requirements from the scientific collaboration to ensure integrity of the physics data, studies of what has been successful in smaller scale TPCs, sharing of knowledge, ideas, and concepts with others in the LArTPC community, and analysis and evaluation of the performance of the 35-t prototype.  These inputs will be distilled into functional requirements.  These functional requirements will be used to define alternative concepts or architectures for the TPC, which in turn will drive preliminary requirements for the TPC interface with the cryostat and the conventional facilities.  They will also be used to define the preliminary interface requirements between the structural components and the modular subassemblies of the TPC.  These alternate concepts will be tested and analyzed as needed, and reviewed with the physicists, conventional facilities engineers, the cryostat manufacturer and the TPC engineers.  Based on analysis and feedback, the preferred concept will be further developed and detailed into final requirements and specifications for the physical internal and external interfaces.  These requirements and specifications will be clearly communicated to the responsible engineering groups.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  AH to here 3:33 3/5
 \section{Anode Plane Assemblies}
 \label{subsec:v5-tpc-chamber-apa}
 
@@ -121,7 +135,7 @@ onto printed circuit boards attached to the wire frame.
 \label{fig:tpc-bias-voltages}
 \end{figure}
 
-%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%  
 \subsection{Wire Planes}
 
 
@@ -135,18 +149,18 @@ will be electrically biased so that electrons from an ionizing-particle
 track completely drift past the first three planes and are collected by the 
 fourth plane. Calculations show that the minimum bias voltages 
 needed to achieve this goal are $V_G= -665$V, $V_U=-370$V, $V_V=0$V and $V_X=820$V 
-respectively.  A grounded mesh plane, located 4.8~mm behind the collection plane, prevents the electric field around this set of wires from being distorted by the metal frame structure and the wires on the opposite side of the frame. It also shields the sensing wires from potential EM interferences from the silicon photomultipliers (SiPMs), discussed in Chapter~\ref{ch:photon}, mounted within the frame.  The mesh should be have a wire pitch less than 2~mm to ensure a uniform electric field and a high optical transparency.  Figure~\ref{fig:tpc-bias-voltages} shows the electric potential distribution near the APA frame with the wire planes biased with the appropriate voltages. 
+respectively.  A grounded mesh plane, located 4.8~mm behind the collection plane, prevents the electric field around this set of wires from being distorted by the metal frame structure and the wires on the opposite side of the frame. It also shields the sensing wires from potential EM interferences from the silicon photomultipliers (SiPMs), discussed in Chapter~\ref{ch:photon}, mounted within the frame.  The mesh should have a wire pitch less than 2~mm to ensure a uniform electric field and a high optical transparency.  Figure~\ref{fig:tpc-bias-voltages} shows the electric potential distribution near the APA frame with the wire planes biased with the appropriate voltages. 
 
 The V wire plane is directly connected to the front-end electronics, i.e. $V_V=0$V, to simplify the coupling and 
-reduce the maximum bias voltages on the other planes. The wires on the two induction planes (U \& V) are wrapped in a helical pattern around the long edges of the wire frame 
-(Fig.\ref{fig:tpc-wire-frame-xsect}a). This technique makes it possible to place readout 
+reduce the maximum bias voltages on the other planes. The wires on the two induction planes (U and V) are wrapped in a helical pattern around the long edges of the wire frame 
+(Figure~\ref{fig:tpc-wire-frame-xsect}a). This technique makes it possible to place readout 
 electronics only at one short edge of a wire frame, enabling joining the APAs on the other three sides with minimal dead space.  It slightly complicates 
-the track reconstruction because the U \& V wires are sensitive to tracks on 
+the track reconstruction because the U and V wires are sensitive to tracks on 
 both sides of the APA.  The upper APAs in the cryostat will have their readouts
 at the top edge of the frame (as shown in Figure~\ref{fig:tpc-wire-frame-xsect}), 
 while the lower APAs will mount their electronics at the bottom edge.  These readout electronics are located outside of the TPC's active volume.
 
-The wire angle and overall APA length are chosen so that the angled wires wrap less than one full wrap around the APA between its head and foot (Fig.~\ref{fig:tpc-wire-angle}).  This avoids an ambiguity problem that would arise if a pair of angled wires and a vertical wire coincided at more than one location on an APA face.  A particle arriving at one of the locations would be indistinguishable from a particle arriving at the other.  The multiple photon detectors embedded in the APA frame also help to identify the vertical location of an ionizing track.
+The wire angle and overall APA length are chosen so that the angled wires wrap less than one full wrap around the APA between its head and foot (Figure~\ref{fig:tpc-wire-angle}).  This avoids an ambiguity problem that would arise if a pair of angled wires and a vertical wire coincided at more than one location on an APA face.  A particle arriving at one of the locations would be indistinguishable from a particle arriving at the other.  The multiple photon detectors embedded in the APA frame also help to identify the vertical location of an ionizing track.
 
 \begin{figure}[htbp]
 \centering
@@ -156,18 +170,18 @@ The wire angle and overall APA length are chosen so that the angled wires wrap l
 \end{figure}
 
 
-Precise values of wire angle and wire pitch were chosen to give an integral number of wires across the boards at the electronics end of the APA as well as an integral number of wire slots in the boards along the sides of the APA.  A solder pad spacing at the electronics end of 5.75~mm and a wire slot spacing along the sides of 8.00~mm results in a wire to wire pitch of $\sim$4.67~mm and a wire angle of 35.71$^\circ$ to the long axis of the APA.
+Precise values of wire angle and wire pitch were chosen to give an integral number of wires across the boards at the electronics end of the APA as well as an integral number of wire slots in the boards along the sides of the APA.  A solder pad spacing at the electronics end of 5.75~mm and a wire slot spacing along the sides of 8.00~mm results in a wire-to-wire pitch of 4.67~mm and a wire angle of 35.71$^\circ$ to the long axis of the APA.
 
 
-The 5.75~mm pitch of solder pads across the electronics boards of the U and V layers results in 40 channels per 230~mm wide board.  The $\sim$4.79~mm pitch in the X layer gives 48 channels per 230~mm wide board.  Each 230mm wide stack of boards has, therefore, 40+40+48=128 channels.  There are 10 of these board distributed per side along the readout edge of an APA for a total of 2560 signal wires on the APA.  With the additional 48 G wires per board stack, the total number of wires per APA is 3520.
+The 5.75~mm pitch of solder pads across the electronics boards of the U and V layers results in 40 channels per 230~mm wide board.  The 4.79~mm pitch in the X layer gives 48 channels per 230~mm wide board.  Each 230~mm wide stack of boards has, therefore, 40+40+48=128 channels.  There are 10 of these board distributed per side along the readout edge of an APA for a total of 2560 signal wires on the APA.  With the additional 48 G wires per board stack, the total number of wires per APA is 3520.
 
-
+%%% AH reviewed to here 5/6
 
 
 \begin{figure}[htpb]
 \centering
 \includegraphics[width=\linewidth]{tpc_apa_frame.png}
-\caption[Conceptual design of a wire frame]{The stainless steel APA frame (shown without wires or boards). The photon detectors are shown in place – although the APA is designed so that the photon detectors can be inserted into the APA after the wires are wound. }
+\caption[Conceptual design of a wire frame]{The stainless steel APA frame (shown without wires or boards). The photon detectors are shown in place --- although the APA is designed so that the photon detectors can be inserted into the APA after the wires are wound. }
 \label{fig:tpc-wire-frame}
 \end{figure}
 
@@ -184,7 +198,7 @@ of the wire frame is shown in Figure~\ref{fig:tpc-wire-frame}.
 It is constructed from all stainless-steel tubes welded in a jig.  
 Structural analysis has shown that the maximum distortion of the frame due to wire tension is less than 0.5~mm. The total mass of a bare frame is $\sim$260~kg.
 
-Lengthwise buckling is not an issue, both because of the strength of the frame and because the wires are maintained at an approximately uniform distance from the frame by periodic comb-like structures (Fig.~\ref{fig:tpc-wire-support}).
+Lengthwise buckling is not an issue, both because of the strength of the frame and because the wires are maintained at an approximately uniform distance from the frame by periodic comb-like structures (Figure~\ref{fig:tpc-wire-support}).
 
 All three long tubes have slots cut in them so the photon detectors can be inserted into the APAs after the wires are installed.  The two long outer members of the frame are open-ended, so the photon detector cables can be threaded through them.  All tube sections are vented to prevent the creation of trapped volumes.
 
@@ -208,7 +222,7 @@ Figure~\ref{fig:tpc-wire-board-x} shows one of the X boards and an intermediate 
 
 In this way the wire board are connected to the bias voltage supply through the resistor-capacitor network on the CR board. The resistors in this network have values around 20 M$\Omega$, so that in the event that a wire from a different plane breaks and is shorted to these wires, the bias voltages on the rest of the wires will not be affected. The AC-coupled signals from the RC network are connected to sockets that will mate with the front-end readout boards.
 
-These readout boards, as described in Section ?, process the analog signals from the wires and transmit the digital information via feedthroughs to the DAQ system outside the cryostat. The electronics on the readout boards generate an estimated 60 W of heat per APA which may produce a small quantity of argon bubbles.  Stainless-steel covers are placed over the readout boards to contain the bubbles and direct them to the gas volume of the cryostat. In the case of the lower APAs, the bubbles, if not already re-condensed, will be funneled through the vertical hollow frame members to the top of the cryostat.
+These readout boards, as described in Chapter~\ref{ch;ce}, process the analog signals from the wires and transmit the digital information via feedthroughs to the DAQ system outside the cryostat. The electronics on the readout boards generate an estimated $\sim$160 W of heat per APA which may produce a small quantity of argon bubbles.  Stainless-steel covers are placed over the readout boards to contain the bubbles and direct them to the gas volume of the cryostat. In the case of the lower APAs, the bubbles, if not already re-condensed, will be funneled through the vertical hollow frame members to the top of the cryostat.
 
 
 Figure \ref{fig:tpc-APA-corner} is a close-up view of a corner of an APA frame with some wires and various wire boards to demonstrate the assembly.
@@ -220,7 +234,7 @@ After the grid plane wires are placed on the APA, and fiberglass cover sheets pl
 \begin{figure}[htpb]
 \centering
 \includegraphics[width=\linewidth]{tpc_apa_u_edge_board}
-\caption{Design of a wire wrapping board for the U wires on a long edge of an APA. The light, angled lines represent the wires wrapped over the board surface. Some wires near the mounting holes must be soldered to the copper traces and then cut.  An epoxy strip attaches the wires to the board so the solder is only critical for the electrical connection.}
+\caption[Design of a wire wrapping board for the U wires on a long edge of an APA]{Design of a wire wrapping board for the U wires on a long edge of an APA. The light, angled lines represent the wires wrapped over the board surface. Some wires near the mounting holes must be soldered to the copper traces and then cut.  An epoxy strip attaches the wires to the board so the solder is only critical for the electrical connection.}
 \label{fig:tpc-wire-board-u-side}
 \end{figure}
 
@@ -250,7 +264,7 @@ The support structure is composed of strips of thin G10 sheet, with notches mach
 \begin{figure}[htpb]
 \centering
 \includegraphics[width=\linewidth]{tpc_apa_winding_machine.png}
-\caption[Winding machine concepts]{The tensioner head is passed from one side of the APA to the other as it’s moved around the APA to wind wire onto the APA frame.  The horizontal/vertical positioning systems on each side of the APA are made of commercial linear motion components.  Much or all of the positioning systems should be available from commercial vendors}
+\caption[Winding machine concepts]{The tensioner head is passed from one side of the APA to the other as it is moved around the APA to wind wire onto the APA frame.  The horizontal/vertical positioning systems on each side of the APA are made of commercial linear motion components.  Much or all of the positioning systems should be available from commercial vendors}
 \label{fig:tpc-winding-machine}
 \end{figure}
 
@@ -260,7 +274,7 @@ The support structure is composed of strips of thin G10 sheet, with notches mach
 A winding machine will be constructed to lay the 3520 wires onto each APA. It has sufficient versatility that the same mechanism can wind both the angled and the longitudinal layers.  This was not a deliberate goal in the beginning but it has turned out that the method chosen for winding the angled layers will work for the longitudinal layers as well.
  
 Its working concepts are illustrated in Figure~\ref{fig:tpc-winding-machine}. 
-The wire tensioner is a self-contained unit that includes the wire spool.  It is designed so that tension is maintained, not just when wire is pulled out, but also if wire is let back into the tensioner.  The APA is held off the ground by a couple posts, with one of its long edges down.  There are X-Y positioners on either side of the APA; the tensioner is moved across the face of the APA by one of these positioners – unspooling tensioned wire as it moves.  When the tensioner arrives at the edge of the APA it is passed across to the positioner on the other side of APA.  This is done in the correct position so that wire is placed into the appropriate slots of the edge boards. The new positioner then moves it to the next location on the edge - where it is passed back around the edge of the APA.  In this way the entire layer of wire can be placed on the frame.  There will be a couple supports on the long side of the APA nearest the floor and one or two on the long side at the top.  At some point in the winding of the angled layers, the machine will have to be stopped and the supports moved out of the way -- to locations that have already been covered with wire.
+The wire tensioner is a self-contained unit that includes the wire spool.  It is designed so that tension is maintained, not just when wire is pulled out, but also if wire is let back into the tensioner.  The APA is held off the ground by a couple posts, with one of its long edges down.  There are X-Y positioners on either side of the APA; the tensioner is moved across the face of the APA by one of these positioners -- unspooling tensioned wire as it moves.  When the tensioner arrives at the edge of the APA it is passed across to the positioner on the other side of APA.  This is done in the correct position so that wire is placed into the appropriate slots of the edge boards. The new positioner then moves it to the next location on the edge - where it is passed back around the edge of the APA.  In this way the entire layer of wire can be placed on the frame.  There will be a couple supports on the long side of the APA nearest the floor and one or two on the long side at the top.  At some point in the winding of the angled layers, the machine will have to be stopped and the supports moved out of the way -- to locations that have already been covered with wire.
 
 Although a large part of an entire plane of wires can be wound in one continuous process, a more fault-tolerant procedure would be to pause the winding machine periodically and solder the last wire. This intermediate soldering step will prevent the unwinding of a large section due to an accidental broken wire.  An automatic soldering robot will solder the wire ends after the wires have been laid down on the APA. A wire-tension measuring device will scan the newly placed wires and record the wire tension of each wire. Any wires with abnormal tension will be replaced manually.
 
@@ -326,7 +340,7 @@ In additional to the resistor network, surge suppressors such as varistors and g
 
 
 The major challenge of this field cage design is to minimize the electric field exposed to the liquid argon near the thin copper strips.  One solution is to cover all copper edges with a thick layer of solder mask (an acrylic based polymer with a high dielectric strength) as part of the standard PCB fabrication steps.  This construction is currently being implemented in the 35ton TPC.  Figure~\ref{fig:tpc-field-cage} shows 
-the a section of the partially constructed field cage.  We'll evaluate 35ton TPC test results to determine if this technique is suitable for the much larger far detector.  In the meantime, we are also investigating new concepts to minimize the electric field at the copper edges (see for example: Fig.~\ref{fig:tpc-field-cage-resistive-coating}).
+the a section of the partially constructed field cage.  We'll evaluate 35ton TPC test results to determine if this technique is suitable for the much larger far detector.  In the meantime, we are also investigating new concepts to minimize the electric field at the copper edges (see for example: Figure~\ref{fig:tpc-field-cage-resistive-coating}).
 
 \begin{figure}[htbp]
 \centering
@@ -337,8 +351,9 @@ the a section of the partially constructed field cage.  We'll evaluate 35ton TPC
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{High Voltage Components}
-\label{subsec:v5-tpc-hv}
+%\subsection{High Voltage Components}   Can't have just one subsection. I think it's better to remove this heading than to 
+% plant in several others. --Anne
+%\label{subsec:v5-tpc-hv}
    
 The power supplies for the TPC cathode planes 
 must be able to provide $-200$ kV at 1~mA current. The output voltage ripple 
@@ -413,7 +428,7 @@ Several prototype TPC modules were constructed during the design phase. The init
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\linewidth]{tpc_apa_40percent.jpg}
-\caption{APA prototype that was used to study the support structure and wire wrapping}
+\caption{APA prototype used to study the support structure and wire wrapping}
 \label{fig:tpc-apa-40percent}
 \end{figure}
 
