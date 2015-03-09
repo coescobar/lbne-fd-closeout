@@ -265,6 +265,174 @@ scaled to 1.5 m.
 
 \subsection{Fiber-embedded bulk acrylic plate}
 
+At LSU, Thomas Kutter and team have developed a VUV photon detector
+design for a large LAr detector that overcomes some of the
+shortcomings of the present LBNE baseline photon detectors. The LSU
+photon detector design allows for a very large area coverage thereby
+increasing the geometrical acceptance of the photon detectors. The
+number of required SiPMs and readout channels per unit detector area
+covered with photon detection panels has been significantly reduced to
+keep the overall cost for the photon detection system at or below the
+present design while increasing the geometrical acceptance at the same
+time.
+
+The photon detection system consists of a TPB coated acrylic panel
+with an embedded S-shaped wavelength shifting (WLS) fiber. The fiber
+is read out by two SiPMs, which are coupled to either end of the fiber
+and serves to transport the light over long distances with minimal
+attenuation. The double-ended fiber readout has the added benefit to
+provide some position dependence to the light generation along the
+panel by comparing relative signal sizes and arrival times in the two
+SiPMs. Figure \ref{fig1-LSU} show a drawing of the layout and a
+picture of a prototype photon detection panel in the test stand at
+LSU.  The incoming 128nm VUV Ar scintillation light will be converted
+by the thin TPB layer on the acrylic panel and re-emitted with
+wavelength peaking at 430nm in an isotropic way. About 50\% of the
+light would be emitted into the acrylic panel where some fraction will
+be absorbed by the WLS fiber and converted to light with a peak
+intensity of about 480 - 500~nm. The green light exiting the fiber is
+well matched to the peak photon detection efficiency of typical SiPMs.
+%
+\begin{figure}[htb]
+  \begin{center}
+     \resizebox{.38\textwidth}{!}{\includegraphics[width=0.45\linewidth]{./figures/LSU_panel_drawing.png}}
+     \resizebox{.58\textwidth}{!}{\includegraphics[width=0.8\linewidth]{./figures/LSU_panel_prototype.png}}
+\caption{LSU photon-detection panel. Technical drawing of a $20"\times4.33"$ acrylic panel with embedded WLS fiber (left) and picture of a prototype in test set-up at LSU (right) with the same dimensions.}
+\label{fig1-LSU} 
+\end{center}
+\end{figure}
+%
+%
+
+\subsection{LSU Photon detection panel production}
+The photon detection panels are produced from $\sfrac{1}{4}"$ thick
+sheet UVT acrylic and cut to size. For a first series of prototypes
+the acrylic panel dimensions were chosen to closely match the area of
+4 bars of the LBNE baseline photon detection system.  The groove is
+cut with a CNC mill in several passes to achieve good groove surface
+quality, which is important for good light transmission from the bulk
+acrylic to the fiber. The panels are dip coated with TPB and left to
+dry prior to insertion of the WLS fiber. Panels with two and three
+layers of fibers inserted and glued into the groove have been
+produced. Fiber ends are cut and polished.  The resulting acrylic
+panels are then inserted into a custom made mechanical frame which was
+designed by David Warner at CSU. The end caps of the mechanical frame
+house one SiPM on either end. The presently used 6x6 mm2 active area
+SiPM are spring mounted to ensure good contact between the active area
+and the fiber ends.  The leads of the SiPMs are connected to a small
+PCB onto which ~2m long twisted pair coax cables are soldered to
+supply the SiPM with a bias voltage and read out signals. The other
+cable ends are typically connected to pre-amplifiers before leading to
+a DAQ system.  Components for the photon detection panels are
+inspected at all stages of the manufacturing process for quality. Due
+to the small number of panels produced to date no quantitative quality
+control parameters have been defined yet.  Proper connectivity of the
+fully assembled units are tested in a setup at LSU using a LED
+flasher. If LED light signals are seen the panel is successively
+immersed in gaseous argon (GAr) along with an alpha source. The
+observation of argon scintillation light originating from alpha
+particles and cosmic-rays penetrating the GAr volume allows for a
+relatively quick quality control check of a completed photon detector
+at room temperature.
+
+\subsection{Proof of concept and prototype detector results}
+Several photon detector panels of $20" \times 4.33"$ have been
+produced and two have been tested in a LAr test stand at CSU. The
+detectors submitted to the cold test have 3 and 2 embedded fibers,
+respectively, but are otherwise produced in the same way. The data
+taking in LAr included self triggered alpha source scans as well as
+cosmic runs with a muon hodoscope providing a trigger for near
+vertical muons penetrating the LAr volume.
+\paragraph{Alpha source runs:} The alpha source was placed at a distance of about 1" in front of the center line of the photon panel and moved to 20 different positions spaced about 1" apart from neighboring positions. At each position 5000 signal traces were recorded and measurements were repeated for three of the positions to check the reproducibility of the measured light yield. Figure \ref{fig2-LSU} shows results for both successively measured panels. The red and blue dots show the mean light yield values in units of p.e. (photo electron equivalents = no. of fired SiPM pixels) for the SiPM on the top and bottom end of the panel as function of source position. Green dots show the sum of both channels. The summed signals provide a very uniform detector response for the entire panel and independent of the alpha source position. The data also indicate good reproducibility for the doubly measured positions.
+The 3-fiber panel shows about 50\% more light when compared to the
+2-fiber panel which is in good agreement with expectations. It needs
+to be pointed out that the LAr purity was not monitored and that
+measurements for the two panels were performed sequentially after
+refilling the dewar with LAr. However, the liquid argon for both
+measurements came from the same batch which motivates the assumption
+that the purity for both measurements was very similar.
+%
+\begin{figure}[htb]
+  \begin{center}
+   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{./figures/LSU_panel_prototype1_ly-position.png}}  
+    \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{./figures/LSU_panel_prototype2_ly-position.png}}
+\caption{Light yield for the 3 (left) and 2 (right) fiber LSU photon
+  detection panels in response to a 1" distant alpha source in
+  LAr. Red and blue symbols represent the mean light yield over 5000
+  trigger events from a single SiPM each and green points represent
+  the summed signal from both SiPMs.}
+\label{fig2-LSU} 
+\end{center}
+\end{figure}
+%
+%
+\paragraph{Cosmic trigger runs:} Two $ 1" \times 10"$ wide scintillator counters were placed above and below the dewar to form a muon hodoscope and to select near vertical muons traversing the LAr volume. The 3-fiber LSU panel and one LBNL/Elgin Bis-MSB doped polystyrene bar of LBNE baseline dimensions and read out by three SiPMs were simultaneously inserted in the LAr. The setup allowed the study of the response of these photon detectors to scintillation light created by penetrating cosmic muons. A detailed quantitative comparison of the relative light yield was not possible with this setup due to large systematic uncertainties in the position dependence of the scintillation light generation by the triggering cosmic muons. A qualitative comparison of the detector responses, taken as the signal sum of 3 and 2 SiPMs for the Elgin bar and the LSU panel, respectively, shows comparable light yields as shown in figure \ref{fig3-LSU}. 
+        
+%
+\begin{figure}[htb]
+  \begin{center}
+   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{./figures/LSU_panel_prototype_charge.png}}
+   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{./figures/LSU_panel_prototype_charge_zoom.png}}
+\caption{Scatter plot of the summed charge of 3 SiPMs coupled to the
+  LBNL/Elgin Bis-MSB doped bar and the summed charge of 2 SiPMs for
+  the 3-fiber LSU panel in response to an external muon hodoscope
+  trigger. The right plot shows a zoomed version of the left plot.}
+\label{fig3-LSU} 
+\end{center}
+\end{figure}
+%
+%
+
+\subsection{R\&D Work in progress and present Plans }
+
+After the construction and proof of principle test of the LSU style
+photon detection panels we manufactured several 2.17m long and 110mm
+(=4.33") wide panels to demonstrate the scalability of the design.  At
+the time of writing tests in the large LAr dewar at CSU are in
+progress.  We are performing alpha source scans and cosmic muon runs.
+The alpha source scan runs are arranged such that the source
+illuminates two photon detectors at the same time.  This setup
+facilitates quantitative and relative light yield comparison between
+different photon detector designs in the same LAr bath with a well
+defined VUV light source.
+
+Manufacturing and testing of wider panels is under consideration to
+maximize the photon detector panel area in the ELBNF LAr far
+detector. The goal is to cover the entire anode plane assembly (APA)
+area with photon detectors embedded into the APA frame.  Another
+important measurement goal is to establish the energy threshold of the
+photon detection panels. A study will be conducted for the photon
+detectors presently installed in the 35t detector using Michel
+electrons. The 35t detector contains one of the 3-fiber LSU photon
+detection panels. In addition, alpha source runs in a well-controlled
+and monitored LAr setup may provide information on the particle energy
+threshold for observation of VUV scintillation light.  The measurement
+of a photon detector panel's light yield as function of the source
+distance is another key measurement to estimate the response and
+sensitivity of the full photon detection system in a LAr
+detector. Results will be useful to validate MC simulations.  We are
+exploring options to perform these tests in the large dewar setup at
+CSU or alternatively in the TallBo setup at FNAL.
+
+The TPB coating procedure of the acrylic panels has not yet been
+optimized and improvements may be possible. We foresee a systematic
+study to identify parameters in the TPB dip and alternatively the
+evaporation coating procedure to maximize the light yield of resulting
+samples. These tests will be performed on small
+$10\times10~\mathrm{cm}^2$ acrylic panels with a U-shaped embedded WLS
+fiber.  On the software and analysis side we are in the process of
+improving our tools to study position dependence for alpha source run
+data using relative signal timing and size. Furthermore, we plan to
+continue work on analysis algorithms to identify the late light
+component from argon scintillation.
+
+Finally, early exploratory work on wallpapering the TPC cathode planes
+with TPB coated Tetratex foils and observing the shifted light with
+suitably installed photon sensors in combination with light collector
+cones will be pursued and explored more rigorously to provide timely
+results.
+
+
 \subsection{Fiber bundle with WS-coated readiator}
 
 The driving cost of the photon detector system is readout
