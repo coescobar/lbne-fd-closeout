@@ -179,7 +179,7 @@ Ref.~\cite{bib:MITbars}.
       photosensors]{Schematic drawing of a light guide with its
       photosensors. The bars have embedded wavelength shifter (WLS),
       either TPB or bis-MSB. Three SiPMs collect the waveshifted
-      photons that have been internally reflected to the bar's end.}
+      photons that have been internally reflected to the bar's end. \fixme{Fuzzy at this size}}
     \label{fig:WaveguideSketch}
   \end{center}
 \end{figure}
@@ -294,17 +294,19 @@ light would be emitted into the acrylic panel where some fraction will
 be absorbed by the WLS fiber and converted to light with a peak
 intensity of about 480 - 500~nm. The green light exiting the fiber is
 well matched to the peak photon detection efficiency of typical SiPMs.
-%
-%\begin{figure}[htb]
-%  \begin{center}
+
+\begin{figure}[htb]
+ \begin{center}
+     \includegraphics[width=0.45\linewidth]{LSU_panel_drawing.png}
+\includegraphics[width=0.45\linewidth]{LSU_panel_prototype.png}
+
 %     \resizebox{.38\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_drawing.png}}
 %     \resizebox{.58\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype.png}}
-%\caption{LSU photon-detection panel. Technical drawing of a $20"\times4.33"$ acrylic panel with embedded WLS fiber (left) and picture of a prototype in test set-up at LSU (right) with the same dimensions.}
-%\label{fig1-LSU} 
-%\end{center}
-%\end{figure}
-%
-%
+\caption{LSU photon-detection panel. Technical drawing of a $20"\times4.33"$ acrylic panel with embedded WLS fiber (left) and picture of a prototype in test set-up at LSU (right) with the same dimensions.}
+\label{fig1-LSU} 
+\end{center}
+\end{figure}
+
 
 \subsection{LSU Photon detection panel production}
 The photon detection panels are produced from 0.25\" thick
@@ -354,35 +356,39 @@ refilling the dewar with LAr. However, the liquid argon for both
 measurements came from the same batch which motivates the assumption
 that the purity for both measurements was very similar.
 %
-%\begin{figure}[htb]
-%  \begin{center}
+\begin{figure}[htb]
+  \begin{center}
+\resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype1_ly-position.png}}
+    \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype2_ly-position.png}}
 %   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype1_ly-position.png}}  
 %    \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype2_ly-position.png}}
-%\caption{Light yield for the 3 (left) and 2 (right) fiber LSU photon
-%  detection panels in response to a 1" distant alpha source in
-%  LAr. Red and blue symbols represent the mean light yield over 5000
-%  trigger events from a single SiPM each and green points represent
-%  the summed signal from both SiPMs.}
-%\label{fig2-LSU} 
-%\end{center}
-%\end{figure}
+\caption[Light yield for the fiber LSU photon
+  detection panels in response to a 1-in distant alpha source in
+  LAr]{Light yield for the 3 (left) and 2 (right) fiber LSU photon
+  detection panels in response to a 1" distant alpha source in
+  LAr. Red and blue symbols represent the mean light yield over 5000
+  trigger events from a single SiPM each and green points represent
+ the summed signal from both SiPMs.}
+\label{fig2-LSU} 
+\end{center}
+\end{figure}
 %
 %
 \paragraph{Cosmic trigger runs:} Two $ 1" \times 10"$ wide scintillator counters were placed above and below the dewar to form a muon hodoscope and to select near vertical muons traversing the LAr volume. The 3-fiber LSU panel and one LBNL/Elgin Bis-MSB doped polystyrene bar of LBNE baseline dimensions and read out by three SiPMs were simultaneously inserted in the LAr. The setup allowed the study of the response of these photon detectors to scintillation light created by penetrating cosmic muons. A detailed quantitative comparison of the relative light yield was not possible with this setup due to large systematic uncertainties in the position dependence of the scintillation light generation by the triggering cosmic muons. A qualitative comparison of the detector responses, taken as the signal sum of 3 and 2 SiPMs for the Elgin bar and the LSU panel, respectively, shows comparable light yields as shown in figure \ref{fig3-LSU}. 
         
 %
-%\begin{figure}[htb]
-%  \begin{center}
-%   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype_charge.png}}
-%   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype_charge_zoom.png}}
-%\caption{Scatter plot of the summed charge of 3 SiPMs coupled to the
-%  LBNL/Elgin Bis-MSB doped bar and the summed charge of 2 SiPMs for
-%  the 3-fiber LSU panel in response to an external muon hodoscope
-%  trigger. The right plot shows a zoomed version of the left plot.}
-%\label{fig3-LSU} 
-%\end{center}
-%\end{figure}
 %
+\begin{figure}[htb]
+  \begin{center}
+   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype_charge.png}}
+   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype_charge_zoom.png}}
+\caption[Summed charge plots of SiPMs in response to muon hodoscope trigger ]{Scatter plot of the summed charge of 3 SiPMs coupled to the
+ LBNL/Elgin Bis-MSB doped bar and the summed charge of 2 SiPMs for
+ the 3-fiber LSU panel in response to an external muon hodoscope
+ trigger. The right plot shows a zoomed version of the left plot.}
+\label{fig3-LSU} 
+\end{center}
+\end{figure}
 %
 
 \subsection{R\&D Work in progress and present Plans }
@@ -702,9 +708,10 @@ performance requirements of the electronics.
  \begin{figure}[h]
   \centering
 %\includegraphics[angle=0,width=10cm,height=7cm]{fig1}
-\caption{Block diagram of the photon detector signal processing system.}
+\caption{Block diagram of the photon detector signal processing system. }
 \label{fig:fig-e-1}
 \end{figure}
+\fixme{No fig1 exists for: Block diagram of the photon detector signal processing system.  }
 %
 In the 35-ton prototype, each SiPM signal was transmitted on an
 individual shielded twisted-pair cable fitted with individual
