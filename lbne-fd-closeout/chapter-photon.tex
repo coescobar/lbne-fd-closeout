@@ -86,51 +86,41 @@ The efficiencies leading to the overall number of photo-electrons
 collected by the photon detection system, $\frac{N_{pe}}{MeV}$, are given
 in table~\ref{Table-Eff}.
 
-\begin{table}[ht]
-  \begin{center}
-    \caption{Individual photon collection efficiencies.}
-    \label{Table-Eff}
-    \begin{tabular}{ c | l | c | l }
-      \hline
-      \hline
-      Factor & Description & Value & Comments  \\
-      \hline
-      $\epsilon_{geom}$ & geometric acceptance & 0.0036 & historical
-      average  \\
-      $\epsilon_{E}$ & field correction & 0.6 & 500~V/cm  \\
+
+\begin{cdrtable}[Individual photon collection efficiencies]{c | l | c | l}{example}
+{Individual photon collection efficiencies}
+ Factor & Description & Value & Comments \\ \toprowrule
+   $\epsilon_{geom}$ & geometric acceptance & 0.0036 & historical
+      average  \\ \colhline
+      $\epsilon_{E}$ & field correction & 0.6 & 500~V/cm  \\ \colhline
       $\epsilon_{mesh}$ & TPC wire shadowing & .83 (30-150$^{\circ}$)
-      & falls off sharply~\cite{HimmelMesh}  \\
+      & falls off sharply~\cite{HimmelMesh}  \\ \colhline
       $\epsilon_{conv}$ & TPB conversion & 1 & see
-      ref.~\cite{bib:gehman}  \\
+      ref.~\cite{bib:gehman}  \\ \colhline
       $\epsilon_{capt}$ & waveguide incident & 0.5 & about half
-      converted photons\\
-      &  & & travel into waveguide  \\
+      converted photons\\ \colhline
+      &  & & travel into waveguide  \\ \colhline
       $\epsilon_{tran}$ & waveguide transmission & TBD  & prototype
-      dependent  \\
+      dependent  \\ \colhline
      $\epsilon_{QE}$ & SiPM QE & .31  & SensL b-series  \\
-      \hline
-      \hline
-    \end{tabular}
-  \end{center}
-\end{table}
+\end{cdrtable}
+
 
 Using equation~\ref{eff_eqn} it is seen that to detect a
 2~p.e. signal, likely to be discriminated from noise, the transport
 efficiency of 1.2\%. Of course this value is very position dependent
 as the geometric acceptance, wire shadowing, and transport corrections
-all depend on the location of the event. Figure~\ref{photon_map}
+all depend on the location of the event. Figure~\ref{fig:photon_map}
 shows the probability of (?) MeV energy deposition neing detected in
 the photon detectors. 
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=.4\columnwidth]{35t_map.jpg}
-\caption[Probability of photon being detected in
-  detectors when depositing energy]{Photon map giving the probability of photon being detected in
-  the photon detectors when depositing energy at map location. \fixme{(need
-  general TPC cell map with better descritpion)}}
-\label{photon_map}
-\end{figure}
+\begin{cdrfigure}[Probability of photon being detected in
+  detectors when depositing energy]{photon_map}{Photon map giving the probability of photon being 
+  detected in the photon detectors when depositing energy at map location. \fixme{(need
+  general TPC cell map with better description)}}
+  \includegraphics[width=0.4\textwidth]{35t_map.jpg}
+\end{cdrfigure}
+
 
 The TPC wire mesh shadowing is also quite location dependent as photon
 angles, relative to the wire plane, lead to rapid loss in transmission
@@ -169,20 +159,18 @@ the bar.  The light guide channels the light to photodectors at its
 end.
 
 A schematic drawing of a light guide with its photosensors is shown in
-Fig.~\ref{fig:WaveguideSketch}. The prototype light guides are bars
+Figure~\ref{fig:WaveguideSketch}. The prototype light guides are bars
 with a footprint 2.54 cm $\times$ 0.6 cm.  The concept is described in
 Ref.~\cite{bib:MITbars}.
-\begin{figure}[ht]
-  \begin{center}
-    \includegraphics[width=.85\columnwidth]{cast-acryl-lightguide}
-    \caption[Schematic drawing of a light guide with its
-      photosensors]{Schematic drawing of a light guide with its
+
+\begin{cdrfigure}[Schematic drawing of a light guide with its
+      photosensors]{WaveguideSketch}{Schematic drawing of a light guide with its
       photosensors. The bars have embedded wavelength shifter (WLS),
       either TPB or bis-MSB. Three SiPMs collect the waveshifted
       photons that have been internally reflected to the bar's end. \fixme{Fuzzy at this size}}
-    \label{fig:WaveguideSketch}
-  \end{center}
-\end{figure}
+    \includegraphics[width=.85\columnwidth]{cast-acryl-lightguide}
+\end{cdrfigure}
+
 The wavelength shifter converts VUV scintillation photons striking it
 to 430~nm photons inside the bar, with an efficiency of $\sim$50\% of
 converting a VUV to an optical photon~\cite{bib:gehman}.  A fraction
@@ -200,23 +188,17 @@ performance in liquid argon.
 The prototype light guides being studied at Indiana are made with
 different three technologies. These technologies are listed in
 Table~\ref{tab:lightGuides}.
-\begin{table}[ht]
-  \begin{center}
-    \caption{Light guide technologies.}
-    \label{tab:lightGuides}
-    \begin{tabular}{ c l  c }
-      \hline
-      \hline
-      ~~Label~~ & ~Light Guide Technologies~  \\
-      \hline
-      (a) & clear acrylic, dip-coated  \\
-      (b) & doped Eljen PVT light guide, dip-coated  \\
-      (c) & doped Eljen polystyrene light guide, dip-coated   \\
-      \hline
-      \hline
-    \end{tabular}
-  \end{center}
-\end{table}
+
+\begin{cdrtable}[Light guide technologies]{ c l  l }{lightGuides}
+{Light guide technologies}
+  Label & Light Guide Technologies \\ \toprowrule
+  (a) & clear acrylic, dip-coated   \\ \colhline
+      (b) & doped Eljen PVT light guide, dip-coated   \\ \colhline
+      (c) & doped Eljen polystyrene light guide, dip-coated    \\ 
+\end{cdrtable}
+
+
+
 (a) The clear acrylic bars are made from blanks of commercially
 available Lucite-UTRAN cast UVT acrylic sheet that has been laser-cut
 and diamond-polished into bars of the proper size.  Lucite-UTRAN has
@@ -285,7 +267,7 @@ and serves to transport the light over long distances with minimal
 attenuation. The double-ended fiber readout has the added benefit to
 provide some position dependence to the light generation along the
 panel by comparing relative signal sizes and arrival times in the two
-SiPMs. Figure \ref{fig1-LSU} show a drawing of the layout and a
+SiPMs. Figure \ref{fig:1-LSU} show a drawing of the layout and a
 picture of a prototype photon detection panel in the test stand at
 LSU.  The incoming 128nm VUV Ar scintillation light will be converted
 by the thin TPB layer on the acrylic panel and re-emitted with
@@ -295,17 +277,11 @@ be absorbed by the WLS fiber and converted to light with a peak
 intensity of about 480 - 500~nm. The green light exiting the fiber is
 well matched to the peak photon detection efficiency of typical SiPMs.
 
-\begin{figure}[htb]
- \begin{center}
-     \includegraphics[width=0.45\linewidth]{LSU_panel_drawing.png}
+\begin{cdrfigure}[LSU photon-detection panel]{1-LSU}{LSU photon-detection panel. Technical drawing of a $20"\times4.33"$ acrylic panel with embedded WLS fiber (left) and picture of a prototype in test set-up at LSU (right) with the same dimensions.}
+\includegraphics[width=0.25\linewidth]{LSU_panel_drawing.png}
 \includegraphics[width=0.45\linewidth]{LSU_panel_prototype.png}
+\end{cdrfigure}
 
-%     \resizebox{.38\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_drawing.png}}
-%     \resizebox{.58\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype.png}}
-\caption{LSU photon-detection panel. Technical drawing of a $20"\times4.33"$ acrylic panel with embedded WLS fiber (left) and picture of a prototype in test set-up at LSU (right) with the same dimensions.}
-\label{fig1-LSU} 
-\end{center}
-\end{figure}
 
 
 \subsection{LSU Photon detection panel production}
@@ -347,7 +323,7 @@ respectively, but are otherwise produced in the same way. The data
 taking in LAr included self triggered alpha source scans as well as
 cosmic runs with a muon hodoscope providing a trigger for near
 vertical muons penetrating the LAr volume.
-\paragraph{Alpha source runs:} The alpha source was placed at a distance of about 1" in front of the center line of the photon panel and moved to 20 different positions spaced about 1" apart from neighboring positions. At each position 5000 signal traces were recorded and measurements were repeated for three of the positions to check the reproducibility of the measured light yield. Figure \ref{fig2-LSU} shows results for both successively measured panels. The red and blue dots show the mean light yield values in units of p.e. (photo electron equivalents = no. of fired SiPM pixels) for the SiPM on the top and bottom end of the panel as function of source position. Green dots show the sum of both channels. The summed signals provide a very uniform detector response for the entire panel and independent of the alpha source position. The data also indicate good reproducibility for the doubly measured positions.
+\paragraph{Alpha source runs:} The alpha source was placed at a distance of about 1" in front of the center line of the photon panel and moved to 20 different positions spaced about 1" apart from neighboring positions. At each position 5000 signal traces were recorded and measurements were repeated for three of the positions to check the reproducibility of the measured light yield. Figure \ref{fig:2-LSU} shows results for both successively measured panels. The red and blue dots show the mean light yield values in units of p.e. (photo electron equivalents = no. of fired SiPM pixels) for the SiPM on the top and bottom end of the panel as function of source position. Green dots show the sum of both channels. The summed signals provide a very uniform detector response for the entire panel and independent of the alpha source position. The data also indicate good reproducibility for the doubly measured positions.
 The 3-fiber panel shows about 50\% more light when compared to the
 2-fiber panel which is in good agreement with expectations. It needs
 to be pointed out that the LAr purity was not monitored and that
@@ -355,40 +331,31 @@ measurements for the two panels were performed sequentially after
 refilling the dewar with LAr. However, the liquid argon for both
 measurements came from the same batch which motivates the assumption
 that the purity for both measurements was very similar.
+
 %
-\begin{figure}[htb]
-  \begin{center}
-\resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype1_ly-position.png}}
-    \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype2_ly-position.png}}
-%   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype1_ly-position.png}}  
-%    \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype2_ly-position.png}}
-\caption[Light yield for the fiber LSU photon
-  detection panels in response to a 1-in distant alpha source in
-  LAr]{Light yield for the 3 (left) and 2 (right) fiber LSU photon
+\begin{cdrfigure}[Light yield for the fiber LSU PD panels with alpha source in
+  LAr]{2-LSU}{Light yield for the 3 (left) and 2 (right) fiber LSU photon
   detection panels in response to a 1" distant alpha source in
   LAr. Red and blue symbols represent the mean light yield over 5000
   trigger events from a single SiPM each and green points represent
  the summed signal from both SiPMs.}
-\label{fig2-LSU} 
-\end{center}
-\end{figure}
+\resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype1_ly-position.png}}
+    \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype2_ly-position.png}}
+\end{cdrfigure}
+
 %
-%
-\paragraph{Cosmic trigger runs:} Two $ 1" \times 10"$ wide scintillator counters were placed above and below the dewar to form a muon hodoscope and to select near vertical muons traversing the LAr volume. The 3-fiber LSU panel and one LBNL/Elgin Bis-MSB doped polystyrene bar of LBNE baseline dimensions and read out by three SiPMs were simultaneously inserted in the LAr. The setup allowed the study of the response of these photon detectors to scintillation light created by penetrating cosmic muons. A detailed quantitative comparison of the relative light yield was not possible with this setup due to large systematic uncertainties in the position dependence of the scintillation light generation by the triggering cosmic muons. A qualitative comparison of the detector responses, taken as the signal sum of 3 and 2 SiPMs for the Elgin bar and the LSU panel, respectively, shows comparable light yields as shown in figure \ref{fig3-LSU}. 
+\paragraph{Cosmic trigger runs:} Two $ 1" \times 10"$ wide scintillator counters were placed above and below the dewar to form a muon hodoscope and to select near vertical muons traversing the LAr volume. The 3-fiber LSU panel and one LBNL/Elgin Bis-MSB doped polystyrene bar of LBNE baseline dimensions and read out by three SiPMs were simultaneously inserted in the LAr. The setup allowed the study of the response of these photon detectors to scintillation light created by penetrating cosmic muons. A detailed quantitative comparison of the relative light yield was not possible with this setup due to large systematic uncertainties in the position dependence of the scintillation light generation by the triggering cosmic muons. A qualitative comparison of the detector responses, taken as the signal sum of 3 and 2 SiPMs for the Elgin bar and the LSU panel, respectively, shows comparable light yields as shown in figure \ref{fig:3-LSU}. 
         
 %
 %
-\begin{figure}[htb]
-  \begin{center}
-   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype_charge.png}}
-   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype_charge_zoom.png}}
-\caption[Summed charge plots of SiPMs in response to muon hodoscope trigger ]{Scatter plot of the summed charge of 3 SiPMs coupled to the
+\begin{cdrfigure}[Summed charge plots of SiPMs in response to muon hodoscope trigger]{3-LSU}{Scatter plot of the summed charge of 3 SiPMs coupled to the
  LBNL/Elgin Bis-MSB doped bar and the summed charge of 2 SiPMs for
  the 3-fiber LSU panel in response to an external muon hodoscope
  trigger. The right plot shows a zoomed version of the left plot.}
-\label{fig3-LSU} 
-\end{center}
-\end{figure}
+   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype_charge.png}}
+   \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype_charge_zoom.png}}
+\end{cdrfigure}
+
 %
 
 \subsection{R\&D Work in progress and present Plans }
@@ -457,18 +424,16 @@ that have been either doped with or coated with TPB the CSU group has
 been developing an alternative design that is based on UV to blue
 wavelength shifting fiber (Y11) that has not been treated with TPB.  A
 thin TPB coated acrylic radiator located in front of a close packed
-array of WLS fibers. Figure~\ref{fiber_bundle} is a photograph of the
+array of WLS fibers. Figure~\ref{fig:fiber_bundle} is a photograph of the
 fiber-bundle prototype. 
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=.4\columnwidth]{fiber_bundle_1.png}
-\caption[Fiber-bundle PD prototype (early one-sided
-  version)]{Photograph of fiber-bundle PD prototype (early one-sided
+\begin{cdrfigure}[Fiber-bundle PD prototype (early one-sided
+  version)]{fiber_bundle}{Photograph of fiber-bundle PD prototype (early one-sided
   version). The thin TPB-coated radiator is mounted on top of the
   prototype in the image.}
-\label{fiber_bundle}
-\end{figure}
+  \includegraphics[width=.4\columnwidth]{fiber_bundle_1.png}
+\end{cdrfigure}
+
 
 The VUV photons are incident on the TPB-coated plastic radiator and
 roughly half of the photons converted in the radiator are incident on
@@ -544,7 +509,7 @@ mounting.
 
 The baseline design for mounting the PDs into the APA frames calls for
 ten PD modules, approximately 2.2m long, mounted roughly equally
-spaced along the full length of the APA frame (Fig.~\ref{fig5.5-1}).  The
+spaced along the full length of the APA frame (Figure~\ref{fig:5.5-1}).  The
 PD modules are read out using individual twisted pair cable, one per
 SiPM.  These cables (120 of them in the original baseline design) are
 routed through the APA side tubes to a connector at the cold
@@ -558,18 +523,16 @@ ambient light, which places significant requirements on the
 environment the APAs are assembled and stored in this way, but
 initially it was decided this was the best option.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=.6\columnwidth]{fig5-5-1.png}
-\caption{Full APA frame with ten photon detectors mounted
+\begin{cdrfigure}[Full APA frame with ten photon detectors mounted
+  inside the frame]{5.5-1}{Full APA frame with ten photon detectors mounted
   inside the frame}
-\label{fig5.5-1}
-\end{figure}
+   \includegraphics[width=.6\columnwidth]{fig5-5-1.png}
+\end{cdrfigure}
 
 A universal PD frame assembly was devised to hold all three PD design
-variations under consideration.  Figure~\ref{fig5.5-2} shows an example of a
+variations under consideration.  Figure~\ref{fig:5.5-2} shows an example of a
 short (400~mm long active area) version of this frame manufactured for
-the 35t test, and figure~\ref{fig5.5-3} shows a mechanical assembly drawing of
+the 35t test, and Figure~\ref{fig:5.5-3} shows a mechanical assembly drawing of
 the frame system for one of the candidate light collector choices.
 The frame consists of two plastic (acetal) end caps mounted to the
 inside of the APA frame, joined by 10~mm diameter stainless steel tubes
@@ -584,25 +547,21 @@ far endblock assembly provides balancing forces to the light collector
 elements as required to ensure these elements remain in straight and
 in good contact with the SiPMs.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=.3\columnwidth]{fig5-5-2.png}
-\caption{Photograph of 40~cm long bar-based prototype mounted in test frame.}
-\label{fig5.5-2}
-\end{figure}
+\begin{cdrfigure}[Photograph of 40~cm long bar-based prototype mounted in test frame]{5.5-2}{Photograph of 40~cm long bar-based prototype mounted in test frame}
+  \includegraphics[width=.5\textwidth]{fig5-5-2.png}
+\end{cdrfigure}
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=.6\columnwidth]{fig5-5-3.png}
-\caption{Mechanical assembly drawing of frame system.}
-\label{fig5.5-3}
-\end{figure}
+
+\begin{cdrfigure}[Mechanical assembly drawing of frame system]{5.5-3}{Mechanical assembly drawing of frame system}
+  \includegraphics[width=.8\columnwidth]{fig5-5-3.png}
+\end{cdrfigure}
+
 
 Testing of the PD mount scheme in many test setups (at IU, CSU and
 FNAL), as well as experience APA assembly, have led to a re-evaluation
 of the PD mounting scheme.  The revised baseline has PD installation
 occurring following APA wire wrapping, through slots left in the side
-of the APA frame (Fig.~\ref{fig5.5-4}).  As shown in the figure, the
+of the APA frame (Figure~\ref{fig:5.5-4}).  As shown in the figure, the
 plan still calls for ten PDs per APA frame.  Five of the PDs will be
 installed through each side of the APA frame, and the cables for each
 of the PDs will be routed to the cold electronics end of the APA
@@ -611,24 +570,20 @@ c-channels mounted into the APA frames prior to wire wrapping will
 guide and support the PDs during and after installation.  The PD will
 only be attached to the APA frame at one end, so the purely-plastic PD
 module will be free to slide in the track to allow for the
-differential contraction (Fig~\ref{fig5.5-5}).  Tests of 2.2m prototype
+differential contraction (Figure~\ref{fig:5.5-5}).  Tests of 2.2m prototype
 assemblies of both fiber hybrid and the LSU-proposed monolithic
 acrylic bar design in the CSU CDDF have demonstrated significant
 promise.  This installation scheme
 
-\begin{figure}[h!]
-  \centering
+\begin{cdrfigure}[Blow up of APA fram showing PD insertion location]{5.5-4}{Blow up of APA fram showing PD insertion location}
   \includegraphics[width=.6\columnwidth]{fig5-5-4.png}
-\caption{Blow up of APA fram showing PD insertion location.}
-\label{fig5.5-4}
-\end{figure}
+\end{cdrfigure}
 
-\begin{figure}[h!]
-  \centering
+
+\begin{cdrfigure}[Slot and rail showing mounting location of photon detector]{5.5-5}{Slot and rail showing mounting location of photon detector}
   \includegraphics[width=.6\columnwidth]{fig5-5-5.png}
-\caption{Slot and rail showing mounting location of photon detector.}
-\label{fig5.5-5}
-\end{figure}
+\end{cdrfigure}
+
 
 Thermal contraction at cryogenic temperatures also complicates the
 mounting of the SiPMs in the PD modules.  The baseline sensL SiPMs are
@@ -641,9 +596,9 @@ mounting PCB and the SiPM itself.
 
 Three different methods of making these electrical contacts: Soldering
 the SiPMs directly to the PCBs (fig 5.5-6a), using commercial
-spring-loaded electrical contacts or “Pogo pins” (fig 5.5-6b), and
+spring-loaded electrical contacts or “Pogo pins” (Figure~\ref{fig:5.5-6b}),\fixme{check ref} and
 soldering short wires to the SiPM pads and thence to the PCB
-(fig. 5.5-6c).  Each of these methods provides assembly challenges,
+(Figure~\ref{fig:5.5-6c}).\fixme{check ref}  Each of these methods provides assembly challenges,
 and cryogenic testing has not suggested a clear choice so far.
 Testing and development are still underway to resolve this issue.
 
@@ -660,23 +615,21 @@ of the general requirements for the system, including requirements
 from a physics performance perspective, are given in
 Table~\ref{tab:fee_req}.
 %
-\begin{table*}[ht]
-\centering
-%\vspace{4mm}
-\begin{tabular}{| l | l |} \hline
- Performance Parameter       & Target   \cr   \hline
- Time Resolution                   & Better than 30 nS wrt event time zero ("t0")      \cr  \hline
- Charge Resolution               & 0.25\% photo-electron equivalent                     \cr \hline
- Dynamic Range                   & $\sim$ x10 better than detector (1000:1)          \cr \hline
- Linearity                               & Sufficient to resolve 1 photo-electron signals   \cr    \hline
- Multi-Hit Capability              & Sufficient to measure Triplet (late) Photons          \cr   \hline
- Dead Time                           & Live up to 2 drift times either side of beam spill          \cr    \hline
- Bias Control                        & 0.1 V resolution up to 30 V per channel  \cr    \hline
- Calibration                          & On-board Charge Injection  \cr    \hline
- Timing                                 & Events time-stamped using NO$\nu$A Timing syst.  \cr    \hline
-\end{tabular}
-\caption{\label{tab:fee_req} Physics requirements for the photon detector electronics.}
-\end{table*}
+\begin{cdrtable}[Physics requirements for the photon detector electronics]{| l | l |}{fee_req}
+{Physics requirements for the photon detector electronics}
+ Performance Parameter       & Target   \\ \toprowrule
+ Time Resolution                   & Better than 30 nS wrt event time zero ("t0")       \\ \colhline
+ Charge Resolution               & 0.25\% photo-electron equivalent                      \\ \colhline
+ Dynamic Range                   & $\sim$ x10 better than detector (1000:1)          \\ \colhline
+ Linearity                               & Sufficient to resolve 1 photo-electron signals   \\ \colhline
+ Multi-Hit Capability              & Sufficient to measure Triplet (late) Photons           \\ \colhline
+ Dead Time                           & Live up to 2 drift times either side of beam spill           \\ \colhline
+ Bias Control                        & 0.1 V resolution up to 30 V per channel   \\ \colhline
+ Calibration                          & On-board Charge Injection   \\ \colhline
+ Timing                                 & Events time-stamped using NO$\nu$A Timing syst.  \\
+\end{cdrtable}
+
+
 %
 The plans for the electronics for the photon detection subsystem
 include a baseline design with several options that remain R\&D
@@ -689,7 +642,7 @@ described in Section~\ref{sec_alt}.
 In the baseline plan, there are no front-end electronics in the cold
 volume.  Instead, the un-amplified signals from the SiPMs are
 transmitted to outside the cryostat on cables for processing and
-digitization, as shown in Fig.~\ref{fig:fig-e-1}.  There are
+digitization, as shown in Figure~\ref{fig:fig-e-1}.  There are
 advantages and disadvantages to this approach.  The advantages are
 that the infrastructure required for inside the cryostat is reduced
 (power, data cables, precision clocks, data protocols, etc.);
@@ -705,14 +658,12 @@ difficult.  Generally, the baseline design favors simplicity,
 reliability and reduced R\&D time and costs, and also meets the
 performance requirements of the electronics.
 %
- \begin{figure}[h]
-  \centering
-%\includegraphics[angle=0,width=10cm,height=7cm]{fig1}
-\caption{Block diagram of the photon detector signal processing system. }
-\label{fig:fig-e-1}
-\end{figure}
 \fixme{No fig1 exists for: Block diagram of the photon detector signal processing system.  }
 %
+\begin{cdrfigure}[Block diagram of the photon detector signal processing system]{fig-e-1}{Block diagram of the photon detector signal processing system}
+%\includegraphics[angle=0,width=10cm,height=7cm]{fig1}
+\end{cdrfigure}
+
 In the 35-ton prototype, each SiPM signal was transmitted on an
 individual shielded twisted-pair cable fitted with individual
 LEMO-style connectors.  The bias voltage was coupled onto the signal
@@ -784,26 +735,21 @@ constant fraction discriminator (CFD) for sub clock timing resolution.
 Because the FPGA is programmable and accessible, it is possible to
 explore different data processing algorithms and techniques, and even
 customize the readout for a given type of event (supernova for
-example.)  A picture of the module is shown in Fig.~\ref{fig:fig-e-2}.
-A block diagram of the system is shown in Fig.~\ref{fig:fig-e-3}.
-%Fig. xx3.  Picture of the SSP module.
-%
-\begin{figure}[h]
-  \centering
-\includegraphics[angle=90,width=10cm,height=5cm]{fig-e-2.png}
-\caption{Picture of the SSP module.}
-\label{fig:fig-e-2}
-\end{figure}
-%
-%Fig. xx2.  Block diagram of the SSP.
-%
-\begin{figure}[h]
-  \centering
-\includegraphics[angle=0,width=12cm,height=7cm]{fig-e-3.png}
-\caption{Block diagram the SSP module.}
-\label{fig:fig-e-3}
-\end{figure}
-%
+example.)  A picture of the module is shown in Figure~\ref{fig:fig-e-2}.
+A block diagram of the system is shown in Figure~\ref{fig:fig-e-3}.
+
+%Figure xx3.  Picture of the SSP module.
+\begin{cdrfigure}[Picture of the SSP module]{fig-e-2}{Picture of the SSP module}
+%\includegraphics[angle=90,width=10cm,height=5cm]{fig-e-2.png}
+\includegraphics[angle=90,width=.8\textwidth]{fig-e-2.png}
+\end{cdrfigure}
+
+%Figure xx2.  Block diagram of the SSP.
+\begin{cdrfigure}[Block diagram the SSP module]{fig-e-3}{Block diagram the SSP module}
+%\includegraphics[angle=0,width=12cm,height=7cm]{fig-e-3.png}
+\includegraphics[angle=0,width=.95\textwidth]{fig-e-3.png}
+\end{cdrfigure}
+
 In the simplest mode of operation, the module can perform waveform
 capture, using either an internal trigger or an external trigger.  Up
 to 2046 waveform samples may be read out for each event.  When
@@ -868,7 +814,9 @@ to have no electronics inside of the cold volume.  This results in a
 large number of cables and connectors.  Other experiments using liquid
 argon have successfully implemented cold TPC electronics, thereby
 significantly reducing the cable plant that must come through the
-cryostat.  This approach has challenges in power distribution, heat
+cryostat.  
+
+This approach has challenges in power distribution, heat
 dissipation, and the performance of front-end electronics in LAr. To
 address serviceability, the cold electronics might be realized in a
 modular way and situated just below the flange in the cryostat so that
@@ -877,8 +825,10 @@ the zero-suppression will be important to avoid high data rates
 depending on the number of readout channels needed. A way to realize
 the cold zero-suppression would be to implement a cold FPGA (or an
 ASIC, yet to be developed).  So far the cold FPGAs have had mixed
-results in tests. Alternative approach would be to perform an "analog
-zero suppression" with a constant-fraction discriminator and then gate
+results in tests. 
+
+An alternative approach would be to perform an ``analog
+zero suppression'' with a constant-fraction discriminator and then gate
 the signal and digitize warm, in which case the complication with
 encoding the particular channel has to be addressed.  The significant
 challenges in this technique include power dissipation, the increased
@@ -897,8 +847,10 @@ By measuring the peak, both amplitude and pulse timing can be
 obtained.  Since the pulse response follows a known transfer function,
 the pulse peak can be obtained using slower synchronous sampling, or
 using asynchronous sampling through the use of peak detection and
-constant fraction discrimination.  In either case, the data can be
-processed by an FPGA, using algorithms optimized for the application.
+constant fraction discrimination.  
+
+In either case, the data can be
+processed by an FPGA using algorithms optimized for the application.
 In particular, assuming that a sufficient number of samples are
 obtained of the shaped pulse, a chi-square comparison of the shape to
 the ideal pulse can be used to determine pulse corruption, or event
@@ -914,16 +866,18 @@ than direct digitization.  Generally, the pulse shaping circuitry is
 also less expensive than the direct digitization technique, assuming
 similar performance requirements.
 
-Another option for the photon system readout would include the use use
+Another option for the photon system readout would include the use 
 of an Application Specific Integrated circuit (ASIC) as a way to
 reduce cost.  The large channel count in a real detector system is
 such that the production cost of the system could be greatly reduced.
 Often, the cost of development of an ASIC from scratch is quite high,
-of order $\sim$400K, and can take ~1-2 years for development, so cost
+of order $\sim$400K, and can take $\sim$1 to 2 years for development, so cost
 and schedule must be weighed carefully.  However, other benefits from
 the ASIC approach include reduced space requirements for circuitry on
 the front-end, lower power dissipation, and specialized functionality
-in the front-end chip.  There exist several ASICs that have been
+in the front-end chip.  
+
+There exist several ASICs that have been
 designed over the last few years especially for SiPM readout.  One
 could potentially explore the functionality and performance of these
 designs, and evaluate their suitability for LBNE.  This option might
@@ -947,36 +901,46 @@ that covers all aspects of an LAr detector calibration, and includes
 methods to convert collected charge to initial particle?s energy, as
 well as calibration techniques to convert collected scintillation
 light into estimate of particle's interaction time, energy, and a
-track/vertex location for each event.  As already described, the
+track/vertex location for each event.  
+
+As already described, the
 baseline for the scintillation photon detectors assumes employment of
 acrylic light collection paddles to reduce the required costly
 photo-cathode area. Several photon detector designs are presently
 being developed and are being tested in small dewars. Since each of
 these new elements has not yet been tested in a large-scale TPC, the
 35-ton LArTPC prototype is being constructed to provide essential
-design validation. The current FD designs are anticipated to have
+design validation. 
+
+The current FD designs are anticipated to have
 sufficient sensitivity to provide event timing information for
 atmospheric neutrino and proton decay channels. However, it will not
-provide high efficiency down to the 5 MeV neutrino energy level
+provide high efficiency down to the 5-MeV neutrino energy level
 desired by the supernova program. This would have the impact that the
 event reconstruction energy resolution would be 20\% rather than 5\%
 achievable with the event time determination from a photon detector
 able to operate efficiently at a sufficiently low energy
 threshold. The improvement in physics will be studied in the near
 future but a substantial effort in development of improved detection
-techniques is desired. In the absence of precise physics requirements
+techniques is desired. 
+
+In the absence of precise physics requirements
 for the photon detector system and in order to support R\&D activities
 on the photon detector development it was decided that the photon
 detector should provide a time stamp to determine the time of
-occurrence of an event (so called ?time zero?) with an accuracy much
-better than 1 ?s.  Items relevant to the photon detector calibration
+occurrence of an event (so called ``time zero'') with an accuracy much
+better than 1 s \fixme{fix}.  
+
+Items relevant to the photon detector calibration
 are the fast and slow components of the light, photon propagation
 including scattering and reflections, impact of N2, E-field strength,
 as well as the energy range of interest. A calibration system that
 addresses the issues listed above has to be both comprehensive and
 cost-effective, and has to be tied to the overall calibration system
 that includes both charge and scintillation light calibration
-techniques. Such a system will be designed in the future.  To support
+techniques. Such a system will be designed in the future.  
+
+To support
 the PD R\&D phase we designed a light-flasher based calibration system
 that will serve to monitor the relative performance and time
 resolution of the system. In particular, for anticipated 35-ton
@@ -989,7 +953,9 @@ transmitting light from outside the detector volume to desired
 locations at the CPA within a TPC. Therefore we will equip the 35-ton
 detector with LEDs located and fired externally, with fibers running
 into the cryostat, to diffusers that will emit light from the CPA to
-the APA. For the 35-ton cryostat at the surface at Fermilab it will be
+the APA. 
+
+For the 35-ton cryostat at the surface at Fermilab it will be
 complementary to cosmic ray muon tracks as means of calibration. In
 terms of light sources the measurements should be performed with an UV
 (245-375nm) light source. The UV light mimics physics starting from
@@ -1007,36 +973,31 @@ calibration system is designed under following assumptions:
   Detector in the future
 \end{itemize}
 
-We describe the system in Fig.~\ref{fig:fig-c-1}. . The system
+We describe the system in Figure~\ref{fig:fig-c-1}. . The system
 consists of a 1U rack mount Photon Detector Calibration Module (PDCM)
 sitting outside the liquid argon cryostat. The module generates light
 pulses that propagate through a quartz fiber-optic cable to diffusers
 at cathode-plane (CPA) to distribute the light uniformly across the
 photon detectors mounted within anode plane (APA).  There are 5
 diffusers on the CPA plane: one in the center and four diffusers close
-to the CPA corners, as shown in Fig.~\ref{fig:fig-c-2}. .
+to the CPA corners, as shown in Figure~\ref{fig:fig-c-2}. 
+
 %
- \begin{figure}[h]
-  \centering
+\begin{cdrfigure}[Concept of the UV-light calibration system]{fig-c-1}{Concept of the UV-light calibration system for the photon
+  detector in liquid argon}
 \includegraphics[angle=0,width=10cm,height=7cm]{fig-c-1.png}
-\caption[Concept of the UV-light calibration system]{Concept of the UV-light calibration system for the photon
-  detector in liquid argon.}
-\label{fig:fig-c-1}
-\end{figure}
-%
-?%
- \begin{figure}[h]
-  \centering
-\includegraphics[angle=0,width=10cm,height=7cm]{fig-c-2.png}
-\caption[Diagrams of diffusers, their locations and UV light transport]{The diffuse light is emitted from diffusers (top left figure)
+\end{cdrfigure}
+
+
+\begin{cdrfigure}[Diagrams of diffusers, their locations and UV light transport]{fig-c-2}{The diffuse light is emitted from diffusers (top left figure)
   mounted at five CPA locations, indicated by arrows (right figure).
   The UV light from the PDCM to diffusers is transported through
   quartz fiber (lower left figure).}
-\label{fig:fig-c-2}
-\end{figure}
-%
+\includegraphics[angle=0,width=10cm,height=7cm]{fig-c-2.png}
+\end{cdrfigure}
 
-The PDCM module layout is shown in Fig.~\ref{fig:fig-c-3}. The ANL
+
+The PDCM module layout is shown in Figure~\ref{fig:fig-c-3}. The ANL
 photon calibration module is based on a re-purposed SSP unit.  An SSP
 board will be repackaged into a deeper rack mount chassis that will
 accommodate a new internal LED Pulser Module (LPM) and an additional
@@ -1050,21 +1011,18 @@ monitoring of the LED light output.  The output of the monitoring
 diode is used to normalize the response of the SiPMs in the detector
 to the calibration pulse
 
-%
- \begin{figure}[h]
-  \centering
-\includegraphics[angle=0,width=10cm,height=7cm]{fig-c-3.png}
-\caption{Photon detector calibration module (PDCM) layout.}
-\label{fig:fig-c-3}
-\end{figure}
-%
+\begin{cdrfigure}[Photon detector calibration module (PDCM) layout]{fig-c-3}{Photon detector calibration module (PDCM) layout}
+%\includegraphics[angle=0,width=10cm,height=7cm]{fig-c-3.png}
+\includegraphics[angle=0,width=.8\textwidth]{fig-c-3.png}
+\end{cdrfigure}
+
 
 For the 280 nm light we have performed a simulation of the designed
 diffuse light calibration system using TracePro, a generalized 3-D
 light ray-tracing program with the ability to include bulk optical
 properties such as absorption, fluorescence, birefringence in addition
 to surface properties such as scattering and
-reflection. Fig.~\ref{fig:fig-c-4} shows simulated light distributions
+reflection. Figure~\ref{fig:fig-c-4} shows simulated light distributions
 of at the 35-ton APA for the cases of the VUV light emitted by either
 the central diffuser only (left figure), or by outer four diffusers
 simultaneously (right figure). A full Geant4 based simulation of the
@@ -1079,17 +1037,12 @@ nm light is emitted in 100 ns long pulses from the four outer
 diffusers at once.
 
 %
- \begin{figure}[h]
-  \centering
-  \includegraphics[angle=0,width=6.5cm,height=3.5cm]{fig-c-4-L.png}\includegraphics[angle=0,width=6.5cm,height=3.5cm]{fig-c-4-R.png}
-\caption[Simulated light distributions of the 35-ton APA, two cases]
-{Simulated light distributions of the 35-ton APA for the
-  cases of the VUV light emitted by either the central diffuser only
-  (left figure), or by outer four diffusers simultaneously (right
-  figure).}
-\label{fig:fig-c-4}
-\end{figure}
-%
+\begin{cdrfigure}[Simulated light distributions of the 35-ton APA, two cases]{fig-c-4}{Simulated light distributions of the 35-ton APA for the cases of the VUV light emitted by either the central diffuser only
+  (left), or by outer four diffusers simultaneously (right).}
+\includegraphics[angle=0,width=6.5cm,height=3.5cm]{fig-c-4-L.png}
+\includegraphics[angle=0,width=6.5cm,height=3.5cm]{fig-c-4-R.png}
+\end{cdrfigure}
+
 
 In the LBNE prototypes (i.e. in 35-ton) and in Future Far Detector it
 will be important to check if photon-detector components are
@@ -1160,7 +1113,7 @@ APA and PD fabrication.  It is not necessary to install the PDs into
 the APA frames until shortly prior to installation of the APAs into
 the cryostat.
 
-As noted above, and shown in figure 5.5-4, a total of 10 PDs are
+As noted above, and shown in Figure~\ref{fig:5.5-4}, a total of 10 PDs are
 installed into each APA frame, with 5 coming in from each side.  The
 installation will occur with the fully-assembled APA frame lying flat
 on an insertion station table.  Prior to installation, the PD cable
@@ -1173,15 +1126,15 @@ tube will only require 15 cables (3 per PD, 30 per APA).  These cables
 extend approximately 30cm past the end of the APA tubes at the cold
 electronics end of the APA, and following installation of the APA into
 the cryostat are connected to long-haul cables for the run to the
-readout electronics (see fig. 5.8-1-- cable diagram.  Needs to be
+readout electronics (see Figure~\ref{fig:5.8-1}-- cable diagram).  Needs to be
 made)
 
 Following this step, 5 PDs will be inserted into the APA through one
 side frame, with connections being made between the twisted pair
 cables and the SiPM PCB just as the readout end of the detector enters
-the tube (See fig. 5.8-2).  The PD is then inserted the last 10cm into
+the tube (See Figure~\ref{fig:5.8-2}).  The PD is then inserted the last 10cm into
 the frame, and affixed to the inner surface of the APA tube (See
-fig. 5.8-3).  The process is then completed for the 5 PDs to be
+Figure~\ref{fig:5.8-3}).  The process is then completed for the 5 PDs to be
 inserted from the opposite side.
 
 Following insertion of the PDs, the environmental controls required
