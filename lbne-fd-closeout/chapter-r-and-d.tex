@@ -8,19 +8,22 @@
 %\setlength{\parskip}{0.05in}
 
 \section{Introduction}
-This chapter describes the development program designed to ensure a successful and cost-effective construction and operation of the massive, dual-cryostat LArTPC detector for LBNE and to investigate possibilities for enhancing the performance of the detector. The feasibility of the LArTPC as a detector has been demonstrated most impressively by the current state of the ICARUS experiment currently taking data at Gran Sasso.
+This chapter describes the development program designed to ensure a successful and cost-effective construction and operation of the massive, dual-cryostat LArTPC detector for LBNE and to investigate possibilities for enhancing the performance of the detector. The feasibility of the LArTPC as a detector has been demonstrated most impressively by the  ICARUS experiment.
+%current state of the ICARUS experiment currently taking data at Gran Sasso. (Anne rmvd 3/12)
 
-It is understood that for succesfull operation an LArTPC has stringent requirements on
+It is understood that for successful operation an LArTPC has stringent requirements on
 \begin{itemize}
  \item argon purity which must be of order 200~ppt O$_2$ equivalent or better
  \item long-term reliability of components located within the liquid argon; in particular, the TPC and field cage must be robust against wire-breakage and must support a cool-down of over 200~K
  \item the front-end electronics which must achieve a noise level ENC of $1000 e$ or better
 \end{itemize}
 
-The design of the LBNE LArTPC has evolved significantly from earlier concepts based on standard, above-ground, upright cylindrical LNG storage tanks which envisioned single TPC sense and high-voltage planes spanning the full width of the tank -- essentially a direct scaling of previous detectors. Problems with the actual construction of such massive planes and with the logistics of being able to construct the TPC only after the cryostat was complete are avoided in the present design. In our design,  TPC `panels'  are fully assembled and tested  -- including the electronics --  independently of the cryostat construction. This modular approach is a key feature of the design. It has the benefit not only of improving the logistics of detector construction, but also the individual components can be of manageable size. It should also be noted that the cryostat itself is formed of modular panels designed for quick and convenient assembly.
+The design of the LBNE LArTPC has evolved significantly from earlier concepts based on standard, above-ground, upright cylindrical LNG storage tanks which envisioned single TPC sense and high-voltage planes spanning the full width of the tank -- essentially a direct scaling of previous detectors. Problems with the actual construction of such massive planes and with the logistics of being able to construct the TPC only after the cryostat was complete are avoided in the present design. In our design,  TPC `panels'  are fully assembled and tested  --- including the electronics ---  independently of the cryostat construction. This modular approach is a key feature of the design. It has the benefit not only of improving the logistics of detector construction, but also the individual components can be of manageable size. It should also be noted that the cryostat itself is formed of modular panels designed for quick and convenient assembly.
 
 \section{Components of the Development Program}
 \label{sec:comp-dev-prog}
+
+\fixme{This section needs review}
 
 Programs of ongoing and planned development to allow the construction of massive LArTPCs in the U.S. have been developed and described in the {\em Integrated Plan for LArTPC Neutrino Detectors in the US}~\cite{IP}.
 To advance the technology to the detectors proposed for LBNE, the U.S. program has three aspects:
@@ -62,15 +65,15 @@ MicroBooNE & Electronics tests & Construction & LBNE CD3 \\
 \end{cdrtable}
 
 
-\section{Scope and Status of Individual Components}
+%\section{Scope and Status of Individual Components}  Anne removed this 3/12/15 because too segmented
 
-\subsection{Materials Test System}
+\section{Materials Test System}
 \label{sec:mts}
 
+\fixme{Do we need to say how old the MTS is?}
 
-
-An area for LAr detector development, shown in Figure~\ref{fig:PAB}, has been established in the Proton Assembly Building at Fermilab. The Materials Test System (MTS) has been developed to determine the effect on electron-drift lifetime of materials and components that are candidates for %part of the LArTPC detector
-inclusion in LAr-FD. The system essentially consists %in essence 
+An area for LAr detector development, shown in Figure~\ref{fig:PAB}, has been established in the Proton Assembly Building at Fermilab. The Materials Test System (MTS) has been developed to determine the effect on electron-drift lifetime of materials and components that are candidates for 
+inclusion in LAr-FD. The system essentially consists 
 of a source of clean argon ($<30$ ppt O$_{2}$ equivalent), a cryostat, a sample chamber that can be purged or evacuated,  a mechanism for transferring a sample from the sample chamber into the cryostat, a mechanism for setting the sample height in the cryostat so that it can be placed either in the liquid or in the gas ullage above the liquid, a temperature probe to measure the temperature of the sample, and an electron-lifetime monitor. The system is fully automated and the lifetime data are stored in a single database along with the state of the cryogenic system. 
 
 \begin{cdrfigure}[Liquid argon area at the Proton Assembly Building at Fermilab]{PAB}{Liquid argon area at the Proton Assembly Building at Fermilab}
@@ -85,14 +88,14 @@ A noteworthy feature is the novel bubble-pump filter inside the cryostat. In cas
 \includegraphics[width=0.9\textwidth]{MTS_Full_Schematic.pdf}
 \end{cdrfigure}
 
-The major conclusions of the studies to-date are summarized here. No material has been found that affects the electron-drift lifetime when the material is immersed in liquid argon -- this includes, for example, the common G-10 substitute, FR-4. On the other hand, materials in the ullage can contaminate the liquid; this contamination is dominated by the water outgassed by the materials and as a result is strongly temperature-dependent. Any convection currents that transport water-laden argon into the LAr and any cold surfaces on which water-laden argon can condense will fall into the LAr and reduce the electron lifetime. Conversely,  a steady flow of gaseous argon of a few ft/hr away from the LAr prevents any material in the gas volume from contaminating the LAr. 
+The major conclusions of the studies to-date \fixme{today's to-date is different from when this was written} are summarized here. No material has been found that affects the electron-drift lifetime when the material is immersed in liquid argon -- this includes, for example, the common G-10 substitute, FR-4. On the other hand, materials in the ullage can contaminate the liquid; this contamination is dominated by the water outgassed by the materials and as a result is strongly temperature-dependent. Any convection currents that transport water-laden argon into the LAr and any cold surfaces on which water-laden argon can condense will fall into the LAr and reduce the electron lifetime. Conversely,  a steady flow of gaseous argon of a few ft/hr away from the LAr prevents any material in the gas volume from contaminating the LAr. 
 
 These results are taken into account in the design of both MicroBooNE and LAr-FD. For LBNE they have been cast as detector requirements. The MTS will continue to be used by MicroBooNE and LBNE to test detector materials such as cables that will reside in the ullage.
 
 
-\subsection{Photon Detection R\&D}
+\section{Photon Detection R\&D}
 
-\fixme{Move to Photon chapter?}
+\fixme{Move to Photon chapter? Anne thinks the PD chapter already covers it.}
 
 The R\&D program  for Photon Detection is based on a promising, new, cost-effective scheme for light collection in LArTPCs as described in a NIM article by Bugel et al~\cite{lightGuides}. The design is based upon lightguides fabricated from extruded or cast acrylic and coated with a wavelength-shifter doped skin.  Multiple acrylic bars are bent to guide light adiabatically to a single cryogenic PMT. Prototypes of the basic detector elements have been shown to perform well.  These lightguides have a thinner profile than the usual TPB-coated PMT-based system, occupying less space in an LAr vessel and resulting in more fiducial volume.  Another advantage of this system is that the bars are inexpensive to produce. The most convenient place for the paddles is between the wire planes that wrap around the APAs.
 
@@ -106,12 +109,12 @@ detector.  The main emphasis of the development program is to develop a TPC desi
 A significant effort has been focused on minimizing the dead space between detector modules to improve
 the fiducial versus total LAr-volume ratio. The APA reference design accomplishes this goal but requires making $\sim$2 million high-quality wire terminations. The wire-termination scheme used by ICARUS has proven to be very reliable but it is too labor-intensive to fabricate for a million-channel detector system. We have adopted the wire-solder + wire-epoxy termination scheme that has been used for decades on drift chambers and proportional wire chambers to mount Cu-Be wires. The termination scheme was used to terminate 2.5 million  anode wires in the CMS end-cap muon system. Cu-Be wires have excellent mechanical properties and the advantage of low resistance compared to stainless steel. A study is currently underway within the LAr-FD subproject to identify the optimum wire-bonding parameters. The focus is currently on finding a commercial epoxy that optimizes the qualities of bond strength, cure time and low-temperature operation.
 
- \subsection{Electronics Development}
+ \section{Electronics Development}
  \fixme{Mark C asks: remove, or move to Electronics section?}
  
  The work to-date on cold electronics has established that no show-stoppers exist. The remaining activities outlined here concern performance optimization of the CMOS ASICs, the evaluation of several widely available CMOS technologies, and the development of readout architectures appropriate and timely for various scenarios of very large detectors.
 
-\subsubsection{CMOS Transistors: Lifetime Verification and Technology Evaluation}
+\subsection{CMOS Transistors: Lifetime Verification and Technology Evaluation}
 
 The results of the design of the CMOS electronics for operation at LAr temperature (89~K), performed so far by the MicroBooNE and LBNE collaborations, as well as by a large collaboration led by Georgia Inst. of Technology, are summarized in Section~\ref{sec:v5-tpc-elec}.
 
@@ -124,14 +127,18 @@ This feature offers a tool for accelerated-lifetime testing by stressing the tra
 \includegraphics[width=0.75\textwidth]{LifetimetestVR}
 \end{cdrfigure}
 
-\subsubsection{Readout Architectures, Multiplexing and Redundancy}
+\subsection{Readout Architectures, Multiplexing and Redundancy}
 A high degree of multiplexing after digitization of signals is essential for a TPC with 0.5 million wires in order to reduce the cable plant and the attendant outgassing. Just how high a multiplexing factor should be chosen is a matter of study, considering the risk of losing one output data link. A part of the
 program will include system designs with redundant links and redundant final multiplexing stages to minimize the risk of losing the data from a significant fraction of the TPC (note that even with a multiplexing factor of 1/1024 and no redundancy, one failed link would result in a loss of 0.2\%).
 
 
-\subsection{35-ton Prototype Phase 1: Cryostat Development}
+\section{35-ton Prototype}
+\fixme{Need explanation of phase 1 vs 2}
+
+\subsection{Phase 1 Cryostat Development}
 \label{35tonprototype}
 
+\fixme{This is out of date}
 
 The next step in the cryostat-prototype program is intended to address project-related issues: (1) to gain detailed construction experience, (2) to develop the procurement and contracting model for LAr-FD and (3) to incorporate the design and approval mechanism in the Fermilab ES\&H manual. (Membrane cryostats are designed in accordance with European and Japanese standards.) At present, we are in the process of procuring the cryostat components for a 35-ton membrane cryostat from IHI.
 
@@ -156,14 +163,13 @@ A 3-m $\times$ 3-m wall panel shown in Figure~\ref{fig:3panel} was constructed a
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%  from Alan Hahn Mar 11, 2015
 
-\subsection{35Ton Phase 1 Run}
+\subsection{Phase 1 Test}
 
 The 35-ton Prototype Cryostat (35T) is a small demonstration project to show the suitability of the 
 membrane technology for LAr detectors. In particular that it can achieve and hold the needed purity 
 levels and provide a stable environment for the TPC. A cutaway drawing of the 35T is shown in 
 Figure~\ref{fig:cutaway}.
 
-\fixme{Need explanation of phase 1 vs 2; unless covered above; need to check}
 
 \begin{cdrfigure}[35T Cutaway Drawing.]{cutaway}{Cutaway drawing of the 35 Ton Cryostat showing construction details with exterior and interior dimensions.}
   \includegraphics[width=0.8\textwidth]{35TCutaway}
@@ -198,7 +204,7 @@ Steel reinforced concrete	    &  0.3 m thick layer\\
 \end{cdrtable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection {35T Instrumentation}
+\subsubsection {Phase 1 Instrumentation}
 
 The 35T includes a full complement of standard commercial transducers and sensors that are used to 
 monitor and control the cryogenic environment. They include temperature sensors, pressure transducers 
@@ -216,7 +222,7 @@ measurements of the temperature profile of the cryostat as a function of depth. 
 originally constructed for the LAPD run and are described in depth in [1]\fixme{}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection {35T Operations}
+\subsubsection {Phase 1 Operations}
 
 In order to purify LAr, it is necessary to do three things: 1) remove the air from the cryostat, leaving only Ar gas, 2) clean the liquid Ar as it comes from the supplier, and 3) remove any impurities that are generated by materials outgassing within the cryostat.  
 LAPD has demonstrated that it is not necessary to evacuate a cryostat in order achieve LAr purity levels sufficient for LBNE. This is of paramount importance since the costs of multi-kiloton cryostats that could withstand evacuation is prohibitive. The 35T followed the procedure LAPD [1] established to obtain and maintain pure LAr. 
@@ -290,7 +296,7 @@ cryostat.}
 Figure~\ref{fig:35TElectronLifetime} shows the electron lifetime from the start of the LAr Pump operation until the Phase 1 run ended. In general the electron lifetime improved as a function of pump on-time, but there were several incidents that spoiled the lifetime. These will be discussed in the next section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection {Stability of Operation}
+\subsubsection {Phase 1 Stability of Operation}
 
 The goals of the 35T Phase 1 run include not only achieving the required purity/lifetime levels, but to 
 also hold those levels and provide a stable operation of the cryostat. The 35T Phase 1 run was a relatively 
@@ -353,29 +359,33 @@ agreement with the current CFD calculations [5\fixme{}].
 \includegraphics[width=\textwidth]{SpoolerScanFull}
 \end{cdrfigure}
 
-\subsubsection{Conclusions}
+\subsection{Phase 1 Conclusions}
 
 The 35T Phase 1 run has shown that the membrane cryostat technology has no innate difficulties with 
-achieving the stated goals of the LBNE Conceptual Design Far Detector. Some of the 35T issues (e.g. loss 
+achieving the stated goals of the LBNE Conceptual Design Far Detector. Some of the 35T issues (e.g., loss 
 of purity when pumps are switched) are most likely unique to the 35T. It also seems likely that in a future 
 design, the pumps will be externally located, to avoid coupling acoustical vibrations into the Far Detector 
 cryostat and to facilitate maintenance and repair.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{35-ton Prototype Phase 2: TPC Installation and Operation}
+\subsection{Phase 2 TPC Installation and Operation}
 
-\subsubsection{TPC Design}
+\fixme{needs content}
 
-\subsubsection{Goals of the Phase 2 Test}
+\subsubsection{Phase 2 TPC Design }
 
-\subsubsection{Data Analysis and Future Applications}
+\subsubsection{Phase 2 Goals}
 
+\subsubsection{Phase 2 Data Analysis and Future Applications}
 
-\subsection{Physics Experiments with Associated Detector-Development Goals}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Physics Experiments with Associated Detector-Development Goals}
+
 Two projects, ArgoNeuT and MicroBooNE,  which are physics experiments in their own right, are also contributing to the development of the LBNE experiment. Their most important role is in providing data and motivation for the development of event reconstruction and indentification software.
 
-\subsubsection{ArgoNeuT - T962}
+\subsection{ArgoNeuT - T962}
 The Argon Neutrino Test (ArgoNeuT) is a 175-liter LArTPC which completed a run in the NuMI neutrino beam.  The 0.5~m $\times$ 0.5~m $\times$ 1~m LArTPC was positioned directly upstream of the MINOS near detector, which served as a muon catcher for neutrino interactions occurring in ArgoNeuT. 
 
 ArgoNeuT began collecting data using the NuMI anti-muon neutrino beam in October 2009 and ran until  March 1, 2010.  ArgoNeuT's $\sim$10k events motivate the development of analysis tools, and are the basis for the first measurements of neutrino cross sections on argon.   An event with two $\pi^{0}$ decays is shown in Figure~\ref{fig:2pi0}.   ArgoNeuT was also the first LArTPC to be exposed to a low-energy neutrino beam and only the second worldwide to observe beam-neutrino interactions. The ArgoNeuT collaboration is currently preparing (1) a NIM paper that documents the detector performance using NuMI beam muons and (2) the first physics paper on muon-neutrino charged-current differential cross sections on argon.  See Figures~\ref{fig:ArgoNeuT_3Dreco} and~\ref{fig:ArgoNeuT-calorimetry}.
@@ -403,7 +413,7 @@ The applicability of ArgoNeuT is that it provides a set of data in the same rang
 \includegraphics[width=\textwidth]{ArgoNeuT_dQdx}
 \end{cdrfigure}%     STILL TO DO      \fixme{Can you remove the caption from the PDF and add it to this caption?} }
 
-\subsubsection {MicroBooNE E-974}
+\subsection {MicroBooNE E-974}
 
 The MicroBooNE experiment is an 89-ton active mass LArTPC, (170-ton argon mass) in the commissioning phase.  It has both a physics program and LArTPC development goals.  
 
