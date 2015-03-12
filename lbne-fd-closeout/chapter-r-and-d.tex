@@ -31,43 +31,35 @@ To advance the technology to the detectors proposed for LBNE, the U.S. program h
   \item a program of development on how to apply the technology to a detector module
  \end{itemize}
  
-A summary of the items in the program is given in the following tables. Table \ref{tab:on-project} lists the activities that are part of the LBNE Project (``on-project'') described in this chapter, a short description of the information needed and the LBNE milestone corresponding to when the information is required. Table \ref{off-project} lists off-project activities, the aspect of these activities that is applicable to LAr-FD and the LBNE milestone at which the information is required. These aspects will be described in more detail in the following sections. As will be explained below, these are not R\&D activities, but rather elements of the preliminary engineering design process. 
-
-\begin{table}
-\begin{center}
-\caption{LBNE on-project development activities}
-\label{tab:on-project}
-\begin{tabular}{| l | l | c |} \hline
-Activity & LAr-FD Information & Need by \\ \hline \hline
-In-liquid Electronics & Low noise readout, long lifetime & CERN prototype construction \\ \hline
-TPC Construction & Mechanical design & CERN prototype construction \\ \hline
-35-ton Prototype & Cryostat construction & CERN prototype cryostat procurement \\ \hline
-CERN prototype & detector integration & TPC construction \\ \hline
-\end{tabular}
+A summary of the items in the program is given in the following tables. Table~\ref{tab:on-project} lists the activities that are part of the LBNE Project (``on-project'') described in this chapter, a short description of the information needed and the LBNE milestone corresponding to when the information is required. Table~\ref{tab:off-project} lists off-project activities, the aspect of these activities that is applicable to LAr-FD and the LBNE milestone at which the information is required. These aspects will be described in more detail in the following sections. As will be explained below, these are not R\&D activities, but rather elements of the preliminary engineering design process. 
 
 
-\vspace{0.5 in}
+\begin{cdrtable}[LBNE on-project development activities]{lp{4cm}p{4cm}}{on-project}{LBNE on-project development activities}
+Activity & LAr-FD Information & Need by \\ \toprowrule
+In-liquid Electronics & Low noise readout, long lifetime & CERN prototype construction \\ \colhline
+TPC Construction & Mechanical design & CERN prototype construction\\ \colhline
+35-ton Prototype & Cryostat construction & CERN prototype cryostat procurement \\ \colhline
+CERN prototype & detector integration & TPC construction \\ 
+\end{cdrtable}
 
-\caption{LBNE off-project development activities}
-\label{off-project}
-\begin{tabular}{| l | l | c | c |} \hline
-Activity & LAr-FD Applicability & Status & Need by \\ \hline \hline
-Yale TPC & None & Completed  & NA \\ \hline
+
+\begin{cdrtable}[LBNE off-project development activities]{p{3cm}llp{2.5cm}}{off-project}
+{LBNE off-project development activities}
+Activity & LAr-FD Applicability & Status & Need by \\ \toprowrule
+Yale TPC & None & Completed  & NA \\ \colhline
 Materials Test System & Define requirements & Completed & NA \\
-                              & Materials testing & Operating & As Req'd \\ \hline
-Electronics Test Stand & Electronics testing & Operating & As Req'd \\ \hline
-LAPD & Purity w/o evac. & Operating & LBNE CD-2 \\ \
-        & Convective flow  & Operating &  LBNE CD-2 \\ \hline
+                              & Materials testing & Operating & As Req'd \\ \colhline
+Electronics Test Stand & Electronics testing & Operating & As Req'd \\ \colhline
+LAPD & Purity w/o evac. & Operating & LBNE CD2 \\ 
+        & Convective flow  & Operating &  LBNE CD2 \\ \colhline
 Scintillator Development & Photon Det. Definition & Completed & CERN prototype Construction \\ 
-                                   & Industrialization &  Not started & LBNE CD-3 \\ \hline
-ArgoNeuT   & Analysis tools   &   On-going & LBNE CD-2 \\ \hline
-MicroBooNE & Electronics tests & Construction & LBNE CD-3 \\ 
-                  & DAQ algorithms &  In development & LBNE CD-3 \\
-                  & Analysis tools    &  In development & LBNE CD-2 \\
-                  & Lessons learned & Not started & LBNE CD-3 \\  \hline
-\end{tabular}
-\end{center}
-\end{table}
+                                   & Industrialization &  Not started & LBNE CD3 \\ \colhline
+ArgoNeuT   & Analysis tools   &   On-going & LBNE CD2 \\ \colhline
+MicroBooNE & Electronics tests & Construction & LBNE CD3 \\ 
+                  & DAQ algorithms &  In development & LBNE CD3 \\
+                  & Analysis tools    &  In development & LBNE CD2 \\
+                  & Lessons learned & Not started & LBNE CD3\\ 
+\end{cdrtable}
 
 
 \section{Scope and Status of Individual Components}
@@ -77,38 +69,21 @@ MicroBooNE & Electronics tests & Construction & LBNE CD-3 \\
 
 
 
-An area for LAr detector development, shown in Figure~\ref{PAB}, has been established in the Proton Assembly Building at Fermilab. The Materials Test System (MTS) has been developed to determine the effect on electron-drift lifetime of materials and components that are candidates for %part of the LArTPC detector
+An area for LAr detector development, shown in Figure~\ref{fig:PAB}, has been established in the Proton Assembly Building at Fermilab. The Materials Test System (MTS) has been developed to determine the effect on electron-drift lifetime of materials and components that are candidates for %part of the LArTPC detector
 inclusion in LAr-FD. The system essentially consists %in essence 
 of a source of clean argon ($<30$ ppt O$_{2}$ equivalent), a cryostat, a sample chamber that can be purged or evacuated,  a mechanism for transferring a sample from the sample chamber into the cryostat, a mechanism for setting the sample height in the cryostat so that it can be placed either in the liquid or in the gas ullage above the liquid, a temperature probe to measure the temperature of the sample, and an electron-lifetime monitor. The system is fully automated and the lifetime data are stored in a single database along with the state of the cryogenic system. 
 
-%
-\begin{figure}[htpb]
-%\begin{center}
-%\vspace{-1.5in}
-%\scalebox{0.6}
-\centering 
-{\includegraphics[width=0.8\textwidth]{LAratPAB.pdf}}
-%{\includegraphics{LAratPAB.pdf}}
-%\end{center}
-\caption{Liquid argon area at the Proton Assembly Building at Fermilab}
-\label{PAB}
-\end{figure}
+\begin{cdrfigure}[Liquid argon area at the Proton Assembly Building at Fermilab]{PAB}{Liquid argon area at the Proton Assembly Building at Fermilab}
+\includegraphics[width=0.8\textwidth]{LAratPAB.pdf}
+\end{cdrfigure}
 %
 
 A noteworthy feature is the novel bubble-pump filter inside the cryostat. In case of argon contamination, this can filter the cryostat volume in a few hours, allowing us to continue studies %after the argon has been contaminated
- without having to refill. A schematic of the MTS is shown in Figure~\ref{MTS_Schem}.
+ without having to refill. A schematic of the MTS is shown in Figure~\ref{fig:MTS_Schem}.
 
-\begin{figure}[htpb]
-%\begin{center}
-%\vspace{-1.5in}
-%\scalebox{0.6}
-\centering 
-{\includegraphics[width=0.9\textwidth]{MTS_Full_Schematic.pdf}}
-%{\includegraphics{MTS_Full_Schematic.pdf}}
-%\end{center}
-\caption{Schematic of the Materials Test System (MTS) cryostat at Fermilab}
-\label{MTS_Schem}
-\end{figure}
+\begin{cdrfigure}[Schematic of the Materials Test System (MTS) cryostat at Fermilab]{MTS_Schem}{Schematic of the Materials Test System (MTS) cryostat at Fermilab}
+\includegraphics[width=0.9\textwidth]{MTS_Full_Schematic.pdf}
+\end{cdrfigure}
 
 The major conclusions of the studies to-date are summarized here. No material has been found that affects the electron-drift lifetime when the material is immersed in liquid argon -- this includes, for example, the common G-10 substitute, FR-4. On the other hand, materials in the ullage can contaminate the liquid; this contamination is dominated by the water outgassed by the materials and as a result is strongly temperature-dependent. Any convection currents that transport water-laden argon into the LAr and any cold surfaces on which water-laden argon can condense will fall into the LAr and reduce the electron lifetime. Conversely,  a steady flow of gaseous argon of a few ft/hr away from the LAr prevents any material in the gas volume from contaminating the LAr. 
 
@@ -141,22 +116,13 @@ the fiducial versus total LAr-volume ratio. The APA reference design accomplishe
 The results of the design of the CMOS electronics for operation at LAr temperature (89~K), performed so far by the MicroBooNE and LBNE collaborations, as well as by a large collaboration led by Georgia Inst. of Technology, are summarized in Section~\ref{sec:v5-tpc-elec}.
 
 Briefly, the fundamentals are: charge-carrier mobility in silicon increases at 89~K, thermal fluctuations decrease with kT/e, resulting in a higher gain (transconductance/current ratio =
- $g_{m}/ i$), higher speed and lower noise. For a given drain-current density the same degree of impact ionization (measured by the transistor substrate current) occurs at a somewhat lower drain-source voltage at 89~K than at 300~K. The charge trapped in the gate oxide and its interface with the channel causes degradation in the transconductance (gain) of the transistor and a threshold shift. The former is of major consequence as it limits the effective lifetime of the device (defined in industry and the literature as 10\% degradation in transconductance). Thus an MOS transistor has equal lifetime due to impact ionization at 89~K and at 300~K at different drain-source voltages. This is illustrated in Figure~\ref{DSV}.  
+ $g_{m}/ i$), higher speed and lower noise. For a given drain-current density the same degree of impact ionization (measured by the transistor substrate current) occurs at a somewhat lower drain-source voltage at 89~K than at 300~K. The charge trapped in the gate oxide and its interface with the channel causes degradation in the transconductance (gain) of the transistor and a threshold shift. The former is of major consequence as it limits the effective lifetime of the device (defined in industry and the literature as 10\% degradation in transconductance). Thus an MOS transistor has equal lifetime due to impact ionization at 89~K and at 300~K at different drain-source voltages. This is illustrated in Figure~\ref{fig:DSV}.  
 
 This feature offers a tool for accelerated-lifetime testing by stressing the transistor with both increased current and increased voltage, and monitoring the substrate current and the change  in $g_{m}$ due to impact ionization. In these conditions, the lifetime can be reduced arbitrarily by many orders of magnitude, and the limiting operating conditions for a lifetime in excess of $\sim$20 years can be determined. With this foundation, more conservative design rules (lower current densities and voltages) can be derived and applied in the ASIC design, as has been done for the ASIC described in Section \ref{subsec:fe-arch}. The goal of this part of the program is to verify by accelerated testing the expected lifetimes for the several widely available CMOS technologies under consideration (TSMC, IBM, AMS). It should be noted that this is a standard test method used by the semiconductor industry. These methods are used to qualify electronics for deep space NASA missions as well as commerical PCs.
  
-\begin{figure}
-%\begin{center}
-%\vspace{-1.5in}
-%\scalebox{0.45}
-\centering 
-{\includegraphics[width=0.75\textwidth]{LifetimetestVR}}
-%{\includegraphics{LifetimetestVR}}
-%\end{center}
-%\vspace{-0.5in}
-\caption{Lifetime at different temperatures vs V$_{DS}$}
-\label{DSV}
-\end{figure}
+\begin{cdrfigure}[Lifetime at different temperatures vs V$_{DS}$]{DSV}{Lifetime at different temperatures vs V$_{DS}$}
+\includegraphics[width=0.75\textwidth]{LifetimetestVR}
+\end{cdrfigure}
 
 \subsubsection{Readout Architectures, Multiplexing and Redundancy}
 A high degree of multiplexing after digitization of signals is essential for a TPC with 0.5 million wires in order to reduce the cable plant and the attendant outgassing. Just how high a multiplexing factor should be chosen is a matter of study, considering the risk of losing one output data link. A part of the
@@ -171,12 +137,9 @@ The next step in the cryostat-prototype program is intended to address project-r
 
 The LBNE project has contracted with the Japanese company IHI to build a small prototype membrane cryostat at Fermilab.  This approximately 35-ton unit is to be built and made operational in 2012 at Fermilab's PC-4 facility where LAPD is located.  It is intended to demonstrate high-purity operation in this type of cryostat and the suitability of the planned LAr-FD construction techniques and materials.  The testing programs for LAPD and the small prototype will be similar.  LBNE's 35-ton membrane cryostat will use a large portion of the cryogenic-process equipment installed for LAPD.
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[Layout of 35-ton prototype at Fermilab's PC-4 facility]{v5ch2-35ton-2011}{Layout of 35-ton prototype at Fermilab's PC-4 facility}
 \includegraphics[width=\textwidth]{v5ch2-35ton-2011} 
-\caption{Layout of 35-ton prototype at Fermilab's PC-4 facility}
-\label{fig:v5ch2-35ton-2011}
-\end{figure}
+\end{cdrfigure}
 
 The prototype membrane cryostat's total size, including insulation and concrete support, is approximately 4.1~m $\times$ 4.1~m $\times$5.4~m, and will hold approximately 826~tons of LAr. The insulation thickness will be 0.4~m rather than the 1.0~m chosen for our reference design.  The techniques of membrane-cryostat construction will be demonstrated to be a fit for high-purity TPC service.  Welding of corrugated panels, removal of leak-checking dye penetrant or ammonia-activated leak-detecting paints, and post-construction-cleaning methods will be tested for suitability of service.  Residual contamination measurements at different elevations during the initial GAr purge process will be compared to computational predictions and will validate the purge-process modeling of a large rectangular vessel.  The prototype membrane cryostat will be filled with LAr.  Purity levels of the liquid with time and electron-drift times will be measured using purity monitors installed in the liquid bath.  Heat-load measurements will be made and compared to calculations. Eventually, connectors and feedthroughs, ports and other features that are planned for the reference design will be incorporated into the prototype.  Materials and cold-electronics testing can be done along with electron-drift-time measurements.
 
@@ -184,20 +147,12 @@ In principle, a thin-walled membrane cryostat is as suitable as a thick-walled c
 
 The significant difference between membrane cryostats and thick-walled cryostats is the depth of the welds used to construct the vessel.  The majority of membrane-cryostat welds are completed in one or two passes with automatic welding machines. A second difference, and a major advantage, is that the membrane cryostat is a standard industrial design that has been in use for over 40 years. A thick-walled cryostat vessel would be custom designed and would require significant engineering and testing. A third difference, and another major advantage, is the ability to purge the membrane cryostat insulation space with argon gas so that a leak cannot affect the purity if it escapes detection and repair. 
 
-A 3-m $\times$ 3-m wall panel shown in Figure~\ref{3panel} was constructed at Fermilab using materials and technical guidance from GTT. The labor hours used in construction are consistent with the vendor estimates. The wall panel was leak tested (none were found) and vacuum tests were performed on the insulation system. We found that the insulation system is designed to allow vacuum pumping of the main cryostat volume to a hard vacuum. This result demonstrates that vacuum pumping of a membrane cryostat is feasible, if it is found to be required. No modifications to the vendor-supplied components are required to accomplish this.
+A 3-m $\times$ 3-m wall panel shown in Figure~\ref{fig:3panel} was constructed at Fermilab using materials and technical guidance from GTT. The labor hours used in construction are consistent with the vendor estimates. The wall panel was leak tested (none were found) and vacuum tests were performed on the insulation system. We found that the insulation system is designed to allow vacuum pumping of the main cryostat volume to a hard vacuum. This result demonstrates that vacuum pumping of a membrane cryostat is feasible, if it is found to be required. No modifications to the vendor-supplied components are required to accomplish this.
 
-\begin{figure}
-%\begin{center}
-%\vspace{-1in}
-%\scalebox{0.5}
-\centering 
-{\includegraphics[width=0.7\textwidth]{Membranepastichepage}}
-%{\includegraphics{Membranepastichepage}}
-%\end{center}
-%\vspace{-0.3in}
-\caption{Membrane panel assembly and components}
-\label{3panel}
-\end{figure}
+
+\begin{cdrfigure}[Membrane panel assembly and components]{3panel}{Membrane panel assembly and components}
+\includegraphics[width=0.7\textwidth]{Membranepastichepage}
+\end{cdrfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%  from Alan Hahn Mar 11, 2015
 
@@ -229,7 +184,7 @@ only one is used at a time.
 
 Table~\ref{tab:35Tdimensions} gives the details of the construction materials and the dimensions for the 35T. More information can be found in [2].
 
-\begin{cdrtable}[35T Details and Dimensions]{cc}{35Tdimensions}
+\begin{cdrtable}[35T Details and Dimensions]{ll}{35Tdimensions}
 {35T Details and Dimensions}
 Parameter & Value \\ \toprowrule
 Cryostat Volume	&      29.16 m3\\ \colhline
@@ -423,42 +378,30 @@ Two projects, ArgoNeuT and MicroBooNE,  which are physics experiments in their o
 \subsubsection{ArgoNeuT - T962}
 The Argon Neutrino Test (ArgoNeuT) is a 175-liter LArTPC which completed a run in the NuMI neutrino beam.  The 0.5~m $\times$ 0.5~m $\times$ 1~m LArTPC was positioned directly upstream of the MINOS near detector, which served as a muon catcher for neutrino interactions occurring in ArgoNeuT. 
 
-ArgoNeuT began collecting data using the NuMI anti-muon neutrino beam in October 2009 and ran until  March 1, 2010.  ArgoNeuT's $\sim$10k events motivate the development of analysis tools, and are the basis for the first measurements of neutrino cross sections on argon.   An event with two $\pi^{0}$ decays is shown in Figure~\ref{fig:2pi0}.   ArgoNeuT was also the first LArTPC to be exposed to a low-energy neutrino beam and only the second worldwide to observe beam-neutrino interactions. The ArgoNeuT collaboration is currently preparing (1) a NIM paper that documents the detector performance using NuMI beam muons and (2) the first physics paper on muon-neutrino charged-current differential cross sections on argon.  See Figures~\ref{ArgoNeuT_3Dreco} and~\ref{ArgoNeuT-calorimetry}.
+ArgoNeuT began collecting data using the NuMI anti-muon neutrino beam in October 2009 and ran until  March 1, 2010.  ArgoNeuT's $\sim$10k events motivate the development of analysis tools, and are the basis for the first measurements of neutrino cross sections on argon.   An event with two $\pi^{0}$ decays is shown in Figure~\ref{fig:2pi0}.   ArgoNeuT was also the first LArTPC to be exposed to a low-energy neutrino beam and only the second worldwide to observe beam-neutrino interactions. The ArgoNeuT collaboration is currently preparing (1) a NIM paper that documents the detector performance using NuMI beam muons and (2) the first physics paper on muon-neutrino charged-current differential cross sections on argon.  See Figures~\ref{fig:ArgoNeuT_3Dreco} and~\ref{fig:ArgoNeuT-calorimetry}.
 
 A deconvolution scheme using an FFT has been applied to the ArgoNeuT data. This procedure eliminates a problem with the ArgoNeuT electronics (which were D-Zero spares and could not be modified for ArgoNeuT). Another more significant benefit of deconvolution is that bi-polar induction-plane signals can be transformed into uni-polar collection-plane signals. An example of this is shown in Figure~\ref{fig:Argo-decon}. A selection of figures from the draft NIM paper are reproduced below.
 
 
-\begin{figure}
-\centering 
-{\includegraphics[width=0.7\textwidth]{ArgoNeuT_event}}
-\caption[ArgoNeuT neutrino event with four photon conversions]{A neutrino event with four photon conversions in the ArgoNeuT detector. The top (bottom) panel shows data from the induction (collection) plane after deconvolution. }
-\label{2pi0}
-\end{figure}
+\begin{cdrfigure}[ArgoNeuT neutrino event with four photon conversions]{2pi0}{A neutrino event with four photon conversions in the ArgoNeuT detector. The top (bottom) panel shows data from the induction (collection) plane after deconvolution.}
+\includegraphics[width=0.7\textwidth]{ArgoNeuT_event}
+\end{cdrfigure}
 
 
 The applicability of ArgoNeuT is that it provides a set of data in the same range of energy as the LBNE neutrino beam, enabling the development of analysis algorithms that can be utilized for LAr-FD physics analysis with little or no modification.
 
 
-\begin{figure}
-\centering 
-{\includegraphics[width=\textwidth]{ArgoNeuT_decon}}
-\caption[Data from ArgoNeuT]{Figure from the ArgoNeuT draft NIM paper. } %     STILL TO DO      \fixme{Can you remove the caption from the PDF and add it to this caption?}}
-\label{Argo-decon}
-\end{figure}
+\begin{cdrfigure}[Data from ArgoNeuT]{Argo-decon}{Figure from the ArgoNeuT draft NIM paper}
+\includegraphics[width=\textwidth]{ArgoNeuT_decon}
+\end{cdrfigure} %     STILL TO DO      \fixme{Can you remove the caption from the PDF and add it to this caption?}}
 
-\begin{figure}
-\centering 
-{\includegraphics[width=\textwidth]{ArgoNeuT_3Dreco}}
-\caption[ArgoNeuT: status of 3D reconstruction]{Figure from the ArgoNeuT draft NIM paper showing the status of 3D reconstruction} %     STILL TO DO       \fixme{Can you remove the caption from the PDF and add it to this caption?}}
-\label{ArgoNeuT_3Dreco}
-\end{figure}
+\begin{cdrfigure}[ArgoNeuT: status of 3D reconstruction]{ArgoNeuT_3Dreco}{Figure from the ArgoNeuT draft NIM paper showing the status of 3D reconstruction}
+\includegraphics[width=\textwidth]{ArgoNeuT_3Dreco}
+\end{cdrfigure}%     STILL TO DO       \fixme{Can you remove the caption from the PDF and add it to this caption?}}
 
-\begin{figure}
-\centering 
+\begin{cdrfigure}[ArgoNeuT: status of calorimetric reconstruction]{ArgoNeuT-calorimetry}{Figure from the ArgoNeuT draft NIM paper showing the status of calorimetric reconstruction.}
 \includegraphics[width=\textwidth]{ArgoNeuT_dQdx}
-\caption[ArgoNeuT: status of calorimetric reconstruction]{Figure from the ArgoNeuT draft NIM paper showing the status of calorimetric reconstruction. } %     STILL TO DO      \fixme{Can you remove the caption from the PDF and add it to this caption?} }
-\label{ArgoNeuT-calorimetry}
-\end{figure}
+\end{cdrfigure}%     STILL TO DO      \fixme{Can you remove the caption from the PDF and add it to this caption?} }
 
 \subsubsection {MicroBooNE E-974}
 

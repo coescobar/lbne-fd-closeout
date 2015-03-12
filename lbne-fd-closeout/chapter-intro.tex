@@ -23,12 +23,10 @@ and therefore descriptions of these systems are not included in this document. T
 
 
 The fiducial mass of one 10-kt detector module is shown in Figure~\ref{fig:10kt-fiducial-mass}.
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\textwidth]{fiducial-mass-10kt-jan2015.png}
-\caption[Fiducial mass of 10-kton detector]{Fiducial mass of 10-kton detector}
-\label{fig:10kt-fiducial-mass}
-\end{figure}
+
+\begin{cdrfigure}[Fiducial mass of 10-kton detector]{10kt-fiducial-mass}{Fiducial mass of 10-kton detector}
+ \includegraphics[width=\textwidth]{fiducial-mass-10kt-jan2015.png}
+ \end{cdrfigure}
 
 In a LArTPC, a uniform electric field is created within the TPC
 volume between cathode planes and anode wire planes. Charged particles
@@ -83,21 +81,15 @@ The Time Projection Chamber (TPC) is the active detection element of the LAr-FD.
  active length of the cryostat's TPC and resulting in a total of 52 APAs and 78 CPAs per cryostat. A ``field cage'' surrounds the top and ends of the cryostat to ensure uniformity of the electric field. The field cage is assembled from
  panels of FR-4 sheets with parallel copper strips connected to resistive divider networks.
 
-Each APA has three wire planes that are connected to readout electronics; two induction planes (labeled U and V in Figure \ref{fig:tpc-concept}) and one collection plane (X). A fourth wire plane, grid plane (G), is held at a bias voltage but is not instrumented with readout electronics. The grid plane improves the signal-to-noise ratio on the U plane and provides electrostatic discharge protection for the readout electronics.
+Each APA has three wire planes that are connected to readout electronics; two induction planes (labeled U and V in Figure~\ref{fig:tpc-concept}) and one collection plane (X). A fourth wire plane, grid plane (G), is held at a bias voltage but is not instrumented with readout electronics. The grid plane improves the signal-to-noise ratio on the U plane and provides electrostatic discharge protection for the readout electronics.
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[TPC modular construction concept]{tpc-concept}{TPC modular construction concept; the APA and CPA arrangement has been changed to two APAs and three CPAs as of 2014, see Figure~\ref{fig:cpa-apa-arrangement-2014}.}
 \includegraphics[width=\linewidth]{TPC_summary_figure}
-\caption[TPC modular construction concept]{TPC modular construction concept; the APA and CPA arrangement has been changed to two APAs and three CPAs as of 2014, see Figure~\ref{fig:cpa-apa-arrangement-2014}.}
-\label{fig:tpc-concept}
-\end{figure}
+\end{cdrfigure}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\linewidth]{cpa-apa-arrangement-2014.png}
-\caption{APA and CPA arrangement, 2014}
-\label{fig:cpa-apa-arrangement-2014}
-\end{figure}
+\begin{cdrfigure}[APA and CPA arrangement, 2014]{cpa-apa-arrangement-2014}{APA and CPA arrangement, 2014}
+ \includegraphics[width=\linewidth]{cpa-apa-arrangement-2014.png}
+\end{cdrfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Electronics, Readout and Data Acquisition}
@@ -121,14 +113,10 @@ and mitigates contamination from cable outgassing
 by reducing the volume of cables in the ullage gas.
 
 % This is a copy of a figure which also appears in the CE chapter.
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[Front-end electronics architecture]{elect_schem_intro_copy}{Front-end electronics architecture. The ADCs multiplex at 8:1, while the digital ASICs multiplex at 4:1, together giving 32:1.}
 \includegraphics[width=\linewidth]{elect_schem.pdf}
-\caption[Front-end electronics architecture]{Front-end electronics architecture.
-         The ADCs multiplex at 8:1, while the digital ASICs multiplex at 4:1, together giving 32:1.
-        }
-\label{fig:elect_schem_intro_copy}
-\end{figure}
+\end{cdrfigure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Photon-Detection System}
@@ -171,37 +159,29 @@ An installation and integration detector mock-up will be constructed at Fermilab
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Principal Parameters}
 
-The principal parameters of the LAr-FD are given in Table~\ref{table:param-summ-larfd}. 
+The principal parameters of the LAr-FD are given in Table~\ref{tab:param-summ-larfd}. 
 
-\begin{table}[htpb]
-\caption{LAr-FD Principal Parameters for 10-kton Detector}
-\label{table:param-summ-larfd}
-\centering
- \begin{tabular}[htbp]{|l|| p{6cm} |}
-\hline
-Parameter & Value  \\
-\hline\hline
+\begin{cdrtable}[LAr-FD Principal Parameters for 10-kton Detector]{lp{7cm}}{param-summ-larfd}
+{LAr-FD Principal Parameters for 10-kton Detector}
+Parameter & Value \\ \toprowrule
 Active (Fiducial) Mass &   13.8 (10.2)~kton \\
-\hline
+\colhline
 Number of Detector Modules (Cryostats) &  2 \\
-\hline
+\colhline
 Drift Cell Configuration within Module &  2~wide $\times$ 2~high $\times$ 13~long \\
-\hline
+\colhline
 Drift Cell Dimensions  &  2 $\times$ 3.4~m wide (drift) $\times$ 6~m high $\times$ 2.3~m long \\
-\hline
+\colhline
 Detector Module Dimensions &  14~m wide $\times$ 12~m high $\times$  30~m long \\
-\hline
+\colhline
 Anode Wire Spacing &  $\sim$4.8~mm \\
-\hline
+\colhline
 Wire Planes (Orientation from vertical) & Grid (0$^\circ$), Induction 1 (36$^\circ$), Induction 2 (-36$^\circ$), Collection (0$^\circ$) \\
-\hline
+\colhline
 Drift Electric Field &  500~V/cm \\ 
-\hline
+\colhline
 Maximum Drift Time & 2.1~ms \\
-\hline
-\end{tabular} 
-\end{table}
-
+\end{cdrtable}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Design Considerations}
 
@@ -237,7 +217,7 @@ The cloud of drifting ionization electrons will spread out in space due to the e
 
 \fixme{needs update, then remove note}
 
-As mentioned above, the design of the LAr-FD has benefited greatly from other experiments and related development activities. Development activities in the U.S. are described in the  {\em Integrated Plan for LArTPC Neutrino Detectors in the US}~\cite{IP}. This program includes non-LBNE activities such as the Fermilab Materials Test Stand, Fermilab electronics test stand, LAPD, photon detection, ArgoNeuT and MicroBooNE as well as LBNE activities such as the 35-ton prototype and LAr1. The development plan is described in detail in Chapter \ref{ch:randd}.
+As mentioned above, the design of the LAr-FD has benefited greatly from other experiments and related development activities. Development activities in the U.S. are described in the  {\em Integrated Plan for LArTPC Neutrino Detectors in the US}~\cite{IP}. This program includes non-LBNE activities such as the Fermilab Materials Test Stand, Fermilab electronics test stand, LAPD, photon detection, ArgoNeuT and MicroBooNE as well as LBNE activities such as the 35-ton prototype and LAr1. The development plan is described in detail in Chapter~\ref{ch:randd}.
 
 
 \begin{editornote}
