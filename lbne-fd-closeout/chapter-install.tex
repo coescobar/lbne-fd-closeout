@@ -55,12 +55,23 @@ The Installation and Commissioning group will be responsible for all LAr-FD-rela
 On-project commissioning activities include the coordination of system-checkout activities, culminating in the approval to introduce LAr into the detector modules, and managing the steps required to meet the CD-4 goals. 
 
 \fixme{Where is reference in text to this figure?}
+\fixme{Note to author who puts in new figures: Please use the new `cdrfigure' environment. I've inserted a model just below each existing `figure' env.  Notice the label within the cdrfigure environment is ``tpc-in-two-cryostats'' but the reference needs to point to ``fig:tpc-in-two-cryostats'' (with the fig: in it) }
 \begin{figure}[htpb]
 \centering
 %\includegraphics[width=\textwidth]{}
 \caption{Cutaway view of two cryostats with TPC detectors installed}
 \label{fig:tpc-in-two-cryostats}
 \end{figure}
+
+%% model:
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}  <-- but not commented, of course!
+\end{cdrfigure}
+
+%What this one will look like:
+\begin{cdrfigure}[Cutaway view of two cryostats with TPC detectors installed]{tpc-in-two-cryostats}{Cutaway view of two cryostats with TPC detectors installed}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Integration (Permanent Equipment)}
@@ -128,6 +139,9 @@ electrically bonded to both the top plate and to the stainless-steel membrane.
 \caption[AC power for the detector modules with a saturable inductor]{Block diagram of the AC power for the detector modules with a saturable inductor to separate the grounds of the transformer shields}
 \label{fig:acpwr-det-modules}
 \end{figure}
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{TPC support rails (Fowler)}
@@ -152,6 +166,9 @@ the roof.  An alternative configuration in which the TPC is supported independen
 \caption{Support rails inside cryostat} 
 \label{fig:support-rails}
 \end{figure}
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Discussion of ports in the top of the cryostat (Fowler)}
@@ -205,6 +222,9 @@ Several items will be installed in the cryostat for use during TPC installation,
 \caption{Raised-panel floor to protect the cryostat's primary membrane } 
 \label{fig:raised-floor-protect}
 \end{figure}
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
 
 \begin{figure}[htbp]
 \centering
@@ -212,6 +232,9 @@ Several items will be installed in the cryostat for use during TPC installation,
 \caption{The bottom APA and CPA panels of the TPC are lowered through the cryostat hatch and held temporarily by a holding fixture } 
 \label{fig:panels-lowered-hatch}
 \end{figure}
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Full-scale Mockup}
@@ -268,6 +291,9 @@ The following list of detector components and systems will be installed in the D
 \caption{TPC panels installed in cryostats } 
 \label{fig:tpc-panels-in-cryostat}
 \end{figure}
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Detector material storage /testing above ground (Howell)}
@@ -379,6 +405,9 @@ the cryostat will each have motorized trolleys so that work can be conducted by 
 transferred to the support rails and then rolled into final position (zone 3).} 
 \label{fig:tpc-install-workzones}
 \end{figure}
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
 
 Signal and power cables will be installed from the cryostat feedthrough ports next to the APA support rods, shown in Figure~\ref{fig:tpc-install-feedthroughs}, along the rails to the point where the connection to the APAs will be made. The cables will be 
 preplaced and tested before APA installation begins.  Editor’s Note: Figure~\ref{fig:tpc-install-feedthroughs} is for a 17-kton fiducial mass cryostat. The 5-kton cryostat is shorter and has fewer rows.  
@@ -389,6 +418,9 @@ preplaced and tested before APA installation begins.  Editor’s Note: Figure~\r
 \caption{Feedthroughs} 
 \label{fig:tpc-install-feedthroughs}
 \end{figure}
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
 
 
 \fixme{ figure caption  6. TPC installation monorail ... Where is reference to it?} 
@@ -399,6 +431,9 @@ preplaced and tested before APA installation begins.  Editor’s Note: Figure~\r
 \caption[TPC installation monorail with APA moving to support rail]{TPC installation monorail with APA moving to support rail. A rolling scaffold with an integral stair tower will allow personnel to access the top of the stacked panel. Fixed scaffolds with stair towers will provide access into the cryostat.} 
 \label{fig:tpc-install-monorail}
 \end{figure}
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
 
 The detector installation system is also responsible for developing and implementing the procedure for monitoring the integrity of the membrane-cryostat primary liner during installation. The space between the 
 primary liner and the secondary liner will be held under vacuum during installation. The vacuum level will be automatically monitored and will alarm if any leaks develop in the primary membrane during TPC installation
@@ -437,6 +472,10 @@ cryostat and TPC. Additional testing will occur after the other cryostat is fill
 \caption{Startup and Commissioning Sequence} 
 \label{fig:tpc-install-commissioning-seq}
 \end{figure}
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
+
 
 Installation of the TPC in cryostat 2 will begin during the LAr fill of cryostat 1. After TPC installation and electronics testing, the purging and cooling for cryostat 2 can proceed. The LAr from cryostat 1 will be 
 transferred to cryostat 2, and once it is full, its TPC will undergo a month of initial testing. During this time, cryostat 1 will be maintained cold via continuous circulation of gaseous Ar. After it is established that no further access will be required, cryostat 1 will be refilled with LAr and begin a five-month commissioning period. Testing during the commissioning period will demonstrate that the detector performance parameters for CD-4 have been achieved. 
@@ -454,6 +493,11 @@ full suite of tests can be made within the HV operating limits.
 \caption[Checkout of the detector systems, durations]{Several opportunities exist for checkout of the detector systems as the installation and startup progresses. The approximate durations are listed with each opportunity.} 
 \label{fig:tpc-install-checkout-duration}
 \end{figure}
+
+\begin{cdrfigure}[short]{label}{long}
+%  \includegraphics[width=0.8\textwidth]{file}
+\end{cdrfigure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Argon receipt (Fowler)}
