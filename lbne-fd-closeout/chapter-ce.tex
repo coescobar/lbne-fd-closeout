@@ -95,32 +95,21 @@ and an 8:1 Mux stage with two pairs of serial readout lines in parallel.
 This has already been prototyped and tested,
 using a commercial FPGA to perform the r\^ole of the digital ASIC (Fig.~\ref{fig:elec_CMBpix}).
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[The CE Architecture]{elect_schem}{The CE Architecture. The basic unit is the 128-channel CMB}
 \includegraphics[width=\linewidth]{elect_schem.pdf}
-\caption{
-  The CE Architecture.
-  The basic unit is the 128-channel CMB.
-}
-\label{fig:elect_schem}
-\end{figure}
+\end{cdrfigure}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.65\linewidth]{elec_CMBpix1.pdf}
-\includegraphics[width=0.65\linewidth]{elec_CMBpix2.pdf}
-\includegraphics[width=0.65\linewidth]{elec_CMBpix3.pdf}
-\caption{
-  The Cold Mother Board (CMB), as used in the early set of tests.
+\begin{cdrfigure}[The Cold Mother Board (CMB), as used in the early set of tests]{elec_CMBpix}{The Cold Mother Board (CMB), as used in the early set of tests.
   {\bf Top:} The analog mother board, showing four ADC ASICs and four FE ASICs surface mounted.
   The other side of the board has another four ADC and FE ASICs.
   Except for anticipated small modifications, this board is essentially the final version.
   {\bf Middle:} The FPGA mezzanine, used in place of the digital ASIC mezzanine for the early set of tests.
   {\bf Bottom:} The complete CMB assembly as used in the early set of tests.
-  The uppermost mezzanine board is the cable connection.
-}
-\label{fig:elec_CMBpix}
-\end{figure}
+  The uppermost mezzanine board is the cable connection.}
+\includegraphics[width=0.65\linewidth]{elec_CMBpix1.pdf}
+\includegraphics[width=0.65\linewidth]{elec_CMBpix2.pdf}
+\includegraphics[width=0.65\linewidth]{elec_CMBpix3.pdf}
+\end{cdrfigure}
 
 The Cold Digital Data (COLDATA) ASIC and its voltage regulators are mounted on the digital ASIC mezzanine.
 The COLDATA ASIC provides:
@@ -269,12 +258,9 @@ This guarantees a high stability of the operating point over a wide range of
 temperatures, including cryogenic.
 The ASIC is packaged in a commercial, fully encapsulated plastic QFP 80 package.
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[The layout of the 16-channel analog FE ASIC]{elec_FE_ASIC}{The layout of the 16-channel analog FE ASIC}
 \includegraphics[width=\linewidth]{elec_FE_ASIC} % New one.
-\caption{The layout of the 16-channel analog FE ASIC}
-\label{fig:elec_FE_ASIC}
-\end{figure}
+\end{cdrfigure}
 
 This ASIC has now been through four design/fabrication/testing revision cycles.
 Prototypes from each cycle have been evaluated and characterized at room (300~K) and liquid nitrogen (77~K) temperatures.
@@ -291,19 +277,13 @@ expected in a cryogenic environment.
 Also reported in Figure~\ref{fig:ce_elec_shaper_out} are the outputs of the BGR and temperature sensor,
 which are in close agreement with the simulations as well.
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[Measured pulse response with details]{ce_elec_shaper_out}{Measured pulse response with details on gain, peaking time and baseline adjustments}
 \includegraphics[width=\linewidth]{v5c3-cel-shaper-out.pdf}
-\caption[Measured pulse response with details]{Measured pulse response with details on gain, peaking time and baseline adjustments}
-\label{fig:ce_elec_shaper_out}
-\end{figure}
+\end{cdrfigure}
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[Measured ENC vs filter time constant]{ce_elec_enc}{Measured ENC vs filter time constant from the first two versions of the analog front end ASICs}
 \includegraphics[width=4in]{v5c3-cel-enc.pdf}
-\caption[Measured ENC vs filter time constant]{Measured ENC vs filter time constant from the first two versions of the analog front end ASICs}
-\label{fig:ce_elec_enc}
-\end{figure}
+\end{cdrfigure}
 
 Figure~\ref{fig:ce_elec_enc} shows the measured ENC versus filter-time constant (peaking time).
 At 1~$\mu$s about 650 e$^{-}$ was measured, to be compared to the simulated value of 500 e$^{-}$.
@@ -335,12 +315,9 @@ The ADC ASIC has 12-bit resolution, 2~MS/s sampling rate, built in FIFO, two 8:1
 The ADC is a complex design, which has more than 300,000 transistors.
 All of the transistors design has been following the rules of long cryo-lifetime.
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[The layout of the 16-channel ADC ASIC]{elec_ADC_ASIC}{The layout of the 16-channel ADC ASIC}
 \includegraphics[width=\linewidth]{elec_ADC_ASIC} % New one
-\caption{The layout of the 16-channel ADC ASIC}
-\label{fig:elec_ADC_ASIC}
-\end{figure}
+\end{cdrfigure}
 
 The ADC ASIC has input buffer with offset compensation to match the output of FE ASIC.
 The input buffer first samples the input signal (with a range of 0.2~V to 1.6~V),
@@ -383,12 +360,10 @@ It is anticipated that the digital ASIC will make use of a 65~nm CMOS technology
 digital library with accurate cold timing models allowing for high level language design and
 automated place and route for design blocks using extensive digital logic.  
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC]{elec_COLDATAfig}{Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC}
 \includegraphics[width=6in]{elec_COLDATAfig.pdf}
-\caption{Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC}
-\label{fig:elec_COLDATAfig}
-\end{figure}
+\end{cdrfigure}
+
 A block diagram of the COLDATA ASIC is presented in Fig.~\ref{fig:elec_COLDATAfig}.
 The major components of the COLDATA ASIC include a downlink which is required to receive the system clock and
 the control/download information transmitted from the DAQ.
@@ -443,12 +418,9 @@ The cables will be strain-relieved on the  mounting rails above the APAs.
 % Two APAs will be cabled to one feedthrough in ``chimneys'' in the roof of the cryostat that
 % contain the support rods for the TPC planes.
 
-\begin{figure}[htbp]
-\centering
+\begin{cdrfigure}[Conceptual design of signal/power feedthrough]{ce_feedthrough}{A conceptual design of a signal/power feedthrough using all off-the-shelf commercial components}
 \includegraphics[width=\linewidth]{v5c3-signal-FT.png}
-\caption[Conceptual design of signal/power feedthrough]{A conceptual design of a signal/power feedthrough using all off-the-shelf commercial components}
-\label{fig:ce_feedthrough}
-\end{figure}
+\end{cdrfigure}
 
 The 35 Ton prototype detector requires a feedthrough and cable plant similar to what a single full size APA
 will require and can serve as a model for at least one possible solution to the feedthrough problem.
@@ -465,16 +437,13 @@ the reliable gas tightness of the flange with an embedded circuit board needs to
 and the planned method of reducing contamination from the cable plant in the ulage
 (and the 35 Ton cryostat has a much larger ulage than planned for the far detector) needs to be studied carefully.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=\linewidth]{FlangeBoard.jpg}
-\caption{Photograph of the 35 Ton ``Flange Board'', without the Conflat flange which will be epoxy potted near
+
+\begin{cdrfigure}[The 35 Ton ``Flange Board'', without the Conflat flange]{ce_feedthrough}{Photograph of the 35 Ton ``Flange Board'', without the Conflat flange which will be epoxy potted near
   the center of the printed circuit.
   This board carries all the electrical connections for the four small APAs in the 35 Ton
-  test cryostat and is similar to the number of connections needed for a Far Detector APA
-}
-\label{fig:ce_feedthrough}
-\end{figure}
+  test cryostat and is similar to the number of connections needed for a Far Detector APA}
+\includegraphics[width=\linewidth]{FlangeBoard.jpg}
+\end{cdrfigure}
 
 
 Measurements in the Materials Test Stand at Fermilab (described in Section~\ref{sec:mts})
