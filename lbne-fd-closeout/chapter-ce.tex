@@ -189,6 +189,36 @@ The estimated power dissipation of FE ASIC is below 5~mW per channel at 1.8~V su
 \section{CMOS Circuit Design}
 \label{sec:fe_CMOS}
 
+%\subsection{CMOS Transistors: Lifetime Verification and Technology Evaluation}
+
+Compared to the situation at 300~K, charge-carrier mobility in silicon increases at 89~K
+while thermal fluctuations decrease with $kT/e$.
+These effects result in a higher gain (transconductance/current ratio = $g_{m}/ i$), higher speed, and lower noise
+at 89~K than at 300~K.
+For a given drain-current density, the same degree of impact ionization (measured by the transistor substrate current)
+occurs at a somewhat lower drain-source voltage at 89~K than at 300~K.
+The charge trapped in the gate oxide and its interface with the channel causes degradation in the transconductance (gain)
+of the transistor and a threshold shift.
+The former is of major consequence as it limits the effective lifetime of the device
+(defined in industry and the literature as 10\% degradation in transconductance).
+Thus, an MOS transistor has equal lifetime due to impact ionization at 89~K and at 300~K, but at different drain-source voltages.
+This is illustrated in Figure~\ref{fig:LifetimetestVR}.  
+
+This feature offers a tool for accelerated-lifetime testing by stressing the transistor with both increased current
+and increased voltage, and monitoring the substrate current and the change in $g_{m}$ due to impact ionization.
+In these conditions, the lifetime can be reduced arbitrarily by many orders of magnitude,
+and the limiting operating conditions for a lifetime in excess of $\sim$20 years can be determined.
+With this foundation, more conservative design rules (lower current densities and voltages)
+can be derived and applied in the ASIC design.
+The goal of this part of the program is to verify by accelerated testing the expected lifetimes for the several
+widely available CMOS technologies under consideration (TSMC, IBM, AMS).
+It should be noted that this is a standard test method used by the semiconductor industry.
+These methods are used to qualify electronics for deep space NASA missions as well as commerical PCs.
+ 
+\begin{cdrfigure}[Lifetime at different temperatures vs V$_{DS}$]{LifetimetestVR}{Lifetime at different temperatures vs V$_{DS}$}
+\includegraphics[width=0.75\textwidth]{LifetimetestVR}
+\end{cdrfigure}
+
 To successfully design CMOS circuits that will operate at cryogenic 
 temperatures, two critical issues must be addressed and resolved. 
 The first issue is the need for realistic models at the operating temperature 
@@ -244,7 +274,7 @@ prototype samples throughout the development process to verify the long-term rel
 
 The development of the readout ASIC has begun by designing and fabricating in a commercial CMOS
 process (0.18~$\mu$m and 1.8V) a 16-channel ASIC implementing the complete analog front-end section.
-The layout out the FE ASIC is shown in fig.~\ref{fig:elec_FE_ASIC}.  % fig.~\ref{fig:elec_asic_layout}. 
+The layout out the FE ASIC is shown in fig.~\ref{fig:elec_FE_ASIC}.
 This process is expected to be available for at least another 10~years. 
 The charge amplifier input MOSFET is a p-channel biased at 2~mA with a L/W (channel length/width) ratio
 of 0.27~$\mu$m / 10~$\mu$m, followed by dual cascade stages.
