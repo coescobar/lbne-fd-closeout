@@ -109,29 +109,6 @@ detector.  The main emphasis of the development program is to develop a TPC desi
 A significant effort has been focused on minimizing the dead space between detector modules to improve
 the fiducial versus total LAr-volume ratio. The APA reference design accomplishes this goal but requires making $\sim$2 million high-quality wire terminations. The wire-termination scheme used by ICARUS has proven to be very reliable but it is too labor-intensive to fabricate for a million-channel detector system. We have adopted the wire-solder + wire-epoxy termination scheme that has been used for decades on drift chambers and proportional wire chambers to mount Cu-Be wires. The termination scheme was used to terminate 2.5 million  anode wires in the CMS end-cap muon system. Cu-Be wires have excellent mechanical properties and the advantage of low resistance compared to stainless steel. A study is currently underway within the LAr-FD subproject to identify the optimum wire-bonding parameters. The focus is currently on finding a commercial epoxy that optimizes the qualities of bond strength, cure time and low-temperature operation.
 
- \section{Electronics Development}
- \fixme{Mark C asks: remove, or move to Electronics section?}
- 
- The work to-date on cold electronics has established that no show-stoppers exist. The remaining activities outlined here concern performance optimization of the CMOS ASICs, the evaluation of several widely available CMOS technologies, and the development of readout architectures appropriate and timely for various scenarios of very large detectors.
-
-\subsection{CMOS Transistors: Lifetime Verification and Technology Evaluation}
-
-The results of the design of the CMOS electronics for operation at LAr temperature (89~K), performed so far by the MicroBooNE and LBNE collaborations, as well as by a large collaboration led by Georgia Inst. of Technology, are summarized in Section~\ref{sec:v5-tpc-elec}.
-
-Briefly, the fundamentals are: charge-carrier mobility in silicon increases at 89~K, thermal fluctuations decrease with kT/e, resulting in a higher gain (transconductance/current ratio =
- $g_{m}/ i$), higher speed and lower noise. For a given drain-current density the same degree of impact ionization (measured by the transistor substrate current) occurs at a somewhat lower drain-source voltage at 89~K than at 300~K. The charge trapped in the gate oxide and its interface with the channel causes degradation in the transconductance (gain) of the transistor and a threshold shift. The former is of major consequence as it limits the effective lifetime of the device (defined in industry and the literature as 10\% degradation in transconductance). Thus an MOS transistor has equal lifetime due to impact ionization at 89~K and at 300~K at different drain-source voltages. This is illustrated in Figure~\ref{fig:DSV}.  
-
-This feature offers a tool for accelerated-lifetime testing by stressing the transistor with both increased current and increased voltage, and monitoring the substrate current and the change  in $g_{m}$ due to impact ionization. In these conditions, the lifetime can be reduced arbitrarily by many orders of magnitude, and the limiting operating conditions for a lifetime in excess of $\sim$20 years can be determined. With this foundation, more conservative design rules (lower current densities and voltages) can be derived and applied in the ASIC design, as has been done for the ASIC described in Section \ref{subsec:fe-arch}. The goal of this part of the program is to verify by accelerated testing the expected lifetimes for the several widely available CMOS technologies under consideration (TSMC, IBM, AMS). It should be noted that this is a standard test method used by the semiconductor industry. These methods are used to qualify electronics for deep space NASA missions as well as commerical PCs.
- 
-\begin{cdrfigure}[Lifetime at different temperatures vs V$_{DS}$]{DSV}{Lifetime at different temperatures vs V$_{DS}$}
-\includegraphics[width=0.75\textwidth]{LifetimetestVR}
-\end{cdrfigure}
-
-\subsection{Readout Architectures, Multiplexing and Redundancy}
-A high degree of multiplexing after digitization of signals is essential for a TPC with 0.5 million wires in order to reduce the cable plant and the attendant outgassing. Just how high a multiplexing factor should be chosen is a matter of study, considering the risk of losing one output data link. A part of the
-program will include system designs with redundant links and redundant final multiplexing stages to minimize the risk of losing the data from a significant fraction of the TPC (note that even with a multiplexing factor of 1/1024 and no redundancy, one failed link would result in a loss of 0.2\%).
-
-
 \section{35-ton Prototype}
 \fixme{Need explanation of phase 1 vs 2}
 
