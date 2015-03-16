@@ -5,7 +5,7 @@
 % One is for text, the other for images and figures 
 
 % Replace the following when the name of the experiment is decided
-\newcommand{\LBNE}{ELBNF}
+\newcommand{\LBNE}{LBNE}
 \newcommand{\COMPARTMENT}{detector section}
 \newcommand{\COMPARTMENTS}{detector sections}
 
@@ -15,27 +15,32 @@
 \label{ch:trig}
 
 The data acquisiton (DAQ) subsystem provides the data collection
-in a robust fashion and optimised for the specific needs of the neutrino and
+in a robust fashion and optimized for the specific needs of the neutrino and
 underground physics of the experiment.  The scope includes design,
 procurement, fabrication, testing, delivery and installation of a
-combination of custom and commerical electronics modules, (including
+combination of custom and commercial electronics modules, (including
 commodity computing and networking hardware), as well as both
 commercial and internally developed software.
 
-The \LBNE\ DAQ must collect data from (a) interactions which are associated
-with the beam, (b) high energy ($>100$~MeV) interactions which are asynchronous such as
-atmospheric neutrinos, proton decay, cosmic ray muons etc., and (c) low
-energy interactions such as those from difuse supernova neutrinos or a
-possible supernova explosion in our galaxy.  In the latter case, it is
-essential to have the maximum possible uptime, to be sure data is
-being collected when a supernova occurs, and to have a sensitive time
-of at least 10 seconds, the estimated time a neutrino burst will last,
-implemented in ring buffer disk storage.  The design follows many of
+The \LBNE\ DAQ must collect data from (a) interactions which are
+associated with the beam, (b) high energy ($>100$~MeV) interactions
+which are asynchronous such as atmospheric neutrinos, proton decay,
+cosmic ray muons etc., and (c) low energy interactions such as those
+from diffuse supernova neutrinos or a possible supernova explosion in
+our galaxy.  For case (a) and (b), it is essential to record the
+maximum information about each event --- the current design presented
+allows collection of all the LArTPC data with no zero suppression
+whatsoever.  For supernova physics, it is essential to have the
+maximum possible uptime, to be sure data is being collected when a
+supernova occurs.
+The sensitive time needed for a supernova is at least 10 seconds,
+during which the data flow will increase dramatically, and zero
+suppression of some form will be required.  The design follows many of
 the principles of other neutrino and collider experiments with scope
 for a multi-level trigger and continuous readout to cope with events,
 such as atmospheric neutrinos, that are asynchronous with the beam.
 
-An innovation of the \LBNE\ DAQ is a thin loose coupled upper layer,
+An innovation of the \LBNE\ DAQ is a modular DAQ design,
 as described in section~\ref{sec:daq_upper}, which extends the
 modularity of the \LBNE\ far detector design and facilitates both
 staging and a possible distributed (worldwide) approach to design and
@@ -57,7 +62,7 @@ used in the 2015 cost and schedule estimations for \LBNE.
 %design, however we believe that the one presented here satisfies the
 %requirements for the experiment and so gives a realistic indication
 %that it is feasible and of the cost.  Further innovation to increase
-%robustness or performance is welcome, and the thin layer allows for
+%robustness or performance is welcome, and the modular DAQ design allows for
 %sufficient modularity that innovations can also be added to the later
 %\COMPARTMENTS\ after the initial \COMPARTMENTS\ are deployed.
 
@@ -66,22 +71,23 @@ section~\ref{sec:daq_intro}.  It is comprised of a readout for the
 LArTPC based on COB modules (section~\ref{sec:daq_cob}), a readout for
 the photon detectors based on SSP modules (section~\ref{sec:daq_ssp}),
 a time synchronisation system (section~\ref{sec:daq_time}) and a
-readout and trigger generator for auxilliary signals associated with
+readout and trigger generator for auxiliary signals associated with
 the experiment (section~\ref{sec:daq_penn}).  The real time data
 collection is performed by a toolkit called artDAQ
 (section~\ref{sec:daq_artDAQ}) that will implement two arms of data
-collection, event-building and processing; the first will stream the
-zero-suppressed hits continuously into a trigger processing farm to
-locate the positions and times of the interesting detector
-interactions and for data storage for supernova studies; the second
-arm receives non-zero suppressed data from the times and positions
-indentified in the first arm to allow the full data to be collected
-for these interesting events.  The run control
+collection, event-building and processing; 
+one of these is primarily dedicated to collection of full non-zero
+suppressed data for the most important triggered events such as beam
+or atmospheric neutrino candidates;  the other arm receives
+zero-suppressed data from the whole detector for all times, it is responsible for
+deadtimeless triggering in software of these important events, has ring-buffers to
+store potential supernova events, and records low energy physics events.
+The run control
 (section~\ref{sec:daq_runcontrol}), online monitoring
 (section~\ref{sec:daq_om}), slow control
 (section~\ref{sec:daq_slowcontrol}) and infrastructure for the DAQ
 subsystem (section~\ref{sec:daq_infrastructure}) are also described.
-There follows the description of the modular thin upper-layer approach
+There follows the description of the modular DAQ design approach
 as introduced above, in section~\ref{sec:daq_upper}.  This allows a
 heterogeneous approach to different \COMPARTMENTS\ of the DAQ and
 gives the ability to keep the majority of the detector running when
@@ -123,17 +129,28 @@ NO$\nu$A~\cite{novatdr} and MicroBooNE~\cite{microboonecdr}
 experiments, as well as from experiments with comparable channel
 counts and/or experimental conditions, such as D-Zero, CDF, NA48 and
 ICARUS.  Guidance and experience is also available from the design and
-operation of the LBNE 35t prototype and the futute CERN testing
+operation of the LBNE 35t prototype and the future CERN testing
 program.
 
 The DAQ subsystem is to be located external to the cryostat vessel,
-with components in the detector halls and in an on-site control
-room\todo{It is not yet decided whether there is a computer room underground}.
-The interfaces are with the front-end electronics for the LArTPC and
-photon-detector subsystems.  To increase robustness and up-time, there
-is a comparitively loose coupling between the DAQ subsystems in each
-detector hall, to allow calibration or maintenence to proceed in one,
+with components in the detector halls (sharing rack space near the
+cryostat feedthroughs with the photon readout, and the power supplies
+for components inside the cryostat) and in an underground computer
+room for the trigger and data collection computers.  A small computer
+room on the surface will also be required for GPS units and network 
+connections between the fiber underground and the network to connect 
+to Fermilab.  It is not decided yet whether a larger control room or 
+computer room on the surface is needed in addition to the one underground. 
+The interfaces to this work package are with the front-end electronics for the LArTPC, the
+photon-detector subsystems and the offline computing.  
+
+To increase
+robustness and up-time, the modular DAQ design concept makes a
+comparatively loose coupling between the DAQ subsystems in each
+detector hall, to allow calibration or maintenance to proceed in one,
 while data collection continues in the others.  The DAQ subsystem
+includes the run of optical fibers to the surface for transfer of data,
+GPS time synchronisation and e.g. telephone.  The DAQ subsystem
 interfaces with the Fermilab Accelerator complex (the beam-spill
 signal), and has a read-only interface with the cryogenics subsystem
 for logging of conditions.  
@@ -226,7 +243,7 @@ components:
     elements'' (RCE) residing on daughter cards in ATCA crates located
     in the detector hall to receive data from the LArTPC.  These carry
     out data merging, buffering and compression and transmission to the
-    local frms of commodity computers (see section~\ref{sec:daq_cob})
+    local farms of commodity computers (see section~\ref{sec:daq_cob})
   \item custom `SSP photon detector digitizers' which digitize and
     process the light signals (described in section~\ref{sec:daq_ssp}) 
   \item two local farms of commodity computers providing two separate
@@ -237,7 +254,7 @@ components:
     on the surface, that locks onto a GPS clock and distributes timing
     signals to the data concentrator modules via slave units (see
     section~\ref{sec:daq_time})
-  \item dedicated computer nodes that host run control online
+  \item dedicated computer nodes that host run control, online
     monitoring, database services and slow controls processes
 \end{itemize}
 %
@@ -251,24 +268,25 @@ the project.
 \label{sec:daq_phys}
 
 The physics considerations determine the scale of the primary tasks of
-digitizing the LArTPC data readout, merging the photon system data,
+digitising the LArTPC data readout, merging the photon system data,
 event building and online processing.  In addition to rates for
 processes of interest, the DAQ subsystem design depends critically on
 the specifications for the LArTPC and front-end electronics systems,
 chosen to satisfy the \LBNE\ physics requirements.  The sampling rate
 of 2~MHz has been chosen so as to achieve the required position
-resolution along the ionization drift direction. Obtaining sensitivity
+resolution along the ionisation drift direction. Obtaining sensitivity
 to signals that occur independently of the \LBNE\ beam spill, such as
 those from nucleon decay, atmospheric neutrinos or supernova-neutrino
 bursts, requires a free-running transmission of data from the LArTPC
 front-end electronics.  In principle, this same technique can be used
-to collect the beam events as well, however we will supplemement the
+to collect the beam events as well, however we will supplement the
 robustness of the beam data collection by transferring knowledge of
 the spill times from Fermilab to the far detector site using GPS.
 
 The task of data transfer is facilitated by multiplexing and utilizing
 high-speed data lines (1Gbps) in front-end ASICs in the LAr, and by
-redundant \todo{Can we still say redundant? - wording is from the first CDR} data lines that
+%redundant (Discussed with Jim, decided to drop this word) 
+data lines that
 provide connection to data-acquisition hardware located outside the
 cryostat.  The hardware receiving the raw TPC data then perform
 zero-suppression and/or data compression, as desired.  A challenge in
@@ -310,10 +328,6 @@ figure~\ref{fig:daq15_main}, and by the separation of sub-system
 control in different \COMPARTMENTS\ of the experiment
 (section~\ref{sec:daq_upper}).
 
-%The requirements on the DAQ system are listed in the requirements
-%documentation~\cite{lar-fd-req}. \todo{Can we remove this, the Rs are
-%  not so up to date?}
-
 \subsection{Event Rates and Timing}
 \label{sec:v5-daq-assumptions}
 
@@ -322,10 +336,6 @@ atmospheric-muon rate is small enough -- 0.1~Hz within the full LAr-FD active
 volume -- to contribute only negligibly to the DAQ bandwidth requirement.
 %For reference, the rate at the alternate 800L site 
 %is estimated to be 500~Hz within the active volume.  
-%This and other assumptions are discussed below in 
-%Section~\ref{sec:v5-daq-assumptions}.  
-
-%The DAQ subsystem design depends on assumptions pertaining to physics goals as well as detector configuration and conditions. 
 
 Signals associated with beam events will be localized within the
 LArTPC and synchronous with discrete (${\cal O} (1\,s)$ rep rate)
@@ -336,32 +346,32 @@ and can be dispersed throughout the TPC volume as in the case of
 neutrino bursts from supernovae.  Other specific signatures, such as
 very slow-moving magnetic monopoles ($\beta < 10^{-3}$) may involve
 signals spanning sample times exceeding the ionization-drift time.
+% Possible reference: Thron J.L. et al. PhysRevD.46.4846 (1992),
+% url = {http://link.aps.org/doi/10.1103/PhysRevD.46.4846} 
 
 Cosmic-ray muons dominate the physics rate, even at the proposed 4850L
 site.  However, this rate is negligible with respect to noise sources.
 The reference design proposed here would be capable of operation at
-shallower depths, up to about the 800L, without sgnificantly impacting
+shallower depths, up to about the 800L, without significantly impacting
 the design.
 
-As described earlier in this report (see
-Figure~\ref{fig:tpc-elec-schematic}), the cold electronics for a
-single Anode Plane Assembly will consist of twenty \todo{update} 128-channel
+As described in section~\ref{sec:fe_arch}, the cold electronics for a
+single Anode Plane Assembly will consist of twenty 128-channel
 Front-End Readout Boards, each providing four digital inputs to the
 RCEs.  The Front-End Boards will generate non-zero-suppressed data,
 i.e.\ a constant data rate of (1.5 bytes/sample $\times$ 32 wires/link
 $\times 2 \times 10^6$ samples/wire/s $=$) 96\,MB/s.
 
-For cosmic-ray muons, the rejection factor is estimated to be $\sim 200$.  
-The rejection factor is of course much higher in APAs 
-not containing any portion of a physics event.  Radioactive decay 
+Radioactive decay 
 from $^{39}$Ar and $^{85}$Kr in the LAr, and to a lesser extent from 
 detector materials (U/Th/Co/K), is estimated to provide a
 65-kHz/APA rate of activity of energy above about 300~keV (0.3 MIPs) 
 but less than $\sim 5\,$MeV, while 
 electronics noise (assuming 10:1 S/N for 1 MIP, and a threshold of 0.3 MIPs) 
 will contribute a relatively low rate per APA of singles.  
-Table~\ref{tab:daq-signal-rates} provides a summary of these rate 
-estimates.  Work is ongoing to further refine them.
+The data rate from cosmic ray muons at the 4850 level is considerably
+lower.  Table~\ref{tab:daq-signal-rates} provides a summary of these rate 
+estimates.
 %
 \begin{cdrtable}[Rates and data sizes/rates for various processes.]
   {lcccc}{daq-signal-rates} {Per-APA estimates of rates and
@@ -430,42 +440,49 @@ negligibly to the average rate.
 
 The reference design of the DAQ system is summarized in block diagram
 form in Figure~\ref{fig:daq15_main}.  Component counts are given in
-Table~\ref{tab:daq15_component_counts}. \todo{Update table.  Be
-  precise and for what sized detector.}
+Table~\ref{tab:daq15_component_counts}. 
+%\todo{Update table.  Be precise and for what sized detector.}
 
 \begin{cdrtable}[DAQ subsystem component counts]{ll}{daq15_component_counts}
-  {DAQ subsystem component counts for one 20-kton module/cryostat.}
+  {DAQ subsystem component counts for one 10-kton module/cryostat.}
     {\bf Quantity} & {\bf Description} \\
-   60  &  COBs (Cluster on Board) each with 8 RCEs\\
-   20  & 2-slot ATCA Shelves  \\
-   2   & Ethernet Switches   \\  
-   60  &  TPC Readout Compute Nodes \\
+   250  &  COBs (Cluster on Board) each with 8 RCEs,\\
+   26  & 14-slot ATCA Shelves  \\
+   27  & Ethernet Switches (one 10G, 26 1G)  \\  
+   26  &  TPC Readout Compute Nodes \\
    1   &  Master Timing Unit with GPS Receiver\\
-   10  &  Slave Timing Units  (assuming we build new, improved ones) \\
-   8   &  Event Builder Compute Nodes  (???) \\
-   8   &  Software Filter Compute Nodes (???) \\
-   1   &  Run Control Compute Node   \\
-   1   &  Slow Control Compute Node   \\
-   1   & DAQ Database  Compute Node   \\
+   27  &  Slave Timing Units \\
+   11  &  Event Builder Compute Nodes \\
+   8   &  Other computing nodes (server, run control, slow control etc)  \\
 \end{cdrtable}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{COB - Cluster on board modules}
+\section{TPC readout}
 \label{sec:daq_cob}
+%\subsection{COB - Cluster on board modules}
 
 The primary interface between the TPC front-end electronics (FE) and
 the DAQ subsystem consists of an ATCA-based system of RCEs
 (Reconfigurable Cluster Elements).  The RCE system receives the
-serialized raw data for the FE, performs zero-suppression on it, and
-packetizes and transmits the resulting sparsified data to a back-end
-data farm for event building and further processing.  Additionally,
+serialized raw data for the FE, stores it with no zero-suppression in 
+ring buffers for later retrieval if a valid trigger is received, performs 
+zero-suppression on it to send to the trigger-arm.  It packetizes and 
+transmits the resulting data to the back-end
+farms for event building and further processing.  Additionally,
 the RCE system transmits timing and control signals to the FE as well
 as forwarding configuration data to them at start-up.
 
 \begin{figure}[hbt]
-  \includegraphics[scale=0.5]{daq15_COB-gen3.pdf}
-  \caption{\label{fig:daq15_cob} The COB (left) and RTM (right).  }
+\begin{center}
+\begin{tikzpicture}
+\node[inner sep=0pt] (russell) at (0,0)
+    {\includegraphics[scale=0.5]{daq15_COB-gen3.pdf}};
+\draw[ultra thick] (russell.south west) ++(1.2,-0.2) -- node[below] {COB board} ++(9.5,0.);
+\draw[ultra thick] (russell.south west) ++(10.9,-0.2) -- node[below] {RTM board} ++(2.,0.);
+\end{tikzpicture}
+  \caption{\label{fig:daq15_cob} The COB (left) and RTM (right). The eight black square units near the upper-left of the COB modules are the RCEs.}
+\end{center}
 \end{figure}
 The RCE system consists the following components: a commercial ATCA
 shelf (2-, 6-, or 14-slot), a Cluster-On-Board (COB) which is the
@@ -476,10 +493,10 @@ Figure~\ref{fig:daq15_cob}) consists of 5 bays for holding daughter
 boards, an onboard 10-GbE switch, and both 10- and 1-Gb ethernet
 connections for communications with the back-end system.  Four of the
 daughter-board bays are for Data Processing Modules (DPM), each of
-which can hold up to two RCEs.  The RCE is the core procession unit of
-the system; it is made up of a modern SoC (currently, the Xilinx
+which can hold up to two RCEs.  The RCE is the core processing unit of
+the system; it is made up of a modern ``system-on-chip'' SoC (currently, the Xilinx
 Zynq-7045) with multiple high-speed I/O ports (up to 10-Gbps each) and
-external DRAM \todo{Say how much} and flash memory controllers.  The
+1\,GBytes of external DRAM and flash memory controllers.  The
 other bay on the COB contains the Data Transmission Module (DTM) which
 is responsible for distributing timing and trigger information to and
 between the DPMs.
@@ -489,14 +506,14 @@ software on the RCE and the RTM board are application specific. The
 RTM provides the mechanical and electrical interfaces between the
 front-end (or, in our case, the flange electronics) and the back-end,
 as well as other external sources such as the timing or trigger
-systems.  In the case of \LBNE, we propose \todo{Add another sentence
-  or two of detail about the number of signals, what happens inside
-  the flange, make it tie in better with the intro to
-  section~\ref{sec:daq_time}.} to use fiber optic connections between
-the flange and the TPC DAQ using QSFP+ connectors.  Currently, each
+systems.  In the case of \LBNE,
+fiber optic connections are used between
+the flange and the TPC DAQ using QSFP+ connectors. This provides the required ground isolation.  These links are used for data transmission from the cryostat and also provide the synchronisation clock to run the ADCs.  Currently, each
 RTM can accommodate up to 16 QSFP+ connections.
 
-With the assumption that each cold FE board multiplexes it's 128 wire
+With 
+%\todo{Erik suggests a simple diagram to accompany this paragraph} 
+the assumption that each cold FE board multiplexes it's 128 wire
 channels to 4 outputs at 1-Gbps each, the non-zero suppressed data for
 1 APA can be fed into a single COB (containing 8 RCEs).  Each RCE
 would receive data from 2 FE boards, perform zero-suppression, and
@@ -522,10 +539,9 @@ central location into a smaller number of large ATCA-shelves.
 \section{Photon detector readout}
 \label{sec:daq_ssp}
 
-The photon detection system is digitised and readout by a custom
+The photon detection system is digitized and readout by a custom
 module called the SIPM signal processor (SSP) which is described in
-detail in section~\ref{sec:pd_ssp}\todo{When SSP is in PD chapter,
-  refer directly to that instead of this section}\ in the photon detector chapter.
+detail in section~\ref{sec_elec} in the photon detector chapter.
 The module has ADC and signal processing hardware.  The output of the
 SSP is Ethernet, interfaced with the same Xilinx Zynq architecture as
 the COB which is used for the LArTPC data. The SSP therefore is able
@@ -547,13 +563,13 @@ to the electronics.  We propose using the same concept with potential
 enhancements and modernisation to distribute the timing from the
 surface to the underground, among the readout modules for the photon
 detector and also for distribution to the COBs for the LArTPC readout.
-This will maintain a 64-bit counter synchronised to the absolute GPS
+This will maintain a 64-bit counter synchronized to the absolute GPS
 time on each of these readout modules.  In addition, we are using a
-separate custom protocol for synchronisation of the cold electronics
+separate protocol for synchronisation of the cold electronics
 boards from the counters on the COBs; this uses the same optical links
 as the data path as described in section~\ref{sec:daq_cob}.  For
 simplicity, this maintains a 64\,MHz clock, but not a large counter
-synchronised on the cold electronics boards, the time being added when
+synchronized on the cold electronics boards, the time being added when
 the data reach the RCE.
 
 The timing link is the only physical link other than the
@@ -578,13 +594,8 @@ A similar GPS based system will be used at Fermilab to record the times
 of the accelerator spills which generate the 10\,$\mu$s bursts of
 neutrinos.  There should be sufficient buffering in the trigger path
 of the readout system shown on figure~\ref{fig:daq15_main} so that all
-trigger-path data can be buffered while the time stamp of the spill is
-sent to the far detector over the internet.  It is likely \todo{Check
-  the number of channels, to make this sentence less vague} that by
-the time the far detector electronics are constructed, memory is
-sufficiently cheap to provide a 0.5\,s-deep ring buffer in the RCE for
-the data-path data, in which case the non-zero suppressed data will be
-available with the spills.
+data can be buffered while the time stamp of the spill is
+sent to the far detector over the internet.  
 
 Since the Fermilab accelerator complex is timed off the 60\,Hz electric
 line frequency from the local power company, and the time between
@@ -592,15 +603,16 @@ accelerator cycles is a variable number of 60 Hz periods, it may be
 possible to predict the time of the spills and avoid the need for such
 a long ring buffer.  Experience on MINOS and NOvA have shown that the
 variability in the 60\,Hz is too great to accurately predict the
-arrival time of a burst of neutrinos in the future, however \LBNE\ has a
+arrival time of a burst of neutrinos in the future for those scintillation detectors, 
+however \LBNE\ has a
 considerably longer readout window (several drift times), and so it
 could work for \LBNE.
 
 We have chosen a 64 bit time stamp for the 64\,MHz clock so that all
 detector and accelerator data will have a unique time for a 20 year
-run of the experiment.  This will allow correlation with non
-accelerator physics events such as supernovas as well as such things
-as equipment failures.
+run of the experiment.  This will allow correlation with
+non-accelerator physics events such as supernovas as well as such
+things as equipment failures.
 
 \subsubsection{Front end clocks}
 
@@ -611,8 +623,9 @@ to select a clock frequency that is well outside the bandwidth of the
 front end electronics.  This has proven to be a very effective in
 several other experiments.  We have chosen 64\,MHz for this design.
 The internal capacitance of the SiPMs in the photon system limits the
-useful frequency range \todo{say if it limits from above or below} to
-about 30\,MHz.  Thus, we can place a double pole (6\,db/octave) filter
+useful frequency range to 
+%\todo{say if it limits from above or below}
+below about 30\,MHz.  Thus, we can place a double pole (6\,db/octave) filter
 in front of the digitizers. This reduces any noise from the clock
 system by 12\,db.  The SiPM's have large internal gain so 12\,db
 coupled with careful cable design should be adequate to eliminate any
@@ -625,13 +638,13 @@ should be adequate for this system.
 
 \subsubsection{Time stamping and synchronization}
 
-The transfer of counter synchronization from the MTU containing the
+The transfer of counter synchronization from the master timing unit containing the
 GPS receiver to the 64-bit counters in the readout modules is achieved
 using the four twisted-pair lines.  Three of the four lines send
 signals from the master to the readout modules and are used for (a)
 the continuous 64\,MHz clock, (b) a serial command line and (c) a SYNC
 line. The fourth line, operating in the opposite direction, is (d) a
-return-SYNC.  The synchronisation proecdure occurs in a similar manner
+return-SYNC.  The synchronisation procedure occurs in a similar manner
 to the NOvA experiment; The master loads a predetermined time in the
 near future over the serial command line to a time-load register in
 all the readout modules.  A specific time $T$ (to be described below)
@@ -648,11 +661,11 @@ chosen so that the loading in each readout module reflects the correct
 GPS time.  As in the NOvA timing system, the cable delays are
 determined automatically with a special delay-calibration sequence in
 which outgoing SYNC pulses are returned immediately over the
-return-SYNC line to the preceeding fanout which measures twice the
+return-SYNC line to the preceding fanout which measures twice the
 delay.  As the detector is nearly a mile underground, the four signals
 (a)-(d) will be converted to optical for the journey down the shaft.
 The delay on this link will be large, and will be measured and
-corrected by the same proedure as described above.
+corrected by the same procedure as described above.
 
 The data rates at the far detector are low enough that a software
 trigger can be used instead of a dedicated hardware trigger.  This
@@ -671,10 +684,10 @@ the time that data taking started.
 \subsubsection{Dynamic Synchronization and Executes}
 
 For the LArTPC readout, 64-bit registers exist in each of the COBs.
-For simplicity, only the 64\,MHz clock is transmitted upstram and
+For simplicity, only the 64\,MHz clock is transmitted upstream and
 fanned-out to the cold electronics, not the absolute synchronisation
 to GPS of any counters.  To insert time markers on this clock line,
-phase encoding (or equivalently, modifiction of the mark-space ratio)
+phase encoding (or equivalently, modification of the mark-space ratio)
 is used.  The first use of this technique is to detect and correct for
 possible glitches on the clock line that could put the data stream off
 by one or more bits resulting in lost data.  This is achieved by phase
@@ -685,22 +698,22 @@ message.  The warm electronics would also check the phase encoding to
 spot failures in the clock distribution system.  The second use of the
 phase encoding is to send an 'execute' pulse to the cold electronics
 which can be used to cause calibration pulses to apear all at the same
-time.  These techniques are used succesfully on the MINOS experiment.
+time.  These techniques are used successfully on the MINOS experiment.
 
-\section{Readout of auxilliary signals}
+\section{Readout of auxiliary signals}
 \label{sec:daq_penn}
 
 In addition to the main readout of the LArTPC and photon detector
-systems, a certain numbr of auxilliary signals may need to be read
+systems, a certain number of auxiliary signals may need to be read
 out.  A trigger module was designed for the 35t test which will be
 used to perform trigger counter logic, and supply external calibration
 pulsers with triggers at predetermined times.  This module is
 connected the the time synchronisation network as described above.  It
 is read out using a Xilinx Zynq FPGA using the same techniques as for
-the RCE system.   At the CERN test, this module will also be used to
-record beam counter information and to digitise the warning of
+the RCE system.   At the CERN single-phase test, this module will also be used to
+record beam counter information and to digitize the warning of
 extraction from the SPS accelerator.  The module will be retained for
-the far detector operation to readout auxilliary information into the
+the far detector operation for calibration triggers and to readout auxiliary information into the
 data stream such as e.g.\ the phase of the 60\,Hz line voltage for
 correlated noise studies.  
 
@@ -711,18 +724,18 @@ correlated noise studies.
 
 Subsequent to the data collection and processing by the RCE system
 (for the LArTPC), the SSP (for the photon detectors) and the
-auxilliary readout module, the data is passed to the two local data
+auxiliary readout module, the data is passed to the two local data
 processing farms as described in section~\ref{sec:daq_phys} and shown
 on figure~\ref{fig:daq15_main} to perform the triggering and event
 building.  Event data will be staged locally before being transmitted
 in quasi real-time for archival to persistent storage (nominally the
-primary store will be at Fermilab, and the rsponsibility of the DAQ
+primary store will be at Fermilab, and the responsibility of the DAQ
 will end when it reaches this store; it will then be copied to further
 locations) .
 
 \subsection{Artdaq}
 
-The data acquisition software in both of the local procesing farms of
+The data acquisition software in both of the local processing farms of
 commodity computers will be based on artdaq which is a toolkit for
 building DAQ systems.  It has been developed at Fermilab, written in
 C++11 and is in use in several other experiments.  Within artdaq, core
@@ -731,7 +744,7 @@ the modules that perform the functions that are specific to the
 experiment.  For the 35-ton detector, LBNE collaborators have
 developed modules that configure and read out the RCE and SSP boards
 that are connected to the LArTPC and photon system detectors,
-respectively.  Members of the experiment are also developing
+respectively.  Other members of the experiment are also developing
 reconstruction and filtering software modules that will analyze the
 data as it is acquired.  The artdaq-based DAQ system for the 35-ton
 detector has been successfully used to acquire data in electronics and
@@ -747,15 +760,15 @@ blocks of data, called millislices, corresponding to fixed windows of
 time, which are immediately adjacent to each other.  The boundaries
 between one millislice and the next are at precisely the same time
 across all the sub-components of the readout as determined by the
-64-bit time counters which are synchronised as described in
+64-bit time counters which are synchronized as described in
 section~\ref{sec:daq_time}.  The triggering front-end computers
-(figure~\ref{fig:daq51_main}) receive zero suppressed data from one
+(figure~\ref{fig:daq15_main}) receive zero suppressed data from one
 particular part of the readout of the detector and parcel it up into
 blocks corresponding to the millislice interval.  These are the
 fragments in artdaq terminology.  The data from the beginning of the
-time interval of one fragment is copied into the end of the preceeding
-fragment to provide suffiecient overlap for correct treatment of
-neutrino events close to the bondary of the millislices.
+time interval of one fragment is copied into the end of the preceding
+fragment to provide sufficient overlap for correct treatment of
+neutrino events close to the boundary of the millislices.
 
 Artdaq designates a backend trigger farm node for each millislice in
 sequence to allow parallelization of the triggering and event building
@@ -764,10 +777,10 @@ node in sequence so that the backend node receives all the data from
 the whole detector for one millislice period.  The number of backends
 operating in parallel can be extended if the processing required is
 large. The trigger farm backend then runs triggering algorithms on the
-data to recognise periods of time with clusters of hits corresponding
+data to recognize periods of time with clusters of hits corresponding
 to neutrino, cosmic ray and other interactions in the detector.  The
 times and locations within the detector corresponding to interactions
-are communicated to a centralised trigger master.  
+are communicated to a centralized trigger master.  
 
 In addition, the trigger backend nodes store all the zero-suppressed
 hit data in data files locally, in order to provide a historical
@@ -810,7 +823,7 @@ substantially test their software in an offline environment and only
 include the full DAQ infrastructure for final testing.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Run Control }
+\section{Run Control}
 \label{sec:daq_runcontrol}
 
 The \LBNE\ run-control system will be the primary control and
@@ -820,11 +833,11 @@ provide several key functions that will make the collections of
 specific data acquisition and monitoring systems (referred to as
 "components") appear as a single, integrated system with a common
 control, monitoring, alert and information display interface.  If the
-thin upper-layer concept described in section~\ref{sec:daq_layer} is
+modular DAQ design concept described in section~\ref{sec:daq_upper} is
 adopted, the run control will independently control each \COMPARTMENT,
 each with a separate run-state while an overall user interface will
 give an overview of the state of all the \COMPARTMENTS.  This common
-view of the "system of systems" will ease the training burden on
+view of the ``system of systems'' will ease the training burden on
 detector shift operators, allowing for rapid response in the event of
 system error conditions.
 
@@ -937,23 +950,99 @@ While these technology choices are selected for their robust designs,
 the modular design of the LBNE run control system allows for
 flexibility in utilizing other technologies as replacements.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Online Monitoring}
 \label{sec:daq_om}
+
+Rapid access to the data during data collection will be provided from
+the artDAQ framework and used for making online monitoring histograms
+and event display.  The online monitoring histograms will be used to
+display the performance of the detector including e.g.\ noise rates,
+dead channels and the online drift velocity measurement.  A framework
+based on the ATLAS LHC experiment online monitoring will be used to
+display the histograms, and associated historical data.  Since the
+data are presented in the ART framework online, the development of new
+histograms can be easily made offline first.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Slow Control Systems }
 \label{sec:daq_slowcontrol}
 
-\todo{Needs a bit of updating, some words here are out of date.}  The
-Slow Control system is a critical element of the DAQ, providing the
-main interface to power supplies for the detector and electronics as
-well as to equipment used to monitor the operational status of the
-detector and supporting systems.  As in the case of the Run Control
-system, the development of the conceptual design for the Slow Control
-system is in its early stages.  Again, based on experience from other
-experiments, no obstacles are foreseen with regard to the development
-of a robust system.
+\subsection{Monitoring}
+
+The slow controls system will allow monitoring of data both within and
+outside the normal data taking.  The central server is based on the
+same infrastructure as the run control described in
+section~\ref{sec:daq_runcontrol}.  It will accept individual ZeroMQ
+messages from sub-system components containing measurement readings
+and will store them in a database on a server at the far detector.
+This database will be replicated to a server at Fermilab which will
+allow access via the standard offline interface being developed at
+Argonne National Lab, based on the NOvA database system.
+
+The slow control will generate status and historical plots of the
+monitored values on demand from the run control Django system so that
+shift-takers and experts can access the information easily through
+the same framework as the run control.  Alarms will be used to
+indicate to shift-crew and notify experts of values which are beyond
+their normal range.
+
+Several example data collection routines which send the zeroMQ message
+to the central control will be provided, e.g. for the Wiener power
+supplies, the rack protection units, the SSP monitoring functions, the
+GPS time synchronisation and the aTCA crate managers.  Storage of
+performance parameters derived from inside artDAQ, or from the data
+analysis in the trigger or the online monitoring will also be reported
+by zeroMQ messages to the slow control infrastructure.  Collaborators
+who supply non-standard equipment will be able to provide their own
+software to send the zeroMQ messages.  A centralized program will
+harvest read-only data about the cryogenics and about the beam at
+Fermilab which will also be available for status and historical
+display.  All this data will be replicated to Fermilab and accessible
+offline through the \LBNE\ offline database framework as described
+above.
+
+\subsection{Control}
+
+The control functions of the \LBNE\ slow control will allow experts to
+power off/on crates and racks remotely, for maintenance out-of hours
+for attempts to restart the experiment after a crash when there is
+no one with DAQ expertise present underground.  The rack protection
+system will automatically (independently of the slow controls) shut
+down electronics if a smoke, over-temperature or absence of cooling
+condition is detected.  The slow controls will provide the interface
+to setup the rack protection thresholds and to send reset commands
+after a trip.
+
+The slow control will have no control (only display of harvested
+monitoring data) for the cryogenic system and the beam line at Fermilab.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Interface with offline computing}
+\label{sec:daq_offline}
+
+As described in section~\ref{sec:daq_slowcontrol}, the interface to
+the slow control monitoring data will be by a replication of the
+online slow control database tables to Fermilab where they are
+accessible via the standard database access tools developed for
+\LBNE.  This method will also be used to give access to the run logging
+database table which gives information about each run.  The values of
+parameters used to configure at the start of each run will also be
+stored in database tables and made available by this route. [The full
+configuration files for each run will be backed up, and a separate job
+will harvest the relevant ones (some are `plumbing parameters' used
+for setting registers used only for lab debugging of the module)].
+
+The default output format for artDAQ is readable by the art framework
+directly.  As described in section~\ref{sec:daq_upper}, the data will be
+stored briefly at each \COMPARTMENT\ and then a merging job will form
+complete `runs' corresponding to all the data in the entire detector
+for a given running period.  This will be archived to Fermilab, recorded in the
+run control database and accessible directly by the offline
+reconstruction and analysis programs.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -962,44 +1051,56 @@ of a robust system.
 
 \subsection{Wide Area Network}
 
-As in the case of MINOS and NO$\nu$A, it is expected that event data can be 
-transmitted over the network to Fermilab.  Although rates for events of 
-interest are comparable, data throughput for the \LBNE\ LArTPC is 
-expected to be at least an order of magnitude higher.  A detailed 
-analysis of the requirements of Sanford Laboratory for the appropriate level of 
-connectivity within and off the lab site will need to be carried out.
+As in the case of MINOS and NO$\nu$A, it is expected that event data
+can be transmitted over the network to Fermilab.  Although rates for
+events of interest are comparable, data throughput for the \LBNE\
+LArTPC is expected to be at least an order of magnitude higher.  A
+bundle of single-mode fibers (latest estimate a 96 fiber bundle)
+should be sufficient for transmitting the data from all four 10kT
+modules to the surface, for transmitting the GPS synchronisation
+(independently for the four 10kT modules) underground and to allow
+expansion capacity.
 
 \subsection{Online Data Storage}
 
-To protect against signficant periods of absent network connectivity, it 
-is desired to store a significant amount of the data emerging from the 
-DAQ to local storage.  A local data storage facility of $\sim 100\,$TB is 
-expected to be more than adequate for five days worth of detector data, 
-even without prescaling cosmic-ray muon events.
+To protect against significant periods of absent network connectivity,
+it is desired to store a significant amount of the data emerging from
+the DAQ to local storage.  A local data storage facility of $\sim
+100\,$TB is expected to be more than adequate for five days worth of
+detector data, even without prescaling cosmic-ray muon events.  This
+storage is provided by a RAID disk array on one of the computing nodes
+in the trigger farm.
 
 \subsection{Power and Cooling}
 
-Power and cooling requirements for the DAQ system described here are 
-modest.  DCMs operate at below 50~Watts each, while the maximum power 
-consumed by each of the two Cisco 4948Es is 275~Watts.  Assuming 
-power supplies that operate at 75\% efficiency, and accounting for 
-other components, the total DAQ subsystem budget for power 
-in each 20-kton detector/cryostat hall is likely to be below 15~kW.
+Power and cooling requirements for the DAQ system described here are
+fairly modest.  COB modules operate at around 100W each and the
+commodity computers for the data collection and triggering at around
+200W each.  More detailled power measurements will be provided by the
+35t test to refine these numbers and add the other electronics
+components into the estimate.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Modular thin upper-layer}
+\section{Modular DAQ design}
 \label{sec:daq_upper}
 
-The thin upper layer of the data acquisition subsystem allows the
+The modular DAQ design concept described here allows the
 \COMPARTMENTS\ of the experiment to have semi-independent and
 autonomous data taking --- essentially each \COMPARTMENT\ has sufficient
 components (timing system, readout of detectors, data storage and
 database storage) to run on its own, including having an independent
-run-control state.  The thin upper layer allows the whole detector to
+run-control state.  The modular DAQ design allows the whole detector to
 be monitored and controlled as a single big detector, for simplicity
 in operation.  It also allows triggers in one \COMPARTMENT\ to initiate
 data collection in the other \COMPARTMENTS.
+This strategy addresses the problem of ensuring that the possibility
+of a supernova occurring while data is not being collected is very
+close to zero, as long as power is present
+underground.  It leverages the inherent redundancy, without
+increasing cost, in the modular nature of the experiment.
+It also has benefits in staging and allowing different \COMPARTMENTS\ 
+to have different readout features.
 
 The essential difference between this and having a single data
 acquisition for the entire far detector is that if one \COMPARTMENT\
@@ -1013,22 +1114,22 @@ database will indicate the periods when any compartment is missing
 from the overall data collection.  It is felt that a mechanism by
 which the entire detector does not stop data collection is essential
 for a detector with the goal of collecting data from a
-once-in-30-years supernova explosion event.  The thin upper layer
+once-in-30-years supernova explosion event.  The modular DAQ design
 concept will also improve overall uptime of the detector.
 
 Each \COMPARTMENT\ runs as a separate data acquisition system with all
 the real-time functions being capable of being run independently.
 Each compartment has its own run-start and run-stop mechanisms (with a
-standardised interface for initiating these commands and obtaining
+standardized interface for initiating these commands and obtaining
 state status information); its own timing system (required to be
-synchronised to UTC to within 10$\mu$s, although it is likely with GPS
+synchronized to UTC to within 10$\mu$s, although it is likely with GPS
 that a more stringent limits will be met by the individual
 \COMPARTMENTS); its own data storage and data catalogue (with
 a standard format for data and for indicating the period of collection
 in each file).   Each \COMPARTMENT\ will also have its own independent
 storage for slow control measurements.
 
-A centralised `manager' for triggers across the entire detector will
+A centralized `manager' for triggers across the entire detector will
 be implemented.  This places a number of requirements on the readout
 of the individual \COMPARTMENTS, although note that none of these is
 more arduous than that required in order to collect beam spill data on
@@ -1068,15 +1169,15 @@ run-control which will give the overall status of the \COMPARTMENTS\ as
 a whole.  It will be regarded as a fault situation unless all
 \COMPARTMENTS\ are taking data in production configurations. 
 
-The above parts of the thin upper-layer (the centralised manager and
+The above parts of the modular DAQ design (the centralized manager and
 the ability for the run-control to treat the \COMPARTMENTS\ as
 autonomous, with an additional overall status) are all that is needed
-in the real-time part of the DAQ subsystem.  A second part of the thin
-upper-layer runs offline, shortly after the data collection has been
+in the real-time part of the DAQ subsystem.  The second part of the
+modular DAQ design runs offline, shortly after the data collection has been
 completed.  This part operates as a batch system on a farm of
 computers and combines the data from the individual \COMPARTMENTS\
 (which will have data files spanning different periods of time) into
 a single sequence of time-ordered files for archival and production
-use offline.  The beamline status and monitoring data will be
+use offline.  The beam line status and monitoring data will be
 transferred from Fermilab and incorporated into the files as well
 (essentially being regarded as an additional pseudo-\COMPARTMENT).

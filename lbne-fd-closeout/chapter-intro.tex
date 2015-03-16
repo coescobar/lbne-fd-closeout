@@ -95,7 +95,7 @@ Each APA has three wire planes that are connected to readout electronics; two in
 \subsection{Electronics, Readout and Data Acquisition}
 \label{sec:det_electronics}
 
-\fixme{Separate into CE and DAQ, or ok as is?}
+%\fixme{Separate into CE and DAQ, or ok as is?} % - DAQ paragraph added to fix this - Giles
 
 CMOS technology, with a noise minimum at 89~K,
 permits the front-end electronics to reside in the LAr (henceforth ``cold electronics''),
@@ -117,6 +117,7 @@ by reducing the volume of cables in the ullage gas.
 \includegraphics[width=\linewidth]{elect_schem.pdf}
 \end{cdrfigure}
 
+The data acquisition system (DAQ) handles the signals from the LArTPC and photon detection once they are outside the cryostat and packages the data into events within runs for offline analysis.  The logic runs in FPGAs, extensively uses the Ethernet protocol which feeds data to commodity computers and network switches  for event building and triggering using a modern software framework which captitalises on scalable parallelization with multicore machines. The primary data transfer path in the DAQ reads out interactions from neutrinos (beam and atmospheric), proton decay and other underground physics phenomena and cosmic ray muons with no zero suppression --- these events occur rarely (the most frequent are the cosmic muons at a rate of about one per minute).  A separate data transfer path works with zero suppressed data to provide the triggering for the avove events, and a continuous readout of all data which can be filtered for study of low energy physics phenomena.  These two readout paths are used in combination for supernova events to maximise the information collected, dependant on the investment available for buffering.  The DAQ is partitioned into sections which are more independent than in most HEP experiments to allow periods of downtime of more than one section of the detector at a time to be practically eliminated, whiuch is useful for supernova detection.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Photon-Detection System}
@@ -229,7 +230,11 @@ As mentioned above, the design of the LAr-FD has benefited greatly from other ex
 \section{Participants}
 
 
-The design for the LAr-FD was carried out by an LBNE subproject team, headed at Fermilab  but with participants also from Brookhaven National Laboratory, Argonne National Laboratory and Indiana  University, in conjunction with an engineering design firm, Arup USA, Inc. that assisted with cryostat and cryogenic-plant design. 
+The design for the LAr-FD was carried out by an LBNE subproject team, headed at Fermilab  but with participants also from Brookhaven National Laboratory, Argonne National Laboratory
+\todo{Next lines added by Giles, check}
+ and SLAC.  Participants from the UK working on the DAQ were the Universities of Lancaster, Oxford, Sussex and Warwick and the Rutherford Appleton Laboratory.  US groups from Universities include University of Maryland, University of Texas at Arlington
+%End of lines added by Giles
+and Indiana University, in conjunction with an engineering design firm, Arup USA, Inc. that assisted with cryostat and cryogenic-plant design. 
 
 
 \nomenclature{ADC}{analog-to-digital converter}
