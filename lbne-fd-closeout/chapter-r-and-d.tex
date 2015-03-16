@@ -137,7 +137,6 @@ program will include system designs with redundant links and redundant final mul
 
 \subsection{Phase 1 Cryostat Development}
 \label{35tonprototype}
-
 \fixme{This is out of date}
 
 The next step in the cryostat-prototype program is intended to address project-related issues: (1) to gain detailed construction experience, (2) to develop the procurement and contracting model for LAr-FD and (3) to incorporate the design and approval mechanism in the Fermilab ES\&H manual. (Membrane cryostats are designed in accordance with European and Japanese standards.) At present, we are in the process of procuring the cryostat components for a 35-ton membrane cryostat from IHI.
@@ -369,15 +368,85 @@ cryostat and to facilitate maintenance and repair.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Phase 2 TPC Installation and Operation}
+\subsection{35T Prototype Phase 2}
 
-\fixme{needs content}
+Phase 2 of the the 35T prototype involves installing a fully operational TPC and Photon Detector into 
+the previously built cryostat.
+This prototype will be filled with Liquid Argon and operated for a several-month-long Cosmic Ray run. 
+External plastic scintillator paddles placed around the cryostat will be used to produce
+trigger signals as well as rough position measurements of the incoming Cosmic Rays.
+Commissioning is expected to begin in June 2015.
+Figure~\ref{fig:tpc-35ton-trial} shows the trial assembly of the TPC outside of the cryostat. 
+Figure~\ref{fig:35TTPC} shows a model of the TPC inside the cryostat.
 
-\subsubsection{Phase 2 TPC Design }
+\subsubsection{35T Phase 2 TPC Design}
 
-\subsubsection{Phase 2 Goals}
+\begin{cdrfigure}[35T with TPC]{35TTPC}{35T Cryostat with TPC and photon detectors installed. 
+Note separate drift regions on ``near'' and ``far'' sides. 
+The near side drift length is close to what is proposed for the far detector. The far
+side has a shorter drift length due to lack of space.}
+\includegraphics[height=3in]{35TTPC}  
+\end{cdrfigure}
 
-\subsubsection{Phase 2 Data Analysis and Future Applications}
+The Phase 2 prototype incorporates many of the design elements described in previous
+sections of this document.
+In many cases, these include novel features that have never previously been tested
+in an operational TPC.
+Rather than reiterate them all here, we simply tabulate some of the more important
+aspects in Table~\ref{tab:35TDesign}.
+
+\begin{cdrtable}[35T Design Aspects]{lcl}{35TDesign}{35T Design Elements}
+ Design Aspect& Section & How Tested\\ \toprowrule
+Modular APAs with wrapped wires & \ref{subsec:v5-tpc-chamber-apa}&Build small-scale APA Modules with FD design\\
+\colhline
+Vertical Gaps between APAs &\ref{subsec:v5-tpc-chamber-apa}& Assemble APAs side-by-side.\\
+&&Study reco'd tracks that cross the gaps.\\
+\colhline
+Horizontal Gaps between APAs &\ref{subsec:v5-tpc-chamber-apa}& Build two shorter APAs and stack vertically\\
+&&Study reco'd tracks that cross the gaps\\
+\colhline
+APAs immersed in active volume &\ref{subsec:v5-tpc-chamber-apa}& Study reco'd tracks that cross APAs\\
+\colhline
+Cold Digital Electronics & \ref{subsec:fe_CMOS_digital} & Measure noise performance etc. {\it in situ}\\
+\colhline
+Waveguide-style Photon Detector& \ref{subsec:fe_CMOS_digital}&Install in APAs. Measure lightyield\\
+\colhline
+Triggerless-capable DAQ & \ref{sec:daq_intro} & Take data using multiple DAQ modes\\ 
+\end{cdrtable}
+
+\subsubsection{Phase 2 Simulation, Reconstruction and Analysis}
+As can be seen from Table~\ref{tab:35TDesign}, successful tests of many of the new 
+design features requires simulation, reconstruction and analysis of 35T data. 
+This will be done with the help of the LarSoft package, which is also used to simulate and 
+reconstruct data from the ArgoNeuT and MicroBoone experiments.
+Reuse of software developed for those experiments can greatly facilitate 35T development. 
+However, the novel hardware features of the 35t prototype necessitate novel software developments 
+as well.
+Among the required new software developments are:
+\begin{itemize}
+\item{Code to break up the wrapped wires into as many as five individual linear segments. 
+A hit on a single electronic channel can, in principle, be related to an induced signal on any of these segments.}
+\item{``Disambiguation'' code to identify which of the possible wire segments was actually responsible
+for the observed hit}
+\item{Code for determining the start time of the event ($t_0$). Since the 35T prototype DAQ can
+run ``triggerless'', methods are needed for finding the $t_0$ in data. Information from the external 
+scintillator paddles as well as the internal photon detectors can be used.}
+\item{Code for ``stitching''together track segments observed in different tracking volumes. 
+Since hits can come from either side of the 4 APAs, there are effectively 8 separate tracking volumes, 
+which are treated as separate TPCs.}
+\end{itemize}
+
+With these simulation and reconstruction tools in hand, ``physics'' analysis of the data can be undertaken.
+In addition to the analyses needed to validate the new detector design elements, there are also
+some analyses of basic LArTPC performance that are needed as well.
+Among the highest priority analysis tasks are:
+
+\begin{itemize}
+\item{Basic detector performance: signal/noise, purity measured with tracks, track direction resolution, 
+photon detector light yield}
+\item{Measurement of distortions due to space charge and field non-uniformity}
+\item{Measurements of different types of particles: muons, protons, neutrons, pions}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
