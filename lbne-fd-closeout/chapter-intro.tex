@@ -157,6 +157,260 @@ After each pair of APAs is installed, they will be connected to the DAQ system a
 
 An installation and integration detector mock-up will be constructed at Fermilab to confirm that interfaces between detector systems are well defined and to refine the installation procedures. 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Requirements}
+
+\section{Far Detector Requirements}
+
+The requirements for the far detector TPC can be found in the requirements
+documentation \cite{lar-fd-req} and are summarized here  The main scientific requirements
+are listed first, from which the functional requirements follow.
+
+\subsection{Scientific Requirements}
+
+The following scientific requirements are given in the P5
+report~\cite{p5report}:
+
+\begin{itemize}
+\item The mean sensitivity to CP violation is required to be better
+  than $3\sigma$ over more than 75\% of the range of possible values
+  of the unknown CP-violating phase $\delta_{CP}$.
+\item The fiducial mass of the LArTPC far detector is to be 40
+  kilotons.
+\item The systematic uncertainty on the predicted signal is to be no
+  more than 1\%.
+\item The systematic uncertainty on the predicted background is to be
+  no more than 5\%.
+\item The experiment should have the demonstrated capability to search
+  for supernova bursts and for proton decay, providing a significant
+  improvement in discovery sensitivity over current searches for the
+  proton lifetime.
+\end{itemize}
+
+\subsection{Detector Requirements: Beam Neutrino Physics}
+
+In order to be sensitive to the mass hierarchy, the baseline of the
+experiment is required to be in excess of
+1000~km~\cite{sci-opp,baselineprd}.  To optimize the simultaneous
+constraint on the mass hierarchy and the ability to measure
+$\delta_{CP}$, a baseline of 1300~km is needed.
+
+The sensitivity of the experiment scales with the product of the
+fiducial mass, the event detection efficiency, and the acceptance of
+the event selection requirements.  The fiducial volume cuts are set so
+that events with primary vertices within the fiducial volume are
+detected with high efficiency and are contained well enough to
+contribute to the oscillation analysis.  The fiducial volume is
+assumed to be set at least 1.5~m from the far edges of the active
+detector volumes, on the sides of the detectors that the beam exits,
+and 30~cm from the boundaries of the active volumes for all other
+boundaries, which are dominantly defined by the field cages.  The
+volume inside the wire planes is to be defined as non-fiducial.
+The event timing for beam-induced neutrino scatters
+shall be precise enough to correlate the events with the
+beam spill times.  % do we want to measure neutrino speed?  We have the longest baseline.
+
+% These requirements are from Table 4.2 in the Scientific Opportunities document
+
+Events will be selected and classified in order to reduce the
+backgrounds of the analyses and to focus the attention on only those
+events with well-modeled efficiency, and thus the efficiency for
+selecting an analysis-quality event is not expected to be 100\%.  The
+event selection efficiency for $\nu_e$~CC interactions shall be at
+least 80\% after selection requirements for incident neutrinos with
+energies above 100~MeV.  For $\nu_\mu$~CC interactions, the selection
+efficiency shall be at least 85\% for the same range of neutrino
+energies.  For neutral current events, a selection efficiency of 90\%
+is required.
+
+The determination of the physics outputs requires a very small
+systematic uncertainty on the event detection and selection
+efficiency, as much of the information is carried by the rates of
+$\nu_e$ and $\bar\nu_e$ appearance events and their ratios to the
+$\nu_\mu$ and $\bar\nu_\mu$ samples.  The total uncertainty on the
+signal yields is required to be less than 1\% from
+far-detector-related uncertainties.  For all of these efficiencies, we
+require fractional systematic uncertainties of less than 0.5\%.  These
+uncertainties will require the formation of control samples in the
+data, and so events that are not selected as analysis quality still will
+need to be detected and counted as such.  We require that a neutrino
+interaction of any sort with its vertex in the fiducial volume,
+depositing above 50~MeV of ionization energy in the detector be
+detected by charge signals on the wires in the TPC, even if they are
+not selected by the analysis cuts.  We require that the systematic
+uncertainty on the fiducial mass of the detector, the product of the
+fiducial volume and the density of the liquid argon, to be less than
+0.5\%.  Because the fiducial volume cuts are applied to the primary
+vertex location, the resolution on the primary vertex is thus required
+to be better than 25~mm.
+
+The background rates for $\nu_e$-CC and $\nu_\mu$-CC events are required
+to be no more than half of the relevant signal rates, and the relative
+systematic uncertainties on the predictions of the background rates 
+are required to be no larger than 5\%.  The misidentification
+rate of neutral-current neutrino scatters as $\nu_e$-CC events is
+required to be less than 1\%.  The misidentification rate of
+$\nu_\mu$-CC events as $\nu_e$-CC events is required to be less than
+1\%.  For $\nu_\mu$ disappearance studies, the misidentification rate
+of neutral-current neutrino scatters as $\nu_\mu$-CC events is
+required to be less than 1\%.
+
+As more data are collected, the shapes of the distributions of the
+reconstructed neutrino energies become increasingly important in
+reducing the uncertainties in the measured parameters.  We require
+that the event-by-event resolution on the reconstructed neutrino
+energy for $\nu_e$-CC events is no wider than 15\%/$\sqrt{E({\rm GeV})}$,
+ and for $\nu_\mu$-CC, no wider than 20\%/$\sqrt{E({\rm GeV})}$.  
+The resolution of the reconstructed neutrino energy in
+neutral-current interactions is required to be no wider than
+30\%/$\sqrt{E({\rm GeV})}$ for neutrinos with energies between 200~MeV
+and 6~GeV.  The energy resolution on stopping hadrons (protons and kaons) is required
+to be 1-3\% based on the measured ionization and range.
+
+The average neutrino energy scale calibration is required
+to be better than 5\% for both $\nu_e$-CC and $\nu_\mu$-CC
+events~\cite{docdb8741}.  % it's 1-2% in the sci-opp book
+The calibration of the energy resolution function is required to be better than ??\%
+for both electron and muon events (``needs study'').
+
+\subsection{Detector Requirements: Supernova Burst Neutrino Physics}
+
+In order to perform measurements of supernova-burst neutrinos, we
+require that the detection efficiency (including hardware and analysis
+selection effects) for a single 5 MeV electron be in excess of 90\%
+averaged over the active volume of the detector, and that the
+detection efficiency for the scintillation light flash from a 10 MeV
+electron be in excess of 50\% averaged over the active volume of the
+detector.  The energy resolution of electron tracks in SNB neutrino
+events is required to be better than 15\% in the range 5-100~MeV in
+order to study the properties of SNB neutrino spectra.  The cosmic-ray
+and radiological background to low-energy $\nu_e$-CC events shall be low enough to measure
+a supernova burst within the Milky Way.
+
+The far detector is required to be able to collect data continuously,
+in order to maximize the acceptance of atmospheric neutrino scatters,
+SNB events, and nucleon decays.  The data-acquisition system is
+required to be able to buffer at least two minutes of continuous, 
+untriggered data for long-term storage in order to preserve a detailed
+record of a supernova burst.  These data are to be collected with minimal impact
+from zero suppression, either with a lower threshold, or a generous amount of samples
+in both time and space near triggered signals. The detector, data-acquisition system, and
+online processing shall be able to trigger a supernova-burst event and
+provide a prompt alert. The absolute time of arrival of SNB
+neutrino events is required to be known to 0.1~ms.  The relative time
+difference between any two SNB events is also required to be known to
+0.1~ms.  The angular resolution on supernova-burst neutrinos shall be
+sufficient to point them to a common location in the sky.  Prompt deexcitation
+gammas produced in association with low-energy charged-current interactions
+shall be identified and separated from radiological backgrounds and electronics noise.
+
+\subsection{Detector Requirements: Atmospheric Neutrino Physics}
+
+The detection efficiency for neutrino interactions is required to be
+independent of energy, angle, and arrival time, for events with
+primary vertices within the fiducial volume.  The cosmic-ray backgrounds
+for atmospheric neutrino physics shall be small enough so as not to impact
+the analysis's sensitivity significantly.  The more stringent requirements
+on cosmic-ray backgrounds for proton decay will suffice for the atmospheric
+neutrino analyses, which are less sensitive to backgrounds.
+
+\subsection{Detector Requirements: Nucleon Decay Physics}
+
+The separation of charged kaons from protons, pions, and muons shall be unambiguous
+and accomplished
+via $dE/dx$ vs. residual range measurements, as well as interactions at the
+ends of the tracks.  The cosmic-ray background shall be low enough to achieve the
+proton decay science objective.  
+
+\subsection{Derived Detector Performance Requirements}
+
+The detection efficiency for a minimum-ionizing particle (MIP)
+traveling close to the CPA is required to exceed 99\%.  The
+signal-to-noise ratio for a MIP traveling close to the CPA is thus
+required to be 9:1 or better, in all three detection planes,
+regardless of the orientation of the track.
+
+The detector uptime shall be greater than 90\% during beam running.
+At least part of the detector shall be operational at all times.
+
+The uncertainty on the electron loss due to the finite electron
+lifetime shall be known to better than 1\%.  This requirement can be
+satisified with a high electron lifetime, a stable electron lifetime,
+and regular monitoring with purity monitors and {\it in situ}
+measurements.
+
+Electromagnetic showers shall be identified by their topology.  The
+energy resolution on individual EM showers is required to be
+3\%/$\sqrt{E({\rm GeV})}$.  The muon momentum resolution is required
+to be better than 5\% for fully-contained muon tracks, and better than
+15\% for partially-contained muon tracks.
+
+The misidentification rate of photons from $\pi^0$ as electrons is
+required to be less than 2\% from measuring the $dE/dx$ in the
+beginning of the electromagnetic shower, coupled with reconstructed
+event topological information, such as the identification of second
+electromagnetic showers and the displacement of the shower start from
+the primary vertex.
+
+Single-track events shall be separated from multi-track events with a
+high efficiency.  Protons, pions, and kaons recoiling from 
+charged-current interactions with kinetic energies above
+21~MeV~\cite{argoneut_proton_spectra} shall be counted and
+identified.  This requirement is coupled to similar requirements on the near detector,
+where a closer match between identification efficiencies of each final state in the far
+and the near detector provides better cancellation of systematic uncertainty.
+Energy deposits from neutrons
+originating in neutrino scatters shall be recorded.
+
+The far detector shall communicate the data to the LBNE global DAQ,
+which shall record the data on long-term storage media easily
+accessible to the collaboration.
+
+The detector shall retain its resolution on $dE/dx$ up to $15\times
+$MIP, in order to separate heavily-ionizing particles from one
+another, and to measure overlapping particles.
+
+Reconstruction ambiguities arising from wrapped wires shall not
+degrade the pattern-recognition abilities of the far detector and its
+software such that the above requirements are not met.  In order for
+each event to be reconstructible without ambiguity, each
+induction-plane wire may intersect any collection-plane wire at most
+once.  More ambiguity may result in charge deposts reconstructed far
+away from their true locations, worsening the particle counting,
+energy, and particle identification performances.
+
+Studies have shown that the separation of electrons from photons
+using the ionization density of the first portion of an electromagnetic shower
+depends most critically on the first 2.5~cm of the shower.  That, and the need
+to identify low-energy electrons, protons, and pions gives a wire pitch
+requirement of no more than 5~mm.
+
+The electric field shall be sufficiently uniform and the detector alignment
+sufficiently stable and well known in order for the muon momentum measurement
+from multiple scattering requirement to be met.
+
+\subsection{Engineering Requirements}
+
+In order to reduce the cosmogenic backgrounds for SNB, nucleon decay,
+atmospheric neutrinos and beam neutrinos, the detector is to be situated
+at the 4850~ft level of the SURF facility.  The far detector underground hall shall
+accommodate the construction of a class 100,000 clean room for detector
+construction.  Concrete floors shall be sealed in areas of clean room environment
+and in the high bay of the cavern.  Showers are to be provided for workers underground
+to remove dust and debris.  A solid waste disposal station consisting of a pad
+large enough to accommodate two 4'$\times$6' dumpsters shall be provided near
+the surface support buildings.
+
+There shall be control rooms both on the surface and underground, with monitoring
+of detector parameters and data flow.  Adequate electrical power, water, air,
+cryogenics support, and networking shall be provided via the shafts.   In case
+one shaft becomes inoperable, the other shaft is required to provide egress, ingress,
+and sufficient services to ensure the safety of the staff and equipment.
+Sufficient airflow is required to reduce buildup of radioactive radon gas.
+
+More requirements -- safety?
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Principal Parameters}
 
@@ -186,39 +440,191 @@ Maximum Drift Time & 2.1~ms \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Design Considerations}
 
-TPCs operated to date have been constructed with an anode wire spacing in the range of 3~mm (ICARUS) to 4.8~mm (Fermilab cosmic-ray stand). The amount of ionization charge collected on the wires increases with larger wire spacing, resulting in a better signal-to-noise ratio without serious consequences (the radiation length of LAr is $\sim$~30 times larger than the typical wire spacing). The electron-$\pi^0$ separation efficiency of a TPC with 5-mm wire spacing is only a few percent lower than one with 3-mm wire spacing. It is also clear that a TPC with larger wire spacing requires fewer wires and readout channels, resulting in lower cost. % could put this later
+TPCs operated to date have been constructed with an anode wire spacing
+in the range of 3~mm (ICARUS) to 4.8~mm (Fermilab cosmic-ray
+stand). The amount of ionization charge collected on the wires
+increases with larger wire spacing, resulting in a better
+signal-to-noise ratio without serious consequences (the radiation
+length of LAr is $\sim$~30 times larger than the typical wire
+spacing). The electron-$\pi^0$ separation efficiency of a TPC with
+5-mm wire spacing is only a few percent lower than one with 3-mm wire
+spacing. It is also clear that a TPC with larger wire spacing requires
+fewer wires and readout channels, resulting in lower cost.  As the
+wire spacing becomes larger, however, spatial resolution degrades in
+the plane parallel to the wires, while resolution remains good in the
+remaining axis pointing along the electric field as that axis is
+digitized in time samples.  This difference in resolutions along the
+three axes if too big will lead to anisotropy in efficiencies,
+resolutions, and particle ID performance.  The 5~mm wire spacing is
+expected to be adequate for discerning short stubs from supernova
+neutrino scattering elecrons which should create signals in
+approximately ten adjacent wires for a 10 MeV electron.  Counting
+short protons near the interaction vertex requires good resolution for
+short tracks.  Furthermore, ambiguities in associting features between
+planes become easier to break when the spatial resolution is better.%
+could put this later
 
-Only two wire planes are required to reconstruct events in three dimensions, however three wire planes will be implemented to provide N+1 redundancy. The third will improve the pattern-recognition efficiency for a subset of multi-track events in which trajectories can overlap in two views. The collection-plane wires are most commonly used for calorimetric reconstruction and are oriented vertically ($0^\circ$) to minimize both the wire length and the electronics noise.
+If hits can be unambiguously reconstructed and associated between
+planes, then only two wire planes are required to reconstruct events
+in three dimensions.  However, three wire planes are needed in order
+to break ambiguities and provide $N+1$ redundancy.  In many events,
+one or more tracks will travel parallel or nearly parallel to the
+wires in one or more of the planes, reducing one plane's contribution
+to the spatial resolution.  The other two planes' hits will be able to
+reconstruct these tracks in three dimensions.  Furthermore, the
+wrapping of the induction-plane wires introduces a discrete ambiguity
+in interpreting the hits on these wires.  Hits that arrive on
+different wires at similar times because they come from portions of
+tracks and clusters that are similar distances from the anode plane
+create ambiguity in the assiciation of hits between planes.  The
+wrapping allows for more combinations, as tracks and clusters from
+either side of the APA can contribute to the signals on any induction
+wire.
 
-\begin{editornote}
-  Editor's Note:  The following paragraph refers to a wire orientation of 45 degrees.  The chosen wire orientation has been changed to 35.7 degrees from vertical.  The study and documentation justifying this choice is in LBNE-docdb-9374.
-\end{editornote}
+The collection-plane wires are oriented vertically ($0^\circ$) in
+order to minimize both the wire length and the electronics noise,
+as well as to provide readout on the ends of the APA frames for
+each wire.  These wires do not wrap around the APA frames and so
+they provide unambiguous two-dimensional information about the
+event.  Calorimetry is most commonly performed using the
+collection-plane wires and so low noise is important, though
+induction-plane wires provide additional meausrements of the same
+drifting charge.
 
-\fixme{We should just fix this and remove the note.}
+% cite LBNE-docdb-9374 -- wire angle change request, 8981 and 9886,
+% the tech board meeting documents -- trade study
 
-A study of wire orientation has shown that for a TPC with three instrumented wire planes, the optimum orientation of the induction plane wires should be between $\pm40^\circ$ and $\pm60^\circ$ when the collection plane wires are at $0^\circ$. The ideal orientation for the more isotropic low-energy events, e.g., 
-supernova-neutrino interactions, is $\pm60^\circ$. The selected induction-plane wire orientation of $\pm45^\circ$ has better position resolution in the vertical direction than $\pm30^\circ$ and has shorter wires compared to a wire orientation of $\pm60^\circ$.  The induction plane wires are wrapped around the APA frames so that the readout electronics can be located on the top or bottom of the TPC. As a result, it is natural to arrange the APAs vertically in a two-high configration. 
+A study of wire orientation~\cite{docdb2836} was performed that uses
+the sum of the numbers of wires a photon from $\pi^0$ decay traverses
+in all three planes before it converts.  This figure of merit is
+designed to optimize topological separation of neutral-current events
+from charged-current electron neutrino scatters.  In this study, the
+optimum orientation of the induction plane wires should be between
+$\pm40^\circ$ and $\pm60^\circ$ when the collection plane wires are at
+$0^\circ$ for beam neutrino physics. The ideal orientation for the
+more isotropic low-energy events, e.g., supernova-neutrino
+interactions, is $\pm60^\circ$.  Selecting induction-plane wire angles
+in this range necessitates wrapping the wires around the sides of the
+APA frames so that readout electronics can be located on the top or
+bottom of the TPC.  As a result, it is natural to arrange the APA's
+vertically in a two-high configuration.
 
-  Access to the top of the cryostat is required to install and connect cabling. Therefore, risk of personnel injury and detector damage, both of which increase with height, form the primary considerations for the the detector height, 12~m. The  The height of the APA has been chosen, accordingly, to be 6~m, resulting in 6-m-long collection-plane wires and 7.3-m-long induction plane wires. 
+Wrapping the induction-plane wires however creates pattern-recognition
+difficulties arising from the discrete ambiguity of which segment of
+the wire contributed any given signal.  If the wires wrap around more
+than once, so that a particular induction-plane wire intersects a
+particular collection-plane wire more than once, then the ambiguity is
+unresolvable with two readout planes and a third one is required, with
+a slightly different angle so as to to create repeated solutions of
+three wires intersecting.  Even with the proposed 44.3$^\circ$ and
+45.7$^\circ$ solution of the initial design, however, ambiguities
+resurface when multiple hits arrive on different wires at similar
+times.  Misassociating hits between views can have the consequence of
+displacing the three-dimensional reconstructed location of the charge
+deposit by the vertical distance required to wrap an induction-plane
+wire around once, or approximately five meters in the CD-1 design.
+Even with the most sophisticated reconstruction algorithms, it is
+expected that even a small fraction of misassigned hits will create
+difficulties in energy reconstruction, track identification, and
+particle ID which may be difficult to simulate to the accuracy
+required by the physics program.
 
-The 2.3~m width of the APA was chosen to facilitate construction and to allow standard, over-the-road transport. 
+In order to reduce the impact of hit assignment ambiguity on
+reconstruction, an angle of $\pm35.71^\circ$ was chosen for the
+induction-plane wires~\cite{docdb-9374,docdb8981,docdb9886}.  The APA
+design with this angle improves on the CD-1 design in a number of
+ways.  The length of the APA is shorter at 6~meters, allowing it to be
+stiffer using the same materials.  The 2.3-meter APA width was chosen
+to facilitate construction and allow standard, over-the-road
+transport. The wire angle is such that no induction-plane wire
+intersects any given collection-plane wire more than once,
+significantly reducing the categories of events for which combinations
+of hits can be misassigned.  The exact wire angle and APA dimensions
+were further constrained by the desire to have an integer multiple of
+128 readout channels per APA so as to efficiencly assign channels to
+front-end boards.  In this design, the collection-plane wires are 6~m
+long and the induction-plane wires are 7.3~m long.
 
-The choice of cryostat width is based on the desired cryostat shape and cavern span. From a cryogenics standpoint, the ideal cryostat for a modular TPC would be a cube since membrane-cryostat capital and operating costs scale linearly with the surface area. This shape is not ideal for cavern excavation, however. In the absence of a geotechnical investigation for the cavern location, the cavern span has been limited to $\sim$30~m on the advice of rock engineers. A detector width of 14~m results after making allowance for cryostat insulation, and personnel access both above and within the cryostat. 
+The choice of cryostat width is based on the desired cryostat shape
+and cavern span. From a cryogenics standpoint, the ideal cryostat for
+a modular TPC would be a cube since membrane-cryostat capital and
+operating costs scale linearly with the surface area. This shape is
+not ideal for cavern excavation, however. In the absence of a
+geotechnical investigation for the cavern location, the cavern span
+has been limited to $\sim$30~m on the advice of rock engineers. A
+detector width of 14~m results after making allowance for cryostat
+insulation, and personnel access both above and within the cryostat.
 
-A drift field of 500~V/cm was chosen based on experience from similar detectors such as ICARUS, ArgoNeuT and the Fermilab cosmic-ray test stand. At this electric field, $\sim$ 30\% of the ionization electrons produced by the passage of a minimum ionizing particle (MIP) recombine and create scintillation light that provides a fast trigger. The remaining ionization electrons drift to the APA and produce wire-plane signals. The TPC could function at higher or lower drift fields but the relative yields of scintillation light and ionization electrons would change. The use of a higher drift field would require more care in the design of the high-voltage systems. The electron drift velocity is 1.6~mm/$\mu$s at 500~V/cm.
+A drift field of 500~V/cm was chosen based on experience from similar
+detectors such as ICARUS, ArgoNeuT and the Fermilab cosmic-ray test
+stand. At this electric field, $\sim$ 30\% of the ionization electrons
+produced by the passage of a minimum ionizing particle (MIP) recombine
+and create scintillation light that provides a fast trigger. The
+remaining ionization electrons drift to the APA and produce wire-plane
+signals. The TPC could function at higher or lower drift fields but
+the relative yields of scintillation light and ionization electrons
+would change. The use of a higher drift field would require more care
+in the design of the high-voltage systems. The electron drift velocity
+is 1.6~mm/$\mu$s at 500~V/cm.
 
-The 14~m width of the the detector can be divided into four drift cells with a maximum drift length of 3.41~m each. This drift cell length was chosen based on experience from other detectors, the required minimum signal-to-noise ratio and high-voltage considerations. The required minimum signal-to-noise ratio of 9:1 ensures that the tracking efficiency will be 100\% throughout the entire drift cell. The TPC must be capable of detecting the smallest signal (1~MeV) produced in interactions that LBNE will study. This situation occurs when a MIP travels parallel to a wire plane and perpendicular to the orientation of the wires in the plane. A MIP loses 2.1~MeV of energy in each cm of travel, producing $\sim$ 40,000 ionization electrons along every 5~mm section of the track. About 28,000 electrons escape recombination and, ignoring the effects of LAr purity and diffusion, would all drift to one collection plane wire. The capacitance due to the maximum-length 7.3~m wire is 164~pF resulting in an equivalent noise charge (ENC) of 500 electrons in the CMOS amplifiers. The signal-to-noise ratio would therefore be 53:1 if all of the ionization electrons arrived at the wire. For a maximum drift distance of 3.41~m and a drift field of 500~V/cm, the required voltage on the cathode plane is 173~kV. This is within the range of commercially available high-voltage cables and within the range of current designs for cryogenic feedthroughs. Additional R\&D would be needed for longer maximum drift lengths.
+The 14~m width of the the detector can be divided into four drift
+cells with a maximum drift length of 3.41~m each. This drift cell
+length was chosen based on experience from other detectors, the
+required minimum signal-to-noise ratio and high-voltage
+considerations. The required minimum signal-to-noise ratio of 9:1
+ensures that the tracking efficiency will be 100\% throughout the
+entire drift cell. The TPC must be capable of detecting the smallest
+signal (1~MeV) produced in interactions that LBNE will study. This
+situation occurs when a MIP travels parallel to a wire plane and
+perpendicular to the orientation of the wires in the plane. A MIP
+loses 2.1~MeV of energy in each cm of travel, producing $\sim$ 40,000
+ionization electrons along every 5~mm section of the track. About
+28,000 electrons escape recombination and, ignoring the effects of LAr
+purity and diffusion, would all drift to one collection plane
+wire. The capacitance due to the maximum-length 7.3~m wire is 164~pF
+resulting in an equivalent noise charge (ENC) of 500 electrons in the
+CMOS amplifiers. The signal-to-noise ratio would therefore be 53:1 if
+all of the ionization electrons arrived at the wire. For a maximum
+drift distance of 3.41~m and a drift field of 500~V/cm, the required
+voltage on the cathode plane is 173~kV. This is within the range of
+commercially available high-voltage cables and within the range of
+current designs for cryogenic feedthroughs. Additional R\&D would be
+needed for longer maximum drift lengths.
 
-Ionization electrons will be lost due to impurities in the LAr. The fraction that survive passage to the anode planes is $e^{t/\tau}$, where$t$ is the drift time and $\tau$ is the drift-electron lifetime. The maximum drift time is the maximum drift length divided by 1.6~mm/$\mu$s which equals 2.3~ms for LBNE. The ICARUS detector has achieved a drift electron lifetime of 6 -- 7~ms. The Materials Test Stand (described in Section~\ref{sec:mts}) regularly achieves a drift-electron lifetime of 8 -- 10 ms. The Fermilab Liquid Argon Purity Demonstrator achieved a liftime of $>$ 3~ms during initial tests. Based on this experience, and by careful selection of materials in the ullage,  a drift-electron lifetime at least as good as ICARUS is expected. The signal-to-noise ratio would be 36:1 for a drift electron lifetime of 6~ms. A minimum lifetime of 1.4~ms is required to meet the 9:1 signal-to-noise ratio requirement.
+Ionization electrons will be lost due to impurities in the LAr. The
+fraction that survive passage to the anode planes is $e^{t/\tau}$,
+where$t$ is the drift time and $\tau$ is the drift-electron
+lifetime. The maximum drift time is the maximum drift length divided
+by 1.6~mm/$\mu$s which equals 2.3~ms for LBNE. The ICARUS detector has
+achieved a drift electron lifetime of 6 -- 7~ms. The Materials Test
+Stand (described in Section~\ref{sec:mts}) regularly achieves a
+drift-electron lifetime of 8 -- 10 ms. The Fermilab Liquid Argon
+Purity Demonstrator achieved a liftime of $>$ 3~ms during initial
+tests. Based on this experience, and by careful selection of materials
+in the ullage, a drift-electron lifetime at least as good as ICARUS is
+expected. The signal-to-noise ratio would be 36:1 for a drift electron
+lifetime of 6~ms. A minimum lifetime of 1.4~ms is required to meet the
+9:1 signal-to-noise ratio requirement.
 
-The cloud of drifting ionization electrons will spread out in space due to the effects of diffusion. The maximum transverse $RMS$ width of the electron cloud is 2.4~mm for the chosen drift distance and drift field. This is well matched to the 5~mm wire spacing.
+The cloud of drifting ionization electrons will spread out in space
+due to the effects of diffusion. The maximum transverse $RMS$ width of
+the electron cloud is 2.4~mm for the chosen drift distance and drift
+field. This is well matched to the 5~mm wire spacing.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Detector Development Program}
 
 \fixme{needs update, then remove note}
 
-As mentioned above, the design of the LAr-FD has benefited greatly from other experiments and related development activities. Development activities in the U.S. are described in the  {\em Integrated Plan for LArTPC Neutrino Detectors in the US}~\cite{IP}. This program includes non-LBNE activities such as the Fermilab Materials Test Stand, Fermilab electronics test stand, LAPD, photon detection, ArgoNeuT and MicroBooNE as well as LBNE activities such as the 35-ton prototype and LAr1. The development plan is described in detail in Chapter~\ref{ch:randd}.
+As mentioned above, the design of the LAr-FD has benefited greatly
+from other experiments and related development activities. Development
+activities in the U.S. are described in the {\em Integrated Plan for
+LArTPC Neutrino Detectors in the US}~\cite{IP}. This program
+includes non-LBNE activities such as the Fermilab Materials Test
+Stand, Fermilab electronics test stand, LAPD, photon detection,
+ArgoNeuT and MicroBooNE as well as LBNE activities such as the 35-ton
+prototype and LAr1. The development plan is described in detail in
+Chapter~\ref{ch:randd}.
 
 
 \begin{editornote}
