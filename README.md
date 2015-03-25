@@ -4,9 +4,9 @@ The LBNE Far-Site Detector Closeout document.
 Related documents and links
 ---
 
-* [The LBNE Far Detector Closeout](https://github.com/LBNE/lbne-fd-closeout)
-* [The ELBNF (name subject to change) CDR](https://github.com/LBNE/lbn-cdr)
-* [Proposal for a Full-Scale, Single-Phase Prototype at CERN](https://github.com/LBNE/cern-prototype-proposal)
+* [The LBNE Far Detector Closeout](https://github.com/DUNE/lbne-fd-closeout)
+* [The ELBNF (name subject to change) CDR](https://github.com/DUNE/lbn-cdr)
+* [Proposal for a Full-Scale, Single-Phase Prototype at CERN](https://github.com/DUNE/cern-prototype-proposal)
 * [CD-1 Preparation Page](https://web.fnal.gov/project/LBNF/ReviewsAndAssessments/CD-1Preparation/SitePages/CD-1%20Preparation%20Home.aspx)
 
 Guidance
@@ -17,21 +17,21 @@ document:
 
   volume-readme.pdf
 
-which is part of the https://github.com/LBNE/lbn-cdr repository.  You can find a recent copy in the [lbn-cdr release area](https://github.com/LBNE/lbn-cdr/releases)
+which is part of the https://github.com/DUNE/lbn-cdr repository.  You can find a recent copy in the [lbn-cdr release area](https://github.com/DUNE/lbn-cdr/releases)
 
 Releases
 ---
 
-Fixed releases of this document with PDFs are available from the [release area](https://github.com/LBNE/lbne-fd-closeout/releases) as zip or tar.gz archives.
+Fixed releases of this document with PDFs are available from the [release area](https://github.com/DUNE/lbne-fd-closeout/releases) as zip or tar.gz archives.
 
-A [shareLaTeX autobuilder](https://www.sharelatex.com/github/repos/LBNE/lbne-fd-closeout) is updated on each pushed commit.
+An auto-built PDF is made shortly after each commit and is available [here](https://dune.bnl.gov/tmp/).
 
 Getting started
 ---
 
 Clone the repository:
 
-    git clone https://github.com/LBNE/lbne-fd-closeout.git
+    git clone https://github.com/DUNE/lbne-fd-closeout.git
     cd lbn-fd-closeout
 
 To build the documents you need `pdflatex` and `bibtex`.
@@ -121,7 +121,7 @@ but will lead to additional effort for the technical editors.  To
 minimize that additional effort we ask that you **please** follow these steps:
 
 * Start editing from the most recent
-  [tagged release](https://github.com/LBNE/lbn-fd-closeout/releases) or the
+  [tagged release](https://github.com/DUNE/lbn-fd-closeout/releases) or the
   specific release you may be requested to use.
 * Unpack the release archive (.zip or .tar.gz) on your computer.
 * Make your edits inside the directory/folder that is created.
