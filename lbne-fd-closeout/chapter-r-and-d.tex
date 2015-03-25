@@ -7,6 +7,7 @@
 
 %\setlength{\parskip}{0.05in}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 This chapter describes the development program designed to ensure a successful and cost-effective construction and operation of the massive, dual-cryostat LArTPC detector for LBNE and to investigate possibilities for enhancing the performance of the detector. The feasibility of the LArTPC as a detector has been demonstrated most impressively by the  ICARUS experiment.
 %current state of the ICARUS experiment currently taking data at Gran Sasso. (Anne rmvd 3/12)
@@ -20,6 +21,7 @@ It is understood that for successful operation an LArTPC has stringent requireme
 
 The design of the LBNE LArTPC has evolved significantly from earlier concepts based on standard, above-ground, upright cylindrical LNG storage tanks which envisioned single TPC sense and high-voltage planes spanning the full width of the tank -- essentially a direct scaling of previous detectors. Problems with the actual construction of such massive planes and with the logistics of being able to construct the TPC only after the cryostat was complete are avoided in the present design. In our design,  TPC `panels'  are fully assembled and tested  --- including the electronics ---  independently of the cryostat construction. This modular approach is a key feature of the design. It has the benefit not only of improving the logistics of detector construction, but also the individual components can be of manageable size. It should also be noted that the cryostat itself is formed of modular panels designed for quick and convenient assembly.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Components of the Development Program}
 \label{sec:comp-dev-prog}
 
@@ -66,7 +68,7 @@ MicroBooNE & Electronics tests & Construction & LBNE CD3 \\
 
 
 %\section{Scope and Status of Individual Components}  Anne removed this 3/12/15 because too segmented
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Materials Test System}
 \label{sec:mts}
 
@@ -93,15 +95,32 @@ The major conclusions of the studies to-date \fixme{today's to-date is different
 These results are taken into account in the design of both MicroBooNE and LAr-FD. For LBNE they have been cast as detector requirements. The MTS will continue to be used by MicroBooNE and LBNE to test detector materials such as cables that will reside in the ullage.
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{TPC Design}
-The design for LBNE has adopted the basic ICARUS multi-plane, single-phase TPC
-concept and has incorporated new features suitable for a very large
-detector.  The main emphasis of the development program is to develop a TPC design that is highly modular, low-cost, robust and easily installed inside a finished cryostat.
 
-A significant effort has been focused on minimizing the dead space between detector modules to improve
-the fiducial versus total LAr-volume ratio. The APA reference design accomplishes this goal but requires making $\sim$2 million high-quality wire terminations. The wire-termination scheme used by ICARUS has proven to be very reliable but it is too labor-intensive to fabricate for a million-channel detector system. We have adopted the wire-solder + wire-epoxy termination scheme that has been used for decades on drift chambers and proportional wire chambers to mount Cu-Be wires. The termination scheme was used to terminate 2.5 million  anode wires in the CMS end-cap muon system. Cu-Be wires have excellent mechanical properties and the advantage of low resistance compared to stainless steel. A study is currently underway within the LAr-FD subproject to identify the optimum wire-bonding parameters. The focus is currently on finding a commercial epoxy that optimizes the qualities of bond strength, cure time and low-temperature operation.
+A string of recent events in several liquid argon setups, such as Long Bo, DarkSide50, ArgonTube and MicroBooNE, in which the sustainable HV were much lower  than designed voltages. These experiences prompted us to reevaluate the breakdown strength of liquid argon, especially at ``detector grade'' purity. Recent studies \cite{bib:HV_in_LAr_1}\cite{bib:HV_in_LAr_2} have revealed that the HV breakdown strength depends on factors such as electrode feature size, distance, stress area/volume, and LAr purity. Although no conclusive threshold was found, the results indicate that the safe operating field in LAr is well under 100~kV/cm.
+ 
+With the uncertainty in the liquid argon HV dielectric strength, we need to focus our attention on the HV related aspects of the TPC design. A R\&D document has been compiled for the far detector (docdb 10006) which contains a section on the proposed R\&D topics and activities to reduce the high voltage related risks. Apart from the HV feedthrough, which will be design and tested above the operating voltages, we are planning to improve the designs of the CPAs and field cage modules.
+ 
+The current TPC design directly interconnect all CPAs on a cathode plane. Two of outer cathode planes are facing the grounded cryostat walls. The stored energy between one of the outer cathode plane and the cryostat wall with the full bias voltage applied is more than 150 joules (LBNE docdb 8920). This amount of energy, if released suddenly in an event of a high voltage discharge, is sufficient to raise the temperature of a cube of stainless steel with 2mm sides by 4000$^\circ$K, resulting in a leak in the membrane cryostat. Moreover, a sudden collapse of the cathode voltage will also inject very large current pulses into the front-end ASICs connected to the first induction plane wires, causing damage to the electronics.
+ 
+To minimize these risks, the logical steps are:
+\begin{itemize}
+\item minimize the stored energy when possible by swapping the locations of the APA and CPA planes such that no CPAs are against the cryostat wall.
+\item slow down the voltage collapse in a discharge by construct the cathode planes out of highly resistive material to form a long RC time constant for discharge.
+\begin{itemize}
+\item Study the electrical behavior of CPAs constructed from highly resistive material.
+\item Identify and test a resistive coating that is robut in cryogenic temperature while maintain good adhesion to the cathode structure.
+\item Design the new CPAs with all resistive elements.
+\end{itemize}
+\end{itemize}
+ 
+On the field cage, we are developing the techniques to apply a highly resistive coating over the current 35ton style printed circuit board based panels to remove field concentration around the conductor edges. In parallel, we are also preparing a fall back solution using roll formed electrodes with much large edge radius to reduce the electric field.
+ 
+On the APAs, we need to develop a simple and effective method to contain a broken outer layer wire so it will not drift far into the drift volume and making contact to the field cage.
+ 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{35-ton Prototype: Phase 1}
 \label{35tonprototype}
 %\fixme{This is out of date}
@@ -388,8 +407,7 @@ of purity when pumps are switched) are most likely unique to the 35T. It also se
 design, the pumps will be externally located, to avoid coupling acoustical vibrations into the Far Detector 
 cryostat and to facilitate maintenance and repair.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{35T Prototype Phase 2}
 
 Phase 2 of the the 35T prototype involves installing a fully operational TPC and Photon Detector into 
@@ -478,8 +496,7 @@ photon detector light yield}
 The results obtained by operating the 35T Phase 2 prototype and the analysis of its data are expected
 to be very valuable in defining the final FD design. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Prototype Detector at CERN to Test Physics Sensitivity}
 
 The physics sensitivity of DUNE has been estimated based on detector-performance characteristics published in the literature, simulation-based estimates
@@ -494,8 +511,7 @@ The beam measurements will serve as a calibration data set to tune the Monte Car
 The prototype is expected to identify any potentially problematic components and lead to future improvements and optimizations of the detector design.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Physics Experiments with Associated Detector-Development Goals}
 
 Two projects, ArgoNeuT and MicroBooNE,  which are physics experiments in their own right, are also contributing to the development of the LBNE experiment. Their most important role is in providing data and motivation for the development of event reconstruction and indentification software.
@@ -545,6 +561,7 @@ LAr. Because MicroBooNE is at the surface, it will also have a large sample of c
 \item provide costing and construction lessons-learned
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Summary}
 
 Impressive progress has been made in the development of LArTPC technology over the last few years. All elements of the development program have completed the R\&D phase. Credible conceptual designs exist for all systems in LAr-FD. The technical activities described in this chapter are properly characterized as preliminary engineering design.

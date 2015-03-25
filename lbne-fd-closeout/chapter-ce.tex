@@ -17,22 +17,22 @@ and will provide amplification, shaping, digitization, buffering and multiplexin
 Because it is not possible to form a trigger for some important measurements,
 such as proton decay and supernova bursts, the CE will be continuously read out,
 with a digitized ADC sample from each APA channel (wire) every 500~ns.
-For each of the 104 APAs in a ten-kton cryostat, one cable bundle will connect to the outside of the cryostat through
+For each of the 104 APAs in a 10-kt fiducial cryostat, one cable bundle will connect to the outside of the cryostat through
 a feedthrough, with one feedthrough servicing two APAs.
-Each of these cable bundles consists of wires for low-voltage power, TPC wire-bias voltages, data-out, clock-in, and
+Each of these cable bundles consists of wires for low-voltage power, TPC wire-bias voltages, data-out, clock-in and
 digital-control IOs.
 % The 2,560 channels from an APA are read out in 20 groups of 128 channels.
 
 The scope of the CE subsystem includes the design, procurement, fabrication, testing,
-delivery and installation of the CE:
+delivery and installation of the CE, the components of which are:
 \begin{itemize}
 \item Front-end cards installed on the APAs
 \item All electronics on those cards
 \item Feedthroughs (a single type, henceforth ``signal feedthroughs'') which handle the signal,
-low-voltage power, TPC bias voltage, and control lines
+low-voltage power, TPC bias voltage and control lines
 \item External interface crates
 \item Power supplies, including low-voltage supplies for the CE and bias-voltage supplies for the TPCs
-\item Signal, control, and power cabling between the front-end cards and the feedthroughs,
+\item Signal, control and power cabling between the front-end cards and the feedthroughs,
 and between the feedthroughs and external power supplies and interface crates
 \end{itemize}
 
@@ -42,13 +42,13 @@ and between the feedthroughs and external power supplies and interface crates
 \label{sec:ce_reqs_n_specs}
 
 The requirements for the CE can be found in the requirements documentation \cite{lar-fd-req}.
-The most significant ones are the following:
+The most significant ones are listed here. The CE shall:
 
 \begin{itemize}	
 \item Provide the means to read out the TPCs and transmit their data in a useful format to the Data Acquisition System (DAQ).
 \item Operate for the life of the facility without significant loss of function.
 \item Record the channel waveforms continuously without dead time.
-Twelve bits of ADC data per APA channel every 500~ns yields a single-channel bit rate of 0.024~Gbps.
+\fixme{This is a response to the requirement; should be elsewhere} Twelve bits of ADC data per APA channel every 500~ns yields a single-channel bit rate of 0.024~Gbps.
 With 8B10B encoding this increases to 0.03~Gbps, plus some overhead for frame data.
 Assuming a conservative serial-link transmission speed of 1~Gbps, a single link can therefore handle 32 channels.
 If a speed of 2~Gbps can be achieved, which is possible but not yet demonstrated,
@@ -61,13 +61,13 @@ the number of serial links for data transmission will be cut in half.
 \item Distinguish a Minimum Ionizing Particle (MIP) from noise with a signal-to-noise ratio $>$ 9:1;
 \item Measure the ionization up to 15 times that of a MIP particle, so that stopping kaons from proton decay can be identified.
 \end{itemize}
-\item All power supplies will have:
+\item Ensure that all power supplies have: 
 \begin{itemize}
-\item Local monitoring and control;
-\item Remote monitoring and control through DAQ;
-\item Over-current and over-voltage protection circuits;
+\item Local monitoring and control
+\item Remote monitoring and control through DAQ
+\item Over-current and over-voltage protection circuits
 \end{itemize}
-\item The low-voltage (signal) feedthroughs must be able to withstand twice their nominal operating voltages 
+\item Ensure that the low-voltage (signal) feedthroughs are able to withstand twice their nominal operating voltages 
 with a maximum specified leakage current in 1-atm argon gas.
 \end{itemize}
 
@@ -84,20 +84,21 @@ that create an electrical connection.
 \label{sec:fe_arch}
 
 The CE architecture is manifested in the Cold Mother Board assembly (CMB),
-which consists of an analog mother board with a digital ASIC mezzanine (Fig.~\ref{fig:elect_schem}).
+which consists of an analog mother board with a digital ASIC mezzanine (Figure~\ref{fig:elect_schem}).
 Each APA is instrumented with 20 CMBs, for a total of 2,560 channels per APA.
 
 The analog mother board is instrumented as a 128-channel board which uses eight 16-channel FE ASICs,
-eight 16-channel ADC ASICs, low voltage regulators, and input-signal protection.
+eight 16-channel ADC ASICs, low-voltage regulators, and input-signal protection.
 The 16-channel FE ASIC provides amplification and pulse shaping.
 The 16-channel ADC ASIC comprises a 12-bit digitizer, local buffering,
 and an 8:1 Mux stage with two pairs of serial readout lines in parallel.
 This has already been prototyped and tested,
-using a commercial FPGA to perform the r\^ole of the digital ASIC (Fig.~\ref{fig:elec_CMBpix}).
+using a commercial FPGA to perform the role of the digital ASIC (Figure~\ref{fig:elec_CMBpix}).
 
 \begin{cdrfigure}[The CE Architecture]{elect_schem}{The CE Architecture. The basic unit is the 128-channel CMB}
 \includegraphics[width=\linewidth]{elect_schem.pdf}
 \end{cdrfigure}
+\fixme{Check white space around figure}
 
 \begin{cdrfigure}[The Cold Mother Board (CMB), as used in the early set of tests]{elec_CMBpix}{The Cold Mother Board (CMB), as used in the early set of tests.
   {\bf Top:} The analog mother board, showing four ADC ASICs and four FE ASICs surface mounted.
@@ -110,25 +111,26 @@ using a commercial FPGA to perform the r\^ole of the digital ASIC (Fig.~\ref{fig
 \includegraphics[width=0.65\linewidth]{elec_CMBpix2.pdf}
 \includegraphics[width=0.65\linewidth]{elec_CMBpix3.pdf}
 \end{cdrfigure}
+\fixme{Should these images be annotated, or are they meaningful as is to the intended audience?}
 
 The Cold Digital Data (COLDATA) ASIC and its voltage regulators are mounted on the digital ASIC mezzanine.
 The COLDATA ASIC provides:
 \begin{itemize}
-\item The communication protocol with the data acquisition system (DAQ);
-\item The control required to program and read out the FE and ADC ASICs;
-\item The system clock interface;
+\item The communication protocol with the data acquisition system (DAQ)
+\item The control required to program and read out the FE and ADC ASICs
+\item The system clock interface
 \item Four 4:1 Muxs that combine 16 serial lines from the ADCs of eight channels each
-into four serial lines of 32 channels each;
-\item Four 1-Gbps serial drivers that form the data link to DAQ.
+into four serial lines of 32 channels each
+\item Four 1-Gbps serial drivers that form the data link to DAQ
 \end{itemize}
 If it is demonstrated that the COLDATA ASIC can achieve 2~Gbps,
 then the 4:1 Mux will be increased to 8:1 and only two serial drivers will be implemented,
 with a subsequent reduction in cabling, etc.
 In either case, the data rates will not be high enough to require the use of optical fibers in the cold,
-nor is there a need for zero-suppression or data compression.
+nor is there a need for zero suppression or data compression.
 This greatly reduces the complexity of the COLDATA ASIC, with a corresponding decrease in overall risk,
 including risk of failure-to-implement (within a fixed schedule and budget)
-and risk of device-failure during long-term operation.
+and risk of device failure during long-term operation.
 Data will be driven to DAQ through copper cable utilizing low-voltage differential signaling (LVDS).
 Output data cables will go to a signal feedthrough and from there to an external crate mounted nearby.
 Under DAQ scope, further data processing is done in the external crate
@@ -150,46 +152,13 @@ The estimated power dissipation of FE ASIC is about 6~mW per channel at 1.8~V su
 Shared among the 16 channels in the ADC ASIC are the bias circuits, programming registers,
 an 8:1 Mux, and the digital interface
 The estimated power dissipation of FE ASIC is below 5~mW per channel at 1.8~V supply.
-% 2015-02-27 chc: not used in ADC ASIC any more
-%A 600-kb buffer is included in this design, capable of storing a 1.5-ms 
-%event sampled at 2~MS/s in each channel.
-%The estimated power dissipation is below 15~mW per channel at 1.8~V supply.
 
-% 2015-02-27 chc: block diagram is outdated
-%\begin{figure}[htbp]
-%\centering
-%\includegraphics[width=\linewidth]{v5c3-cel-ASIC-layout}
-%\caption{Architecture and layout of the 16-channel front-end mixed-signal ASIC}
-%\label{fig:elec_asic_layout}
-%\end{figure}
-
-%
-%%%%%%%%%%%%%%%%
-%\section{Data Rates}
-%\label{sec:fe_data_rates}
-%
-%For neutrino-oscillation measurements the pulsed beam could provide a
-%trigger for readout, but for other measurements, such as proton decay
-%and supernova bursts, there will be no trigger.
-%Therefore the APAs will be self triggering, and the
-%data rates will depend on the event rates for background processes.
-%Dominant backgrounds are decays of radionuclides in the LAr, predominantly the naturally occurring Ar$^{39}$.
-%The cosmic-muon rate at the 4850 Level is approximately 2.3~mHz per APA.
-%Reading an APA (2,560 wires) for one drift time (4,625 samples) gives 142~Mb of data.
-%At the cosmic-event rate, the net data rate is 0.3~Mb/s per APA.
-%For radioactive decay of Ar$^{39}$ the rates are much higher: the specific activity is 1~Bq/kg which results in 183~kHz/APA.
-%At this rate, the APA will be continuously read out
-%at a data rate of 1.5~Gb/s on each of its 40 parallel outputs.
-%Since the ionization produced by these events is highly localized, most of the drift ``frame'' is empty.
-%The mean range of the beta from Ar$^{39}$ decay is only 0.3~mm, so all
-%of the signal is contained in a single over-threshold-sample of a single wire, for a true ``information''
-%rate of 0.6~Mb/s.
 
 %%%%%%%%%%%%%%%%
 \section{CMOS Circuit Design}
 \label{sec:fe_CMOS}
 
-%\subsection{CMOS Transistors: Lifetime Verification and Technology Evaluation}
+\fixme{This could use a bit more of an intro; we get to ``thus and MOS transistor has blah...'' and I don't even know what MOS is (well, I've certainly heard of it, but in terms of the text) or how it relates to the issues brought up}
 
 Compared to the situation at 300~K, charge-carrier mobility in silicon increases at 89~K
 while thermal fluctuations decrease with $kT/e$.
@@ -204,26 +173,28 @@ The former is of major consequence as it limits the effective lifetime of the de
 Thus, an MOS transistor has equal lifetime due to impact ionization at 89~K and at 300~K, but at different drain-source voltages.
 This is illustrated in Figure~\ref{fig:LifetimetestVR}.  
 
-This feature offers a tool for accelerated-lifetime testing by stressing the transistor with both increased current
-and increased voltage, and monitoring the substrate current and the change in $g_{m}$ due to impact ionization.
-In these conditions, the lifetime can be reduced arbitrarily by many orders of magnitude,
+\fixme{Sorry, which feature?  }
+This feature offers a tool for accelerated-lifetime testing. The tool can be used to stress the transistor with both increased current
+and increased voltage, and monitor the substrate current and the change in $g_{m}$ due to impact ionization.
+Under these conditions, the lifetime can be reduced arbitrarily by many orders of magnitude,
 and the limiting operating conditions for a lifetime in excess of $\sim$20 years can be determined.
 With this foundation, more conservative design rules (lower current densities and voltages)
 can be derived and applied in the ASIC design.
-The goal of this part of the program is to verify by accelerated testing the expected lifetimes for the several
+The goal of this part of the program \fixme{have you described a program?} is to use accelerated testing to verify the expected lifetimes for the several
 widely available CMOS technologies under consideration (TSMC, IBM, AMS).
-It should be noted that this is a standard test method used by the semiconductor industry.
-These methods are used to qualify electronics for deep space NASA missions as well as commerical PCs.
+It should be noted that this is a standard test method used by the semiconductor industry;
+%. These methods are (you went from `a method' to `these methods')
+it is used to qualify electronics for deep space NASA missions as well as commerical PCs.
  
 \begin{cdrfigure}[Lifetime at different temperatures vs V$_{DS}$]{LifetimetestVR}{Lifetime at different temperatures vs V$_{DS}$}
-\includegraphics[width=0.75\textwidth]{LifetimetestVR}
+\includegraphics[width=0.9\textwidth]{LifetimetestVR}
 \end{cdrfigure}
 
 To successfully design CMOS circuits that will operate at cryogenic 
 temperatures, two critical issues must be addressed and resolved. 
 The first issue is the need for realistic models at the operating temperature 
 of all active and passive components in order to reliably predict operating points,
-signal response, and noise during the design process.
+signal response and noise during the design process.
 The second issue is that the design must ensure a long operational lifetime, since once the TPC is filled 
 with LAr the detector must operate for about 15~years without any access to the 
 electronics for repair or replacement.
@@ -274,7 +245,7 @@ prototype samples throughout the development process to verify the long-term rel
 
 The development of the readout ASIC has begun by designing and fabricating in a commercial CMOS
 process (0.18~$\mu$m and 1.8V) a 16-channel ASIC implementing the complete analog front-end section.
-The layout out the FE ASIC is shown in fig.~\ref{fig:elec_FE_ASIC}.
+The layout out the FE ASIC is shown in Figure~\ref{fig:elec_FE_ASIC}.
 This process is expected to be available for at least another 10~years. 
 The charge amplifier input MOSFET is a p-channel biased at 2~mA with a L/W (channel length/width) ratio
 of 0.27~$\mu$m / 10~$\mu$m, followed by dual cascade stages.
@@ -394,7 +365,7 @@ automated place and route for design blocks using extensive digital logic.
 \includegraphics[width=6in]{elec_COLDATAfig.pdf}
 \end{cdrfigure}
 
-A block diagram of the COLDATA ASIC is presented in Fig.~\ref{fig:elec_COLDATAfig}.
+A block diagram of the COLDATA ASIC is presented in Figure~\ref{fig:elec_COLDATAfig}.
 The major components of the COLDATA ASIC include a downlink which is required to receive the system clock and
 the control/download information transmitted from the DAQ.
 The download data must be transmitted to the FE and ADC ASICs on the CMB.
