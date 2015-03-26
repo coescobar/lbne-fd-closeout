@@ -379,9 +379,11 @@ The development of the COLDATA ASIC will follow the same general guidelines deve
 will differ from the analog design in a couple of aspects.
 It is anticipated that the digital ASIC will make use of a 65-nm CMOS technology and require a
 digital library with accurate cold timing models allowing for high-level language design and
-automated place-and-route \fixme{automated placement and routing?
+automated place-and-route for design blocks using extensive digital logic.
+\fixme{automated placement and routing?
 \newline rwh: I already had this conversation with the author of this phrase.  ``place and route'' is an industry-standard phrase, it turns out, so I decided to keep it, awkward though it may appear to us outside the industry.
-I did add hyphens, which make it less so.} for design blocks using extensive digital logic.  \fixme{This sentence is a mouthful -- not sure how the last phrase fits in (for design...)
+I did add hyphens, which make it less so.}
+\fixme{This sentence is a mouthful -- not sure how the last phrase fits in (for design...)
 \newline rwh: Same comment. I think the hyphens help.}
 
 \begin{cdrfigure}[Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC]{elec_COLDATAfig}{Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC}
@@ -409,7 +411,9 @@ to exit the LAr environment.
 If a speed of 2~Gbps can be achieved, which is possible but not yet demonstrated,
 the number of serial links for data transmission will be cut in half.
 \fixme{This last sentence is opaque to me; I think it's my ignorance of driver/link, but maybe you can improve it anyway 
-\newline rwh: Sorry, I can't think of how to improve this without maybe adding a short lesson on the subject, which I'm not really qualified to do, and besides I think that would exceed the scope of the CDR.}
+\newline rwh: Sorry, I can't think of how to improve this without maybe adding a short lesson on the subject,
+which I'm not really qualified to do, and besides I think that would exceed the scope of the CDR.
+BTW, I added a sentence at the end, so your comment now refers to the next-to-last sentence.}
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -428,8 +432,10 @@ both functionality and adequate lifetime of optical converters in LAr.
 In addition to the high-speed data-output channels,
 LVDS connections will be made to each APA to distribute a clock signal and control information.
 These data can be transmitted at a lower bit rate.
-Optical fiber will be employed externally to the cryostat \fixme{for the LVDS connections? 
-\newline rwh: LVDS is defined above.  Nothing to do with optical. Again, I'm not sure what you're asking here.}, under DAQ scope. \fixme{Here's what I understand: slower connections will use optical fiber, data will use copper. Is that right?
+Optical fiber will be employed externally to the cryostat, under DAQ scope.
+\fixme{for the LVDS connections? 
+\newline rwh: LVDS is defined above.  Nothing to do with optical. Again, I'm not sure what you're asking here.}
+\fixme{Here's what I understand: slower connections will use optical fiber, data will use copper. Is that right?
 \newline  rwh: No. Optical is far faster than copper, but optical coverters haven't been shown to work in the cold,
 so there we are strictly using electrical (copper) connections. I added some text to that effect, just above here.}
 
@@ -441,7 +447,7 @@ so there we are strictly using electrical (copper) connections. I added some tex
 No specific design for the Far Detector signal feedthroughs exists at this time.
 We are currently exploring the possibility of working in tandem with the Near Detector group, which has
 similar feedthrough needs. This group is starting with a concept based on the feedthrough design that has been successfully
-running in the Atlas experiment for about 15 years, \fixme{ref?} demonstrating both longevity and reliability.
+running in the Atlas experiment for about 15 years\cite{ATLASFT}, demonstrating both longevity and reliability.
 A somewhat different conceptual design of a signal feedthrough flange is shown in Figure~\ref{fig:ce_feedthrough}.
 Based on a standard 8-in conflat flange with all commercial off-the-shelf components,
 each of these feedthroughs would serve the bias/power/digital IO needs of two APAs.  
