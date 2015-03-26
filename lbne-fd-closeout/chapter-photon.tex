@@ -495,9 +495,166 @@ are commercially available which is an attractive feature. The
 engineering aspects of the design will be discussed in the approariate
 section of this chapter. 
 
-\section{SiPM}
+\section{Silicon Photo-multipliers}
 
-\section{Menchanical Support}
+Silicon Photomultipliers (SiPMs) have been selected as photon
+detectors for the far detector LArTPC photon detection system. SiPM is
+a photo detection device sensitive to single photons with excellent
+linearity range in collecting multiple photons.  SiPM consists of a
+large avalanche photodiode (APD) array built on a common silicon
+substrate. APDs operate in Geiger mode.
+
+SiPMs have been developing at a very fast pace in recent years, in
+response to the needs of medical industry. As a result, the price of
+SiPMs has gone down, while their performance has greatly
+improved. There are a number of characteristics that make SiPMs an
+attractive choice as photo-detectors for the PD system.
+
+\begin{itemize}
+
+\item{High photon-detection efficiency (PDE) up to 40-50\% at the
+  peak detection wavelength. }
+
+\item{High intrinsic gain at ranging from 105 to 107 depending on the
+  overvoltage.}
+\item{Low dark rate at cryogenic temperatures – less than 50 Hz even
+  at the maximum overvoltage.}
+\item{Insensitive to external magnetic field.}
+\item{Gain vs. overvoltage is extremely linear.}\
+\item{Low cost per sensitive area compared to small cryogenic
+  photomultiplier tubes (PMTs).}\
+\item{Small dimensions allow simple, compact and robust design.}
+\item{No need for high voltage (HV) power.}
+\item{Bias voltage required is typically less than 100 V, and even
+  less than 30 V in some cases, resulting in low peripheral costs.}
+\item{Gain and PDE remain high at cryogenic temperatures.}
+
+\end{itemize}
+
+In short, SiPMs demonstrated performance that is comparable to
+traditional PMTs, but at a significantly reduced cost. As a result,
+they have become a photon-detector of choice for PD system of the far
+LArTPC detector.
+
+The main risk associated with using SiPMs is that generally they have
+not been designed for operation at LAr temperature. None of the SiPM
+data sheets show nor guarantee their performance at cryogenic
+temperatures. This was the main motive for testing SiPMs at LAr
+temperatures. Tests performed in the last two years have mostly been
+done using LN2 as it has similar temperature (10 K below LAr), but it
+costs much less.
+
+There is a number of SiPM manufacturers on the market such as SenSL,
+Hamamatsu, KETEK, AdvanSiD, CPTA (Photonique), Philipis, Novel Device
+Laboratory (NDL), Zecotek, Voxtel, Amlification Technologies,
+Excelites, etc, but only a fraction of them offer SiPMs that are
+suitable for PD system- large area (6×6 mm2 or 3×3 mm2), large fill
+factor, pin or surface mount and no housing. We have conducted an
+exhaustive search in 2012 of suitable SiPMs, although one should keep
+in mind, that in this rapidly developing field, manufacturers come up
+with new, improved models every year in most cases. As result of 2012
+search, sample SiPMs were obtained from SenSL, Hamamtsu, CPTA and
+AdvanSID.  Samples
+
+There are many SiPM suppliers on the market. In the initial round of
+tests, we tested models from SenSL (MicroSM-600-35-X13), Hamamtsu(MPPC
+S10985-100C), CPTA (SSPM-0710G9MM) and AdvanSID (ASD-SiPM3S-P), as we
+had success in obtaining suitable models from these four companies. In
+this test, SiPMs were cooled in liquid nitrogen and signal output as a
+function of overvoltage was recorded. Laser light pulse at 400 nm
+wavelength was used a light source. Results can be seen in Fig.~\ref{laser400}.
+
+\begin{cdrfigure}[SiPM signals as function of bias voltage in liquid
+    nitrogen.]{laser400}{SiPM signals as function of bias voltage in
+    liquid nitrogen. Liquid nitrogen has 10 K lower temperature than
+    liquid argon, making the measurement applicable. In all cases
+    there is a significant increase in gain with increasing bias
+    voltage, but difference in gain among different samples is clearly
+    visible.} 
+  \includegraphics[width=.6\columnwidth]{sipm_laser.png}
+\end{cdrfigure}
+
+Based on these initial tests, the follow up tests focused on SenSL and
+Hamamtsu models. This decision was partially driven by the high price
+quotes received at the time from AdvanSiD and CPTA.
+
+Shortly after initial tests, SenSL came up with a new model
+(MicroFB-600-35-SMT followed by improved MicroFC-600-35-SMT) and most
+of the tests have been done on the SenSL models. Hamamtsu’s MPPC
+S12895- 0404-PB50 has been on the market for a long time and Indiana
+group measured very high cross-talk and afterpulsing rates. Hamamtsu
+came up with a new, improved model in 2015, S13360, that will be
+tested in 2015 and compared with SenSL models.
+
+\subsection{Requirements}
+
+PD system requires high sensitivity photo-detectors to detect argon
+scintillation light, despite its excellent scintillation yield due to
+a very small surface area of the PDs.  The late scintillation light in
+argon reprsents 2/3 of the total scintillation light, but it is spread
+over 1100~–~1600~ns, making the individual late light signals very
+small in average.
+
+SiPM characteristics from the data sheets satisfy these requirements
+in general. Thus, it is important to verify that similar performance
+is observed at LAr temperatures in terms of high gain, sensitivity to
+single photoelectrons, high PDE, linearity of the response, stability
+of breakdown voltage, long-term stability, low afterpulsing and low
+cross-talk. In addition, SiPMs must have low dark rate and mechanical
+robustness as they undergo cryogenic cooling and cycling. Finally
+devices must have low cost and we need to identify at least two
+suitable choices to avoid sole source issues.
+
+Institutions designing different PD prototypes (Indiana University,
+Colorado State University and Louisiana State University) have
+conducted a number of tests of PDs with SiPMs. Additional,
+specifically targeted tests have been conducted at Louisiana State
+University (LSU) and University of Hawaii (UH) in recent
+months. Importance of selecting the best photo-sensors for the PD
+motivates the need for parallel tests conducted at both LSU and
+UH. Such approach will ensure important cross-checks and reduce
+possible testing biases.
+
+\subsection{Test Results}
+
+In the last 18 months, we have built a test setup for SiPM evaluation,
+that includes Belle experiment electronics to power and record signals
+from SiPMs.  More recently, we have designed a new board similar to
+SenSL testing board (to address noise problems and low amplification
+of the Belle board critical at low light levels) that is currently
+being used to conduct dark rate and single photoelectron study.
+Fig~\ref{sipm_schem} shows the layout of the new testing board and
+picture of the actual circuit as built.
+
+\begin{cdrfigure}[The diagram on the left shows the schematics of the
+    PCB board, while the picture on the right shows the PCB as
+    built. This PCB can accommodate three SiPMs for
+    testing.]{sipm_schem}{The diagram on the left shows the schematics
+    of the PCB board, while the picture on the right shows the PCB as
+    built. This PCB can accommodate three SiPMs for testing.}  
+  \includegraphics[width=.6\columnwidth]{pd_SiPM_schem.png}
+\end{cdrfigure}
+
+As previously mentioned, tests focused on Hamamatsu and SenSL produced
+8SiPMs. However, Indiana University group found out that Hamamatsu
+SiPMs are placed in a dewar inside a copper plated dark box and cooled
+with LN2. SiPMs are held in place on the PCB with acrylic holder as
+shown in the Fig~\ref{sipm_mount}.
+
+\begin{cdrfigure}[Picture on the left shows acrylic holder that
+    secures SiPMs to the PCB while figure on the top right shows the
+    entire assembly prior to lowering in the dewer. Orange cable
+    delivers laser or LED light that shines on the SiPMs. Everything
+    is secured to the wooden lid that closes the
+    dewer.]{sipm_mount}{Picture on the left shows acrylic holder that
+    secures SiPMs to the PCB while figure on the top right shows the
+    entire assembly prior to lowering in the dewer. Orange cable
+    delivers laser or LED light that shines on the SiPMs. Everything
+    is secured to the wooden lid that closes the dewer.}   
+  \includegraphics[width=.6\columnwidth]{sipm_mount.png}
+\end{cdrfigure}
+
+\section{Mechanical Support}
 
 Mechanically supporting the photon detector systems in the APA frames
 presented several challenges, including the need to support three
