@@ -9,17 +9,28 @@
 % This chapter describes the reference design for the
 % CE that meets the required performance for the LBNE liquid argon detector, LAr-FD.
 \fixme{Need an intro sentence or short pgraph; decide if we need to define terms, e.g., ASIC, CMOS...
+\newline rwh: I disagree about the intro sentence.  It's short and to the point as it is.
+I am, of course, open to specific suggestions or offerings.
 \newline rwh: I added definitions of ASIC and CMOS, but, frankly, ``everyone'' in the field knows what they are,
-and this has the appearance of defining water.}
+and this has the appearance of defining water.
+On second thought, I don't like the way it reads \& looks, so I took those back out.
+FYI: Application-Specific Integrated Circuit (ASIC) and Complementary Metal-Oxide Semiconductor (CMOS)}
 
-\fixme{This chapter needs a good illustration showing the placement of the electonics with respect to the APAs and the cryostat, feedthroughs, etc.}
+\fixme{This chapter needs a good illustration showing the placement of the electronics with respect to the APAs and the cryostat,
+feedthroughs, etc.
+\newline rwh: Done.}
+\begin{cdrfigure}[The front end electronics as mounted on an APA]{elec_CMBonAPA}{The front end electronics as mounted on an APA.
+  {\bf Top:} The front end electronics  is shown in the red ellipse.
+  {\bf Bottom:} Cross section view.}
+\includegraphics[width=1.00\linewidth]{elec_CMBonAPA_1.pdf}
+\includegraphics[width=1.00\linewidth]{elec_CMBonAPA_2.pdf}
+\end{cdrfigure}
 
 The TPC read-out electronics are referred to as the ``Cold Electronics'' (CE) because they will reside in LAr,
-mounted directly on the APA front-end.
+mounted directly on the APA front-end (Figure~\ref{fig:elec_CMBonAPA}).
 This will minimize channel capacitance and noise by keeping the length of the connection between an anode wire
 and its corresponding electronics input to an absolute minimum.
-The CE will be implemented as Application-Specific Integrated Circuit (ASIC) chips using
-Complementary Metal-Oxide Semiconductor (CMOS) technology,
+The CE will be implemented as ASIC chips using CMOS technology,
 which performs well at cryogenic temperatures,
 and will provide amplification, shaping, digitization, buffering and multiplexing (Mux) of the signals.
 Because it is not possible to form a trigger for some important measurements,
@@ -56,8 +67,6 @@ The most significant ones are listed here. The CE shall:
 \item Provide the means to read out the TPCs and transmit their data in a useful format to the Data Acquisition System (DAQ).
 \item Operate for the life of the facility without significant loss of function.
 \item Record the channel waveforms continuously without dead time.
-\fixme{This is a response to the requirement; should be elsewhere
-\newline rwh: This was part of my thought process.  I didn't mean to leave it here.  Now it's moved.}
 \item Use only materials that are compatible with high-purity liquid argon.
 \item Provide sufficient precision and range in the digitization to:
 \begin{itemize}
@@ -103,8 +112,6 @@ using a commercial FPGA to perform the role of the digital ASIC (Figure~\ref{fig
 \begin{cdrfigure}[The CE Architecture]{elect_schem}{The CE Architecture. The basic unit is the 128-channel CMB}
 \includegraphics[width=\linewidth]{elect_schem.pdf}
 \end{cdrfigure}
-\fixme{Check white space around figure
-\newline rwh: Done, but there wasn't much white space.  I assume this refers to Fig.~\ref{fig:elect_schem}.}
 
 \begin{cdrfigure}[The Cold Mother Board (CMB), as used in the early set of tests]{elec_CMBpix}{The Cold Mother Board (CMB), as used in the early set of tests.
   {\bf Top:} The analog mother board, showing four ADC ASICs and four FE ASICs surface mounted.
@@ -248,8 +255,7 @@ drain current densities, where impact ionization becomes negligible.
 For digital circuits, 
 operating the devices with reduced $V_{DD}$ (about 20\%) and using non-minimum channel length L
 is easily accommodated since at cryogenic temperature the speed of the digital circuit increases, 
-compensating for the increased L. \fixme{not a sentence.
-\newline rwh: Now it is.}
+compensating for the increased L.
 %
 These guidelines will be verified with accelerated aging tests, 
 at increasing values of $V_{DD}$, on dedicated structures. Such tests also will be conducted on 
@@ -362,9 +368,8 @@ The performance of the ADC meets the far detector requirements.
 An analog front-end ASIC was adopted by the MicroBooNE experiment in 2010.\cite{microboone-url}
 The fabrication and installation was successfully completed in early 2014, and now 
 a total of 8,256 channels (516 FE ASICs) instrument the MicroBooNE TPC. 
-%Both FE ASICs and ADC ASICs are being used in the 35-ton LArTPC prototype. \fixme{ref?}
 A total of 2,048 channels (on 128 FE ASICs and 128 ADC ASICs) are used to instrument the 35-ton 
-LArTPC. \fixme{ref?}
+LArTPC.
 The cold front-end mother boards have been produced and tested at 300~K and are currently
 being tested at 77~K before final installation. % on the TPC.
 
@@ -380,11 +385,6 @@ will differ from the analog design in a couple of aspects.
 It is anticipated that the digital ASIC will make use of a 65-nm CMOS technology and require a
 digital library with accurate cold timing models allowing for high-level language design and
 automated place-and-route for design blocks using extensive digital logic.
-\fixme{automated placement and routing?
-\newline rwh: I already had this conversation with the author of this phrase.  ``place and route'' is an industry-standard phrase, it turns out, so I decided to keep it, awkward though it may appear to us outside the industry.
-I did add hyphens, which make it less so.}
-\fixme{This sentence is a mouthful -- not sure how the last phrase fits in (for design...)
-\newline rwh: Same comment. I think the hyphens help.}
 
 \begin{cdrfigure}[Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC]{elec_COLDATAfig}{Functional Block Diagram of the Cold Digital Data (COLDATA) ASIC}
 \includegraphics[width=6in]{elec_COLDATAfig.pdf}
@@ -400,8 +400,7 @@ which will generate a low-jitter stable clock to the high-speed serializer. \fix
 
 A single COLDATA ASIC on each CMB will also be receiving the data from each of the eight ADCs on a board.
 Each ADC will transmit two streams of data at 192~Mbps for a total data input of 3.072~Gbps.
-All data will be transmitted off-board to DAQ. \fixme{to where?
-\newline rwh: I thought it was obvious, so I took out ``to DAQ'', which I therefore regarded as dead words, but I put that back.}
+All data will be transmitted off-board to DAQ.
 Twelve bits of ADC data per APA channel every 500~ns yields a single-channel bit rate of 0.024~Gbps.
 With 8B10B encoding, for example, this increases to 0.03~Gbps, plus some overhead for frame data to indicate event blocks.
 Assuming a conservative serial-link transmission speed of 1~Gbps, a single link can therefore handle 32 channels.
@@ -410,10 +409,6 @@ A line driver will be designed that is capable of driving a copper link for the 
 to exit the LAr environment.
 If a speed of 2~Gbps can be achieved, which is possible but not yet demonstrated,
 the number of serial links for data transmission will be cut in half.
-\fixme{This last sentence is opaque to me; I think it's my ignorance of driver/link, but maybe you can improve it anyway 
-\newline rwh: Sorry, I can't think of how to improve this without maybe adding a short lesson on the subject,
-which I'm not really qualified to do, and besides I think that would exceed the scope of the CDR.
-BTW, I added a sentence at the end, so your comment now refers to the next-to-last sentence.}
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -427,17 +422,10 @@ with an overall 32:1 Mux and 80 LVDS channels per APA.
 There is, therefore, no need for high-speed optical links inside the cryostat, so all cables inside the cryostat will be copper.
 This has the significant benefit of avoiding a major R\&D effort which would be required to demonstrate
 both functionality and adequate lifetime of optical converters in LAr.
-\fixme{You've given a reason that they CAN be copper, not why they SHOULD be copper.
-\newline rwh: ``Copper'' means electrical, and in this sense serves to distinguish from optical. These are the only two choices. I added a phrase to that effect.}
 In addition to the high-speed data-output channels,
 LVDS connections will be made to each APA to distribute a clock signal and control information.
 These data can be transmitted at a lower bit rate.
 Optical fiber will be employed externally to the cryostat, under DAQ scope.
-\fixme{for the LVDS connections? 
-\newline rwh: LVDS is defined above.  Nothing to do with optical. Again, I'm not sure what you're asking here.}
-\fixme{Here's what I understand: slower connections will use optical fiber, data will use copper. Is that right?
-\newline  rwh: No. Optical is far faster than copper, but optical coverters haven't been shown to work in the cold,
-so there we are strictly using electrical (copper) connections. I added some text to that effect, just above here.}
 
 %
 %%%%%%%%%%%%%%%%
@@ -557,9 +545,6 @@ The power-per-channel for the FE ASIC is designed to be about 15~mW and
 the total high-voltage \fixme{?
 \newline rwh: What's wrong here? I don't see it.} power requirement for each APA is expected to be about 65~W. 
 
-\fixme{The first kind:
-\newline rwh: No, this is not the first kind.  The two ``kinds'' are not described, and this is not important.  I took out
-the ``two kinds'' sentence, which was part of something else that was not completely removed, and which was misleading.} 
 Power will be supplied to the electronics on each APA separately by low-noise
 power supplies outside the cryostat, either directly by
 low-voltage (1.8~V), high-current (36 A) conductors or by high-voltage (48~V)
@@ -578,8 +563,6 @@ contributing to additional heat load on the cryogenic system.
 The sum of the these two factors as a function of the wire gauge, however, has a minimum 
 due to the two opposing dependencies on the copper-wire cross section.
 An optimum wire gauge can be chosen to minimize heat input to the cryostat.
-\fixme{where do we describe the second?
-\newline rwh: See previous comment.}
 %
 %%%%%%%%%%%%%%%%
 \subsection{Wire-Bias Voltages}
@@ -591,8 +574,6 @@ The current on each of these supplies is expected to be zero at normal operation
 However the ripple voltage on the supply must be carefully controlled 
 to avoid noise injection into the front-end electronics.  
 
-\fixme{Isn't this still the first kind?
-\newline rwh: See previous comment.}
 The power supplies for the wire bias will be similar to 
 those used for conventional multi-wire proportional chambers. 
 Additional filtering networks will 
@@ -608,8 +589,8 @@ feedthroughs capable of withstanding the maximum voltage are under investigation
 
 Cold electronics will be mounted on the TPC and installed inside the cryostat.
 Because access to the cold electronics is not possible after the cryostat is sealed,
-a full complement of tests will be performed during the development stage and before the final installation.
-\fixme{figure!}
+a full complement of tests will be performed during the development stage and before the final installation
+(Figure~\ref{fig:elec_CMBonAPA}).
 
 %%%%%%%%%%%%%%%%
 \subsection{Prototype Testing}
