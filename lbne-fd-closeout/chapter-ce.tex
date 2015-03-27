@@ -6,19 +6,6 @@
 \section{Introduction}
 \label{sec:ce_intro}
 
-% This chapter describes the reference design for the
-% CE that meets the required performance for the LBNE liquid argon detector, LAr-FD.
-\fixme{Need an intro sentence or short pgraph; decide if we need to define terms, e.g., ASIC, CMOS...
-\newline rwh: I disagree about the intro sentence.  It's short and to the point as it is.
-I am, of course, open to specific suggestions or offerings.
-\newline rwh: I added definitions of ASIC and CMOS, but, frankly, ``everyone'' in the field knows what they are,
-and this has the appearance of defining water.
-On second thought, I don't like the way it reads \& looks, so I took those back out.
-FYI: Application-Specific Integrated Circuit (ASIC) and Complementary Metal-Oxide Semiconductor (CMOS)}
-
-\fixme{This chapter needs a good illustration showing the placement of the electronics with respect to the APAs and the cryostat,
-feedthroughs, etc.
-\newline rwh: Done.}
 \begin{cdrfigure}[The front end electronics as mounted on an APA]{elec_CMBonAPA}{The front end electronics as mounted on an APA.
   {\bf Top:} The front end electronics  is shown in the red ellipse.
   {\bf Bottom:} Cross section view.}
@@ -124,8 +111,6 @@ using a commercial FPGA to perform the role of the digital ASIC (Figure~\ref{fig
 \includegraphics[width=0.65\linewidth]{elec_CMBpix2.pdf}
 \includegraphics[width=0.65\linewidth]{elec_CMBpix3.pdf}
 \end{cdrfigure}
-\fixme{Should these images be annotated, or are they meaningful as is to the intended audience?
-\newline rwh: I don't understand what you are asking here.}
 
 The Cold Digital Data (COLDATA) ASIC and its voltage regulators are mounted on the digital ASIC mezzanine.
 The COLDATA ASIC provides:
@@ -133,10 +118,8 @@ The COLDATA ASIC provides:
 \item The communication protocol with the data acquisition system (DAQ)
 \item The control required to program and read out the FE and ADC ASICs
 \item The system clock interface
-\item Four 4:1 Muxs that combine 16 serial lines from the ADCs of eight channels each
-into four serial lines of 32 channels each
-\item Four 1-Gbps serial drivers that form the data link to DAQ \fixme{I don't understand the relationship between driver and link
-\newline rwh: These are electronic terms, and I think the meaning is clear.}
+\item Four 4:1 Muxs that combine 16 serial lines from the ADCs of eight channels each into four serial lines of 32 channels each
+\item Four 1-Gbps serial drivers that form the data link to DAQ
 \end{itemize}
 If it is demonstrated that the COLDATA ASIC can achieve 2~Gbps,
 then the 4:1 Mux will be increased to 8:1 and only two serial drivers will be implemented,
@@ -185,28 +168,23 @@ The charge trapped in the gate oxide and its interface with the channel causes d
 of the transistor and a threshold shift.
 The former is of major consequence as it limits the effective lifetime of the device
 (defined in industry and the literature as 10\% degradation in transconductance).
-Thus, an MOS transistor has equal lifetime due to impact ionization at 89~K and at 300~K, but at different drain-source voltages.
-This is illustrated in Figure~\ref{fig:LifetimetestVR}.  
-
-\fixme{Sorry, which feature?  }
-This feature offers a tool for accelerated-lifetime testing. The tool can be used to stress the transistor with both increased current
-and increased voltage, and monitor the substrate current and the change in $g_{m}$ due to impact ionization.
+Thus, an MOS transistor has equal lifetime due to impact ionization at 89~K and at 300~K,
+but at different drain-source voltages $V_{DS}$,
+as illustrated in Figure~\ref{fig:LifetimetestVR}.  
+This property can be exploited to stress the transistor with both increased current
+and increased voltage while monitoring the substrate current and the change in $g_{m}$ due to impact ionization.
 Under these conditions, the lifetime can be reduced arbitrarily by many orders of magnitude,
 and the limiting operating conditions for a lifetime in excess of $\sim$20 years can be determined.
 With this foundation, more conservative design rules (lower current densities and voltages)
 can be derived and applied in the ASIC design.
-The goal of this part of the program \fixme{have you described a program?} is to use accelerated testing to verify the expected lifetimes for the several
+With this accelerated testing the expected lifetimes can be verified for the several
 widely available CMOS technologies under consideration (TSMC, IBM, AMS).
 It should be noted that this is a standard test method used by the semiconductor industry;
-%. These methods are (you went from `a method' to `these methods')
 it is used to qualify electronics for deep space NASA missions as well as commerical PCs.
  
 \begin{cdrfigure}[Lifetime at different temperatures vs V$_{DS}$]{LifetimetestVR}{Lifetime at different temperatures vs V$_{DS}$}
 \includegraphics[width=0.9\textwidth]{LifetimetestVR}
 \end{cdrfigure}
-\fixme{V sub DS not defined
-\newline rwh: This is a very standard notation.  Anyone familiar with MOS etc. will understand this.
-Anyone not familiar with MOS etc. is not likely to get anything out of this section whether this variable is defined or not.}
 
 To successfully design CMOS circuits that will operate at cryogenic 
 temperatures, two critical issues must be addressed and resolved. 
@@ -241,8 +219,7 @@ These design guidelines also provide information for designing test conditions t
 deterioration mechanism and to extrapolate from accelerated deterioration rates, 
 measured under stressed conditions within practical times, to the ultimate lifetime under normal operation.
 
-A monitor of the impact ionization is the bulk current, which reaches a maximum at $V_{DS} = V_{DD}$ and at $V_{GS} = 0.5 V_{DD}$. \fixme{V sub * not defined
-\newline rwh:  See previous response to V sub DS.}
+A monitor of the impact ionization is the bulk current, which reaches a maximum at $V_{DS} = V_{DD}$ and at $V_{GS} = 0.5 V_{DD}$.
 When operating constantly in this condition at room temperature, a properly designed device 
 will typically have a lifetime (defined as a 10\% degradation in $g_m$) of about 10~years. 
 The bulk current (i.e., the impact ionization) increases by roughly a factor of four from 300~K to 77~K 
@@ -268,12 +245,12 @@ prototype samples throughout the development process to verify the long-term rel
 
 The development of the readout ASIC has begun by designing and fabricating in a commercial CMOS
 process (0.18~$\mu$m and 1.8V) a 16-channel ASIC implementing the complete analog front-end section.
-The layout out the FE ASIC is shown in Figure~\ref{fig:elec_FE_ASIC}.
+The FE ASIC layout is shown in Figure~\ref{fig:elec_FE_ASIC}.
 This process is expected to be available for at least another 10~years. 
 The charge amplifier input MOSFET is a p-channel biased at 2~mA with a L/W (channel length/width) ratio
 of 0.27~$\mu$m / 10~$\mu$m, followed by dual cascade stages.
-The charge amplification and shaping filter have
-digitally programmable gain and peaking time as described above. \fixme{which section?}
+The charge amplification and shaping filter have digitally programmable gain and peaking time
+(as listed in Section~\ref{sec:fe_arch}).
 Each channel also implements a high-performance output driver,
 which is used to drive a long cable when it is used in a standalone mode, as it is in MicroBooNE.\cite{microboone-url}
 The buffer can be disabled when it is interfaced to an ADC ASIC to reduce the power consumption.
@@ -357,8 +334,7 @@ The ADC along with the input buffers are biased internally using a bias generato
 The bandgap voltage (VBGR) can be monitored and/or controlled externally.
 It can be put in the low-power sleep mode, and woken up in less than 1~$\mu$s.
 
-\fixme{This is sort of a repeat of lines 273ff; please fix.
-\newline rwh: I can't find any line labeled 273.  This goes to my earlier request about doing the line numbers differently.} The ADC ASIC has now been through four design/fabrication/testing revision cycles.
+The ADC ASIC has now been through four design/fabrication/testing revision cycles.
 Prototypes from each cycle have been evaluated and characterized at room (300~K) and liquid nitrogen (77~K) temperatures.
 During these tests the circuits have been cycled multiple times.
 The effective resolution with reference to the input referred noise is $\sim$11.6~bits at both 300~K and 77~K.
@@ -392,11 +368,10 @@ automated place-and-route for design blocks using extensive digital logic.
 
 A block diagram of the COLDATA ASIC is presented in Figure~\ref{fig:elec_COLDATAfig}.
 The major components of the COLDATA ASIC include a downlink which is required to receive the system clock and
-the control/download information transmitted from the DAQ. \fixme{components are a downlink (required for xzy) and what else?
-\newline rwh: I don't know what you mean here.} 
+the control/download information transmitted from the DAQ.
 The download data must be transmitted to the FE and ADC ASICs on the CMB.
 The system clock will provide a frequency reference to a crystal-based Phase Lock Loop (PLL)
-which will generate a low-jitter stable clock to the high-speed serializer. \fixme{it will generate a clock?}
+which will generate a low-jitter stable clock to the high-speed serializer.
 
 A single COLDATA ASIC on each CMB will also be receiving the data from each of the eight ADCs on a board.
 Each ADC will transmit two streams of data at 192~Mbps for a total data input of 3.072~Gbps.
@@ -466,8 +441,10 @@ requirements and rather fewer photon detector cables so the 35-ton feedthrough w
 for what might be done for the far detector.
 While the electrical connection requirements are straightforward,
 the reliable gas tightness of the flange with an embedded circuit board needs to be fully verified.
-Also the planned method of reducing contamination from the cable plant in the ullage (the warmer gas phase at the top of the cryostat) 
-needs to be studied carefully, as does that for the 35-ton cryostat, which has a has a much larger ullage than that planned for the far detector.
+Also the planned method of reducing contamination from the cable plant in the ullage
+(the warmer gas phase at the top of the cryostat) 
+needs to be studied carefully, as does that for the 35-ton cryostat,
+which has a has a much larger ullage than that planned for the far detector.
 
 
 \begin{cdrfigure}[The 35 Ton ``Flange Board'', without the Conflat flange]{ce_feedthrough}{Photograph of the 35 Ton ``Flange Board'', without the Conflat flange which will be epoxy potted near
@@ -513,8 +490,7 @@ feed using DC/DC convertors or a low-voltage/higher-current feed used by low-vol
 Studies will take place to decide the most efficient and practical usage.
 
 The wire-bias cables must deliver voltages up to %a couple  
-two or three \fixme{ok?
-\newline rwh: Huh?} thousand volts with less than a couple of milliamps.
+two or three thousand volts with less than a couple of milliamps.
 We anticipate using a coaxial cable and connectors which have been tested and found sufficient to provide this load.
 
 The cables for the moderate speed downlink could utilize LVDS signaling and low-skew pairs.
@@ -537,14 +513,8 @@ This is in addition to concerns about material compatibility and the fact they m
 \subsection{Power for the Cold Electronics }
 \label{subsec:ce_feedthrough_power}
 
-%There are two types of power supplies:
-%TPC wire-bias voltages and low-voltage DC power to the readout electronics.
-\fixme{This intro didn't flow... please check}
-
-The power-per-channel for the FE ASIC is designed to be about 15~mW and
-the total high-voltage \fixme{?
-\newline rwh: What's wrong here? I don't see it.} power requirement for each APA is expected to be about 65~W. 
-
+The power-per-channel for the FE ASIC is designed to be about 15~mW and the total high-voltage
+power requirement for each APA is expected to be about 65~W. 
 Power will be supplied to the electronics on each APA separately by low-noise
 power supplies outside the cryostat, either directly by
 low-voltage (1.8~V), high-current (36 A) conductors or by high-voltage (48~V)
