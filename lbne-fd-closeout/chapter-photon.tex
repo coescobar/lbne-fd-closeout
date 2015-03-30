@@ -517,7 +517,7 @@ attractive choice as photo-detectors for the PD system.
 
 \item{High intrinsic gain at ranging from 105 to 107 depending on the
   overvoltage.}
-\item{Low dark rate at cryogenic temperatures – less than 50 Hz even
+\item{Low dark rate at cryogenic temperatures - less than 50 Hz even
   at the maximum overvoltage.}
 \item{Insensitive to external magnetic field.}
 \item{Gain vs. overvoltage is extremely linear.}\
@@ -526,7 +526,7 @@ attractive choice as photo-detectors for the PD system.
 \item{Small dimensions allow simple, compact and robust design.}
 \item{No need for high voltage (HV) power.}
 \item{Bias voltage required is typically less than 100 V, and even
-  less than 30 V in some cases, resulting in low peripheral costs.}
+  less than 30~V in some cases, resulting in low peripheral costs.}
 \item{Gain and PDE remain high at cryogenic temperatures.}
 
 \end{itemize}
@@ -592,7 +592,7 @@ PD system requires high sensitivity photo-detectors to detect argon
 scintillation light, despite its excellent scintillation yield due to
 a very small surface area of the PDs.  The late scintillation light in
 argon reprsents 2/3 of the total scintillation light, but it is spread
-over 1100~–~1600~ns, making the individual late light signals very
+over 1100 - 1600~ns, making the individual late light signals very
 small in average.
 
 SiPM characteristics from the data sheets satisfy these requirements
@@ -636,7 +636,7 @@ picture of the actual circuit as built.
 \end{cdrfigure}
 
 As previously mentioned, tests focused on Hamamatsu and SenSL produced
-8SiPMs. However, Indiana University group found out that Hamamatsu
+8 SiPMs. However, Indiana University group found out that Hamamatsu
 SiPMs are placed in a dewar inside a copper plated dark box and cooled
 with LN2. SiPMs are held in place on the PCB with acrylic holder as
 shown in the Fig~\ref{sipm_mount}.
@@ -653,6 +653,113 @@ shown in the Fig~\ref{sipm_mount}.
     is secured to the wooden lid that closes the dewer.}   
   \includegraphics[width=.6\columnwidth]{sipm_mount.png}
 \end{cdrfigure}
+
+To address the issue of different contraction rates of materials in
+LN2 that produced mechanical damage to some of the SiPMs, a PCB board
+with spring loaded POGO pins is used (based on the previous design by
+the Colorado State University group) to provide contact to SiPMs and
+hold SiPMs in place with acrylic housing rather than solder joints. We
+have also acquired special cryo rated, compact MMCX connectors, as the
+solder joints of the signal and power wires have been breaking from
+repeated usage.
+
+The SiPM bias voltage is delivered via POGO pins and SiPM signal is
+sent via POGO pins to the DAQ. The signal is amplified via two inline
+low noise amplifiers and read out by oscilloscope. SiPMs are
+illuminated by a 1~ns long laser pulses from the tunable wavelength
+laser system. Laser light intensity is regulated with a Fine Laser
+Intensity Controller (FLIC), a computer controlled system allowing us
+to tune laser intensity through several orders of magnitude with
+various stages, important for linearity measurements. Signal waveforms
+from Waverunner LeCroy oscilloscope are recorded and analyzed
+afterwards.
+
+We have also noted that the SiPMs require lower bias voltage when
+cooled in LN2, which requires determination of the optimal operating
+voltage at LAr temperature as dark rates also increase with bias
+voltage. Additional tests showed excellent gain at cryogenic
+temperatures as can be seen from the tests conducted on the SenSL C
+series SiPM MicroFC-600-35-SMT (previous M and B series also tested)
+shown in Fig~\ref{sipm_gain}. along with clearly distinguished pulses
+for 1, 2, 3 and 4 photelectron pulses.
+
+\begin{cdrfigure}[SiPM SenSL C series gain tested in LN2 is shown on
+    the right hand side. Excellent linearity over the entire
+    overvoltage range observed. There is a significant change of gain
+    with increasing bias voltage, effectively doubling between the
+    minimum and maximum tested bias voltage. Clearly distinguished
+    numbers of photoelectrons can be seen in the left hand
+    figure.]{sipm_gain}{SiPM SenSL C series gain tested in LN2 is
+    shown on the right hand side. Excellent linearity over the entire
+    overvoltage range observed. There is a significant change of gain
+    with increasing bias voltage, effectively doubling between the
+    minimum and maximum tested bias voltage. Clearly distinguished
+    numbers of photoelectrons can be seen in the left hand figure.}    
+  \includegraphics[width=1.0\columnwidth]{sipm_gains.png}
+\end{cdrfigure}
+
+The dark rate increases significantly with bias voltage, but the
+overall rate is very small when SiPMs are cooled down to 80 K as can
+be seen in Fig.~\ref{sipm_dark}.
+
+\begin{cdrfigure}[SiPM SenSL C series dark rate with two different
+    data runs in LN2. While dark rate increases for an order of
+    magnitude, it is still less than 50 Hz even at the highest bias
+    voltage setting.]{sipm_dark}{SiPM SenSL C series dark rate with
+    two different data runs in LN2. While dark rate increases for an
+    order of magnitude, it is still less than 50 Hz even at the
+    highest bias voltage setting.}     
+  \includegraphics[width=0.6\columnwidth]{sipm_dark_rates.png}
+\end{cdrfigure}
+
+Afterpulsing is another important aspect of SiPM
+performance. Afterpulsing increases noise and obstructs detection of
+late argon scintillation light. Results of the afterpulsing
+measurement performed on the SenSL C series, cooled down SiPM show
+very small afterpulsing fraction below 1\% for most overvoltage
+values, as can be seen in Fig.~\ref{sipm_after}.
+
+\begin{cdrfigure}[SenSL C series SiPM afterpulsing fraction for 5
+    different SiPMs, with system being completely cooled
+    down.]{sipm_after}{SenSL C series SiPM afterpulsing fraction for 5
+    different SiPMs, with system being completely cooled down.}      
+  \includegraphics[width=0.6\columnwidth]{sipm_afterpulsing.png}
+\end{cdrfigure}
+
+SenSL C series SiPMs were also tested for cross-talk. Cross-talk gives
+a measure of the light hitting one pixel, also produces signal in
+adjacent pixels and effectively distorts the signal
+strength. Fig.~\ref{sipm_crosstalk}. shows the test
+results. Cross-talk is a strong function of overvoltage which will be
+another criteria in choosing the operating overvoltage for the PD
+system.
+
+Although, not presented here, SenSL B series SiPM MicroFB-600-35-SMT
+were also tested and satisfy our requirements, based on the tests
+conducted so far. However, we have not performed yet a full set of
+tests including mechanical integrity from thermal cycling and
+cross-checks. 
+
+\begin{cdrfigure}[SenSL C series SiPM cross-talk measurement based on
+    two separate runs in LN2. Cross-talk is a strong function of
+    overvoltage and is very consistent between the
+    runs.]{sipm_crosstalk}{SenSL C series SiPM cross-talk measurement
+    based on two separate runs in LN2. Cross-talk is a strong function
+    of overvoltage and is very consistent between the runs.}       
+  \includegraphics[width=0.6\columnwidth]{sipm_crosstalk.png}
+\end{cdrfigure}
+
+In parallel with performance test, mechanical cryogenic tests were
+conducted where the number of cycles and time spent at LN2 temperature
+has been logged. This important test has started recently, but will
+involve testing a number of devices for extended period of time and
+examining mechanical status under the microscope along with
+performance tests. 
+
+Future steps involve increasing the testing sample of C series SiPMs
+and evaluating several alternatives to avoid the risk of sole source
+vendor. 
+
 
 \section{Mechanical Support}
 
