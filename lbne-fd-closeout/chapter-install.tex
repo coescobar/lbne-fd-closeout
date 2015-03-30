@@ -56,22 +56,7 @@ On-project commissioning activities include the coordination of system-checkout 
 
 \fixme{Where is reference in text to this figure?}
 \fixme{Note to author who puts in new figures: Please use the new `cdrfigure' environment. I've inserted a model just below each existing `figure' env.  Notice the label within the cdrfigure environment is ``tpc-in-two-cryostats'' but the reference needs to point to ``fig:tpc-in-two-cryostats'' (with the fig: in it) }
-\begin{figure}[htpb]
-\centering
-%\includegraphics[width=\textwidth]{}
-\caption{Cutaway view of two cryostats with TPC detectors installed}
-\label{fig:tpc-in-two-cryostats}
-\end{figure}
 
-%% model:
-\begin{cdrfigure}[short]{label}{long}
-%  \includegraphics[width=0.8\textwidth]{file}  <-- but not commented, of course!
-\end{cdrfigure}
-
-%What this one will look like:
-\begin{cdrfigure}[Cutaway view of two cryostats with TPC detectors installed]{tpc-in-two-cryostats}{Cutaway view of two cryostats with TPC detectors installed}
-%  \includegraphics[width=0.8\textwidth]{file}
-\end{cdrfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Integration (Permanent Equipment)}
@@ -256,8 +241,13 @@ Materials for the TPC will be transported down the Ross shaft from the surface t
 
 Local storage in the SURF region will be required because Detector installation is much shorter duration than the detector fabrication/assembly time. The local storage facility will also be used for checkout and 
 testing of Detector components. The installation space in the cavern is very limited and so material will be moved from the local storage to the cavern at the rate of installation. Prior to installation, a clean area 
-will need to be setup in the cavern just outside of the cryostat. After the clean area is configured, temporary installation equipment will be installed in the first cryostat. TPC installation will proceed in the 
+will need to be setup in the cavern just outside of the cryostat (Figure~\ref{fig:clean_area}. After the clean area is configured, temporary installation equipment will be installed in the first cryostat. TPC installation will proceed in the 
 first cryostat and as temporary equipment is removed from the first cryostat it will be installed into the second cryostat to prepare for installing the second TPC.
+
+\begin{cdrfigure}[Underground clean area arrangement]{clean_area}{Underground clean area arrangement}
+\includegraphics[width=0.8\textwidth]{underground_clean_area_arrangement}
+\end{cdrfigure}
+
 
 The following list of detector components and systems will be installed in the Detector Hall and cryostats: 
 
@@ -273,14 +263,8 @@ The following list of detector components and systems will be installed in the D
 \item Note: Support rails and hangers are installed during cryostat construction 
 \end{itemize}
 
-\begin{figure}[htbp]
-\centering
-%\includegraphics[width=\textwidth]{}
-\caption{TPC panels installed in cryostats } 
-\label{fig:tpc-panels-in-cryostat}
-\end{figure}
-\begin{cdrfigure}[short]{label}{long}
-%  \includegraphics[width=0.8\textwidth]{file}
+\begin{cdrfigure}[TPC panels installed in cryostats]{tpc-panels-in-cryostat}{TPC panels installed in cryostats}
+\includegraphics[width=0.8\textwidth]{TPC_installed}
 \end{cdrfigure}
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -292,9 +276,15 @@ also be used for testing and checkout of the APA after the shipment from the man
 detectors and/or the installation of cold electronics on to the APAs.  A facility for this purpose will be identified in the SURF region and arrangements will be made for its use during LAr-FD construction. Each system group is 
 responsible for delivery of its components to the storage/testing facility. The Installation and Commissioning group will provide the management and labor resources for inventory control, material handling and transport from the off-site facility to the Detector Cavern. 
 
+
 The majority of the storage/testing facility space will be required for storage and testing of APAs. The APA will be shipped from the APA assembly sites to the SURF area in semitrailers or 40 ft long cargo containers. The APAs 
-will be held in a vertical plane in a rack with one rack of about 10 APAs fitting in each trailer or container. It will expected that the racks can be removed from shipping container and the APAs can remain in the racks as they are 
-moved and stored.  The racks will have an approximate footprint of 8' x 22'. About 12 such racks will be needed for each cryostat approximately with 2500 ft2 required for all APA storage. The CPA and field cages material can be packed more compactly and will required additional space of approximately 2500 ft2.
+will be held in a vertical plane in a rack with one rack of about 10 APAs fitting in each trailer or container. It will expected that the racks can be removed from shipping container (Figure~\ref{fig:apa_ship}) and the APAs can remain in the racks as they are 
+moved and stored.  The racks will have an approximate footprint of 8' x 22'. About 12 such racks will be needed for each cryostat approximately with 2500 ft2 required for all APA storage. The CPA and field cages material can be packed more compactly and will required additional space of approximately 2,500 square feet.
+
+\begin{cdrfigure}[Concept for APA shipping containers]{apa_ship}{Concept for APA shipping containers}
+\includegraphics[width=0.8\textwidth]{apa_ship}
+\end{cdrfigure}
+
 
 The facility will also be used for checkout and testing of the APAs after the long distance shipment from the assembly sites. In addition, the facility may also be used for some assembly tasks such as installing the photon 
 detectors. Since the APAs will be exposed during these operations, the work lighting will have UV filters installed and air recirculation units will be used to maintain a clean area in the range of class 10,000 (ISO 7 equivalent). 
@@ -317,7 +307,12 @@ Ross shaft limits the width of objects that can be lowered down the shaft.
 The Ross shaft lift has provisions to attach long objects to the bottom of the cage. The APA in a special container will descend the shaft in a vertical orientation 
 (the same orientation as they will be installed), be rotated to a horizontal orientation as they are extracted from the shaft, then moved along the access drift on a cart to the cavern. The APA transportation container consists of 
 an internal rack that can be extracted from the outer container thus avoiding moving the outer container into the clean area used for installation. The internal rack will be used to hold the APA in the installation area until they 
-are installed. Empty racks will be returned to the warehouse for reloading in the transportation container.
+are installed. Empty racks will be returned to the warehouse for reloading in the transportation container. Figure~\ref{fig:warehouse_arrangement} shows the warehouse arrangement.
+
+\begin{cdrfigure}[Warehouse arrangement]{warehouse_arrangement}{Warehouse arrangement}
+\includegraphics[width=\textwidth]{warehouse_arrangement}
+\end{cdrfigure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Setup and equipment arrangement in clean area (Fowler)}
@@ -394,8 +389,8 @@ transferred to the support rails and then rolled into final position (zone 3).}
 Signal and power cables will be installed from the cryostat feedthrough ports next to the APA support rods, shown in Figure~\ref{fig:tpc-install-feedthroughs}, along the rails to the point where the connection to the APAs will be made. The cables will be 
 preplaced and tested before APA installation begins.  Editor’s Note: Figure~\ref{fig:tpc-install-feedthroughs} is for a 17-kton fiducial mass cryostat. The 5-kton cryostat is shorter and has fewer rows.  
 
-\begin{cdrfigure}[Feedthroughs]{tpc-install-feedthroughs}{lFeedthroughs}
-%  \includegraphics[width=\textwidth]{file}
+\begin{cdrfigure}[Feedthroughs]{tpc-install-feedthroughs}{Feedthroughs}
+\includegraphics[width=\textwidth]{feedthroughs}
 \end{cdrfigure}
 
 
