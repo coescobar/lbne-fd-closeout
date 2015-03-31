@@ -2,6 +2,9 @@
 \label{ch:photon}
 \section{Introduction}
 
+\fixme{In our 2012 CDR we started each chapter with:  The scope of the (whichever) subsystem includes the design, procurement, fabrication, testing, delivery and installation of the mechanical and high voltage components of the (blah); followed by list of components -- see the TPC chapter. At this late date, not sure it's worth it...}
+
+
 Liquid argon is an excellent scintillating medium. With an average
 energy needed to produce a photon of 19.5~eV (at zero field) a typical
 particle depositing 1~MeV in liquid argon will generate 40,000~photons
@@ -23,17 +26,17 @@ be helpful in background rejection.
 There are no requirements for the beam-based physics program, as the
 machine clock will provide a $t_{0}$ with roughly 10 $\mu$s
 resolution. Given that the electron drift is 1.6 mm/$\mu$s the
-uncertainty to the electron lifetime correction is small is the beam
+uncertainty to the electron lifetime correction is small is \fixme{when?} the beam
 timing is used. The photon system can be useful in determining the
 $t_{0}$ of cosmic ray events and events from radiological decays as
 well as giving a handle to the location of beam events in the LAr
-volume wuth respect to fiducial boundaries. The impact of the LAr
-scintillaiton light on the detector performance needs to be
+volume with respect to fiducial boundaries. The impact of the LAr
+scintillation light on the detector performance needs to be
 determined, but it is not expected that the reduction in backgrounds
 for the oscillation program will introduce additional requirements to
 the photon system design.
 
-\subsection{Proton decay and atmospheric physics}
+\subsection{Proton Decay and Atmospheric Physics}
 
 The photon detector system must provide the t$_0$ for non-beam related
 physics channels if a correction for electron recombination during
@@ -45,7 +48,7 @@ charge must be accurately corrected for recombination. Therefore the
 photon system must provide a $t_{0}$ for particles with >100 MeV with
 >95\% efficiency in the fiducial volume of the detector.
 
-\subsection{Low-energy physics}
+\subsection{Low-energy Physics}
 
 Supernova events will produce neutrinos down to about
 $\sim$5~MeV. Studies have estimated the momentum resolution for 5 MeV
@@ -53,12 +56,14 @@ electrons to be 20\% using only TPC information and assuming a highly
 efficient trigger and an electron lifetime of 5 ms. The impact of
 various detector resolutions on the physics potential of LBNE has not
 been studied in detail. At present there is no strong requirement that
-the energy resolution must be better than 20\% so no requirement on
+the energy resolution %must 
+be better than 20\%, so no requirement on
 the photon system trigger efficiency is set at this time. However it
-is clear that if a detector design can be found the energy resolution
+is clear that if a detector design can be found, \fixme{clarify `detector design can be found'} the energy resolution
 would greatly improve. A goal of the photon detection R\&D is to
 develop a system with the lowest possible threshold for a reasonable
-cost. At time of the start of final design a final decision as to the
+cost. At the %time of the 
+start of final design, a final decision as to the
 configuration will need to be made based on cost and added physics
 capability.
 
@@ -66,11 +71,11 @@ capability.
 
 To achieve the physics goals in the previous section the performance
 of the photon detection system must be understood. The prototype
-readout electronics described in section~\ref{sec_elec} have been
-shown to detect the single p.e. signals associated with the late
+readout electronics described in Section~\ref{sec_elec} have been
+shown to detect the single photoelectron (p.e.) signals associated with the late
 scintillation light but future versions may sacrifice this ability to
 mitigate high channel costs. It is assumed that the physics goals of
-the photon detection system will be met using on the prompt
+the photon detection system will be met using the prompt
 scintillation light.
 
 The performance, or overall photon collection efficiency, is given by
@@ -106,12 +111,12 @@ in table~\ref{Table-Eff}.
 \end{cdrtable}
 
 
-Using equation~\ref{eff_eqn} it is seen that to detect a
+Using Equation~\ref{eff_eqn} it is seen that to detect a
 2~p.e. signal, likely to be discriminated from noise, the transport
-efficiency of 1.2\%. Of course this value is very position dependent
-as the geometric acceptance, wire shadowing, and transport corrections
+efficiency is 1.2\%. Of course this value is very position-dependent,
+as the geometric acceptance, wire shadowing and transport corrections
 all depend on the location of the event. Figure~\ref{fig:photon_map}
-shows the probability of (?) MeV energy deposition neing detected in
+shows the probability of (?)\fixme{} MeV energy deposition being detected in
 the photon detectors. 
 
 \begin{cdrfigure}[Probability of photon being detected in
@@ -122,10 +127,10 @@ the photon detectors.
 \end{cdrfigure}
 
 
-The TPC wire mesh shadowing is also quite location dependent as photon
+The TPC wire mesh shadowing is also quite location-dependent as photon
 angles, relative to the wire plane, lead to rapid loss in transmission
-below 30$^{\circ}$ and greater than 150$^{\circ}$. Lastly the photon
-detector paddles themselves can have position dependent response to
+below 30$^{\circ}$ and greater than 150$^{\circ}$. Lastly, the photon
+detector paddles themselves can have position-dependent response to
 incident photons due to the attenuation length of the waveguide. The
 photon detector simulation, which is nearing stable operation, will be
 able to better estimate the efficiencies coming from geometric
@@ -137,25 +142,25 @@ In the event that higher photon collection efficiencies can be
 achieved it should be possible to improve the energy resolution of the
 detector by adding the photon yield to the electron yield information.
 However this requires several orders of improvement in light
-collection efficiency so it is beyond the scope of present designed.
+collection efficiency, so it is beyond the scope of the present design.
 
 \section{Photon Detector Prototype Designs}
 
-All design considered for the photon detector have been based on the
+All designs considered for the photon detector have been based on the
 use of wavelength-shifting coating, or bulk doping, of plastic
 materials coupled to silicon photomultipliers (SiPMs). The reference
-design~\ref{sec_bars} utilizes a coated acrylic waveguide coupled to
-SiPMs. Alternatate designs, desribed in the following section, have
-been developed to optimize coverage, cost, and attenuation length. 
+design, described in Section~\ref{sec_bars}, utilizes a coated acrylic waveguide coupled to
+SiPMs. Alternate designs, desribed in the following sections, have
+been developed in an effort to optimize coverage, cost and attenuation length. 
 
-\subsection{Cast or Bulk doped acrylic bars}
+\subsection{Cast or Bulk Doped Acrylic Bars}
 \label{sec_bars}
 
 The reference design for the photon detection system is based on light
-guides that are coated with wavelength shifter. The 128 nm
+guides that are coated with wavelength shifter. The 128-nm
 scintillation photons from liquid argon interact with the wavelength
-shifter on the light guide surface and 430 nm light is re-emitted in
-the bar.  The light guide channels the light to photodectors at its
+shifter on the light guide surface and 430-nm light is re-emitted in
+the bar.  The light guide channels the light to photodetectors at its
 end.
 
 A schematic drawing of a light guide with its photosensors is shown in
@@ -171,12 +176,12 @@ Ref.~\cite{bib:MITbars}.
     \includegraphics[width=.85\columnwidth]{cast-acryl-lightguide}
 \end{cdrfigure}
 
-The wavelength shifter converts VUV scintillation photons striking it
-to 430~nm photons inside the bar, with an efficiency of $\sim$50\% of
-converting a VUV to an optical photon~\cite{bib:gehman}.  A fraction
+The wavelength shifter converts incident VUV scintillation photons %striking it
+to 430~nm photons inside the bar, with an efficiency of $\sim$50\% %of
+for converting a VUV to an optical photon~\cite{bib:gehman}.  A fraction
 of the waveshifted optical photons are internally reflected to the
 bar's end where they are detected by SiPMs whose QE is well matched to
-the 430~nm waveshifted photons. The light guides were made with one of
+the 430-nm waveshifted photons. The light guides were made with one of
 two wavelength shifters: the conventional TPB
 (1,1,4,4-tetraphenyl-1,3-butadiene) and the less expensive alternative
 bis-MSB (1,4-bis-(o-methyl-styryl)-benzene). Preliminary studies with
@@ -185,8 +190,8 @@ favorably in their waveshifting efficiency~\cite{bib:baptistaJINST}. A
 testing program is currently underway to compare their relative
 performance in liquid argon.
 
-The prototype light guides being studied at Indiana are made with
-different three technologies. These technologies are listed in
+A team at Indiana University is studying prototype light guides made with three 
+different technologies. These technologies are listed in
 Table~\ref{tab:lightGuides}.
 
 \begin{cdrtable}[Light guide technologies]{ c l  l }{lightGuides}
@@ -199,45 +204,45 @@ Table~\ref{tab:lightGuides}.
 
 
 
-(a) The clear acrylic bars are made from blanks of commercially
+The clear acrylic bars (a) are made from blanks of commercially
 available Lucite-UTRAN cast UVT acrylic sheet that has been laser-cut
 and diamond-polished into bars of the proper size.  Lucite-UTRAN has
 the longest attenuation length of the acrylics
 tested~\cite{bib:mufsonJINST}.  The
-Eljen\footnote{http://www.eljentechnology.com} bars are commercial
+Eljen\footnote{http://www.eljentechnology.com} bars (b and c) are commercial
 light guides that are doped with J2 green fluor (equivalent to Y11).
-Two types of light guides were purchased from Eljen.  (b) The light
-guides were fabricated from polyvinyl toluene (PVT).  These are the
+Two types of light guides were purchased from Eljen.  The light
+guides (b)  were fabricated from polyvinyl toluene (PVT); these are the
 standard Eljen product EJ-280.  The quantum efficiency of the
 fluorescent dopant in EJ-280 is 0.86, so the second shift in
 wavelength does not markedly degrade the photon detector efficiency.
-(c) The light guides were fabricated from polystyrene.  These light
+The light guides (c) were fabricated from polystyrene; these light
 guides were ordered because PVT bars can craze if cooled too rapidly.
 Although the PVT light guides may be brighter, no instance of crazing
 has ever been observed in polystyrene light guides.
 
 For the acrylic light guides, the WLS must be embedded in the plastic
-at the bar's surface so that 128~nm scintillation photons can generate
-optical 430~nm photons within the volume of the plastic.  Otherwise
+at the bar's surface so that 128-nm scintillation photons can generate
+optical 430-nm photons within the volume of the plastic.  Otherwise
 the VUV photons will not be trapped by the light guide.  For the Eljen
-bars, the wavlength shifter can either be embedded in the plastic as
-with the acrylic.  Or it can be deposited on a plate or film placed in
+bars, the wavlength shifter can either be embedded in the plastic, as
+with the acrylic, or it can be deposited on a plate or film placed in
 proximity to the light guides.  The J2 wavelength shifter then
-converts the resulting 430~nm photons inside the light guides where
+converts the resulting 430-nm photons inside the light guides where
 they are channeled to the photodetectors.
 
 To embed the WLS at the surface of the light guides, a ``dip-coating''
 process was developed at Indiana University.  Before the WLS was
-applied to the acrylic bars, they were annealed at 80$^\circ$C for one
-hour.  The Eljen bars were not annealed.  The WLS was dissolved in the
+applied to the acrylic bars, the bars were annealed at 80$^\circ$C for one
+hour.  (The Eljen bars were not annealed.)  The WLS was dissolved in the
 organic solvent dichlormethane (CH$_2$Cl$_2$).  For these waveguides
-there were 5 gm of wavelength shifter dissolved in 1,000~gm of DCM.  A
+5~g of wavelength shifter was dissolved in 1,000~gm of DCM.  A
 series of experiments showed that this concentration was optimum.  A
 bar was first dipped into the WLS mixture for 15 seconds and then
 removed.  It was then hung in the dark for at least two hours to dry.
 Once dry, the ends of the bars were flycut.  Currently designs are
 being fabricated that put an acrylic plate painted with WLS or a thin
-film impregnated with WLS in front of the Eljen light guides .
+film impregnated with WLS in front of the Eljen light guides.
 
 In summer 2015 these designs will all be tested side-by-side at the
 TallBo dewar facility at Fermilab under uniform, low-contamination
@@ -245,36 +250,37 @@ conditions.  In addition to the designs described above, these tests
 will include photon detector designs from Colorado State University
 and Louisiana State University.  This experiment will compare the
 relative performance and the absolute efficiency for all designs
-scaled to 1.5 m.
+scaled to 1.5~m.
 
-\subsection{Fiber-embedded bulk acrylic plate}
+\subsection{Fiber-embedded Bulk Acrylic Plate}
 
-At LSU, Thomas Kutter and team have developed a VUV photon detector
+%At LSU, Thomas Kutter and his team have 
+The LSU team has developed a VUV photon detector
 design for a large LAr detector that overcomes some of the
-shortcomings of the present LBNE baseline photon detectors. The LSU
-photon detector design allows for a very large area coverage thereby
+shortcomings of the present LBNE baseline \fixme{define `baseline' here; do you mean `reference design'?} photon detectors. The LSU
+photon detector design allows for coverage of a very large area, thereby
 increasing the geometrical acceptance of the photon detectors. The
 number of required SiPMs and readout channels per unit detector area
 covered with photon detection panels has been significantly reduced to
 keep the overall cost for the photon detection system at or below the
-present design while increasing the geometrical acceptance at the same
-time.
+present design while increasing the geometrical acceptance. % at the same time.
 
-The photon detection system consists of a TPB coated acrylic panel
+The photon detection system consists of a TPB-coated acrylic panel
 with an embedded S-shaped wavelength shifting (WLS) fiber. The fiber
-is read out by two SiPMs, which are coupled to either end of the fiber
+is read out by two SiPMs, which are coupled to either end of the fiber,
 and serves to transport the light over long distances with minimal
-attenuation. The double-ended fiber readout has the added benefit to
-provide some position dependence to the light generation along the
+attenuation. The double-ended fiber readout has the added benefit of
+providing some position dependence to the light generation along the
 panel by comparing relative signal sizes and arrival times in the two
-SiPMs. Figure \ref{fig:1-LSU} show a drawing of the layout and a
-picture of a prototype photon detection panel in the test stand at
-LSU.  The incoming 128nm VUV Ar scintillation light will be converted
+SiPMs. Figure~\ref{fig:1-LSU} shows a drawing of the layout and a
+photograph of a prototype photon detection panel in the test stand at
+LSU.  The incoming 128-nm VUV Ar scintillation light will be converted
 by the thin TPB layer on the acrylic panel and re-emitted with
-wavelength peaking at 430nm in an isotropic way. About 50\% of the
-light would be emitted into the acrylic panel where some fraction will
+wavelength peaking at 430~nm in an isotropic way. About 50\% of the
+light %would be 
+is emitted into the acrylic panel where some fraction will
 be absorbed by the WLS fiber and converted to light with a peak
-intensity of about 480 - 500~nm. The green light exiting the fiber is
+intensity of about 480 -- 500~nm. The green light exiting the fiber is
 well matched to the peak photon detection efficiency of typical SiPMs.
 
 \begin{cdrfigure}[LSU photon-detection panel]{1-LSU}{LSU photon-detection panel. Technical drawing of a $20"\times4.33"$ acrylic panel with embedded WLS fiber (left) and picture of a prototype in test set-up at LSU (right) with the same dimensions.}
@@ -285,57 +291,59 @@ well matched to the peak photon detection efficiency of typical SiPMs.
 
 
 \subsection{LSU Photon detection panel production}
-The photon detection panels are produced from 0.25\" thick
+
+The photon detection panels are produced from 0.25-inch-thick
 sheet UVT acrylic and cut to size. For a first series of prototypes
 the acrylic panel dimensions were chosen to closely match the area of
-4 bars of the LBNE baseline photon detection system.  The groove is
+four bars of the LBNE baseline \fixme{reference?} photon detection system.  The groove is
 cut with a CNC mill in several passes to achieve good groove surface
 quality, which is important for good light transmission from the bulk
 acrylic to the fiber. The panels are dip coated with TPB and left to
 dry prior to insertion of the WLS fiber. Panels with two and three
 layers of fibers inserted and glued into the groove have been
 produced. Fiber ends are cut and polished.  The resulting acrylic
-panels are then inserted into a custom made mechanical frame which was
-designed by David Warner at CSU. The end caps of the mechanical frame
-house one SiPM on either end. The presently used 6x6 mm2 active area
-SiPM are spring mounted to ensure good contact between the active area
+panels are then inserted into a custom-made mechanical frame.% which was designed by David Warner at CSU. 
+The end caps of the mechanical frame
+house one SiPM on either end. The presently used $6\times6 mm^2$ active-area
+SiPMs are spring-mounted to ensure good contact between the active area
 and the fiber ends.  The leads of the SiPMs are connected to a small
-PCB onto which ~2m long twisted pair coax cables are soldered to
-supply the SiPM with a bias voltage and read out signals. The other
+PCB onto which $\sim$2-m-long twisted-pair coax cables are soldered to
+supply the SiPM with a bias voltage and to read out signals. The other
 cable ends are typically connected to pre-amplifiers before leading to
 a DAQ system.  Components for the photon detection panels are
 inspected at all stages of the manufacturing process for quality. Due
-to the small number of panels produced to date no quantitative quality
+to the small number of panels produced to date, no quantitative quality
 control parameters have been defined yet.  Proper connectivity of the
 fully assembled units are tested in a setup at LSU using a LED
-flasher. If LED light signals are seen the panel is successively
+flasher. If LED light signals are seen, the panel is successively
 immersed in gaseous argon (GAr) along with an alpha source. The
-observation of argon scintillation light originating from alpha
-particles and cosmic-rays penetrating the GAr volume allows for a
-relatively quick quality control check of a completed photon detector
+observation of %argon 
+scintillation light originating from alpha
+particles and cosmic rays penetrating the GAr volume allows for a
+relatively quick quality-control check of a completed photon detector
 at room temperature.
 
-\subsection{Proof of concept and prototype detector results}
-Several photon detector panels of $20" \times 4.33"$ have been
+\subsection{Proof-of-Concept and Prototype Detector Results}
+
+Several photon detector panels of $20 \times 4.33 in^2$ have been
 produced and two have been tested in a LAr test stand at CSU. The
-detectors submitted to the cold test have 3 and 2 embedded fibers,
+detectors submitted to the cold test have three and two embedded fibers,
 respectively, but are otherwise produced in the same way. The data
-taking in LAr included self triggered alpha source scans as well as
-cosmic runs with a muon hodoscope providing a trigger for near
-vertical muons penetrating the LAr volume.
-\paragraph{Alpha source runs:} The alpha source was placed at a distance of about 1" in front of the center line of the photon panel and moved to 20 different positions spaced about 1" apart from neighboring positions. At each position 5000 signal traces were recorded and measurements were repeated for three of the positions to check the reproducibility of the measured light yield. Figure \ref{fig:2-LSU} shows results for both successively measured panels. The red and blue dots show the mean light yield values in units of p.e. (photo electron equivalents = no. of fired SiPM pixels) for the SiPM on the top and bottom end of the panel as function of source position. Green dots show the sum of both channels. The summed signals provide a very uniform detector response for the entire panel and independent of the alpha source position. The data also indicate good reproducibility for the doubly measured positions.
-The 3-fiber panel shows about 50\% more light when compared to the
-2-fiber panel which is in good agreement with expectations. It needs
+taken in LAr included self-triggered alpha source scans as well as
+cosmic runs with a muon hodoscope providing a trigger for near-vertical muons penetrating the LAr volume.
+\paragraph{Alpha source runs:} The alpha source was placed at a distance of about 1~inch in front of the center line of the photon panel and moved to 20 different positions spaced about 1~inch apart from neighboring positions. At each position 5000 signal traces were recorded and measurements were repeated for three of the positions to check the reproducibility of the measured light yield. Figure~\ref{fig:2-LSU} shows results for both successively measured panels. The red and blue dots show the mean light yield values in units of p.e. (photo electron equivalents = no. of fired SiPM pixels) for the SiPM on the top and bottom end of the panel as function of source position. Green dots show the sum of both channels. The summed signals provide \fixme{indicate?} a very uniform detector response for the entire panel, independent of the alpha source position. The data also indicate good reproducibility for the doubly measured positions.
+The three-fiber panel shows about 50\% more light when compared to the
+two-fiber panel, which is in good agreement with expectations. It needs
 to be pointed out that the LAr purity was not monitored and that
 measurements for the two panels were performed sequentially after
 refilling the dewar with LAr. However, the liquid argon for both
-measurements came from the same batch which motivates the assumption
+measurements came from the same batch, which motivates the assumption
 that the purity for both measurements was very similar.
 
 %
 \begin{cdrfigure}[Light yield for the fiber LSU PD panels with alpha source in
-  LAr]{2-LSU}{Light yield for the 3 (left) and 2 (right) fiber LSU photon
-  detection panels in response to a 1" distant alpha source in
+  LAr]{2-LSU}{Light yield for the three (left) and two (right) fiber LSU photon
+  detection panels in response to a 1-in distant alpha source in
   LAr. Red and blue symbols represent the mean light yield over 5000
   trigger events from a single SiPM each and green points represent
  the summed signal from both SiPMs.}
@@ -344,13 +352,13 @@ that the purity for both measurements was very similar.
 \end{cdrfigure}
 
 %
-\paragraph{Cosmic trigger runs:} Two $ 1" \times 10"$ wide scintillator counters were placed above and below the dewar to form a muon hodoscope and to select near vertical muons traversing the LAr volume. The 3-fiber LSU panel and one LBNL/Elgin Bis-MSB doped polystyrene bar of LBNE baseline dimensions and read out by three SiPMs were simultaneously inserted in the LAr. The setup allowed the study of the response of these photon detectors to scintillation light created by penetrating cosmic muons. A detailed quantitative comparison of the relative light yield was not possible with this setup due to large systematic uncertainties in the position dependence of the scintillation light generation by the triggering cosmic muons. A qualitative comparison of the detector responses, taken as the signal sum of 3 and 2 SiPMs for the Elgin bar and the LSU panel, respectively, shows comparable light yields as shown in figure \ref{fig:3-LSU}. 
+\paragraph{Cosmic trigger runs:} Two $ 1" \times 10"$ wide scintillator counters were placed above and below the dewar to form a muon hodoscope and to select near-vertical muons traversing the LAr volume. The three-fiber LSU panel and one LBNL/Elgin Bis-MSB doped polystyrene bar of LBNE baseline dimensions and read out by three SiPMs were simultaneously inserted in the LAr. The setup allowed the study of the response of these photon detectors to scintillation light created by penetrating cosmic muons. A detailed quantitative comparison of the relative light yield was not possible with this setup due to large systematic uncertainties in the position dependence of the scintillation light generation by the triggering cosmic muons. A qualitative comparison of the detector responses, taken as the signal sum of three and two SiPMs for the Elgin bar and the LSU panel, respectively, shows comparable light yields as shown in Figure~\ref{fig:3-LSU}. 
         
 %
 %
-\begin{cdrfigure}[Summed charge plots of SiPMs in response to muon hodoscope trigger]{3-LSU}{Scatter plot of the summed charge of 3 SiPMs coupled to the
- LBNL/Elgin Bis-MSB doped bar and the summed charge of 2 SiPMs for
- the 3-fiber LSU panel in response to an external muon hodoscope
+\begin{cdrfigure}[Summed charge plots of SiPMs in response to muon hodoscope trigger]{3-LSU}{Scatter plot of the summed charge of three SiPMs coupled to the
+ LBNL/Elgin Bis-MSB doped bar and the summed charge of two SiPMs for
+ the three-fiber LSU panel in response to an external muon hodoscope
  trigger. The right plot shows a zoomed version of the left plot.}
    \resizebox{.48\textwidth}{!}{\includegraphics[width=0.45\linewidth]{LSU_panel_prototype_charge.png}}
    \resizebox{.48\textwidth}{!}{\includegraphics[width=0.8\linewidth]{LSU_panel_prototype_charge_zoom.png}}
@@ -358,28 +366,28 @@ that the purity for both measurements was very similar.
 
 %
 
-\subsection{R\&D Work in progress and present Plans }
+\subsection{R\&D Work in Progress and Present Plans }
 
-After the construction and proof of principle test of the LSU style
-photon detection panels we manufactured several 2.17m long and 110mm
-(=4.33") wide panels to demonstrate the scalability of the design.  At
-the time of writing tests in the large LAr dewar at CSU are in
-progress.  We are performing alpha source scans and cosmic muon runs.
+After the construction and proof-of-principle test of the LSU-style
+photon detection panels %we manufactured 
+several 2.17-m-long and 110-mm-wide 
+(=4.33") panels were manufactured to demonstrate the scalability of the design.  At
+the time of writing, tests in the large LAr dewar at CSU are in
+progress.  The team is performing alpha source scans and cosmic muon runs.
 The alpha source scan runs are arranged such that the source
 illuminates two photon detectors at the same time.  This setup
 facilitates quantitative and relative light yield comparison between
-different photon detector designs in the same LAr bath with a well
-defined VUV light source.
+different photon detector designs in the same LAr bath with a well-defined VUV light source.
 
 Manufacturing and testing of wider panels is under consideration to
-maximize the photon detector panel area in the ELBNF LAr far
+maximize the photon detector panel area in the DUNE LAr far
 detector. The goal is to cover the entire anode plane assembly (APA)
 area with photon detectors embedded into the APA frame.  Another
 important measurement goal is to establish the energy threshold of the
 photon detection panels. A study will be conducted for the photon
-detectors presently installed in the 35t detector using Michel
-electrons. The 35t detector contains one of the 3-fiber LSU photon
-detection panels. In addition, alpha source runs in a well-controlled
+detectors presently installed in the 35t detector \fixme{reference sec in r\&d chap} using Michel
+electrons. The 35t detector contains one of the three-fiber LSU photon
+detection panels. In addition, performing alpha source runs in a well-controlled
 and monitored LAr setup may provide information on the particle energy
 threshold for observation of VUV scintillation light.  The measurement
 of a photon detector panel's light yield as function of the source
@@ -387,17 +395,18 @@ distance is another key measurement to estimate the response and
 sensitivity of the full photon detection system in a LAr
 detector. Results will be useful to validate MC simulations.  We are
 exploring options to perform these tests in the large dewar setup at
-CSU or alternatively in the TallBo setup at FNAL.
+CSU or alternatively in the TallBo setup \fixme{ref?} at FNAL.
 
 The TPB coating procedure of the acrylic panels has not yet been
-optimized and improvements may be possible. We foresee a systematic
-study to identify parameters in the TPB dip and alternatively the
+optimized and improvements may be possible. A systematic
+study is foreseen to identify parameters in the TPB dip and %alternatively 
+in the
 evaporation coating procedure to maximize the light yield of resulting
 samples. These tests will be performed on small
 $10\times10~\mathrm{cm}^2$ acrylic panels with a U-shaped embedded WLS
-fiber.  On the software and analysis side we are in the process of
-improving our tools to study position dependence for alpha source run
-data using relative signal timing and size. Furthermore, we plan to
+fiber.  On the software and analysis side, %we are in the process of improving our 
+tools are being improved to study position dependence for alpha-source run
+data using relative signal timing and size. Furthermore, it is planned to
 continue work on analysis algorithms to identify the late light
 component from argon scintillation.
 
@@ -408,23 +417,24 @@ cones will be pursued and explored more rigorously to provide timely
 results.
 
 
-\subsection{Fiber bundle with WS-coated readiator}
+\subsection{Fiber Bundle with WS-coated Radiator}
 
-The driving cost of the photon detector system is readout
-electronics. A reduction in attenuation length has been observed for
-acrylic waveguids that have been doped with TPB. Once scenario to
-address this reduction is to populate the PD system with half-length
-paddles. Of course this leads to an increase in the number of readout
-channels. While it may be possible to combine readout channels to
-mitigate the increase in overall number a more desirable soultion
-would be to address the attenuaton length issue.   
+A reduction in attenuation length has been observed in
+acrylic waveguides that have been doped with TPB. One possible way to
+address this reduction would be to populate the PD system with half-length
+paddles. However, this would lead to an increase in the number of readout
+channels, and readout
+electronics is the driving cost of the photon detector system. While it may be possible to combine readout channels to
+mitigate the increase in overall number, a more desirable soultion
+would be to address the attenuaton length issue.  \fixme{by `address' do you mean make it longer?} 
 
-To mitigate the reduced attenuation length of acrylic and polystyrene
-that have been either doped with or coated with TPB the CSU group has
-been developing an alternative design that is based on UV to blue
+To mitigate the reduced attenuation length in TPB-doped or -coated acrylic and polystyrene,
+%that have been either doped with or coated with TPB, 
+the CSU group has
+been developing an alternative design based on UV-to-blue
 wavelength shifting fiber (Y11) that has not been treated with TPB.  A
-thin TPB coated acrylic radiator located in front of a close packed
-array of WLS fibers. Figure~\ref{fig:fiber_bundle} is a photograph of the
+thin TPB-coated acrylic radiator located in front of a close-packed
+array of WLS fibers. Figure~\ref{fig:fiber_bundle} shows a photograph of the
 fiber-bundle prototype. 
 
 \begin{cdrfigure}[Fiber-bundle PD prototype (early one-sided
@@ -437,65 +447,71 @@ fiber-bundle prototype.
 
 The VUV photons are incident on the TPB-coated plastic radiator and
 roughly half of the photons converted in the radiator are incident on
-the bundle fiber bundle. The photons in the Y11 fiber are then which
-are directed onto SiPMs at one end. The Y11 fiber (from Kuraray ) have
-mean absorption and emission wavelengths of about 440 nm and 480 nm
+the %bundle 
+fiber bundle. %The photons in the Y11 fiber 
+These photons are then directed onto SiPMs at one end. The Y11 fiber (from Kuraray ) have
+mean absorption and emission wavelengths of about 440~nm and 480~nm
 respectively.  The attenuation length of the Y11 fibers is given to be
-greater than 3.5 m at the mean emission wavelength, which allows
-production of full-scale (2.2 m length) photon detector paddles.
+greater than 3.5~m at the mean emission wavelength, which allows
+production of full-scale (2.2-m length) photon detector paddles.
 
 First prototypes of this design utilized two rows of fibers with a
-reflecter behind the doubled row to redirect the ~400~nm photons back
-through the two rows if they weren't absorbed on the first pass
-through. Based on data taken at the CSU Cryogenic Detector Development
-Facility (CDDF) and the Fall 2014 FNAL Tallbo test, only a single row
-design could be considered - and is currently under development. Data
-taken at both tests showed that the front row of fibers collected
-twice as much light as the back row of fibers. The current design
-utilizes teo single rows of fibers back-to-back with layers of Tyvek
-diffuse reflector in between.
+reflector behind the double row used to redirect the unabsorbed $\sim$400~nm photons back
+through the two rows.% if they weren't absorbed on the first pass through. 
+%Based on 
+Data taken at the CSU Cryogenic Detector Development
+Facility (CDDF) and the Fall 2014 FNAL Tallbo test 
+showed that the front row of fibers collected
+twice as much light as the back row, thus
+only a single row
+design can be considered --- this is currently under development. The current design
+utilizes two single rows of fibers back-to-back with layers of \fixme{opaque?} Tyvek
+diffuse reflector between them.
 
-Another benefit of this design is that an arragement with back-to-back
-rows of fibers separated by an opaque relector arranged would then
-face into different TPC cells allowing additional information to be
+%Another benefit of this design is that an arrangement with back-to-back rows of fibers separated by an opaque relector arranged would then
+
+In this design \fixme{what? the fiber bundles?} would face into different TPC cells, allowing additional information to be
 used in the disambiguation of the TPC signals coming from wire
-wrapping on the APA frames. A further benefit of the design could be
-compatibility with concepts where the walls of the detector are
-covered with TPB coated material shifting the VUV photon to blue and
-then the WS-fiber can capture the emitted light. Further study is
-required to determine the effect of these enhancements on physics
+wrapping on the APA frames. \fixme{signals coming from wire wrapping? How about `signals coming from wires on the APA frames'?}
+If the walls of the detector were to be 
+%A possible further benefit of the design could be its
+%compatibility with concepts where the walls of the detector are
+covered with TPB-coated material shifting the VUV photon to blue,
+ the WS-fiber in this design could capture the emitted light, offering 
+ a further benefit. Further study is
+required to determine the effect these enhancements would have on the physics
 reach of the detector. 
 
 To fully exploit this approach several design optimizations need to be
-be examined including the following:
+be examined, including the following:
 
 \begin{itemize}
 
 \item{TPB coating thickness on thin radiator}
 
-\item{Double-ended readout. If the fibers are readout out from both
+\item{Double-ended readout; if the fibers are read out from both
   ends and the corresponding channels are ganged onto one readout
-  channel an increase in channel output can be obtained without
-  significant cost.}
+  channel, an increase in channel output can be obtained without
+  significant cost}
 
-\item{Use of custom doped fibers to best match the QE response of the
-  SiPMs and the emission sepctrum of the TPB.}
+\item{Use of custom-doped fibers to best match the QE response of the
+  SiPMs and the emission spectrum of the TPB}
 
-\item{Remove the radiator and coat the TPB directly onto the outer
-  fiber cladding of the Y11 fibers. Since the fibers are double-clad
+\item{Removal of the radiator and coating the TPB directly onto the outer
+  fiber-cladding of the Y11 fibers. Since the fibers are double-clad
   it may be the case that the attenuation lenth of the fibers is not
-  altered byt the TPB application. The geometry of the close-packed
+  altered by the TPB application. The geometry of the close-packed
   fiber row may lead to increased photon (400~nm) collection}
 
 \end{itemize}
 
 The cost of this design is comparable to that of the bar-based design
-but is slightly more complex to fabricate - although the Y11 fibers
-are commercially available which is an attractive feature. The
-engineering aspects of the design will be discussed in the approariate
-section of this chapter. 
+but is slightly more complex to fabricate --- although the Y11 fibers
+are commercially available, which is an attractive feature. The
+engineering aspects of the design will be discussed in the appropriate
+section of this chapter. \fixme{ref section}
 
-\section{Silicon Photo-multipliers}
+\section{Silicon Photomultipliers}
 
 Silicon Photomultipliers (SiPMs) have been selected as photon
 detectors for the far detector LArTPC photon detection system. SiPM is
