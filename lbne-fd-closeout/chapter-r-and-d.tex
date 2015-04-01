@@ -9,17 +9,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-This chapter describes the development program designed to ensure a successful and cost-effective construction and operation of the massive, dual-cryostat LArTPC detector for LBNE and to investigate possibilities for enhancing the performance of the detector. The feasibility of the LArTPC as a detector has been demonstrated most impressively by the  ICARUS experiment.
+This chapter describes the development program designed to ensure a successful and cost-effective construction and operation of the massive, dual-cryostat LArTPC detector for LBNE and to investigate possibilities for enhancing the performance of the detector. The feasibility of the LArTPC as a detector has been demonstrated most impressively by the  ICARUS experiment. \fixme{add ref?}
 %current state of the ICARUS experiment currently taking data at Gran Sasso. (Anne rmvd 3/12)
 
 It is understood that for successful operation an LArTPC has stringent requirements on
 \begin{itemize}
- \item argon purity which must be of order 200~ppt O$_2$ equivalent or better
+ \item argon purity, which must be of order 200~ppt O$_2$ equivalent or better
  \item long-term reliability of components located within the liquid argon; in particular, the TPC and field cage must be robust against wire-breakage and must support a cool-down of over 200~K
- \item the front-end electronics which must achieve a noise level ENC of $1000 e$ or better
+ \item the front-end electronics, which must achieve a noise level ENC of $1000 e$ or better
 \end{itemize}
 
-The design of the LBNE LArTPC has evolved significantly from earlier concepts based on standard, above-ground, upright cylindrical LNG storage tanks which envisioned single TPC sense and high-voltage planes spanning the full width of the tank -- essentially a direct scaling of previous detectors. Problems with the actual construction of such massive planes and with the logistics of being able to construct the TPC only after the cryostat was complete are avoided in the present design. In our design,  TPC `panels'  are fully assembled and tested  --- including the electronics ---  independently of the cryostat construction. This modular approach is a key feature of the design. It has the benefit not only of improving the logistics of detector construction, but also the individual components can be of manageable size. It should also be noted that the cryostat itself is formed of modular panels designed for quick and convenient assembly.
+The design of the LBNE LArTPC has evolved significantly from earlier concepts based on standard, above-ground, upright cylindrical LNG storage tanks which envisioned single TPC sense and high-voltage planes spanning the full width of the tank -- essentially a direct scaling of previous detectors. Problems with the actual construction of such massive planes and with the logistics of being able to construct the TPC only after the cryostat was complete are avoided in the present design. In this design,  TPC `panels'  are fully assembled and tested  --- including the electronics ---  independently of the cryostat construction. This modular approach is a key feature of the design. It has the benefit not only of improving the logistics of detector construction, but also the individual components can be of manageable size. It should also be noted that the cryostat itself is formed of modular panels designed for quick and convenient assembly.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Components of the Development Program}
@@ -83,7 +83,7 @@ of a source of clean argon ($<30$ ppt O$_{2}$ equivalent), a cryostat, a sample 
 \end{cdrfigure}
 %
 
-A noteworthy feature is the novel bubble-pump filter inside the cryostat. In case of argon contamination, this can filter the cryostat volume in a few hours, allowing us to continue studies %after the argon has been contaminated
+A noteworthy feature is the novel bubble-pump filter inside the cryostat. In case of argon contamination, this can filter the cryostat volume in a few hours, allowing continuation of studies %after the argon has been contaminated
  without having to refill. A schematic of the MTS is shown in Figure~\ref{fig:MTS_Schem}.
 
 \begin{cdrfigure}[Schematic of the Materials Test System (MTS) cryostat at Fermilab]{MTS_Schem}{Schematic of the Materials Test System (MTS) cryostat at Fermilab}
@@ -98,26 +98,28 @@ These results are taken into account in the design of both MicroBooNE and LAr-FD
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{TPC Design}
 
-A string of recent events in several liquid argon setups, such as Long Bo, DarkSide50, ArgonTube and MicroBooNE, in which the sustainable HV were much lower  than designed voltages. These experiences prompted us to reevaluate the breakdown strength of liquid argon, especially at ``detector grade'' purity. Recent studies \cite{bib:HV_in_LAr_1}\cite{bib:HV_in_LAr_2} have revealed that the HV breakdown strength depends on factors such as electrode feature size, distance, stress area/volume, and LAr purity. Although no conclusive threshold was found, the results indicate that the safe operating field in LAr is well under 100~kV/cm.
+A string of recent events in several liquid argon setups, such as Long Bo, DarkSide50, ArgonTube and MicroBooNE, in which the sustainable high voltage (HV) was much lower  than designed voltages \fixme{incomplete sentence}. These experiences prompted a reevaluation of the breakdown strength of liquid argon, especially at ``detector grade'' purity. Recent studies \cite{bib:HV_in_LAr_1}\cite{bib:HV_in_LAr_2} have revealed that the HV-breakdown strength depends on factors such as electrode feature size, distance, stress area/volume, and LAr purity. Although no conclusive threshold was found, the results indicate that the safe operating field in LAr is well under 100~kV/cm.
  
-With the uncertainty in the liquid argon HV dielectric strength, we need to focus our attention on the HV related aspects of the TPC design. A R\&D document has been compiled for the far detector (docdb 10006) which contains a section on the proposed R\&D topics and activities to reduce the high voltage related risks. Apart from the HV feedthrough, which will be design and tested above the operating voltages, we are planning to improve the designs of the CPAs and field cage modules.
+With the uncertainty in the liquid argon HV dielectric strength, attention will be focused on the HV-related aspects of the TPC design; this appears to involve the CPAs and field cage modules. \fixme{right?} An R\&D document has been compiled for the far detector \fixme{add citation} (docdb 10006) that contains a section on the proposed R\&D topics and activities to reduce the HV-related risks. Apart from the HV feedthrough, which will be designed and tested above the operating voltages, there is a plan to improve the designs of the CPAs and field cage modules.
  
-The current TPC design directly interconnect all CPAs on a cathode plane. Two of outer cathode planes are facing the grounded cryostat walls. The stored energy between one of the outer cathode plane and the cryostat wall with the full bias voltage applied is more than 150 joules (LBNE docdb 8920). This amount of energy, if released suddenly in an event of a high voltage discharge, is sufficient to raise the temperature of a cube of stainless steel with 2mm sides by 4000$^\circ$K, resulting in a leak in the membrane cryostat. Moreover, a sudden collapse of the cathode voltage will also inject very large current pulses into the front-end ASICs connected to the first induction plane wires, causing damage to the electronics.
+The current TPC design directly interconnects all CPAs on a cathode plane. Two of the outer cathode planes face the grounded cryostat walls. The stored energy between one of the outer cathode planes and the cryostat wall, with the full bias voltage applied, is more than 150 joules \fixme{add citation}(LBNE docdb 8920). This amount of energy, if released suddenly in an event of a high voltage discharge, is sufficient to raise the temperature of a cube of stainless steel with 2-mm sides by 4000$^\circ$K, resulting in a leak in the membrane cryostat. Moreover, a sudden collapse of the cathode voltage will also inject very large current pulses into the front-end ASICs connected to the first induction plane wires, causing damage to the electronics.
  
 To minimize these risks, the logical steps are:
 \begin{itemize}
 \item minimize the stored energy when possible by swapping the locations of the APA and CPA planes such that no CPAs are against the cryostat wall.
-\item slow down the voltage collapse in a discharge by construct the cathode planes out of highly resistive material to form a long RC time constant for discharge.
+\item slow the voltage collapse in a discharge by constructing the cathode planes out of highly resistive material to form a long RC time constant for discharge
 \begin{itemize}
-\item Study the electrical behavior of CPAs constructed from highly resistive material.
-\item Identify and test a resistive coating that is robut in cryogenic temperature while maintain good adhesion to the cathode structure.
-\item Design the new CPAs with all resistive elements.
+\item study the electrical behavior of CPAs constructed from highly resistive material
+\item identify and test a resistive coating that is robust at cryogenic temperature and able to maintain good adhesion to the cathode structure
+\item design the new CPAs with all resistive elements
 \end{itemize}
 \end{itemize}
  
-On the field cage, we are developing the techniques to apply a highly resistive coating over the current 35ton style printed circuit board based panels to remove field concentration around the conductor edges. In parallel, we are also preparing a fall back solution using roll formed electrodes with much large edge radius to reduce the electric field.
+Techniques for applying a highly resistive coating over the current 35t-style printed circuit board-based panels on the field cage are being developed in order to remove field concentration around the conductor edges.
+%On the field cage, we are developing the techniques to apply a highly resistive coating over the current 35t-style printed circuit board-based panels to remove field concentration around the conductor edges. 
+In parallel, a fall back solution for reducing the field using roll-formed electrodes with a much larger edge radius is being developed.
  
-On the APAs, we need to develop a simple and effective method to contain a broken outer layer wire so it will not drift far into the drift volume and making contact to the field cage.
+For the APAs, a simple and effective method to contain a broken outer layer wire must be developed; such a wire must be prevented from drifting far into the drift volume and making contact with the field cage.
  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -125,33 +127,33 @@ On the APAs, we need to develop a simple and effective method to contain a broke
 \label{35tonprototype}
 %\fixme{This is out of date}
 When first conceived, the 35-ton prototype cyrostat was intended solely
-as a demonstration of membrane cryostat technology for use with Liquid Argon. 
-We now call this demonstration ``Phase 1''.
+as a demonstration of membrane cryostat technology for use with liquid argon. 
 Later, it was decided to install and operate a small-scale LArTPC in the cryostat to test many of the design features
 proposed for use in the FD. 
-We call this ``Phase 2''.
-Phase 1 was completed in 2014.
-Phase 2 is currently under construction and is planned to take data in summer 2015.
+The membrane cryostat demonstration, completed in 2014, is referred to as ``Phase 1'' and the operation of the TPC is called ``Phase 2.''
+Phase 2 is currently under construction and it is planned to take data in summer 2015.
 
 \subsection{Phase 1 Construction}
-The construction of the 35T cryostat addressed a number of issues.
-Firstly, there were project-related issues, such as gaining detailed construction experience, 
+The construction of the 35t cryostat addressed a number of issues.
+First were project-related issues, such as gaining detailed construction experience, 
 developing the procurement and contracting model, and incorporating the design and approval mechanism 
 in the Fermilab ES\&H manual, which was necessary because membrane cryostats are designed in accordance
-with European and Japanese standards.)
-Secondly, there are technical issues such as demonstratingn high-purity operation in this type of 
+with European and Japanese standards.
+Secondly, it addressed technical issues such as %demonstrating 
+high-purity operation in this type of 
 cryostat and the suitability of the planned LAr-FD construction techniques and materials.
 
-The LBNE project contracted with the Japanese company IHI to build the 35T cryostat at Fermilab.  
-It was built in Fermilab's PC-4 facility where the Liquid Argon Purity Demonstrator 
+The LBNE project contracted with the Japanese company IHI to build the 35t cryostat at Fermilab.  
+It was built in Fermilab's PC-4 facility where the Liquid Argon Purity Demonstrator (LAPD)
 \cite{bib:lapdP07005}
-also is located, which
+is also located, which
 allowed for re-use of a large portion of the cryogenic-process equipment installed for LAPD.
 The proximity and size (30 tons) of LAPD also offers the possibility using LAPD as 
-a partial storage vessel for LAr if the 35T would need to be emptied. The 35T employs a submersible LAr 
+a partial storage vessel for LAr if the 35t ever needs to be emptied. 
+The 35t employs a submersible %LAr 
 pump to pump the LAr from the cryostat to the filters. Two pumps were installed for redundancy, but 
 only one is used at a time.
-Figure~\ref{fig:35cryo} shows the layout of the 35T prototype at 
+Figure~\ref{fig:35cryo} shows the layout of the 35t prototype at 
 Fermilab's PC-4 facility. 
 Figure~\ref{fig:35cutaway} shows a cutaway view of the cryostat and a photograph of the interior
 of the completed cryostat. 
@@ -160,24 +162,24 @@ of the completed cryostat.
 \includegraphics[width=0.9\textwidth]{35TLayout}
 \end{cdrfigure}
 
-\begin{cdrfigure}[Cutaway view]{35cutaway}{(left) Cutaway view of the 35T cyrostat. (right) Interior
+\begin{cdrfigure}[Cutaway view]{35cutaway}{(left) Cutaway view of the 35t cyrostat. (right) Interior
 photograph of the completed cryostat.}
 \includegraphics[width=0.60\textwidth]{35TCutaway}
 \includegraphics[width=0.35\textwidth]{35TCryo}
 \end{cdrfigure}
 
 Table~\ref{tab:35Tdimensions} gives the details of the construction materials and the
-dimensions for the 35T.
+dimensions for the 35t.
 More information can be found in
 \cite{bib:membcryo1573}.
-The insulation thickness is 0.4~m rather than the 1.0~m chosen for our reference design.  
+The insulation thickness is 0.4~m rather than the 1.0~m chosen for the reference design.  
 The techniques of membrane-cryostat construction were demonstrated to be a fit 
 for high-purity TPC service.
 Welding of corrugated panels, removal of leak-checking dye penetrant or ammonia-activated
 leak-detecting paints, and post-construction-cleaning methods were tested for suitability of service.  
 
-\begin{cdrtable}[35T Details and Dimensions]{ll}{35Tdimensions}
-{35T Details and Dimensions}
+\begin{cdrtable}[35t Details and Dimensions]{ll}{35Tdimensions}
+{35t Details and Dimensions}
 Parameter & Value \\ \toprowrule
 Cryostat Volume	&      29.16 m3\\ \colhline
 Liquid Argon total mass	 &     38.6 metric tons\\ \colhline
@@ -202,11 +204,11 @@ Steel reinforced concrete	    &  0.3 m thick layer\\
 %Materials and cold-electronics testing can be done along with electron-drift-time measurements.
 
 In principle, a thin-walled membrane cryostat is as suitable as a thick-walled cryostat
-for use with high purity LAr. 
+for use with high-purity LAr. 
 Both are constructed with 304 stainless steel with a polished surface finish.
 Both use passive insulation. 
 The total length of interior welds required for construction would be similar in both cases.
-The leak checking procedure would be the same in both cases.
+The leak-checking procedure would be the same in both cases.
 
 The significant difference between membrane cryostats and thick-walled cryostats is
 the depth of the welds used to construct the vessel.  
@@ -235,59 +237,62 @@ it escapes detection and repair.
 
 \subsection {Phase 1 Instrumentation}
 
-The 35T includes a full complement of standard commercial transducers and sensors that are used to 
+The 35t includes a full complement of standard commercial transducers and sensors that are used to 
 monitor and control the cryogenic environment. They include temperature sensors, pressure transducers 
-(absolute and gauge), flow meters, and level sensors. These devices are typically readout directly into the 
-Control System and data logged. 
+(absolute and gauge), flow meters, and level sensors. These devices are typically read out directly into the 
+Control System and data-logged. 
 
-A number of commercial gas analyzers are available that can measure trace impurity levels (O$_2$, H$_2$O, and 
+A number of commercial gas analyzers are available \fixme{have been implemented?} that can measure trace impurity levels (O$_2$, H$_2$O, and 
 N$_2$) in the argon. Some have sensitivities at the 100 ppt level. A gas distribution switchyard feeding the 
-gas analyzers allows the sampling points in the 35T to be reconfigured.
+gas analyzers allows the sampling points in the 35t to be reconfigured.
 
 There were also two purpose-built pieces of instrumentation for the monitoring of the high-purity 
-environment needed for a LAr detector. They are the purity monitors (PrMs) and the RTD Spooler. The 
+LAr environment,   % needed for a LAr detector. They are 
+the purity monitors (PrMs) and the RTD Spooler. The 
 PrMs are used to measure electron lifetimes in the LAr, and the RTD Spooler is used to make precision 
 measurements of the temperature profile of the cryostat as a function of depth.  These instruments were 
-originally constructed for the LAPD run and are described in depth in \cite{bib:lapdP07005}.
+originally constructed for the LAPD run and are fully described %in depth 
+in \cite{bib:lapdP07005}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection {Phase 1 Operations}
 In order to purify LAr, it is necessary to do three things: 
-\begin{itemize}
-\item{Remove the air from the cryostat, leaving only Ar gas}
-\item{Clean the liquid Ar as it comes from the supplier}
+\begin{enumerate}
+\item{Remove the air from the cryostat, leaving only Ar gas.}
+\item{Clean the liquid Ar as it comes from the supplier.}
 \item{Remove any impurities that are generated by materials outgassing within the cryostat.}
-\end{itemize}
+\end{enumerate}
   
-LAPD has demonstrated that it is not necessary to evacuate a cryostat in order achieve 
+LAPD has \fixme{executed all three of these processes and} demonstrated that it is not necessary to evacuate a cryostat in order achieve 
 LAr purity levels sufficient for LBNE. 
 This is of paramount importance since the costs of multi-kiloton cryostats that 
 could withstand evacuation is prohibitive. 
-The 35T followed the procedure LAPD 
+The 35t followed the procedure LAPD 
 \cite{bib:lapdP07005}
 established to obtain and maintain pure LAr. 
 
 %%%%%%%%%%%%%%
 \subsubsection {Gas Phase}
 
-Figure~\ref{fig:35TPurge} graphically shows step 1, removing the ambient air, of the purification process. These measurements are made by a variety of gas monitors that are sampling the gas in the cryostat. 
+Figure~\ref{fig:35TPurge} graphically shows step 1 of the purification process, removal of the ambient air. These measurements are made by a variety of gas monitors that sample the gas in the cryostat. 
 
-\begin{cdrfigure}[Gas Ar Purge and Recirculation]{35TPurge}{Gas phase of removing impurities in the 35T. These quantities are being measured by various gas analyzers. The first stage of the purification is a process called the ``Piston Purge''.  The second stage is ``Recirculation with Filtering''. The gap between the two steps was due to troubleshooting a leak.}
+\begin{cdrfigure}[Gas Ar Purge and Recirculation]{35TPurge}{Gas phase of removing impurities in the 35t. These quantities are being measured by various gas analyzers. The first stage of the purification is a process called the ``Piston Purge''.  The second stage is ``Recirculation with Filtering''. The gap between the two steps was due to troubleshooting a leak.}
   \includegraphics[width=\textwidth]{35TPurgeAndRecirc}
 \end{cdrfigure}
 
-The initial state of the 35T was that ``dry'' air had been purging the cryostat for approximately three weeks. The initial start values for oxygen, water, and nitrogen reflect this state.
-The air in the cryostat is removed by  the Piston Purge.  Argon gas is flooded into the bottom of the cryostat. As argon is heavier than air, the argon layer rises analogous to a mechanical piston, pushing the air up and out of the cryostat. This gas is vented to the outside atmosphere. The venting stage continues for 32 hours, approximately the equivalent of 12 volume changes. 
+%The initial state of the 35t was that 
+When the test began, ``dry'' air had been purging the cryostat for approximately three weeks. The initial values for oxygen, water and nitrogen reflect this state.
+The Piston Purge removes the air in the cryostat; during this step argon gas is flooded into the bottom of the cryostat. Since argon is heavier than air, the argon layer rises, analogous to a mechanical piston, pushing the air up and out of the cryostat. This gas \fixme{the air?} is vented to the outside atmosphere. The venting stage continues for 32 hours, approximately the equivalent of 12 volume changes. 
 
-At this point the exiting gas is re-routed to circulate through the filtration system that removes O$_2$ and H$_2$O. N$_2$ is not materially removed by the filters. Any leaks to the outside atmosphere can be detected during this step. As shown in Figure~\ref{fig:35TPurge}, a leak was found and mitigated (the ``Debugging'' gap in the plot). Once leaks have been eliminated the recirculation continues until the O$_2$ level drops into the sub-ppm level. As can be seen in the plot, the H$_2$O level plateaus at a much higher level than O$_2$. This is due to the outgassing of materials inside the 35T, including the cryostat walls, which are at room temperature during the recirculation step. 
+At this point the exiting gas \fixme{which is mostly/all argon?} is re-routed to circulate through the filtration system that removes O$_2$ and H$_2$O. (N$_2$ is not materially removed by the filters.) Any leaks to the outside atmosphere can be detected during this step. As shown in Figure~\ref{fig:35TPurge}, a leak was found and mitigated (the ``Debugging'' gap in the plot). Once leaks have been eliminated the recirculation continues until the O$_2$ level drops to the sub-ppm level. As can be seen in the plot, the H$_2$O level plateaus at a much higher level than O$_2$. This is due to the outgassing of materials inside the 35t, including the cryostat walls, which are \fixme{remain?} at room temperature during \fixme{throughout?} the recirculation step. 
 
 %%%%%%%%%%%%%%
-\subsubsection {Cool down and LAr filling}
+\subsubsection {Cooldown and LAr Fill}
 
-\begin{cdrfigure}[35T Cooldown and Filling]{35TCooldown}{Cooldown and filling the 35T. The 
+\begin{cdrfigure}[35t Cooldown and Fill]{35TCooldown}{Cooldown and filling the 35t. The 
 measurements (red trace) are made from RTDs afixed to the cryostat walls. The black dashed curve is the 
 manufacturer's maximum allowed cooldown rate. The filling (blue trace) was from the transfer of LAr 
-from LAPD, This quantity of LAr is less than the capacity of the 35T. The RTD traces drop to the LAr 
+from LAPD, This quantity of LAr is less than the capacity of the 35t. The RTD traces drop to the LAr 
 temperature when the level of the LAr covers reaches their mounting height.}
   \includegraphics[width=\textwidth]{35TCoolDown.png}
 \end{cdrfigure}
@@ -299,12 +304,12 @@ filling is shown in Figure~\ref{fig:35TCooldown} . The temperature measurements 
 were made by RTDs that are glued to the membrane walls of the cryostat. The black dashed trace is the 
 manufacturer specification for the cool down rate.
 
-Once the cool down was finished, the LAr transfer into the cryostat began. In the case of the 35T phase 1 
+Once the cool down was finished, the LAr transfer into the cryostat began. In the case of the 35t phase 1 
 run, the LAr came from LAPD, where it had been used by that system in its own recently completed 
 second run\cite{bib:lapdP07005}. 
 
-LAPD contained about 30 tons of LAr, of which only 25 tons could be transferred to the 35T ($\sim$70\% of 
-the total possible 35T LAr volume). It was decided that we would begin the initial commissioning of the 
+LAPD contained about 30 tons of LAr, of which only 25 tons could be transferred to the 35t ($\sim$70\% of 
+the total possible 35t LAr volume). It was decided that we would begin the initial commissioning of the 
 Phase 1 run with this level since several components of the 35 Ton could be commissioned with the 
 partial LAr fill. After running with this partial fill for approximately eighteen days, additional LAr was 
 added to bring the capacity to 100\%. 
@@ -315,17 +320,17 @@ added to bring the capacity to 100\%.
 The Fermilab Material Test Stand (MTS)\cite{bib:Voiron9940,bib:mtslapd308} has shown that contaminants released inside LAr filled cryostats are from materials outgassing in the warm ullage regions above the LAr surface. Typical detector materials located in LAr have negligible impact of LAr purity levels. 
 
 Figure~\ref{fig:35TVaporFlow} depicts how impurities generated by outgassing materials in the 
-relatively warm ullage under Plate B are swept up by the normal Ar boil-off in the 35T. This impure vapor 
-is condensed in the LN2-cooled LAr condensor. The impure condensate is returned to the 35T just inside 
+relatively warm ullage under Plate B are swept up by the normal Ar boil-off in the 35t. This impure vapor 
+is condensed in the LN2-cooled LAr condensor. The impure condensate is returned to the 35t just inside 
 the intake manifold of the interior submersible LAr pump. From there it is pumped to the filtration 
 system where the impurities are removed.
 
 Of interest, the electron lifetime of the LAr exiting the filters, as measured by the inline PrM was always  
 > 30 ms (purity ~ 10 ppt O2 equivalent). This indicates that the filters are very efficient at removing all 
-trace amounts of O2 and H2O. This was true for the entire 35T phase 1 run, including the filling periods.
+trace amounts of O2 and H2O. This was true for the entire 35t phase 1 run, including the filling periods.
 
-\begin{cdrfigure}[35T Vapor Flow]{35TVaporFlow}{Drawing of Boiloff/Outgassing Vapor Flow (white 
-arrows) from the Cryostat, with condensate return (violet arrows) from the condensor into the Pump 
+\begin{cdrfigure}[35t Vapor Flow]{35TVaporFlow}{Drawing of Boiloff/Outgassing Vapor Flow (white 
+arrows) from the 35t cryostat, with condensate return (violet arrows) from the condensor into the Pump 
 Intake Manifold. LAr flow into the pump, and return from the Purification filters are shown by blue 
 arrows. Also shown is the location of the Stainless Steel Radiation baffles beneath Plate B. This location 
 just beneath Plate B is the warmest location and presumably the principal source of outgassing within the 
@@ -338,22 +343,22 @@ Figure~\ref{fig:35TElectronLifetime} shows the electron lifetime from the start 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection {Phase 1 Stability of Operation}
 
-The goals of the 35T Phase 1 run include not only achieving the required purity/lifetime levels, but to 
-also hold those levels and provide a stable operation of the cryostat. The 35T Phase 1 run was a relatively 
+The goals of the 35t Phase 1 run include not only achieving the required purity/lifetime levels, but to 
+also hold those levels and provide a stable operation of the cryostat. The 35t Phase 1 run was a relatively 
 short  ~2 months of LAr running. We achieved electron lifetimes in the 2-3 ms range as can be seen in 
 Figure~\ref{fig:35TElectronLifetime}.
 
 However the electron lifetimes were severely impacted whenever we would switch from one LAr pump to 
 another. The drops in purity coincided with the turn on of the previously-inactive pump (see annotations 
 in Figure~\ref{fig:35TElectronLifetime}). We believe the issue was with the procedure we used to start the 
-pumps and plan to modify it for future operations in the 35T Phase 2 run.
+pumps and plan to modify it for future operations in the 35t Phase 2 run.
 
-A second stability question is keeping the temperature stable in the cryostat. Currently the 35T controls 
+A second stability question is keeping the temperature stable in the cryostat. Currently the 35t controls 
 system regulates the gauge pressure of the cryostat, keeping the internal pressure to 6.69(02) kPa above 
 ambient atmospheric pressure. However this leaves the thermodynamics of the LAr sensitive to normal 
 atmospheric pressure changes.
 
-\begin{cdrfigure}[35T Electron Lifetime]{35TElectronLifetime}{LAr electron lifetmes as measured by 
+\begin{cdrfigure}[35t Electron Lifetime]{35TElectronLifetime}{LAr electron lifetmes as measured by 
 Cryostat Purity Monitors. Significant events are annotated on the plot. Major divisions on horizontal axis 
 are one week periods. Equivalent purity levels are shown as dashed horizontal lines.}
   \includegraphics[width=0.8\textwidth]{35TElectronLifetime.png}
@@ -374,11 +379,11 @@ Fitting the normalized drift velocity (inverse of normalized drift time) gives t
  
 The electron drift velocities for these three PrMs varied from (0.3 to 0.4) mm/$\mu$s depending on the individual PrM's drift field. 
 
-\begin{cdrfigure}[35T Temperature Stability]{35TTempStability}{Interior Cryostat Absolute Pressure 
+\begin{cdrfigure}[35t Temperature Stability]{35TTempStability}{Interior Cryostat Absolute Pressure 
 (blue trace), bulk LAr temperature (white dashed trace), and PrM drift times (dots) over a nine-day period. 
 Major divisions on horizontal axis are one day intervals. The PrM drift times are from three PrMs, two in 
 the cryostat, and the third from the inline PrM. The lag between the temperature and pressure is due to 
-the 35T thermal inertia.}
+the 35t thermal inertia.}
   \includegraphics[width=\textwidth]{35TTempStability}
 \end{cdrfigure}
 
@@ -394,23 +399,23 @@ bulk temperature of the LAr. These profiles seen in Figure~\ref{fig:SpoolerScan}
 agreement with the current CFD calculations [5\fixme{}].
 
 
-\begin{cdrfigure}[35T Vertical Temperature Profile]{SpoolerScan}{(top) RTD Spooler Vertical Temperature scan of the 35T Cryostat under Plate B showing both the liquid and vapor temperature.  (bottom) Expanded horizontal axis around 88.12~K. Note that the horizontal divisions on the lower plot are 50~mK. }
+\begin{cdrfigure}[35t Vertical Temperature Profile]{SpoolerScan}{(top) RTD Spooler Vertical Temperature scan of the 35t Cryostat under Plate B showing both the liquid and vapor temperature.  (bottom) Expanded horizontal axis around 88.12~K. Note that the horizontal divisions on the lower plot are 50~mK. }
 \includegraphics[width=\textwidth]{SpoolerScanFull.png}
 \includegraphics[width=\textwidth]{SpoolerScanExpand.png}  
 \end{cdrfigure}
 
 \subsection{Phase 1 Conclusions}
 
-The 35T Phase 1 run has shown that the membrane cryostat technology has no innate difficulties with 
-achieving the stated goals of the LBNE Conceptual Design Far Detector. Some of the 35T issues (e.g., loss 
-of purity when pumps are switched) are most likely unique to the 35T. It also seems likely that in a future 
+The 35t Phase 1 run has shown that the membrane cryostat technology has no innate difficulties with 
+achieving the stated goals of the LBNE Conceptual Design Far Detector. Some of the 35t issues (e.g., loss 
+of purity when pumps are switched) are most likely unique to the 35t. It also seems likely that in a future 
 design, the pumps will be externally located, to avoid coupling acoustical vibrations into the Far Detector 
 cryostat and to facilitate maintenance and repair.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{35T Prototype Phase 2}
+\section{35t Prototype Phase 2}
 
-Phase 2 of the the 35T prototype involves installing a fully operational TPC and Photon Detector into 
+Phase 2 of the the 35t prototype involves installing a fully operational TPC and Photon Detector into 
 the previously built cryostat.
 This prototype will be filled with Liquid Argon and operated for a several-month-long Cosmic Ray run. 
 External plastic scintillator paddles placed around the cryostat will be used to produce
@@ -421,9 +426,9 @@ commissioning is expected to begin in June 2015.
 Figure~\ref{fig:35TTPC} shows a model of the TPC inside the cryostat and a trial assembly of
 the TPC done outside of the cyrostat. 
 
-\subsection{35T Phase 2 TPC Design}
+\subsection{35t Phase 2 TPC Design}
 
-\begin{cdrfigure}[35T with TPC]{35TTPC}{(left) 35T Cryostat with TPC and photon detectors installed. 
+\begin{cdrfigure}[35t with TPC]{35TTPC}{(left) 35t Cryostat with TPC and photon detectors installed. 
 Note separate drift regions on ``near'' and ``far'' sides.
 The near side drift length is close to what is proposed for the far detector. The far
 side has a shorter drift length due to lack of space.
@@ -440,7 +445,7 @@ in an operational TPC.
 Rather than reiterate them all here, we simply tabulate some of the more important
 aspects in Table~\ref{tab:35TDesign}.
 
-\begin{cdrtable}[35T Design Aspects]{lcl}{35TDesign}{35T Design Elements}
+\begin{cdrtable}[35t Design Elements]{lcl}{35TDesign}{35t Design Elements}
  Design Aspect& Section & How Tested\\ \toprowrule
 Modular APAs with wrapped wires & \ref{subsec:v5-tpc-chamber-apa}&Build small-scale APA Modules with FD design\\
 \colhline
@@ -461,10 +466,10 @@ Triggerless-capable DAQ & \ref{sec:daq_intro} & Take data using multiple DAQ mod
 
 \subsection{Phase 2 Simulation, Reconstruction and Analysis}
 As can be seen from Table~\ref{tab:35TDesign}, successful tests of many of the new 
-design features requires simulation, reconstruction and analysis of 35T data. 
+design features requires simulation, reconstruction and analysis of 35t data. 
 This will be done with the help of the LarSoft package, which is also used to simulate and 
 reconstruct data from the ArgoNeuT and MicroBoone experiments.
-Reuse of software developed for those experiments can greatly facilitate 35T development. 
+Reuse of software developed for those experiments can greatly facilitate 35t development. 
 However, the novel hardware features of the 35t prototype necessitate novel software developments 
 as well.
 Among the required new software developments are:
@@ -473,7 +478,7 @@ Among the required new software developments are:
 A hit on a single electronic channel can, in principle, be related to an induced signal on any of these segments.}
 \item{``Disambiguation'' code to identify which of the possible wire segments was actually responsible
 for the observed hit}
-\item{Code for determining the start time of the event ($t_0$). Since the 35T prototype DAQ can
+\item{Code for determining the start time of the event ($t_0$). Since the 35t prototype DAQ can
 run ``triggerless'', methods are needed for finding the $t_0$ in data. Information from the external 
 scintillator paddles as well as the internal photon detectors can be used.}
 \item{Code for ``stitching''together track segments observed in different tracking volumes. 
@@ -493,7 +498,7 @@ photon detector light yield}
 \item{Measurements of different types of particles: muons, protons, neutrons, pions}
 \end{itemize}
 
-The results obtained by operating the 35T Phase 2 prototype and the analysis of its data are expected
+The results obtained by operating the 35t Phase 2 prototype and the analysis of its data are expected
 to be very valuable in defining the final FD design. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
