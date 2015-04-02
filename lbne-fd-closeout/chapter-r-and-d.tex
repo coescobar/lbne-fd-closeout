@@ -98,9 +98,9 @@ These results are taken into account in the design of both MicroBooNE and LAr-FD
 
 A string of recent events in several liquid argon setups, such as Long Bo, DarkSide50, ArgonTube and MicroBooNE, in which the sustainable high voltage (HV) was much lower  than designed voltages \fixme{incomplete sentence}. These experiences prompted a reevaluation of the breakdown strength of liquid argon, especially at ``detector grade'' purity. Recent studies \cite{bib:HV_in_LAr_1}\cite{bib:HV_in_LAr_2} have revealed that the HV-breakdown strength depends on factors such as electrode feature size, distance, stress area/volume, and LAr purity. Although no conclusive threshold was found, the results indicate that the safe operating field in LAr is well under 100~kV/cm.
  
-With the uncertainty in the liquid argon HV dielectric strength, attention will be focused on the HV-related aspects of the TPC design; this appears to involve the CPAs and field cage modules. \fixme{right?} An R\&D document has been compiled for the far detector \fixme{add citation} (docdb 10006) that contains a section on the proposed R\&D topics and activities to reduce the HV-related risks. Apart from the HV feedthrough, which will be designed and tested above the operating voltages, there is a plan to improve the designs of the CPAs and field cage modules.
+With the uncertainty in the liquid argon HV dielectric strength, attention will be focused on the HV-related aspects of the TPC design; this appears to involve the CPAs and field cage modules. \fixme{right?} An R\&D document has been compiled for the far detector~\cite{fd_rndplan_10006} that contains a section on the proposed R\&D topics and activities to reduce the HV-related risks. Apart from the HV feedthrough, which will be designed and tested above the operating voltages, there is a plan to improve the designs of the CPAs and field cage modules.
  
-The current TPC design directly interconnects all CPAs on a cathode plane. Two of the outer cathode planes face the grounded cryostat walls. The stored energy between one of the outer cathode planes and the cryostat wall, with the full bias voltage applied, is more than 150 joules \fixme{add citation}(LBNE docdb 8920). This amount of energy, if released suddenly in an event of a high voltage discharge, is sufficient to raise the temperature of a cube of stainless steel with 2-mm sides by 4000$^\circ$K, resulting in a leak in the membrane cryostat. Moreover, a sudden collapse of the cathode voltage will also inject very large current pulses into the front-end ASICs connected to the first induction plane wires, causing damage to the electronics.
+The current TPC design directly interconnects all CPAs on a cathode plane. Two of the outer cathode planes face the grounded cryostat walls. The stored energy between one of the outer cathode planes and the cryostat wall, with the full bias voltage applied, is more than 150 joules\cite{ve-fd_025_8920}. This amount of energy, if released suddenly in an event of a high voltage discharge, is sufficient to raise the temperature of a cube of stainless steel with 2-mm sides by 4000$^\circ$K, resulting in a leak in the membrane cryostat. Moreover, a sudden collapse of the cathode voltage will also inject very large current pulses into the front-end ASICs connected to the first induction plane wires, causing damage to the electronics.
  
 To minimize these risks, the logical steps are:
 \begin{itemize}
@@ -123,7 +123,7 @@ For the APAs, a simple and effective method to contain a broken outer layer wire
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{35-ton Prototype: Phase 1}
 \label{35tonprototype}
-%\fixme{This is out of date}
+
 When first conceived, the 35t prototype cyrostat was constructed to demonstrate that a non-evacuable membrane cryostat can satisfy the less-than-200-parts-per-trillion (ppt) requirement on oxygen contamination of the liquid argon in the detector and maintain that level stably.
 %
 It was intended to prototype a wide variety of issues that construction and 
@@ -166,11 +166,11 @@ Fermilab's PC-4 facility.
 Figure~\ref{fig:35cutaway} shows a cutaway view of the cryostat and a photograph of the interior
 of the completed cryostat. 
 
-\begin{cdrfigure}[Layout of 35t prototype at Fermilab's PC-4 facility]{35cryo}{Layout of 35t prototype at Fermilab's PC-4 facility. }
+\begin{cdrfigure}[35t prototype at Fermilab's PC-4 facility, layout]{35cryo}{Layout of 35t prototype at Fermilab's PC-4 facility. }
 \includegraphics[width=0.9\textwidth]{35TLayout}
 \end{cdrfigure}
 
-\begin{cdrfigure}[Cutaway view]{35cutaway}{(left) Cutaway view of the 35t cyrostat. (right) Interior
+\begin{cdrfigure}[35t Cutaway view]{35cutaway}{(left) Cutaway view of the 35t cyrostat; (right) Interior
 photograph of the completed cryostat.}
 \includegraphics[width=0.60\textwidth]{35TCutaway}
 \includegraphics[width=0.35\textwidth]{35TCryo}
@@ -303,7 +303,7 @@ Figure~\ref{fig:35TPurge} graphically shows step 1 of the purification process, 
 These measurements are made by a variety of %gas 
 monitors that sample the gas in the cryostat. 
 
-\begin{cdrfigure}[Gas Ar Purge and Recirculation]{35TPurge}{Gas phase of removing impurities in the 35t. These quantities are being measured by various gas analyzers. The first stage of the purification is a process called the ``Piston Purge''.  The second stage is ``Recirculation with Filtering''. The gap between the two steps was due to troubleshooting a leak.}
+\begin{cdrfigure}[35t Gas Ar Purge and Recirculation]{35TPurge}{Gas phase of removing impurities in the 35t. These quantities are being measured by various gas analyzers. The first stage of the purification is a process called the ``Piston Purge''.  The second stage is ``Recirculation with Filtering''. The gap between the two steps was due to troubleshooting a leak.}
   \includegraphics[width=\textwidth]{35TPurgeAndRecirc}
 \end{cdrfigure}
 
@@ -363,8 +363,10 @@ cryostat.}
   \includegraphics[width=\textwidth]{35TVaporFlow.png}
 \end{cdrfigure}
 
-Figure~\ref{fig:35TElectronLifetime} shows the electron lifetime from the start of the LAr Pump operation until the end of the Phase 1 run. In general, the electron lifetime improved as a function of pump 
-on-time, but there were several incidents that spoiled the lifetime. \fixme{revisit this sentence} These will be discussed in the next section.
+Figure~\ref{fig:35TElectronLifetime} plots the electron lifetime from the start of the LAr Pump operation until the end of the Phase 1 run. In general, the electron lifetime improved as a function of pump 
+``on-time,'' but %there were several 
+a few incidents, shown on the plot, %that spoiled 
+impacted the lifetime. These will be discussed in the next section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection {Phase 1 Stability of Operation}
@@ -388,7 +390,7 @@ atmospheric pressure changes.
 \begin{cdrfigure}[35t Electron Lifetime]{35TElectronLifetime}{LAr electron lifetmes as measured by 
 Cryostat Purity Monitors. Significant events are annotated on the plot. Major divisions on horizontal axis 
 are one week periods. Equivalent purity levels are shown as dashed horizontal lines.}
-  \includegraphics[width=0.8\textwidth]{35TElectronLifetime.png}
+  \includegraphics[width=\textwidth]{35TElectronLifetime.png}
 \end{cdrfigure}
 
 Figure~\ref{fig:35TTempStability} shows a plot over a nine-day period of the cryostat absolute pressure (blue 
@@ -397,7 +399,7 @@ and long inside the cryostat, and the long inline PrM exterior to the cryostat. 
 from the RTD Spooler measurements by requiring that the RTDs be at least 15 cm below the LAr surface. \fixme{prev sentence doesn't make sense to me. You take a temperature by
 requiring some condition to be in place?}
 The temperature curve lags the pressure changes ($\Delta P \sim~3.5$~kPa over this period) due to the thermal 
-inertia of the LAr. However \fixme{need `however'?} the normalized drift time (= drift time/(average drift time for this period) is 
+inertia of the LAr. However \fixme{is `however' right? what's the contrast?} the normalized drift time (= drift time/(average drift time for this period) is 
 directly correlated to the LAr temperature. The LAr temperature excursion range was $\Delta T \sim~0.3$~K. 
 Fitting the normalized drift velocity (inverse of normalized drift time) gives the result 
 
@@ -416,7 +418,7 @@ the thermal inertia of the LAr.}
 \end{cdrfigure}
 
 The RTD Spooler was intended to provide a precision measurement of the vertical temperature profile. 
-This measurement is a means of testing the Computational Fluid Dynamics Simulations [5]\fixme{} that 
+This measurement is a means of testing the Computational Fluid Dynamics Simulations [5]\fixme{what is actual reference?} that 
 are being made on the fluid motion in the cryostat. Experimentally measuring the actual motion does not 
 appear to be feasible at this time. The CFD calculations are being used to understand whether there 
 might be dead areas in the cryostat where impurities might collect. Figure~\ref{fig:SpoolerScan} shows the result of one RTD 
@@ -424,7 +426,7 @@ scan. This scan was taken from a period where the barometric pressure was relati
 the temperature would remain constant during the scan. Since a scan takes up to 6 hours in one direction 
 (up or down) and as can be seen in Figure~\ref{fig:35TTempStability}, pressure changes can impact the 
 bulk temperature of the LAr. These profiles seen in Figure~\ref{fig:SpoolerScan} are in nominal 
-agreement with the current CFD calculations [5]\fixme{add real reference}.
+agreement with the current CFD calculations [5]\fixme{add real reference, same as the one above?}.
 
 
 \begin{cdrfigure}[35t Vertical Temperature Profile]{SpoolerScan}{(top) RTD Spooler Vertical Temperature scan of the 35t Cryostat under Plate B showing both the liquid and vapor temperature.  (bottom) Expanded horizontal axis around 88.12~K. Note that the horizontal divisions on the lower plot are 50~mK. }
@@ -492,8 +494,6 @@ Waveguide-style Photon Detector& \ref{subsec:fe_CMOS_digital}&Install in APAs. M
 Triggerless-capable DAQ & \ref{sec:daq_intro} & Take data using multiple DAQ modes\\ 
 \end{cdrtable}
 
-\fixme{the xrefs in this table need to be fixed}
-
 \subsection{Phase 2 Simulation, Reconstruction and Analysis}
 As can be seen from Table~\ref{tab:35TDesign}, successful tests of many of the new 
 design features requires simulation, reconstruction and analysis of 35t data. 
@@ -534,7 +534,7 @@ to be very valuable in defining the final far detector design.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Prototype Detector at CERN to Test Physics Sensitivity}
 
-The physics sensitivity of DUNE \fixme{this is the LBNE closeout; do we want to mention DUNE?} has been estimated based on detector-performance characteristics published in the literature, simulation-based estimates
+The physics sensitivity of LBNE \fixme{it said DUNE, I think we want lbne} has been estimated based on detector-performance characteristics published in the literature, simulation-based estimates
 and on a variety of assumptions about the anticipated performance of the future detector, event reconstruction and particle-identification algorithms.
 A single-phase LAr prototype detector has been proposed for testing in a CERN beam with the goal of
  replacing these assumptions with measurements.  The prototype will implement a full-scale detector element; this will 
@@ -559,7 +559,7 @@ ArgoNeuT began collecting data using the NuMI muon antineutrino beam in October 
 A deconvolution scheme using an FFT has been applied to the ArgoNeuT data. This procedure eliminates a problem with the ArgoNeuT electronics (which were D-Zero spares and could not be modified for ArgoNeuT). Another more significant benefit of deconvolution is that bi-polar induction-plane signals can be transformed into uni-polar collection-plane signals. An example of this is shown in Figure~\ref{fig:Argo-decon}. A selection of figures from the draft NIM paper are reproduced below.
 
 
-\begin{cdrfigure}[ArgoNeuT neutrino event with four photon conversions]{2pi0}{A neutrino event with four photon conversions in the ArgoNeuT detector. The top (bottom) panel shows data from the induction (collection) plane after deconvolution.}
+\begin{cdrfigure}[ArgoNeuT: neutrino event with four photon conversions]{2pi0}{A neutrino event with four photon conversions in the ArgoNeuT detector. The top (bottom) panel shows data from the induction (collection) plane after deconvolution.}
 \includegraphics[width=0.7\textwidth]{ArgoNeuT_event}
 \end{cdrfigure}
 
@@ -567,7 +567,7 @@ A deconvolution scheme using an FFT has been applied to the ArgoNeuT data. This 
 The applicability of ArgoNeuT is that it provides a set of data in the same range of energy as the LBNE neutrino beam, enabling the development of analysis algorithms that can be utilized for LAr-FD physics analysis with little or no modification.
 
 
-\begin{cdrfigure}[Data from ArgoNeuT]{Argo-decon}{Figure from the ArgoNeuT draft NIM paper}
+\begin{cdrfigure}[ArgoNeut: tracks as seen on (deconvoluted) induction plane]{Argo-decon}{Figure from the ArgoNeuT draft NIM paper}
 \includegraphics[width=\textwidth]{ArgoNeuT_decon}
 \end{cdrfigure} %     STILL TO DO      
 \fixme{Can you remove the caption from the PDF and add it to this caption?}
@@ -584,7 +584,7 @@ The applicability of ArgoNeuT is that it provides a set of data in the same rang
 
 \subsection {MicroBooNE E-974}
 
-The MicroBooNE experiment is an 89-ton active mass LArTPC, (170-ton total \fixme{check} argon mass) in the commissioning phase.  It has both a physics program and LArTPC development goals.  
+The MicroBooNE experiment is an 89-ton active mass LArTPC, (170-ton total \fixme{`total' is right?} argon mass) in the commissioning phase.  It has both a physics program and LArTPC development goals.  
 
 MicroBooNE received stage 1 approval from the Fermilab director in 2008, partial funding through an NSF MRI in 2008 and an NSF proposal in 2009.  MicroBooNE received DOE CD-0 Mission Need in 2009, CD-1 review in 2010, CD-2/3a review in 2011, CD-3b review in 2012 and CD-4 review in December 2014. The construction of MicroBooNE experiment has been completed successfully, and detector commissioning is ongoing. It plans to start running in mid 2015. 
 
