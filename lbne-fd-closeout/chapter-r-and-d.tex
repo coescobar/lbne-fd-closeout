@@ -43,7 +43,7 @@ A summary of the items in the program is given in the following tables. Table~\r
 Activity & LAr-FD Information & Need by \\ \toprowrule
 In-liquid Electronics & Low noise readout, long lifetime & CERN prototype construction \\ \colhline
 TPC Construction & Mechanical design & CERN prototype construction\\ \colhline
-35-ton Prototype & Cryostat construction & CERN prototype cryostat procurement \\ \colhline
+35t Prototype & Cryostat construction & CERN prototype cryostat procurement \\ \colhline
 CERN prototype & detector integration & TPC construction \\ 
 \end{cdrtable}
 
@@ -72,7 +72,6 @@ MicroBooNE & Electronics tests & Construction & LBNE CD3 \\
 \section{Materials Test System}
 \label{sec:mts}
 
-\fixme{Do we need to say how old the MTS is?}
 
 An area for LAr detector development, shown in Figure~\ref{fig:PAB}, has been established in the Proton Assembly Building at Fermilab. The Materials Test System (MTS) has been developed to determine the effect on electron-drift lifetime of materials and components that are candidates for 
 inclusion in LAr-FD. The system essentially consists 
@@ -81,16 +80,15 @@ of a source of clean argon ($<30$ ppt O$_{2}$ equivalent), a cryostat, a sample 
 \begin{cdrfigure}[Liquid argon area at the Proton Assembly Building at Fermilab]{PAB}{Liquid argon area at the Proton Assembly Building at Fermilab}
 \includegraphics[width=0.8\textwidth]{LAratPAB.pdf}
 \end{cdrfigure}
-%
 
-A noteworthy feature is the novel bubble-pump filter inside the cryostat. In case of argon contamination, this can filter the cryostat volume in a few hours, allowing continuation of studies %after the argon has been contaminated
+A noteworthy feature is the novel bubble-pump filter inside the cryostat. In case of argon contamination, this can filter the cryostat volume in a few hours, allowing continuation of studies 
  without having to refill. A schematic of the MTS is shown in Figure~\ref{fig:MTS_Schem}.
 
 \begin{cdrfigure}[Schematic of the Materials Test System (MTS) cryostat at Fermilab]{MTS_Schem}{Schematic of the Materials Test System (MTS) cryostat at Fermilab}
 \includegraphics[width=0.9\textwidth]{MTS_Full_Schematic.pdf}
 \end{cdrfigure}
 
-The major conclusions of the studies to-date \fixme{today's to-date is different from when this was written} are summarized here. No material has been found that affects the electron-drift lifetime when the material is immersed in liquid argon -- this includes, for example, the common G-10 substitute, FR-4. On the other hand, materials in the ullage can contaminate the liquid; this contamination is dominated by the water outgassed by the materials and as a result is strongly temperature-dependent. Any convection currents that transport water-laden argon into the LAr and any cold surfaces on which water-laden argon can condense will fall into the LAr and reduce the electron lifetime. Conversely,  a steady flow of gaseous argon of a few ft/hr away from the LAr prevents any material in the gas volume from contaminating the LAr. 
+The major conclusions of the studies are summarized here. No material has been found that affects the electron-drift lifetime when the material is immersed in liquid argon -- this includes, for example, the common G-10 substitute, FR-4. On the other hand, materials in the ullage can contaminate the liquid; this contamination is dominated by the water outgassed by the materials and as a result is strongly temperature-dependent. Any convection currents that transport water-laden argon into the LAr and any cold surfaces on which water-laden argon can condense will fall into the LAr and reduce the electron lifetime. Conversely,  a steady flow of gaseous argon of a few ft/hr away from the LAr prevents any material in the gas volume from contaminating the LAr. 
 
 These results are taken into account in the design of both MicroBooNE and LAr-FD. For LBNE they have been cast as detector requirements. The MTS will continue to be used by MicroBooNE and LBNE to test detector materials such as cables that will reside in the ullage.
 
@@ -126,14 +124,24 @@ For the APAs, a simple and effective method to contain a broken outer layer wire
 \section{35-ton Prototype: Phase 1}
 \label{35tonprototype}
 %\fixme{This is out of date}
-When first conceived, the 35-ton prototype cyrostat was intended solely
-as a demonstration of membrane cryostat technology for use with liquid argon. 
-Later, it was decided to install and operate a small-scale LArTPC in the cryostat to test many of the design features
-proposed for use in the FD. 
+When first conceived, the 35t prototype cyrostat was constructed to demonstrate that a non-evacuable membrane cryostat can satisfy the less-than-200-parts-per-trillion (ppt) requirement on oxygen contamination of the liquid argon in the detector and maintain that level stably.
+%
+It was intended to prototype a wide variety of issues that construction and 
+operation of the far detector would need to address, including procurement of 
+materials and services, safety and the processes involved with ensuring the 
+cryostat can maintain high-purity liquid argon. 
+%
+Later it was decided to extend its scope, and to install and operate a small-scale LArTPC and photon detector in the cryostat; this phase will focus on the performance of active detector elements placed directly in the volume of liquid argon.
+
 The membrane cryostat demonstration, completed in 2014, is referred to as ``Phase 1'' and the operation of the TPC is called ``Phase 2.''
 Phase 2 is currently under construction and it is planned to take data in summer 2015.
 
+\fixme{Needed a bit more introduction before going into the details; I added info above. Please check.}
+
+
 \subsection{Phase 1 Construction}
+\label{sec:rnd:35t1:construction}
+
 The construction of the 35t cryostat addressed a number of issues.
 First were project-related issues, such as gaining detailed construction experience, 
 developing the procurement and contracting model, and incorporating the design and approval mechanism 
@@ -158,7 +166,7 @@ Fermilab's PC-4 facility.
 Figure~\ref{fig:35cutaway} shows a cutaway view of the cryostat and a photograph of the interior
 of the completed cryostat. 
 
-\begin{cdrfigure}[Layout of 35-ton prototype at Fermilab's PC-4 facility]{35cryo}{Layout of 35-ton prototype at Fermilab's PC-4 facility. }
+\begin{cdrfigure}[Layout of 35t prototype at Fermilab's PC-4 facility]{35cryo}{Layout of 35t prototype at Fermilab's PC-4 facility. }
 \includegraphics[width=0.9\textwidth]{35TLayout}
 \end{cdrfigure}
 
@@ -235,7 +243,7 @@ it escapes detection and repair.
 %\includegraphics[width=0.7\textwidth]{35cryo.png}
 %\end{cdrfigure}
 
-\subsection {Phase 1 Instrumentation}
+\subsection {Phase 1 Cryogenics Instrumentation}
 
 The 35t includes a full complement of standard commercial transducers and sensors that are used to 
 monitor and control the cryogenic environment. They include temperature sensors, pressure transducers 
@@ -256,35 +264,52 @@ in \cite{bib:lapdP07005}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection {Phase 1 Operations}
-In order to purify LAr, it is necessary to do three things: 
+
+\fixme{This needs an initial sentence stating what the operations are, e.g., air purge, cooldown/fill, LAr purification. I added the following, please check}
+
+The operational portion of Phase 1 involved three main steps: 
+
 \begin{enumerate}
-\item{Remove the air from the cryostat, leaving only Ar gas.}
-\item{Clean the liquid Ar as it comes from the supplier.}
-\item{Remove any impurities that are generated by materials outgassing within the cryostat.}
+\item{removal of the air from the cryostat, leaving only Ar gas (the Piston Purge)}
+\item cooldown and fill of the cryostat with high-purity LAr
+\item maintenance of the high purity level of the LAr
+\end{enumerate}
+
+The first two steps above are part of the purification process, which also involves 
+%In order to purify LAr, it is necessary to do three things:  
+\begin{enumerate}
+\item{cleaning the liquid Ar as it comes from the supplier}
+\item{removal of any impurities that are generated by materials outgassing within the cryostat.}
 \end{enumerate}
   
-LAPD has \fixme{executed all three of these processes and} demonstrated that it is not necessary to evacuate a cryostat in order achieve 
-LAr purity levels sufficient for LBNE. 
+LAPD, referred to in Section~\ref{sec:rnd:35t1:construction},
+ had already demonstrated that it is not necessary to evacuate a cryostat in order achieve 
+LAr purity levels sufficient for LBNE. \fixme{something about `but it didn't demonstrate
+it for the type of cryostat planned for use in the far detector ...' In other words, why did we still need the 35t for phase 1?}
 This is of paramount importance since the costs of multi-kiloton cryostats that 
 could withstand evacuation is prohibitive. 
-The 35t followed the procedure LAPD 
-\cite{bib:lapdP07005}
+The 35t followed the procedure LAPD~\cite{bib:lapdP07005}
 established to obtain and maintain pure LAr. 
 
 %%%%%%%%%%%%%%
 \subsubsection {Gas Phase}
 
-Figure~\ref{fig:35TPurge} graphically shows step 1 of the purification process, removal of the ambient air. These measurements are made by a variety of gas monitors that sample the gas in the cryostat. 
+%The initial state of the 35t was that 
+When the phase 1 test began, ``dry'' air had been purging the cryostat for approximately three weeks. 
+
+The first step of the ``gas phase'' portion of the process, the Piston Purge, removes the air in the cryostat; during this step argon gas is flooded into the bottom of the cryostat. Since argon is heavier than air, the argon layer rises, analogous to a mechanical piston, pushing the air up and out of the cryostat. This gas \fixme{initially 100\% air?} is vented to the outside atmosphere. The venting stage continues for 32 hours, approximately the equivalent of 12 volume changes. 
+%
+Figure~\ref{fig:35TPurge} graphically shows step 1 of the purification process, removal of the ambient air. The initial state, $t=0$, reflects the initial values for oxygen, water and nitrogen in the ``dry air'' state. This is followed by the Piston Purge.
+These measurements are made by a variety of %gas 
+monitors that sample the gas in the cryostat. 
 
 \begin{cdrfigure}[Gas Ar Purge and Recirculation]{35TPurge}{Gas phase of removing impurities in the 35t. These quantities are being measured by various gas analyzers. The first stage of the purification is a process called the ``Piston Purge''.  The second stage is ``Recirculation with Filtering''. The gap between the two steps was due to troubleshooting a leak.}
   \includegraphics[width=\textwidth]{35TPurgeAndRecirc}
 \end{cdrfigure}
 
-%The initial state of the 35t was that 
-When the test began, ``dry'' air had been purging the cryostat for approximately three weeks. The initial values for oxygen, water and nitrogen reflect this state.
-The Piston Purge removes the air in the cryostat; during this step argon gas is flooded into the bottom of the cryostat. Since argon is heavier than air, the argon layer rises, analogous to a mechanical piston, pushing the air up and out of the cryostat. This gas \fixme{the air?} is vented to the outside atmosphere. The venting stage continues for 32 hours, approximately the equivalent of 12 volume changes. 
 
-At this point the exiting gas \fixme{which is mostly/all argon?} is re-routed to circulate through the filtration system that removes O$_2$ and H$_2$O. (N$_2$ is not materially removed by the filters.) Any leaks to the outside atmosphere can be detected during this step. As shown in Figure~\ref{fig:35TPurge}, a leak was found and mitigated (the ``Debugging'' gap in the plot). Once leaks have been eliminated the recirculation continues until the O$_2$ level drops to the sub-ppm level. As can be seen in the plot, the H$_2$O level plateaus at a much higher level than O$_2$. This is due to the outgassing of materials inside the 35t, including the cryostat walls, which are \fixme{remain?} at room temperature during \fixme{throughout?} the recirculation step. 
+%At this point 
+After the purge, the exiting gas \fixme{which is mostly/all argon?} is re-routed to circulate through the filtration system that removes O$_2$ and H$_2$O. (N$_2$ is not materially removed by the filters.) Any leaks to the outside atmosphere can be detected during this step. As shown in ``Debugging'' gap in Figure~\ref{fig:35TPurge}, a leak was found and mitigated. Once leaks have been eliminated the recirculation continues until the O$_2$ level drops to the sub-ppm level. As can be seen in the plot, the H$_2$O level plateaus at a much higher level than O$_2$. This is due to the outgassing of materials inside the 35t, including the cryostat walls, which are \fixme{remain?} at room temperature during \fixme{throughout?} the recirculation step. 
 
 %%%%%%%%%%%%%%
 \subsubsection {Cooldown and LAr Fill}
@@ -297,37 +322,37 @@ temperature when the level of the LAr covers reaches their mounting height.}
   \includegraphics[width=\textwidth]{35TCoolDown.png}
 \end{cdrfigure}
 
-We have adopted a gas/liquid spray method to cool down the cryostat. This generates a turbulent mixing 
-of cold gas in the cryostat and cools the entire surface. The cool down rate was limited to be less than 
-the maximum rate specified by the membrane cryostat manufacturer. The cool down, as well as the initial 
-filling is shown in Figure~\ref{fig:35TCooldown} . The temperature measurements (red traces) in this plot 
+A gas/liquid spray method is used to cool down the cryostat. This generates a turbulent mixing 
+of cold gas in the cryostat and cools the entire surface. The cooldown rate was %limited to be less than 
+maintained lower (slower) than
+the maximum rate specified by the membrane cryostat manufacturer. The cooldown, as well as the initial 
+fill, is shown in Figure~\ref{fig:35TCooldown}. The temperature measurements (red traces) in this plot 
 were made by RTDs that are glued to the membrane walls of the cryostat. The black dashed trace is the 
-manufacturer specification for the cool down rate.
+manufacturer specification for the cooldown rate.
 
-Once the cool down was finished, the LAr transfer into the cryostat began. In the case of the 35t phase 1 
-run, the LAr came from LAPD, where it had been used by that system in its own recently completed 
+Once the cooldown was complete, the LAr transfer into the cryostat began. % In the case of the 35t phase 1 run, 
+In this case the LAr came from LAPD, where it had been used by that system in its own recently completed 
 second run\cite{bib:lapdP07005}. 
 
-LAPD contained about 30 tons of LAr, of which only 25 tons could be transferred to the 35t ($\sim$70\% of 
-the total possible 35t LAr volume). It was decided that we would begin the initial commissioning of the 
-Phase 1 run with this level since several components of the 35 Ton could be commissioned with the 
-partial LAr fill. After running with this partial fill for approximately eighteen days, additional LAr was 
-added to bring the capacity to 100\%. 
+LAPD contained about 30 tons of LAr, of which only 25 tons could be transferred to the 35t providing a$\sim$70\% fill. It was decided to begin the initial commissioning of the 
+Phase 1 run at this point since several components of the 35t could be commissioned at this fill level. After running with the partial fill for approximately eighteen days, additional LAr was 
+added to bring the capacity to 100\%, the full 35 tons.
 
 %%%%%%%%%%%%%%
 \subsubsection{LAr Purification}
 
-The Fermilab Material Test Stand (MTS)\cite{bib:Voiron9940,bib:mtslapd308} has shown that contaminants released inside LAr filled cryostats are from materials outgassing in the warm ullage regions above the LAr surface. Typical detector materials located in LAr have negligible impact of LAr purity levels. 
+The Fermilab Material Test System (MTS)\cite{bib:Voiron9940,bib:mtslapd308} (see Section~\ref{sec:mts}) has shown that contaminants released inside LAr-filled cryostats come from materials outgassing in the warm ullage regions above the LAr surface. Typical detector materials submersed in LAr have negligible impact of LAr purity levels. \fixme{only because the materials have to be tested for this, right?}
 
 Figure~\ref{fig:35TVaporFlow} depicts how impurities generated by outgassing materials in the 
 relatively warm ullage under Plate B are swept up by the normal Ar boil-off in the 35t. This impure vapor 
-is condensed in the LN2-cooled LAr condensor. The impure condensate is returned to the 35t just inside 
+is condensed in the LN$_2$-cooled LAr condensor. The impure condensate is returned to the 35t just inside 
 the intake manifold of the interior submersible LAr pump. From there it is pumped to the filtration 
 system where the impurities are removed.
 
-Of interest, the electron lifetime of the LAr exiting the filters, as measured by the inline PrM was always  
-> 30 ms (purity ~ 10 ppt O2 equivalent). This indicates that the filters are very efficient at removing all 
-trace amounts of O2 and H2O. This was true for the entire 35t phase 1 run, including the filling periods.
+%Of interest, 
+It is worth noting that the electron lifetime of \fixme{`in'?} the LAr exiting the filters, as measured by the inline PrM was always  
+> 30 ms (corresponding to a purity $\sim$10 ppt O$_2$ equivalent). This indicates that the filters are very efficient at removing all 
+trace amounts of O$_2$ and H$_2$O. This was true for the entire 35t phase 1 run, including the filling periods.
 
 \begin{cdrfigure}[35t Vapor Flow]{35TVaporFlow}{Drawing of Boiloff/Outgassing Vapor Flow (white 
 arrows) from the 35t cryostat, with condensate return (violet arrows) from the condensor into the Pump 
@@ -338,20 +363,22 @@ cryostat.}
   \includegraphics[width=\textwidth]{35TVaporFlow.png}
 \end{cdrfigure}
 
-Figure~\ref{fig:35TElectronLifetime} shows the electron lifetime from the start of the LAr Pump operation until the Phase 1 run ended. In general the electron lifetime improved as a function of pump on-time, but there were several incidents that spoiled the lifetime. These will be discussed in the next section.
+Figure~\ref{fig:35TElectronLifetime} shows the electron lifetime from the start of the LAr Pump operation until the end of the Phase 1 run. In general, the electron lifetime improved as a function of pump 
+on-time, but there were several incidents that spoiled the lifetime. \fixme{revisit this sentence} These will be discussed in the next section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection {Phase 1 Stability of Operation}
 
-The goals of the 35t Phase 1 run include not only achieving the required purity/lifetime levels, but to 
-also hold those levels and provide a stable operation of the cryostat. The 35t Phase 1 run was a relatively 
-short  ~2 months of LAr running. We achieved electron lifetimes in the 2-3 ms range as can be seen in 
+The goals of the 35t Phase 1 run included not only achieving the required purity/lifetime levels, but to 
+also hold those levels and provide \fixme{demonstrate?} a stable operation of the cryostat. The 35t Phase 1 LAr run lasted a relatively 
+short $\sim$2 months.% of LAr running. 
+Electron lifetimes in the 2-3 ms range were achieved, as can be seen in 
 Figure~\ref{fig:35TElectronLifetime}.
 
-However the electron lifetimes were severely impacted whenever we would switch from one LAr pump to 
+The electron lifetimes were severely impacted, however, whenever one LAr pump would switch to 
 another. The drops in purity coincided with the turn on of the previously-inactive pump (see annotations 
-in Figure~\ref{fig:35TElectronLifetime}). We believe the issue was with the procedure we used to start the 
-pumps and plan to modify it for future operations in the 35t Phase 2 run.
+in Figure~\ref{fig:35TElectronLifetime}). The issue is believed to lie with the procedure used to start the 
+pumps; it will be modified for future operations in the 35t Phase 2 run.
 
 A second stability question is keeping the temperature stable in the cryostat. Currently the 35t controls 
 system regulates the gauge pressure of the cryostat, keeping the internal pressure to 6.69(02) kPa above 
@@ -364,12 +391,13 @@ are one week periods. Equivalent purity levels are shown as dashed horizontal li
   \includegraphics[width=0.8\textwidth]{35TElectronLifetime.png}
 \end{cdrfigure}
 
-Figure~\ref{fig:35TTempStability} is a plot over a nine day period of the Cryostat absolute pressure (blue 
+Figure~\ref{fig:35TTempStability} shows a plot over a nine-day period of the cryostat absolute pressure (blue 
 trace), bulk LAr temperature (white dashed trace) and the normalized drift time of three PrMs, one short 
 and long inside the cryostat, and the long inline PrM exterior to the cryostat. The temperature is taken 
-from the RTD Spooler measurements by requiring that the RTDs be at least 15 cm below the LAr surface. 
-The temperature curve lags the pressure changes ($\Delta P \sim~3.5$~kPa over this period), due to the thermal 
-inertial of the LAr. However the normalized drift time (= drift time/(average drift time for this period) is 
+from the RTD Spooler measurements by requiring that the RTDs be at least 15 cm below the LAr surface. \fixme{prev sentence doesn't make sense to me. You take a temperature by
+requiring some condition to be in place?}
+The temperature curve lags the pressure changes ($\Delta P \sim~3.5$~kPa over this period) due to the thermal 
+inertia of the LAr. However \fixme{need `however'?} the normalized drift time (= drift time/(average drift time for this period) is 
 directly correlated to the LAr temperature. The LAr temperature excursion range was $\Delta T \sim~0.3$~K. 
 Fitting the normalized drift velocity (inverse of normalized drift time) gives the result 
 
@@ -383,11 +411,11 @@ The electron drift velocities for these three PrMs varied from (0.3 to 0.4) mm/$
 (blue trace), bulk LAr temperature (white dashed trace), and PrM drift times (dots) over a nine-day period. 
 Major divisions on horizontal axis are one day intervals. The PrM drift times are from three PrMs, two in 
 the cryostat, and the third from the inline PrM. The lag between the temperature and pressure is due to 
-the 35t thermal inertia.}
+the thermal inertia of the LAr.}
   \includegraphics[width=\textwidth]{35TTempStability}
 \end{cdrfigure}
 
-The RTD Spooler was intended to give us a precision measurement of the vertical temperature profile. 
+The RTD Spooler was intended to provide a precision measurement of the vertical temperature profile. 
 This measurement is a means of testing the Computational Fluid Dynamics Simulations [5]\fixme{} that 
 are being made on the fluid motion in the cryostat. Experimentally measuring the actual motion does not 
 appear to be feasible at this time. The CFD calculations are being used to understand whether there 
@@ -396,7 +424,7 @@ scan. This scan was taken from a period where the barometric pressure was relati
 the temperature would remain constant during the scan. Since a scan takes up to 6 hours in one direction 
 (up or down) and as can be seen in Figure~\ref{fig:35TTempStability}, pressure changes can impact the 
 bulk temperature of the LAr. These profiles seen in Figure~\ref{fig:SpoolerScan} are in nominal 
-agreement with the current CFD calculations [5\fixme{}].
+agreement with the current CFD calculations [5]\fixme{add real reference}.
 
 
 \begin{cdrfigure}[35t Vertical Temperature Profile]{SpoolerScan}{(top) RTD Spooler Vertical Temperature scan of the 35t Cryostat under Plate B showing both the liquid and vapor temperature.  (bottom) Expanded horizontal axis around 88.12~K. Note that the horizontal divisions on the lower plot are 50~mK. }
@@ -415,12 +443,12 @@ cryostat and to facilitate maintenance and repair.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{35t Prototype Phase 2}
 
-Phase 2 of the the 35t prototype involves installing a fully operational TPC and Photon Detector into 
+Phase 2 of the the 35t prototype involves installing a fully operational TPC and photon detector into 
 the previously built cryostat.
-This prototype will be filled with Liquid Argon and operated for a several-month-long Cosmic Ray run. 
+The prototype will be filled with liquid argon and operated for a several-month-long cosmic ray run. 
 External plastic scintillator paddles placed around the cryostat will be used to produce
-trigger signals as well as rough position measurements of the incoming Cosmic Rays.
-Installation of the TPC inot the cryostat is expected in April 2015 and 
+trigger signals as well as rough position measurements of the incoming cosmic rays.
+Installation of the TPC into the cryostat is expected in April 2015 and 
 commissioning is expected to begin in June 2015.
 %Figure~\ref{fig:tpc-35ton-trial} shows the trial assembly of the TPC outside of the cryostat. 
 Figure~\ref{fig:35TTPC} shows a model of the TPC inside the cryostat and a trial assembly of
@@ -442,8 +470,8 @@ The Phase 2 prototype incorporates many of the design elements described in prev
 sections of this document.
 In many cases, these include novel features that have never previously been tested
 in an operational TPC.
-Rather than reiterate them all here, we simply tabulate some of the more important
-aspects in Table~\ref{tab:35TDesign}.
+Rather than reiterate them all here, some of the more important
+aspects are collected in Table~\ref{tab:35TDesign}.
 
 \begin{cdrtable}[35t Design Elements]{lcl}{35TDesign}{35t Design Elements}
  Design Aspect& Section & How Tested\\ \toprowrule
@@ -464,14 +492,16 @@ Waveguide-style Photon Detector& \ref{subsec:fe_CMOS_digital}&Install in APAs. M
 Triggerless-capable DAQ & \ref{sec:daq_intro} & Take data using multiple DAQ modes\\ 
 \end{cdrtable}
 
+\fixme{the xrefs in this table need to be fixed}
+
 \subsection{Phase 2 Simulation, Reconstruction and Analysis}
 As can be seen from Table~\ref{tab:35TDesign}, successful tests of many of the new 
 design features requires simulation, reconstruction and analysis of 35t data. 
 This will be done with the help of the LarSoft package, which is also used to simulate and 
 reconstruct data from the ArgoNeuT and MicroBoone experiments.
 Reuse of software developed for those experiments can greatly facilitate 35t development. 
-However, the novel hardware features of the 35t prototype necessitate novel software developments 
-as well.
+However, the novel hardware features of the 35t prototype necessitate new software developments 
+as well.  
 Among the required new software developments are:
 \begin{itemize}
 \item{Code to break up the wrapped wires into as many as five individual linear segments. 
@@ -479,10 +509,10 @@ A hit on a single electronic channel can, in principle, be related to an induced
 \item{``Disambiguation'' code to identify which of the possible wire segments was actually responsible
 for the observed hit}
 \item{Code for determining the start time of the event ($t_0$). Since the 35t prototype DAQ can
-run ``triggerless'', methods are needed for finding the $t_0$ in data. Information from the external 
+run ``triggerless,'' methods are needed for finding the $t_0$ in data. Information from the external 
 scintillator paddles as well as the internal photon detectors can be used.}
-\item{Code for ``stitching''together track segments observed in different tracking volumes. 
-Since hits can come from either side of the 4 APAs, there are effectively 8 separate tracking volumes, 
+\item{Code for ``stitching'' together track segments observed in different tracking volumes. 
+Since hits can come from either side of the four APAs, there are effectively eight separate tracking volumes, 
 which are treated as separate TPCs.}
 \end{itemize}
 
@@ -499,16 +529,16 @@ photon detector light yield}
 \end{itemize}
 
 The results obtained by operating the 35t Phase 2 prototype and the analysis of its data are expected
-to be very valuable in defining the final FD design. 
+to be very valuable in defining the final far detector design. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Prototype Detector at CERN to Test Physics Sensitivity}
 
-The physics sensitivity of DUNE has been estimated based on detector-performance characteristics published in the literature, simulation-based estimates
+The physics sensitivity of DUNE \fixme{this is the LBNE closeout; do we want to mention DUNE?} has been estimated based on detector-performance characteristics published in the literature, simulation-based estimates
 and on a variety of assumptions about the anticipated performance of the future detector, event reconstruction and particle-identification algorithms.
 A single-phase LAr prototype detector has been proposed for testing in a CERN beam with the goal of
  replacing these assumptions with measurements.  The prototype will implement a full-scale detector element; this will 
- mitigate the risks associated with extrapolating from small-scale versions of the single-phase LAr TPC technology and allow benchmarking of the operation of a full-scale detector elements in a well characterized charged-particle beam.  
+ mitigate the risks associated with extrapolating from small-scale versions of the single-phase LAr TPC technology and allow benchmarking of the operation of full-scale detector elements in a well-characterized charged-particle beam.  
 
 The detector will need to accurately identify and measure the energy of the particles produced in the neutrino interaction with argon, which will range from hundreds of MeV to several GeV.
 The beam measurements will serve as a calibration data set to tune the Monte Carlo simulations and serve as a reference data set for the detector. 
@@ -519,12 +549,12 @@ The prototype is expected to identify any potentially problematic components and
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Physics Experiments with Associated Detector-Development Goals}
 
-Two projects, ArgoNeuT and MicroBooNE,  which are physics experiments in their own right, are also contributing to the development of the LBNE experiment. Their most important role is in providing data and motivation for the development of event reconstruction and indentification software.
+Two projects, ArgoNeuT and MicroBooNE,  which are physics experiments in their own right, are also contributing to the development of the LBNE experiment. Their most important role is in providing data and motivation for the development of event reconstruction and identification software.
 
 \subsection{ArgoNeuT - T962}
-The Argon Neutrino Test (ArgoNeuT) is a 175-liter LArTPC which completed a run in the NuMI neutrino beam.  The 0.5~m $\times$ 0.5~m $\times$ 1~m LArTPC was positioned directly upstream of the MINOS near detector, which served as a muon catcher for neutrino interactions occurring in ArgoNeuT. 
+The Argon Neutrino Test (ArgoNeuT) is a 175-liter LArTPC which completed a run in the NuMI neutrino beam in 2010.  The 0.5~m $\times$ 0.5~m $\times$ 1~m LArTPC was positioned directly upstream of the MINOS near detector, which served as a muon catcher for neutrino interactions occurring in ArgoNeuT. 
 
-ArgoNeuT began collecting data using the NuMI anti-muon neutrino beam in October 2009 and ran until  March 1, 2010.  ArgoNeuT's $\sim$10k events motivate the development of analysis tools, and are the basis for the first measurements of neutrino cross sections on argon.   An event with two $\pi^{0}$ decays is shown in Figure~\ref{fig:2pi0}.   ArgoNeuT was also the first LArTPC to be exposed to a low-energy neutrino beam and only the second worldwide to observe beam-neutrino interactions. The ArgoNeuT collaboration is currently preparing (1) a NIM paper that documents the detector performance using NuMI beam muons and (2) the first physics paper on muon-neutrino charged-current differential cross sections on argon.  See Figures~\ref{fig:ArgoNeuT_3Dreco} and~\ref{fig:ArgoNeuT-calorimetry}.
+ArgoNeuT began collecting data using the NuMI muon antineutrino beam in October 2009 and ran until  March 1, 2010.  ArgoNeuT's $\sim$10k events motivate the development of analysis tools, and are the basis for the first measurements of neutrino cross sections on argon.   An event with two $\pi^{0}$ decays is shown in Figure~\ref{fig:2pi0}.   ArgoNeuT was also the first LArTPC to be exposed to a low-energy neutrino beam and only the second worldwide to observe beam-neutrino interactions. The ArgoNeuT collaboration is currently preparing (1) a NIM paper that documents the detector performance using NuMI beam muons and (2) the first physics paper on muon-neutrino charged-current differential cross sections on argon.  See Figures~\ref{fig:ArgoNeuT_3Dreco} and~\ref{fig:ArgoNeuT-calorimetry}.
 
 A deconvolution scheme using an FFT has been applied to the ArgoNeuT data. This procedure eliminates a problem with the ArgoNeuT electronics (which were D-Zero spares and could not be modified for ArgoNeuT). Another more significant benefit of deconvolution is that bi-polar induction-plane signals can be transformed into uni-polar collection-plane signals. An example of this is shown in Figure~\ref{fig:Argo-decon}. A selection of figures from the draft NIM paper are reproduced below.
 
@@ -539,19 +569,22 @@ The applicability of ArgoNeuT is that it provides a set of data in the same rang
 
 \begin{cdrfigure}[Data from ArgoNeuT]{Argo-decon}{Figure from the ArgoNeuT draft NIM paper}
 \includegraphics[width=\textwidth]{ArgoNeuT_decon}
-\end{cdrfigure} %     STILL TO DO      \fixme{Can you remove the caption from the PDF and add it to this caption?}}
+\end{cdrfigure} %     STILL TO DO      
+\fixme{Can you remove the caption from the PDF and add it to this caption?}
 
 \begin{cdrfigure}[ArgoNeuT: status of 3D reconstruction]{ArgoNeuT_3Dreco}{Figure from the ArgoNeuT draft NIM paper showing the status of 3D reconstruction}
 \includegraphics[width=\textwidth]{ArgoNeuT_3Dreco}
-\end{cdrfigure}%     STILL TO DO       \fixme{Can you remove the caption from the PDF and add it to this caption?}}
+\end{cdrfigure}%     STILL TO DO       
+\fixme{Can you remove the caption from the PDF and add it to this caption?}
 
 \begin{cdrfigure}[ArgoNeuT: status of calorimetric reconstruction]{ArgoNeuT-calorimetry}{Figure from the ArgoNeuT draft NIM paper showing the status of calorimetric reconstruction.}
 \includegraphics[width=\textwidth]{ArgoNeuT_dQdx}
-\end{cdrfigure}%     STILL TO DO      \fixme{Can you remove the caption from the PDF and add it to this caption?} }
+\end{cdrfigure}%     STILL TO DO      
+\fixme{Can you remove the caption from the PDF and add it to this caption?} 
 
 \subsection {MicroBooNE E-974}
 
-The MicroBooNE experiment is an 89-ton active mass LArTPC, (170-ton argon mass) in the commissioning phase.  It has both a physics program and LArTPC development goals.  
+The MicroBooNE experiment is an 89-ton active mass LArTPC, (170-ton total \fixme{check} argon mass) in the commissioning phase.  It has both a physics program and LArTPC development goals.  
 
 MicroBooNE received stage 1 approval from the Fermilab director in 2008, partial funding through an NSF MRI in 2008 and an NSF proposal in 2009.  MicroBooNE received DOE CD-0 Mission Need in 2009, CD-1 review in 2010, CD-2/3a review in 2011, CD-3b review in 2012 and CD-4 review in December 2014. The construction of MicroBooNE experiment has been completed successfully, and detector commissioning is ongoing. It plans to start running in mid 2015. 
 
@@ -571,6 +604,6 @@ LAr. Because MicroBooNE is at the surface, it will also have a large sample of c
 
 Impressive progress has been made in the development of LArTPC technology over the last few years. All elements of the development program have completed the R\&D phase. Credible conceptual designs exist for all systems in LAr-FD. The technical activities described in this chapter are properly characterized as preliminary engineering design.
 
-The most significant deficiency is the lack of fully-automated event reconstruction. Algorithms have been developed within the LAr community and are being successfully applied to ArgoNeuT data as well as to simulated MicroBooNE data. The algorithms have individually shown that the high efficiency and excellent background rejection capabilities of an LArTPC are achievable. The task remains to combine them into a single package. 
+The most significant deficiency is the lack of fully-automated event reconstruction. Algorithms have been developed within the LAr community and are being successfully applied to ArgoNeuT data as well as to simulated MicroBooNE data. The algorithms have individually shown that the high efficiency and excellent background rejection capabilities of a LArTPC are achievable. The task remains to combine them into a single package. 
 
 
