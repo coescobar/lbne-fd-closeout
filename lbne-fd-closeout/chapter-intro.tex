@@ -2,20 +2,31 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Overview}
-\begin{cdrfigure}[Underground detector illustration]{2x5kt-3d}{The LBNE underground liquid argon detector. Shown is the status of the detector design in January of 2015. The design consisted of two liquid argon detector module each with 5~kt fiducial volume.}
- \includegraphics[width=\textwidth]{2x5kt-3D.pdf}
+\begin{cdrfigure}[Underground detector illustration]{2x5kt-3d}{The LBNE underground liquid argon detector design as of January of 2015. The design consisted of two liquid argon detector module each with 5~kt fiducial volume.}
+% \includegraphics[width=\textwidth]{2x5kt-3D.pdf}
  \end{cdrfigure}
+ \fixme{Missing figure in repo}
 
-The former LBNE Far Detector Project team has prepared this design document which describes the single-phase liquid argon time projection chamber (LArTPC) which was being developed for the LBNE experiment. This report reflects the design status of January 2015 which marks the end of the LBNE coloration and start of the new DUNE collaboration. As the DUNE collaboration moves forward it is antiquated that the collaboration will grow and the scope of the experiment will increase. The LBNE detector consisted of two detector modules each with a fiducial volume of 5~kt to be located at the 4850 ft. level of the Sanford Underground Research Facility (SURF). Figure~\ref{2x5kt-3d} shows the 3-D model of the detector. Throughout this document the detector is referred to as the LAr-FD. 
+The former LBNE Far Detector Project team has prepared this design document which describes the single-phase liquid argon time projection chamber (LArTPC) that was being developed for the LBNE experiment. This report reflects the design status of January 2015, which marks the end of the LBNE collaboration and the start of the new DUNE collaboration. As the DUNE collaboration moves forward, it is anticipated that the collaboration will grow and the scope of the experiment will increase. The LBNE detector consisted of two detector modules each with a fiducial volume of 5~kt to be located at the 4850L of the Sanford Underground Research Facility (SURF). Figure~\ref{2x5kt-3d} shows the 3D model of the detector. Throughout this document the detector is referred to as the LAr-FD. 
 
-The LAr-FD is proposed as the starting point for the design of the DUNE single-phase far detector. The full scope of the DUNE experiment consists of four 10-kt detector modules to reach the desired fiducial mass of 40~kt, which would enable a compelling research program in long-baseline and underground neutrino physics and in nucleon decay. The ultimate goal in the operation of the facility and experimental program is to measure fundamental physical parameters, explore physics beyond the Standard Model and better elucidate the nature of matter and antimatter. 
+The LAr-FD is proposed as the starting point for the design of the DUNE single-phase far detector. The full scope of the DUNE experiment consists of four 10-kt detector modules to reach the desired fiducial mass of 40~kt, which would enable a compelling research program in long-baseline and underground neutrino physics and in nucleon decay studies. The ultimate goal in the operation of the facility and experimental program is to measure fundamental physical parameters, explore physics beyond the Standard Model and better elucidate the nature of matter and antimatter. 
 
-The basic components of this detector type are a cryostat to contain the liquid argon (LAr),  a  Time Projection Chamber (TPC) detector mechanism immersed in the LAr to detect charge deposited in the detector, a photon system to register light,  an readout electronics and a cryogenic system to keep the LAr temperature at 89~K and maintain the required purity.  The cryostat and cryogenics systems will be managed by LBNF facilities project, and therefore descriptions of these systems are not included in this document. 
+The basic components of this detector type are a cryostat to contain the liquid argon (LAr),  a  Time Projection Chamber (TPC) detector mechanism immersed in the LAr to detect charge deposited in the detector, a photon system to register light, a readout electronics system and a cryogenic system to keep the LAr temperature at 89~K and maintain the required purity.  The cryostat and cryogenics systems will be managed by the LBNF project, therefore descriptions of these systems are not included in this document. 
 
-In a single-phase LArTPC, a uniform electric field is created within the TPC volume between cathode planes and anode wire planes. Charged particles passing through the TPC interact with the argon and generate both VUV photon and ionization electrons. The electrons drift in the applied electric field to the anode planes. The anode planes consist of four wire planes a grid plane, two stereo induction planes and a collection plane (from outside in). The bias voltage to each plane is set so that ionization electrons drift between the grid and the two induction planes to be collected on the last plane. Readout electronics amplify and continuously digitize the induced waveforms on the sensing wires at 2 MHz, and transmit these data to the data acquisition (DAQ)  system for processing. The wire planes are oriented at different angles allowing a 3D reconstruction of the particle trajectories. In addition to these basic components, a photon-detection system provides a trigger for proton decay and galactic supernova neutrino interactions. 
+In a single-phase LArTPC, a uniform electric field is created within the TPC volume between cathode planes and anode wire planes. Charged particles passing through the TPC interact with the argon and generate both VUV photon and ionization electrons. The electrons drift in the applied electric field to the anode planes. The anode planes consist of (listed in order from the outside in) four wire planes, a grid plane, two stereo induction planes and a collection plane. The bias voltage to each plane is set so that ionization electrons drift between the grid and the two induction planes, to be collected on the last plane. Readout electronics amplify and continuously digitize the induced waveforms on the sensing wires at 2~MHz, and transmit these data to the data acquisition (DAQ)  system for processing. The wire planes are oriented at different angles allowing a 3D reconstruction of the particle trajectories. In addition to these basic components, a photon-detection system provides a trigger for proton decay and galactic supernova neutrino interactions. 
 
 
-The design of the LAr-FD has been developed and refined over the past five years. The starting point was the ICARUS  T600 system \cite{Icarus-T600}, and the process was informed and guided by the experience with small  LArTPCs in the U.S., particularly ArgoNeuT~\cite{argoneut-url} and MicroBooNE~\cite{microboone-url}. The LAr-FD concept is designed for assembly from small, independent elements  which can be repeated almost indefinitely in any dimension to form the entire  assembly within a large cryostat. Each  of the elements provides an independent mechanical structure to support the elements it contains.  The size of the elements are defined by the restrictions placed by the local site and logistical issues. The detector elements will be manufactured in advance of the detector installation so they must be small enough to be shipped and stored using standard transport containers. The components must physically fit in the shafts at SURF and be able to be transported underground. The advantage of this modular design is that the units can be thoroughly  tested prior to installation and the actual installation can be quickly performed. The design also allows multiple construction sites for the major components. The modular design allows one to scale the detector size from detector volumes containing anywhere from a few to several hundred such elements in a straightforward with small  and predictable risk. Scaling in other areas of  LArTPC detector technology, namely cryostat construction, LAr purification and electronics readout has been incorporated into the design.
+The design of the LAr-FD has been developed and refined over the past five years. The starting point was the ICARUS  T600 system \cite{Icarus-T600}, and the process was informed and guided by the experience with small  LArTPCs in the U.S., particularly ArgoNeuT~\cite{argoneut-url} and MicroBooNE~\cite{microboone-url}. The LAr-FD concept is designed for assembly from small, independent %elements 
+units that can be repeated %almost indefinitely 
+as many times as necessary in any dimension to form the entire  assembly within a large cryostat. Each of the units provides an independent mechanical structure to support the elements it contains. 
+ The size of the units is defined by the restrictions placed by the local site and logistical issues.  The detector units will be manufactured in advance of the detector installation, so they must be small enough to be shipped and stored using standard transport containers. They must physically fit in the shafts at SURF and %be able to 
+ be transported underground. 
+ 
+ The modular design offers several advantages.
+The units can be thoroughly  tested prior to installation, reducing installation time. %  and the actual installation can be quickly performed. 
+Construction of the major components can be done at multiple sites.
+% The design also allows for multiple construction sites for the major components. %The modular design allows one to 
+ The design can accommodate a wide range of detector volumes, containing anywhere from a few to several hundred units in a straightforward way, with small and predictable risk. Scaling in other areas of  LArTPC detector technology, namely cryostat construction, LAr purification and electronics readout has been incorporated into the design.
 
 
 
@@ -29,18 +40,23 @@ The design of the LAr-FD has been developed and refined over the past five years
 The Time Projection Chamber (TPC) is the active detection element of the LAr-FD. The construction concept is  shown schematically in the upper right illustration of Figure~\ref{fig:single-phase-overview}.  A TPC is located inside each cryostat vessel and is completely submerged in LAr at 89~K. Five planes line up across the width: three Cathode Plane Assemblies (CPA)   interleaved with two Anode Plane Assemblies (APA). These planes are oriented vertically and  parallel to the beamline such that the electric fields applied between them are perpendicular to the beamline. Sufficient space is maintained between the detector an the cryostat walls to prevent high voltage discharge. 
 
 
-\begin{cdrfigure}[Detector Overview Slide for January 2015 configuration]{single-phase-overview}{Left: Illustration of the APA design. 2.3~m by 6~m steel frames form the core of the APAs. Wire are wound about the planes to form the grid (not shown), U and V induction planes and the collection plane. Electronic readout is mounted on one end. The lower APA plane is hung from the top plane to form a 12~m tall unit. Upper-Right: Schematic showing the orientation of the TPC inside the Cryostat. Lower-Right: The APAs and CPAs are hung from the top of the cryostat using mounting rails. The rails also are used in the installation process to move the planes to the final position. }
+\begin{cdrfigure}[Detector Overview Slide for January 2015 configuration]{single-phase-overview}{Left: Illustration of the APA design. 2.3-m by 6-m steel frames form the core of the APAs. Wires are wound about the planes to form the grid plane (not shown), the U and V induction planes and the collection plane. Electronic readout is mounted on one end. The lower APA plane is hung from the top plane to form a 12-m-tall unit. Upper-Right: Schematic showing the orientation of the TPC inside the Cryostat. Lower-Right: The APAs and CPAs are hung from the top of the cryostat using mounting rails. The rails also are used in the installation process to move the planes to the final position. }
  \includegraphics[width=1.0\linewidth]{single-phase-overview.pdf}
 \end{cdrfigure}
  
-As seen on the left of Figure~\ref{fig:single-phase-overview} the APAs are constructed as 2.3~m wide 6~m tall units. Each APA has three wire planes that are connected to readout electronics; two induction planes (labeled U and V in Figure~\ref{fig:single-phase-overview}) and one collection plane (X). A fourth wire plane, grid plane (G), is held at a bias voltage but is not instrumented with readout electronics. The grid plane improves the signal-to-noise ratio on the U plane and provides electrostatic discharge protection for the readout electronics. The Electronic readout is from a single end so that two units can be hung together with minimal gap between the top and bottom units. The APAs are mounted inside the cryostat on rails which run the length of the cryostat (Figure~\ref{fig:single-phase-overview} Lower-Right). Two rows of wire planes each two APAs high and 13 deep instrument each cryostat forming a 30~m long detector. 52 APA are needed in total for a 5~kt fiducial volume detector. 
+As seen on the left of Figure~\ref{fig:single-phase-overview} the APAs are constructed as 2.3-m-wide, 6-m-tall units. Each APA has three wire planes that are connected to readout electronics; two induction planes (labeled ``U'' and ``V'' in Figure~\ref{fig:single-phase-overview}) and one collection plane (``X''). A fourth wire plane, grid plane (``G''), is held at a bias voltage but is not instrumented with readout electronics. The grid plane improves the signal-to-noise ratio on the U plane and provides electrostatic discharge protection for the readout electronics. The electronic readout is from a single end so that two units can be hung together with minimal gap between the top and bottom units. The APAs are mounted inside the cryostat on rails which run the length of the cryostat (Figure~\ref{fig:single-phase-overview} lower-right). Two rows of wire planes, each two APAs high and 13 deep, instrument each cryostat forming a 30-m-long detector. A total of 52 APA are needed for a 5-kt fiducial volume detector. 
 
- The CPAs are also manufactured in 2.3~m wide stainless steel units and are hung from similar mounting rails as the APAs. Insulating G-10 rods connect the CPAs to the rails and provide the needed electrical isolation. 78 CPAs per cryostat are needed for the three rows of CPAs. The maximum electron-drift distance between a CPA and an adjacent APA is 3.4~m. A ``drift cell'' is associated with the volume between any APA and CPA. As seen in Figure~\ref{fig:single-phase-overview} each of the far detector modules has four drift cells each measuring 3.5~m wide 12~m high and 30~m deep..  A ``field cage'' surrounds the top and ends of the cryostat to ensure uniformity of the electric field. The field cage is assembled from panels of FR-4 sheets with parallel copper strips connected to resistive divider networks.
- 
- 
+ The CPAs are also manufactured in 2.3-m-wide stainless steel units and are hung from similar mounting rails as the APAs. Insulating G-10 rods connect the CPAs to the rails and provide the needed electrical isolation. Each cryostat  needs 78 CPAs for the three rows.% of CPAs. 
+ The maximum electron-drift distance between a CPA and an adjacent APA is 3.4~m. A ``drift cell'' is associated with the volume between any APA and CPA. As seen in Figure~\ref{fig:single-phase-overview}, each of the far detector modules has four drift cells each 3.5~m wide 12~m high and 30~m deep.  A ``field cage'' surrounds the top and ends of the cryostat to ensure uniformity of the electric field. The field cage is assembled from panels of FR-4 sheets with parallel copper strips connected to resistive divider networks.
 
-
-The size of a liquid argon detector is normally defined by its mass. However several metrics are used and need to be clearly defined if comparisons are to be made. The total liquid volume or mass of the detector is defined by the total amount of liquid argon contained in the cryostat which is 9.2~kt for the detector described in this report. Space inside the cryostat is needed for the membrane convolutions, cryogenic services, installation, the volume of the APAs themselves, and an insulation region for HV protection which is 0.5m for the LAr-FD. These volumes reduce the total instrumented volume for each TPC module to 6.9~kt. Finally in any physics analysis fiducial volume cuts will need to be applied. to the data. The cuts will depend on the physics process itself but for the purpose of defining the detector size the cuts for the oscillation physics are used. The cuts applied to the detector volume which lead to the total fiducial mass of tow 5-kt detector modules is shown in Figure~\ref{fig:10kt-fiducial-mass}. A cut of 10~cm on the upstream end of the detector is applied to insure that the event originated inside the detector and not from a muon generated in the rock. A cut of 140~cm downstream of the detector is applies so that muon momentum can be determined by multiple scattering. Finally a cut of 30~cm on each side of the APAs is applied to insure that a neutrino interacting in the fiducial volume will be sufficiently contained to have a good energy measurement.
+The size of a liquid argon detector is normally %defined by 
+quoted in terms of its mass. However, several metrics are used and need to be clearly defined if comparisons are to be made. The total liquid volume %or 
+and mass of a detector module (cryostat) %the detector is 
+are defined by the total amount of liquid argon contained;% in the cryostat; 
+9.2~kt per cryostat in this case. %for the detector described in this report. 
+Space inside the cryostat is needed for the membrane convolutions \fixme{new term to me}, cryogenic services, installation, the volume of the APAs themselves, and an insulation region for HV protection, which is 0.5~m for the LAr-FD. These volumes reduce the total instrumented volume for each %TPC module 
+cryostat to 6.9~kt. Finally, in any physics analysis fiducial volume cuts will need to be applied to the data. The cuts will depend on the physics process itself but for the purpose of defining the detector size, the cuts for the oscillation physics are used. These cuts %applied to the detector volume which 
+lead to a total fiducial mass of two 5-kt detector modules, as shown in Figure~\ref{fig:10kt-fiducial-mass}. A cut of 10~cm on the upstream end of the detector is applied to ensure that a given event originated inside the detector and not from a muon generated in the rock. A cut of 140~cm downstream of the detector is applied so that muon momentum can be determined by multiple scattering. Finally, a cut of 30~cm on each side of the APAs is applied to ensure that a neutrino interacting in the fiducial volume will be sufficiently contained to have a good energy measurement.
 
 \begin{cdrfigure}[Fiducial mass of 10-kton detector]{10kt-fiducial-mass}{Fiducial mass of 10-kton detector}
  \includegraphics[width=\textwidth]{fiducial-mass-10kt-jan2015.png}
@@ -51,9 +67,13 @@ The size of a liquid argon detector is normally defined by its mass. However sev
 \label{sec:det_electronics}
 
 
-CMOS technology, with a noise minimum at 89~K, permits the front-end electronics to reside in the LAr (henceforth ``cold electronics''), as close to the anode wires as is practical. This minimizes capacitance and therefore signal noise, and benefits LAr purity by not residing in the ullage gas. The cold electronics architecture is comprises a front-end shaping/filtering stage (FE ASIC), an analog-to-digital conversion stage (ADC ASIC), and a communication/control stage (digital ASIC). The signal feedthroughs are all located on top of the cryostat, where they are most accessible, are at low hydrostatic pressure, and pose no risk of LAr leakage. The cold electronics multiplex at 1:32, which lowers the cable-count to what can be acomodated by the planned number of feedthroughs, and mitigates contamination from cable outgassing by reducing the volume of cables in the ullage gas.
+CMOS technology, with a noise minimum at 89~K, permits the front-end electronics to reside in the LAr (henceforth ``cold electronics''), as close to the anode wires as is practical. This minimizes capacitance and therefore signal noise, and benefits LAr purity by not residing in the ullage gas. The cold electronics architecture is comprosed of a front-end shaping/filtering stage (FE ASIC), an analog-to-digital conversion stage (ADC ASIC), and a communication/control stage (digital ASIC). The signal feedthroughs are all located on top of the cryostat, where they are most accessible, are at low hydrostatic pressure, and pose no risk of LAr leakage. The cold electronics multiplex at 1:32, which lowers the cable count to what can be accommodated by the planned number of feedthroughs, and mitigates contamination from cable outgassing by reducing the volume of cables in the ullage gas.
 
-The data acquisition system (DAQ) handles the signals from the LArTPC and photon detection once they are outside the cryostat and packages the data into events within runs for offline analysis.  The logic runs in FPGAs, extensively uses the Ethernet protocol which feeds data to commodity computers and network switches  for event building and triggering using a modern software framework which captitalises on scalable parallelization with multicore machines. The primary data transfer path in the DAQ reads out interactions from neutrinos (beam and atmospheric), proton decay and other underground physics phenomena and cosmic ray muons with no zero suppression --- these events occur rarely (the most frequent are the cosmic muons at a rate of about one per minute).  A separate data transfer path works with zero suppressed data to provide the triggering for the avove events, and a continuous readout of all data which can be filtered for study of low energy physics phenomena.  These two readout paths are used in combination for supernova events to maximise the information collected, dependant on the investment available for buffering.  The DAQ is partitioned into sections which are more independent than in most HEP experiments to allow periods of downtime of more than one section of the detector at a time to be practically eliminated, whiuch is useful for supernova detection.
+The data acquisition system (DAQ) handles the signals from the LArTPC and photon detection once they are outside the cryostat and packages the data into events within runs for offline analysis.  The logic runs in FPGAs extensively use the Ethernet protocol, which feeds data to commodity computers and network switches  for event building and triggering. This uses a modern software framework that captitalizes on scalable parallelization with multicore machines. The primary data transfer path in the DAQ reads out interactions from neutrinos (beam and atmospheric), proton decay and other underground physics phenomena and cosmic-ray muons with no zero suppression --- these events occur rarely (the most frequent are the cosmic muons at a rate of about one per minute).  A separate data-transfer path works with zero-suppressed data to provide both the triggering for the above events and a continuous readout of all data, which can be filtered for study of low-energy physics phenomena.  These two readout paths are used in combination for supernova events to maximize the information collected, which is dependant on the %investment 
+space available for buffering.  The DAQ is partitioned into sections that are more independent than in most HEP experiments; this is done to %allow 
+practically eliminate periods of downtime of more than one section of the detector at a time, % to be practically eliminated, 
+which is %useful 
+important for supernova detection.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Photon-Detection System}
@@ -63,7 +83,7 @@ true ionization charge.
 
 For non-accelerator physics events, $t_0$ is not known a priori. However, LAr is an excellent scintillator, generating of order $10^{4}$ 128-nm photons per MeV of deposited energy.  Detection of scintillation photons provides a prompt signal that allows unambiguous location of particle positions along the drift axis.
 
-The reference design for the photon detection system is based on acrylic bars, which are either coated in TPB or doped in bulk. The 128 nm photons interact with the TPB on the surface and 430 nm light is re-emitted. The signals will be routed out of the cryostat to standard readout electronics.
+The reference design for the photon detection system is based on acrylic bars, which are either coated in TPB or doped in bulk. The 128-nm photons interact with the TPB on the surface and 430-nm light is re-emitted. The signals will be routed out of the cryostat to standard readout electronics.
 
 Twenty light-guide and SiPM assemblies, or ``paddles'', will be installed within each APA frame prior to wire winding. The SiPM signals will be used as a software ``trigger'' in the DAQ to define the event time, t$_0$, for non-accelerator events. This system provides a $t_0$ signal throughout the entire detector in contrast to a system similar to that used in MicroBooNE and ICARUS, where light is detected outside the detector volume. 
 
@@ -71,11 +91,11 @@ Twenty light-guide and SiPM assemblies, or ``paddles'', will be installed within
 \section{Detector Installation and Operation}
 \label{sec:det-install}
 
-Detector components will be shipped in sealed containers to the Far Site by truck and lowered to the cavern. Shipping containers will be moved to a clean area over the septum area between the cryostats. There the components will be unpacked from the sealed container and lowered  through an access hatch into the cryostat. 
+Detector components will be shipped in sealed containers to the far site by truck and lowered to the cavern. Shipping containers will be moved to a clean area over the septum between the cryostats. There the components will be unpacked from the sealed container and lowered  through an access hatch into the cryostat. 
 
-The construction of the two cryostats and the installation and commissioning activities will be staged such that both TPCs can be tested cold while one cryostat still remains available as a potential LAr storage vessel. The LAr in one cryostat can be transferred to the other, andback again, if necessary, until all the tests complete successfully. Once both TPCs are known to work properly at LAr temperature, the second fill will take place.
+The construction of the two cryostats and the installation and commissioning activities will be staged such that both TPCs can be tested cold while one cryostat still remains available as a potential LAr storage vessel. The LAr in one cryostat can be transferred to the other, and back again, if necessary, until all the tests complete successfully. Once both TPCs are known to work properly at LAr temperature, the second fill will take place.
 
-To protect the membrane on the floor of the cryostat during TPC installation, a temporary floor will be installed. After each pair of APAs is installed, they will be connected to the DAQ system and the wire integrity tested. All wires on previously installed APA pairs will also be tested. The wire integrity test will be performed during cryostat cool-down as well. A relatively slow cool-down rate will ensure that the temperature-induced stresses in the APA frames and wires are kept well below the level experienced during testing. 
+To protect the membrane on the floor of the cryostat during TPC installation, a temporary floor will be installed. After each pair of APAs is installed, they will be connected to the DAQ system and the wire integrity will be tested. All wires on previously installed APA pairs will also be tested. The wire integrity test will be performed during cryostat cool-down as well. A relatively slow cool-down rate will ensure that the temperature-induced stresses in the APA frames and wires are kept well below the level experienced during testing. 
 
 An installation and integration detector mock-up will be constructed at Fermilab to confirm that interfaces between detector systems are well defined and to refine the installation procedures. 
 
@@ -95,15 +115,15 @@ constraint on the mass hierarchy and the ability to measure
 $\delta_{CP}$, a baseline of 1300~km is needed.
 
 The sensitivity of the experiment scales with the product of the
-fiducial mass, the event detection efficiency, and the acceptance of
-the event selection requirements.  The fiducial volume cuts are set so
+fiducial mass, the event-detection efficiency, and the acceptance of
+the event selection requirements. \fixme{acceptance of ... requirements? I don't get it} The fiducial volume cuts are set so
 that events with primary vertices within the fiducial volume are
 detected with high efficiency and are contained well enough to
 contribute to the oscillation analysis.  The fiducial volume is
 assumed to be set at least 1.5~m from the far edges of the active
 detector volumes, on the sides of the detectors that the beam exits,
 and 30~cm from the boundaries of the active volumes for all other
-boundaries, which are dominantly defined by the field cages.  The
+boundaries, \fixme{from all other `sides'?} which are dominantly defined by the field cages.  The
 volume inside the wire planes is to be defined as non-fiducial.
 The event timing for beam-induced neutrino scatters
 shall be precise enough to correlate the events with the
@@ -112,10 +132,10 @@ beam spill times.  % do we want to measure neutrino speed?  We have the longest 
 % These requirements are from Table 4.2 in the Scientific Opportunities document
 
 Events will be selected and classified in order to reduce the
-backgrounds of the analyses and to focus the attention on only those
-events with well-modeled efficiency, and thus the efficiency for
+backgrounds of the analyses and to focus attention on only those
+events with well-modeled efficiency; thus the efficiency for
 selecting an analysis-quality event is not expected to be 100\%.  The
-event selection efficiency for $\nu_e$~CC interactions shall be at
+event-selection efficiency for $\nu_e$~CC interactions shall be at
 least 80\% after selection requirements for incident neutrinos with
 energies above 100~MeV.  For $\nu_\mu$~CC interactions, the selection
 efficiency shall be at least 85\% for the same range of neutrino
@@ -128,17 +148,20 @@ efficiency, as much of the information is carried by the rates of
 $\nu_e$ and $\bar\nu_e$ appearance events and their ratios to the
 $\nu_\mu$ and $\bar\nu_\mu$ samples.  The total uncertainty on the
 signal yields is required to be less than 1\% from
-far-detector-related uncertainties.  For all of these efficiencies, we
-require fractional systematic uncertainties of less than 0.5\%.  These
+far-detector-related uncertainties.  For all of these efficiencies, 
+fractional systematic uncertainties of less than 0.5\% are required.  These
 uncertainties will require the formation of control samples in the
-data, and so events that are not selected as analysis quality still will
-need to be detected and counted as such.  We require that a neutrino
+data, therefore events that are not selected as analysis quality still will
+need to be detected and counted as such.  %We require that 
+A neutrino
 interaction of any sort with its vertex in the fiducial volume,
-depositing above 50~MeV of ionization energy in the detector be
+depositing above 50~MeV of ionization energy in the detector is required to be
 detected by charge signals on the wires in the TPC, even if they are
-not selected by the analysis cuts.  We require that the systematic
+not selected by the analysis cuts.  %We require that 
+The systematic
 uncertainty on the fiducial mass of the detector, the product of the
-fiducial volume and the density of the liquid argon, to be less than
+fiducial volume and the density of the liquid argon, %to 
+is required to be less than
 0.5\%.  Because the fiducial volume cuts are applied to the primary
 vertex location, the resolution on the primary vertex is thus required
 to be better than 25~mm.
@@ -156,9 +179,9 @@ required to be less than 1\%.
 
 As more data are collected, the shapes of the distributions of the
 reconstructed neutrino energies become increasingly important in
-reducing the uncertainties in the measured parameters.  We require
-that the event-by-event resolution on the reconstructed neutrino
-energy for $\nu_e$-CC events is no wider than 15\%/$\sqrt{E({\rm GeV})}$,
+reducing the uncertainties in the measured parameters.  The event-by-event resolution on the reconstructed neutrino
+energy for $\nu_e$-CC events %is 
+shall be no wider than 15\%/$\sqrt{E({\rm GeV})}$,
  and for $\nu_\mu$-CC, no wider than 20\%/$\sqrt{E({\rm GeV})}$.  
 The resolution of the reconstructed neutrino energy in
 neutral-current interactions is required to be no wider than
@@ -166,7 +189,7 @@ neutral-current interactions is required to be no wider than
 and 6~GeV.  The energy resolution on stopping hadrons (protons and kaons) is required
 to be 1-3\% based on the measured ionization and range.
 
-The average neutrino energy scale calibration is required
+The average neutrino energy-scale calibration is required
 to be better than 5\% for both $\nu_e$-CC and $\nu_\mu$-CC
 events~\cite{docdb8741}.  % it's 1-2% in the sci-opp book
 The calibration of the energy resolution function is required to be better than ??\%
@@ -174,12 +197,12 @@ for both electron and muon events (``needs study'').
 
 \subsection{Detector Requirements: Supernova Burst Neutrino Physics}
 
-In order to perform measurements of supernova-burst neutrinos, we
-require that the detection efficiency (including hardware and analysis
-selection effects) for a single 5 MeV electron be in excess of 90\%
-averaged over the active volume of the detector, and that the
-detection efficiency for the scintillation light flash from a 10 MeV
-electron be in excess of 50\% averaged over the active volume of the
+In order to perform measurements of supernova-burst neutrinos, %we require that 
+the detection efficiency (including hardware and analysis
+selection effects) for a single 5-MeV electron is required to be in excess of 90\%
+averaged over the active volume of the detector, and that %the detection efficiency 
+for the scintillation light flash from a 10-MeV
+electron to be in excess of 50\% averaged over the active volume of the
 detector.  The energy resolution of electron tracks in SNB neutrino
 events is required to be better than 15\% in the range 5-100~MeV in
 order to study the properties of SNB neutrino spectra.  The cosmic-ray
@@ -199,7 +222,7 @@ provide a prompt alert. The absolute time of arrival of SNB
 neutrino events is required to be known to 0.1~ms.  The relative time
 difference between any two SNB events is also required to be known to
 0.1~ms.  The angular resolution on supernova-burst neutrinos shall be
-sufficient to point them to a common location in the sky.  Prompt deexcitation
+sufficient to point them to a common location in the sky.  Prompt de-excitation
 gammas produced in association with low-energy charged-current interactions
 shall be identified and separated from radiological backgrounds and electronics noise.
 
@@ -274,7 +297,7 @@ degrade the pattern-recognition abilities of the far detector and its
 software such that the above requirements are not met.  In order for
 each event to be reconstructible without ambiguity, each
 induction-plane wire may intersect any collection-plane wire at most
-once.  More ambiguity may result in charge deposts reconstructed far
+once.  More ambiguity may result in charge deposits reconstructed far
 away from their true locations, worsening the particle counting,
 energy, and particle identification performances.
 
@@ -292,9 +315,10 @@ from multiple scattering requirement to be met.
 
 In order to reduce the cosmogenic backgrounds for SNB, nucleon decay,
 atmospheric neutrinos and beam neutrinos, the detector is to be situated
-at the 4850~ft level of the SURF facility.  The far detector underground hall shall
+at the 4850~ft level of the SURF facility. \fixme{The prev sounds like a physics req} The far detector underground hall shall
 accommodate the construction of a class 100,000 clean room for detector
-construction.  Concrete floors shall be sealed in areas of clean room environment
+construction. \fixme{say why clean env needed; LAr purity issues?}  Concrete floors shall be sealed in %areas of 
+clean room environments
 and in the high bay of the cavern.  Showers are to be provided for workers underground
 to remove dust and debris.  A solid waste disposal station consisting of a pad
 large enough to accommodate two 4'$\times$6' dumpsters shall be provided near
@@ -307,14 +331,14 @@ one shaft becomes inoperable, the other shaft is required to provide egress, ing
 and sufficient services to ensure the safety of the staff and equipment.
 Sufficient airflow is required to reduce buildup of radioactive radon gas.
 
-More requirements -- safety?
+\fixme{More requirements -- safety? TJ?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Principal Parameters}
 
 The principal parameters of the LAr-FD are given in Table~\ref{tab:param-summ-larfd}. 
-
-\begin{cdrtable}[LAr-FD Principal Parameters for 10-kton Detector]{lp{7cm}}{param-summ-larfd}
+\fixme{This is for the closeout LBNE design -- 10-kt detector is 5+5?}
+\begin{cdrtable}[LAr-FD Principal Parameters for 10-kt Detector]{lp{7cm}}{param-summ-larfd}
 {LAr-FD Principal Parameters for 10-kton Detector}
 Parameter & Value \\ \toprowrule
 Active (Fiducial) Mass &   13.8 (10.2)~kton \\
@@ -352,15 +376,15 @@ wire spacing becomes larger, however, spatial resolution degrades in
 the plane parallel to the wires, while resolution remains good in the
 remaining axis pointing along the electric field as that axis is
 digitized in time samples.  This difference in resolutions along the
-three axes if too big will lead to anisotropy in efficiencies,
-resolutions, and particle ID performance.  The 5~mm wire spacing is
+three axes, if too big, will lead to anisotropy in efficiencies,
+resolutions, and particle ID performance.  The 5-mm wire spacing is
 expected to be adequate for discerning short stubs from supernova
 neutrino scattering elecrons which should create signals in
-approximately ten adjacent wires for a 10 MeV electron.  Counting
+approximately ten adjacent wires for a 10-MeV electron.  Counting
 short protons near the interaction vertex requires good resolution for
-short tracks.  Furthermore, ambiguities in associting features between
+short tracks.  Furthermore, ambiguities in associating features between
 planes become easier to break when the spatial resolution is better.%
-could put this later
+\fixme{could put this later. TJ?}
 
 If hits can be unambiguously reconstructed and associated between
 planes, then only two wire planes are required to reconstruct events
@@ -372,9 +396,9 @@ to the spatial resolution.  The other two planes' hits will be able to
 reconstruct these tracks in three dimensions.  Furthermore, the
 wrapping of the induction-plane wires introduces a discrete ambiguity
 in interpreting the hits on these wires.  Hits that arrive on
-different wires at similar times because they come from portions of
-tracks and clusters that are similar distances from the anode plane
-create ambiguity in the assiciation of hits between planes.  The
+different wires at similar times, because they come from portions of
+tracks and clusters that are similar distances from the anode plane,
+create ambiguity in the association of hits between planes.  The
 wrapping allows for more combinations, as tracks and clusters from
 either side of the APA can contribute to the signals on any induction
 wire.
@@ -385,8 +409,8 @@ as well as to provide readout on the ends of the APA frames for
 each wire.  These wires do not wrap around the APA frames and so
 they provide unambiguous two-dimensional information about the
 event.  Calorimetry is most commonly performed using the
-collection-plane wires and so low noise is important, though
-induction-plane wires provide additional meausrements of the same
+collection-plane wires, therefore low noise is important, though
+induction-plane wires provide additional measurements of the same
 drifting charge.
 
 % cite LBNE-docdb-9374 -- wire angle change request, 8981 and 9886,
@@ -411,7 +435,7 @@ Wrapping the induction-plane wires however creates pattern-recognition
 difficulties arising from the discrete ambiguity of which segment of
 the wire contributed any given signal.  If the wires wrap around more
 than once, so that a particular induction-plane wire intersects a
-particular collection-plane wire more than once, then the ambiguity is
+particular collection-plane wire more than once, then the ambiguity is%%%%% Anne to here 4/6 5pm
 unresolvable with two readout planes and a third one is required, with
 a slightly different angle so as to to create repeated solutions of
 three wires intersecting.  Even with the proposed 44.3$^\circ$ and
