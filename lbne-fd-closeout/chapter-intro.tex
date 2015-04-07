@@ -7,7 +7,7 @@
  \end{cdrfigure}
  \fixme{Missing figure in repo}
 
-The former LBNE Far Detector Project team has prepared this design document which describes the single-phase liquid argon time projection chamber (LArTPC) that was being developed for the LBNE experiment. This report reflects the design status of January 2015, which marks the end of the LBNE collaboration and the start of the new DUNE collaboration. As the DUNE collaboration moves forward, it is anticipated that the collaboration will grow and the scope of the experiment will increase. The LBNE detector consisted of two detector modules each with a fiducial volume of 5~kt to be located at the 4850L of the Sanford Underground Research Facility (SURF). Figure~\ref{2x5kt-3d} shows the 3D model of the detector. Throughout this document the detector is referred to as the LAr-FD. 
+The former LBNE Far Detector Project team has prepared this design document which describes the single-phase liquid argon time projection chamber (LArTPC) that was being developed for the LBNE experiment. This report reflects the design status of January 2015, which marks the end of the LBNE collaboration and the start of the new DUNE collaboration. As the DUNE collaboration moves forward, it is anticipated that the collaboration will grow and the scope of the experiment will increase. The LBNE detector consisted of two detector modules each with a fiducial volume of 5~kt to be located at the 4850L of the Sanford Underground Research Facility (SURF). Figure~\ref{fig:2x5kt-3d} shows the 3D model of the detector. Throughout this document the detector is referred to as the LAr-FD. 
 
 The LAr-FD is proposed as the starting point for the design of the DUNE single-phase far detector. The full scope of the DUNE experiment consists of four 10-kt detector modules to reach the desired fiducial mass of 40~kt, which would enable a compelling research program in long-baseline and underground neutrino physics and in nucleon decay studies. The ultimate goal in the operation of the facility and experimental program is to measure fundamental physical parameters, explore physics beyond the Standard Model and better elucidate the nature of matter and antimatter. 
 
@@ -31,7 +31,7 @@ Construction of the major components can be done at multiple sites.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{LAr-FD Components}
+\section{LAr-FD Components and Activities}
 \label{sec:larfd-components}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -88,7 +88,7 @@ The reference design for the photon detection system is based on acrylic bars, w
 Twenty light-guide and SiPM assemblies, or ``paddles'', will be installed within each APA frame prior to wire winding. The SiPM signals will be used as a software ``trigger'' in the DAQ to define the event time, t$_0$, for non-accelerator events. This system provides a $t_0$ signal throughout the entire detector in contrast to a system similar to that used in MicroBooNE and ICARUS, where light is detected outside the detector volume. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Detector Installation and Operation}
+\subsection{Detector Installation and Operation}
 \label{sec:det-install}
 
 Detector components will be shipped in sealed containers to the far site by truck and lowered to the cavern. Shipping containers will be moved to a clean area over the septum between the cryostats. There the components will be unpacked from the sealed container and lowered  through an access hatch into the cryostat. 
@@ -284,7 +284,7 @@ and the near detector provides better cancellation of systematic uncertainty.
 Energy deposits from neutrons
 originating in neutrino scatters shall be recorded.
 
-The far detector shall communicate the data to the LBNE global DAQ,
+The far detector shall communicate the data to the DUNE global DAQ,
 which shall record the data on long-term storage media easily
 accessible to the collaboration.
 
@@ -415,6 +415,8 @@ drifting charge.
 
 % cite LBNE-docdb-9374 -- wire angle change request, 8981 and 9886,
 % the tech board meeting documents -- trade study
+\fixme{Is this new or old? cite LBNE-docdb-9374 -- wire angle change request, 8981 and 9886,
+ the tech board meeting documents -- trade study}
 
 A study of wire orientation~\cite{docdb2836} was performed that uses
 the sum of the numbers of wires a photon from $\pi^0$ decay traverses
@@ -432,29 +434,32 @@ bottom of the TPC.  As a result, it is natural to arrange the APA's
 vertically in a two-high configuration.
 
 Wrapping the induction-plane wires however creates pattern-recognition
-difficulties arising from the discrete ambiguity of which segment of
+difficulties arising from the discrete ambiguity in determining which segment of
 the wire contributed any given signal.  If the wires wrap around more
 than once, so that a particular induction-plane wire intersects a
-particular collection-plane wire more than once, then the ambiguity is%%%%% Anne to here 4/6 5pm
-unresolvable with two readout planes and a third one is required, with
+particular collection-plane wire more than once, then the ambiguity is
+unresolvable with two readout planes; a third one is then required, with
 a slightly different angle so as to to create repeated solutions of
 three wires intersecting.  Even with the proposed 44.3$^\circ$ and
 45.7$^\circ$ solution of the initial design, however, ambiguities
 resurface when multiple hits arrive on different wires at similar
-times.  Misassociating hits between views can have the consequence of
-displacing the three-dimensional reconstructed location of the charge
+times.  Misassociating hits between views can result in %have the consequence of
+displacement of the 3D reconstructed location of the charge
 deposit by the vertical distance required to wrap an induction-plane
-wire around once, or approximately five meters in the CD-1 design.
+wire around once; this is approximately five meters in the CD-1 design.
+ \fixme{Can we say ``LBNE'' design? CD-1 vs `CD-1 refresh' might be confusing}
 Even with the most sophisticated reconstruction algorithms, it is
 expected that even a small fraction of misassigned hits will create
-difficulties in energy reconstruction, track identification, and
-particle ID which may be difficult to simulate to the accuracy
+difficulties in energy reconstruction, track identification and
+particle ID, which may be difficult to simulate to the accuracy
 required by the physics program.
+\fixme{Is it necessary to go into the problems of the earlier design? I guess it's a way to describe the issue,
+but seems like TMI}
 
-In order to reduce the impact of hit assignment ambiguity on
+In order to reduce the impact of hit-assignment ambiguity on
 reconstruction, an angle of $\pm35.71^\circ$ was chosen for the
 induction-plane wires~\cite{docdb-9374,docdb8981,docdb9886}.  The APA
-design with this angle improves on the CD-1 design in a number of
+design with this angle improves on the CD-1 \fixme{ditto} design in a number of
 ways.  The length of the APA is shorter at 6~meters, allowing it to be
 stiffer using the same materials.  The 2.3-meter APA width was chosen
 to facilitate construction and allow standard, over-the-road
@@ -469,13 +474,14 @@ long and the induction-plane wires are 7.3~m long.
 
 The choice of cryostat width is based on the desired cryostat shape
 and cavern span. From a cryogenics standpoint, the ideal cryostat for
-a modular TPC would be a cube since membrane-cryostat capital and
+a modular TPC would be a cube, since membrane-cryostat capital and
 operating costs scale linearly with the surface area. This shape is
 not ideal for cavern excavation, however. In the absence of a
 geotechnical investigation for the cavern location, the cavern span
-has been limited to $\sim$30~m on the advice of rock engineers. A
+has been limited to $\sim$30~m on the advice of rock engineers. \fixme{No geotech investigation
+at this site?} A
 detector width of 14~m results after making allowance for cryostat
-insulation, and personnel access both above and within the cryostat.
+insulation and personnel access both above and within the cryostat.
 
 A drift field of 500~V/cm was chosen based on experience from similar
 detectors such as ICARUS, ArgoNeuT and the Fermilab cosmic-ray test
@@ -496,7 +502,7 @@ required minimum signal-to-noise ratio and high-voltage
 considerations. The required minimum signal-to-noise ratio of 9:1
 ensures that the tracking efficiency will be 100\% throughout the
 entire drift cell. The TPC must be capable of detecting the smallest
-signal (1~MeV) produced in interactions that LBNE will study. This
+signal (1~MeV) produced in interactions that DUNE will study. This
 situation occurs when a MIP travels parallel to a wire plane and
 perpendicular to the orientation of the wires in the plane. A MIP
 loses 2.1~MeV of energy in each cm of travel, producing $\sim$ 40,000
@@ -517,9 +523,9 @@ Ionization electrons will be lost due to impurities in the LAr. The
 fraction that survive passage to the anode planes is $e^{t/\tau}$,
 where$t$ is the drift time and $\tau$ is the drift-electron
 lifetime. The maximum drift time is the maximum drift length divided
-by 1.6~mm/$\mu$s which equals 2.3~ms for LBNE. The ICARUS detector has
+by 1.6~mm/$\mu$s which equals 2.3~ms for DUNE. The ICARUS detector has
 achieved a drift electron lifetime of 6 -- 7~ms. The Materials Test
-Stand (described in Section~\ref{sec:mts}) regularly achieves a
+System (described in Section~\ref{sec:mts}) regularly achieves a
 drift-electron lifetime of 8 -- 10 ms. The Fermilab Liquid Argon
 Purity Demonstrator achieved a liftime of $>$ 3~ms during initial
 tests. Based on this experience, and by careful selection of materials
