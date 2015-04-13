@@ -15,14 +15,15 @@
 \label{ch:trig}
 
 The data acquisiton (DAQ) subsystem provides the data collection
-in a robust fashion and optimized for the specific needs of the \fixme{long-baseline?} neutrino and
+in a robust fashion and optimized for the specific needs of the long-baseline neutrino and
 underground physics of the experiment.  The scope includes design,
 procurement, fabrication, testing, delivery and installation of a
 combination of custom and commercial electronics modules, (including
 commodity computing and networking hardware), as well as both
 commercial and internally developed software.
 
-\fixme{could we list out the components here?}
+%\fixme{could we list out the components here? - I prefer not, I wanted to get the
+%requirements in ahead of lists of names of things}
 
 The \LBNE\ DAQ must collect data from (a) interactions which are
 associated with the beam, (b) high energy ($>100$~MeV) interactions
@@ -30,8 +31,7 @@ which are asynchronous such as atmospheric neutrinos, proton decay,
 cosmic ray muons etc., and (c) low energy interactions such as those
 from diffuse supernova neutrinos or a possible supernova explosion in
 our galaxy.  For case (a) and (b), it is essential to record the
-maximum information about each event --- the %current 
-design presented
+maximum information about each event --- the design presented
 allows collection of all the LArTPC data with no zero suppression
 whatsoever.  For supernova physics, it is essential to have the
 maximum possible uptime, to be sure data is being collected when a
@@ -52,8 +52,7 @@ operated independently, and in so doing allows an added degree of
 robustness to data collection, in particular supernova burst
 detection, by giving a method for eliminating entirely even short
 periods when the entire detector is off.  It also allows for unique 
-design features %to be possible 
-in the different \COMPARTMENTS\ 
+design features in the different \COMPARTMENTS\ 
 of \LBNE.
 
 The majority of this chapter describes the full conceptual design for
@@ -134,8 +133,12 @@ in the development of relevant systems for the MINOS,
 NO$\nu$A~\cite{novatdr} and MicroBooNE~\cite{microboonecdr}
 experiments, as well as from experiments with comparable channel
 counts and/or experimental conditions, such as D-Zero, CDF, NA48 and
-ICARUS. \fixme{Need references?} Guidance and experience is also available from the design and
-operation of the LBNE 35t prototype \fixme{internal reference?} and the future CERN testing
+ICARUS. 
+%\fixme{Need references? - If we had more time, ideally yes!} 
+Guidance and experience is also available from the design and
+operation of the LBNE 35t prototype 
+%\fixme{internal reference? - No, we don't have anything to reference yet} 
+and the future CERN testing
 program.
 
 The DAQ subsystem is to be located external to the cryostat vessel,
@@ -246,7 +249,7 @@ in Figure~\ref{fig:daq15_main} and consists of the following
 components:
 \begin{itemize}
   \item logic and processing elements called ``Reconfigurable cluster
-    elements'' (RCE) residing on daughter cards in ATCA crates \fixme{What is ATCA?} located
+    elements'' (RCE) residing on daughter cards in standard ATCA crates located
     in the detector hall to receive data from the LArTPC; these carry
     out data merging, buffering and compression and transmission to the
     local farms of commodity computers (see Section~\ref{sec:daq_cob})
@@ -342,7 +345,7 @@ control in different \COMPARTMENTS\ of the experiment
 For the reference design described here, sited at the 4850L of the Sanford Laboratory, the 
 atmospheric-muon rate is small enough --- 0.1~Hz within the full LAr-FD active 
 volume --- to contribute only negligibly to the DAQ bandwidth requirement.
-\fixme{what does it mean to ``contribute to a requirement?''}
+%\fixme{what does it mean to ``contribute to a requirement?' - I mean that the rate is much higher from other sources and they drive the requirement, so this only adds a small increment to the bandidth we are required to provide.'}
 %For reference, the rate at the alternate 800L site 
 %is estimated to be 500~Hz within the active volume.  
 
@@ -522,7 +525,7 @@ the flange and the TPC DAQ using QSFP+ connectors. This provides the required gr
 RTM can accommodate up to 16 QSFP+ connections.
 
 With 
-\fixme{Erik suggests a simple diagram to accompany this paragraph} 
+%\fixme{Erik suggests a simple diagram to accompany this paragraph - let's not - no time now} 
 the assumption that each cold FE board multiplexes its 128 wire
 channels to four outputs at 1-Gbps each, the non-zero-suppressed data for
 one APA can be fed into a single COB (containing eight RCEs).  Each RCE
@@ -530,7 +533,8 @@ would receive data from two FE boards, perform zero suppression, and
 send the result to the trigger front-end computers.  There would also
 be a large DRAM ring buffer to store a non-zero-suppressed copy of the
 data, which would be read out on request (see
-Figure~\ref{fig:daq15_main}) to the data front-end computers.\fixme{``data front-end computers''? Why `data'?}
+Figure~\ref{fig:daq15_main}) to the data front-end computers.
+%\fixme{``data front-end computers''? Why `data' - that is what is in the figure where we separate the trigger-frontends from the data-fontends}
 
 Figure~\ref{fig:daq15_atcapic} shows a COB in a two-slot ATCA shelf.
 There are some options regarding the physical distribution of the
@@ -570,7 +574,7 @@ NO$\nu$A experiment.  NO$\nu$A uses a Global Positioning System (GPS)
 receiver on the surface, in a module called the Master Timing Unit
 (MTU), and a protocol that uses four twisted-pair connections (on a
 standard RJ45 connector) to fan out and then daisy-chain these signals
-to the electronics.  \LBNE\ proposes using the same concep,t with potential
+to the electronics.  \LBNE\ proposes using the same concept with potential
 enhancements and modernization, for distribution of the 
 surface-to-underground timing among the readout modules for the photon
 detector and also for distribution to the COBs for the LArTPC readout.
@@ -578,10 +582,13 @@ This will maintain a 64-bit counter synchronized to the absolute GPS
 time on each of these readout modules.  In addition, a
 separate protocol for synchronization of the cold electronics
 boards from the counters on the COBs will be used; this uses the same optical links
-as the data path described in Section~\ref{sec:daq_cob}.  For
-simplicity, this \fixme{the protocol?} maintains a 64\,MHz clock, but not a large counter
-synchronized on the cold electronics boards, the time being added when
-the data reach the RCE. \fixme{I'm not sure I can parse this sentence correctly; please try to rephrase it a bit.}
+as the data path described in Section~\ref{sec:daq_cob}.  
+For simplicity, the full 64-bit counter is not used in the cold electronics, instead, 
+the 64\,MHz clock is supplied to the cold electronics and the higer-order bits on 
+the timestamp added when the data reach the COBs.
+%For simplicity, this \fixme{the protocol?} maintains a 64\,MHz clock, but not a large counter
+%synchronized on the cold electronics boards, the time being added when
+%the data reach the RCE. \fixme{I'm not sure I can parse this sentence correctly; please try to rephrase it a bit.}
 
 The timing link is the only physical link other than the
 communications network.  The system described here
@@ -604,10 +611,12 @@ provides several essential functions:
 
 A similar GPS-based system will be used at Fermilab to record the times
 of the accelerator spills that generate the 10-$\mu$s bursts of
-neutrinos.  There should be \fixme{should or must?} sufficient buffering in the trigger path
+neutrinos.  There should be 
+%\fixme{should or must? - should, see next paragraph} 
+sufficient buffering in the trigger path
 of the readout system shown on Figure~\ref{fig:daq15_main} so that all
 data can be buffered while the time stamp of the spill is
-sent to the far detector over the internet.  
+sent to the far detector over the internet.
 
 Since the Fermilab accelerator complex is timed off the 60-Hz electric
 line frequency from the local power company, and the time between
@@ -725,8 +734,8 @@ systems, a certain number of auxiliary signals may need to be read
 out.  A trigger module, designed for the 35t test,  will be
 used to perform trigger counter logic and supply external calibration
 pulsers with triggers at predetermined times.  This module is
-connected to the time-synchronization network as described above \fixme{the prev section? Please use Section~\ref{sec:dyn-sync-exec} or whatever the right label is}.  It
-is read out using a Xilinx Zynq FPGA using the same techniques as for
+connected to the time-synchronization network as described in Section~\ref{sec:daq_time}. %\fixme{the prev section? Please use Section~\ref{sec:dyn-sync-exec} or whatever the right label is}
+It is read out using a Xilinx Zynq FPGA using the same techniques as for
 the RCE system.   At the CERN single-phase test, this module will also be used to
 record beam counter information and to digitize the warning of
 extraction from the SPS accelerator.  The module will be retained for
@@ -1025,8 +1034,9 @@ software to send the zeroMQ messages.  A centralized program will
 harvest read-only data about the cryogenics and about the beam at
 Fermilab which will also be available for status and historical
 display.  All this data will be replicated to Fermilab and accessible
-offline through the \LBNE\ offline database framework as described
-above.\fixme{pls indicate section}
+offline through the \LBNE\ offline database framework.
+
+% as described above.\fixme{pls indicate section - ahem, there isn't any description above!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Slow Control}
@@ -1047,22 +1057,20 @@ The slow control will have no control over the cryogenics system or the beamline
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\fixme{What?} Interface with Offline Computing}
+\section{Interface between DAQ and Offline Computing}
 \label{sec:daq_offline}
 
-\fixme{This section needs some cleanup}
+%\fixme{This section needs some cleanup}
+\fixme{This section may still need some more cleanup}
 
-As described in Section~\ref{sec:daq_slowcontrol}, the interface \fixme {from ??} to
-the slow-control monitoring data will be handled via replication of the
-online slow-control database tables to Fermilab where they will be
-accessible via the standard database-access tools developed for
-\LBNE.  This method will also be used to give access to the run-logging
-database table that provides information about each run.  The values of
-parameters used to configure \fixme{to configure the run?} at the start of each run will also be
-stored in database tables and made available in this way. [The full \fixme{set of files, or the full file?}
-configuration files for each run will be backed up, and a separate job
-will harvest the relevant ones \fixme{relevant to what? maybe say the meaningful ones?} (some are `plumbing parameters' used
-for setting registers used only for lab debugging of the module)].
+The online DAQ system must be closely coupled to the offline data
+procressing and analysis software in order that the data that is
+collected can be studied easilly.  Although there are some software
+libraries in common between online and ofline, the requirement that
+the online should have a high uptime means it must be ready to run on
+demand, whereas the offline code can wait for short periods if bugs in
+the latest code need to be fixed.  Therefore the online will use
+relatively stable, frozen versions of the software packages.
 
 The default output format for artDAQ is readable by the art framework
 directly.  As described in Section~\ref{sec:daq_upper}, the data will be
@@ -1071,6 +1079,20 @@ complete `runs' corresponding to all the data in the entire detector
 for a given running period.  This will be archived to Fermilab, recorded in the
 run control database and accessible directly by the offline
 reconstruction and analysis programs.
+
+As described in Section~\ref{sec:daq_slowcontrol}, the access offline
+to the slow-control monitoring data will be handled via replication of
+the online slow-control database tables to Fermilab where they will be
+accessible via the standard database-access tools developed for \LBNE.
+The data will be accessible using the time as a key, rather than e.g.\
+the run number so that the slow control can provide monitoring
+information independent of whether a run is in progress or not.
+
+This method will also be used to give offline access to the
+run-logging database table that provides information about each run
+taken by the DAQ.  The values of parameters used to configure the
+experiment at the start of each run will also be stored in database
+tables and made available in this way.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1108,7 +1130,7 @@ commodity computers for the data collection and triggering operate at around
 35t test to refine these numbers and add the other electronics
 components into the estimate.
 
-\fixme{You don't give any totals here; might be useful}
+%\fixme{You don't give any totals here; might be useful -- deliberately omitted, we don't know them yet!}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1146,7 +1168,7 @@ database will indicate the periods when any compartment is missing
 from the overall data collection. 
 Given the rarity and scientific value of a supernova event, it is deemed
 essential to do everything possible to ensure continuous operation of at least part of the detector at all times.
-\fixme{This sentence was a mouthful... does the previous sentence capture the right idea?}
+%\fixme{This sentence was a mouthful... does the previous sentence capture the right idea? - yes, excellent!!!}
 %  It is felt that a mechanism by
 %which the entire detector does not stop data collection is essential
 %for a detector with the goal of collecting data from a
@@ -1167,9 +1189,11 @@ in each file).   Each \COMPARTMENT\ will also have its own independent
 storage for slow-control measurements.
 
 A centralized `manager' for triggers across the entire detector will
-be implemented.  This places a number of requirements on the readout
-of the individual \COMPARTMENTS, although %note that 
-none of these is as arduous as \fixme{what?} collecting beam-spill data on its own. \fixme{This comes out of the blue... what's collecting it, why is it so arduous and why is it used as a comparison here?}
+be implemented.   The timing requirements for the communications protocol with the manager should not be more stringent than needed for operating an individual \COMPARTMENT\ alone.
+% Thankyou, yes, this was a mess - I have reworded it
+% This places a number of requirements on the readout
+%of the individual \COMPARTMENTS, although %note that 
+%none of these is as arduous as \fixme{what?} collecting beam-spill data on its own. \fixme{This comes out of the blue... what's collecting it, why is it so arduous and why is it used as a comparison here?}
 %more arduous than that required in order to collect beam spill data on its own.  
 The individual \COMPARTMENTS\ are able to report when they detect an activity that warrants triggering of the adjacent (or all) \COMPARTMENTS;
 this could be detection of  e.g.,\ a cosmic muon, atmospheric or beam neutrino.  These reports are likely to occur only once every minute,
@@ -1188,11 +1212,14 @@ implemented via a dedicated Ethernet network.% which is not used for any other t
 To establish a connection setup to the central management service
 the individual \COMPARTMENT\ will subscribe to it; if the central management is not present
 or stops, the \COMPARTMENT\ can run independently (although, in this case,
-it will not receive trigger requests from the other \COMPARTMENTS).  It is possible that an alternative way for a \COMPARTMENT\
-to obtain the spill-timing information independently of the central
-manager may be available. \fixme{this sentence is pretty vague}
+it will not receive trigger requests from the other \COMPARTMENTS).  
+%It is possible that an alternative way for a \COMPARTMENT\
+%to obtain the spill-timing information independently of the central
+%manager may be available. \fixme{this sentence is pretty vague - yes you are right, let's leave it out}
 
-The \fixme{something about `modular'?} run control will consist of a dedicated run control for each
+The 
+%\fixme{something about `modular'? - good idea} 
+modular run control will consist of a dedicated run control for each
 \COMPARTMENT\ that permits run-starts, run-stops, monitoring, logging,
 run-mode selection and configuration.  The run control functionality can
 vary between \COMPARTMENTS, but will conform to a
