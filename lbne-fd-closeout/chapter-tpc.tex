@@ -55,9 +55,10 @@ At a nominal wire pitch (center-to-center separation) of 4.8~mm,
 the total number of readout channels in an APA is 2560, for a total of 133,120 in each cryostat.
  
 As shown in Figure~\ref{fig:tpc-wire-frame-xsect}, the readout electronics reside only along one narrow edge of an APA. 
-\fixme{``As shown in Figure~\ref{fig:tpc-wire-frame-xsect}, the readout electronics reside only along one narrow edge of an APA.'' How is that shown? I assume it's at the top, but that's not said.} During installation, two APAs are interconnected on their non-readout ends, leaving the readout ends completely outside of the TPC's active volume.  Cables from the bottom APAs can be routed either through the hollow vertical APA frames, or down along the floor and up along a side wall of the cryostat.
+%\fixme{``As shown in Figure~\ref{fig:tpc-wire-frame-xsect}, the readout electronics reside only along one narrow edge of an APA.'' How is that shown? I assume it's at the top, but that's not said.} 
+During installation, two APAs are interconnected on their non-readout ends, leaving the readout ends completely outside of the TPC's active volume.  Cables from the bottom APAs can be routed either through the hollow vertical APA frames, or down along the floor and up along a side wall of the cryostat.
 
-\begin{cdrfigure}[Illustration of the APA wire wrapping scheme]{tpc-wire-frame-xsect}{Illustration of the APA wire wrapping scheme, and three cross sectional views.}
+\begin{cdrfigure}[Illustration of the APA wire wrapping scheme]{tpc-wire-frame-xsect}{a) Illustration of the APA wire wrapping scheme. b) cross section of the 'readout end' of the APA.  Front-end readout electronics boards are plugged in to the wire bonding boards.  c) cross section of a long edge of the APA where the two induction wire planes wrap around the edge boards.  d) cross section view of an intermediate wire support structure, and the non-readout end of the APA.}
 \includegraphics[width=\linewidth]{tpc_apa_cross_sections}
 \end{cdrfigure}
 
@@ -129,7 +130,7 @@ limit the unsupported wire length to less than 1.5~m, resulting in less than 0.2
 onto printed circuit boards attached to the wire frame.
 
 \begin{cdrfigure}[Plot of electric potential distribution near the wire planes]{tpc-bias-voltages}{A surface plot of the electric potential distribution near the wire planes.  The voltages on the wire planes are biased to provide complete electron transparency through the first three planes, and complete collection on the fourth plane.}
-\includegraphics[width=\linewidth]{v5c3-bias-voltages.png}
+\includegraphics[width=\linewidth]{tpc_wire_bias.png}
 \end{cdrfigure}
 
 
@@ -138,15 +139,15 @@ onto printed circuit boards attached to the wire frame.
 
 
 Four planes of wires are installed on each side of an APA as shown in Figure~\ref{fig:tpc-wire-frame-xsect}.
-A nominal wire pitch of 4.7~mm is selected to meet the position resolution  and signal-to-noise ratio requirement. The distance between wire planes is set to 4.8~mm (3/16~in) to use standard printed circuit board thickness, while maintaining optimal signal formation.  These four planes (along the direction of electron drift) are labeled as: the {\em grid plane}, the {\em first induction plane} (U), the {\em second induction plane} (V), and the {\em collection plane} (X).
+A nominal wire pitch of 4.7~mm is selected to meet the position resolution  and signal-to-noise ratio requirement. The distance between wire planes is set to 4.8~mm (3/16~in) to use standard printed circuit board thickness, while maintaining optimal signal formation.  These four planes (along the direction of electron drift) are labeled as: the {\em grid plane} (G), the {\em first induction plane} (U), the {\em second induction plane} (V), and the {\em collection plane} (X).
 The wires on the grid and the collection planes
 are vertically oriented, while the two induction planes are oriented 
-at $\sim\pm$35.71$^\circ$ to the vertical. \fixme{why $\sim$ here?} This wire layout is shown to be very good for reconstructing beam-neutrino events \cite{wire-orientation}. The wires on the grid plane are not 
+at $\pm$35.71$^\circ$ to the vertical. This wire layout is shown to be very good for reconstructing beam-neutrino events \cite{wire-orientation}. The wires on the grid plane are not 
 connected to the readout electronics; they shield the first induction wire plane from being influenced by distant arriving ionizations. The four wire planes 
 will be electrically biased so that electrons from an ionizing-particle
 track completely drift past the first three planes and are collected by the 
 fourth plane. Calculations show that the minimum bias voltages 
-needed to achieve this goal are $V_G= -665$V, $V_U=-370$V, $V_V=0$V and $V_X=820$V 
+needed to achieve this goal are $V_G= -655$V, $V_U=-365$V, $V_V=0$V and $V_X=860$V 
 respectively.  A grounded mesh plane, located 4.8~mm behind the collection plane, prevents the electric field around this set of wires from being distorted by the metal frame structure and the wires on the opposite side of the frame. It also shields the sensing wires from potential EM interferences from the silicon photomultipliers (SiPMs), discussed in Chapter~\ref{ch:photon}, mounted within the frame.  The mesh should have a wire pitch less than 2~mm to ensure a uniform electric field and a high optical transparency.  Figure~\ref{fig:tpc-bias-voltages} shows the electric potential distribution near the APA frame with the wire planes biased with the appropriate voltages. 
 
 The V wire plane is directly connected to the front-end electronics, i.e. $V_V=0$V, to simplify the coupling and 
@@ -160,16 +161,16 @@ while the lower APAs will mount their electronics at the bottom edge.  These rea
 
 The wire angle and overall APA length are chosen so that the angled wires wrap less than one full wrap around the APA between its head and foot (Figure~\ref{fig:tpc-wire-angle}).  This avoids an ambiguity problem that would arise if a pair of angled wires and a vertical wire coincided at more than one location on an APA face.  A particle arriving at one of the locations would be indistinguishable from a particle arriving at the other.  The multiple photon detectors embedded in the APA frame also help to identify the vertical location of an ionizing track.
 
-\begin{cdrfigure}[TPC APA wire wrapping illustration]{tpc-wire-angle}{An illustration of a few wire paths on the APA.  The length and width of the APA, and the wire angle, are chosen so that in the angled layers the wires wrap less than once around the APA.  This can be seen in the darkened path of a single wire in the illustration.  Small portions of the wires from the three signal planes are shown in color.  There is a fourth, un-shown wire plane above these three which is present to help maintain a uniform field and shield the induction planes from interference.}
+\begin{cdrfigure}[TPC APA wire wrapping illustration]{tpc-wire-angle}{An illustration of a few wire paths on the APA.  The length and width of the APA, and the wire angle, are chosen so that in the angled layers the wires wrap less than once around the APA.  This can be seen from a single wire (shown in black in the magenta group) in the illustration.  Small portions of the wires from the three signal planes are shown in color: magenta (U), green (V), blue (X).  There is a fourth (G), un-shown wire plane above these three, and parallel with X, which is present to improve the pulse shape on the U plane signals.}
 \includegraphics[width=\linewidth]{tpc_apa_wire_wrapping.png}
 \end{cdrfigure}
 
-\fixme{Figure~\ref{fig:tpc-wire-angle}: ``darkened'' path? Maybe `labeled' path. And it's not clear to me what the blue lines are. AH}
+%\fixme{Figure~\ref{fig:tpc-wire-angle}: ``darkened'' path? Maybe `labeled' path. And it's not clear to me what the blue lines are. AH}
 
-Precise values of wire angle and wire pitch were chosen to give an integral number of wires across the boards \fixme{electronics boards?} at the electronics end of the APA as well as an integral number of wire slots in the boards along the sides of the APA.  A solder pad spacing of 5.75~mm at the electronics end and a wire slot spacing of 8.00~mm along the sides results in a wire-to-wire pitch of 4.67~mm and a wire angle of 35.71$^\circ$ to the long axis of the APA.
+Precise values of wire angle and wire pitch were chosen to give an integral number of wires across the wire-bonding boards at the electronics end of the APA as well as an integral number of wire slots in the boards along the sides of the APA.  A solder pad spacing of 5.75~mm at the electronics end and a wire slot spacing of 8.00~mm along the sides results in a wire-to-wire pitch of 4.67~mm and a wire angle of 35.71$^\circ$ to the long axis of the APA.
 
 
-The 5.75~mm pitch of solder pads across the electronics boards of the U and V layers results in 40 channels per 230-mm-wide board.  The 4.79~mm pitch in the X layer gives 48 channels per 230~mm wide board.  Each 230-mm-wide stack of boards has, therefore, 40+40+48=128 channels.  There are 10 of these boards distributed per side along the readout edge of an APA for a total of 2560 signal wires on the APA.  With the additional 48 G wires \fixme{G wires not defined} per board stack, the total number of wires per APA is 3520.
+The 5.75~mm pitch of solder pads across the electronics boards of the U and V layers results in 40 channels per 230-mm-wide board.  The 4.79~mm pitch in the X layer gives 48 channels per 230~mm wide board.  Each 230-mm-wide stack of boards has, therefore, 40+40+48=128 channels.  There are 10 of these boards distributed per side along the readout edge of an APA for a total of 2560 signal wires on the APA.  With the additional 48 G wires per board stack, the total number of wires per APA is 3520.
 
 \begin{cdrfigure}[Conceptual design of a wire frame]{tpc-wire-frame}{The stainless steel APA frame (shown without wires or boards). The photon detectors are shown in place --- although the APA is designed so that the photon detectors can be inserted into the APA after the wires are wound.}
 \includegraphics[width=\linewidth]{tpc_apa_frame.png}
@@ -199,19 +200,19 @@ All three long tubes have slots cut in them so the photon detectors can be inser
 \subsection{Wire Wrapping Around an APA}
 
 
-\begin{cdrfigure}[Conceptual design of a wire-bonding board for the x wires]{tpc-wire-board-x}{Left: Design of a wire bonding board for the x wires.  The wires are glued on the leading edge of the top surface, and then soldered to the soldering pads. Right: Another board, located underneath the four wire boards, carries the RC network for the bias voltages.}
+\begin{cdrfigure}[Conceptual design of a wire-bonding board for the x wires]{tpc-wire-board-x}{Left: Design of a wire bonding board for the x wires.  The wires are glued on the leading edge of the top surface, and then soldered to the soldering pads. Right: Another board, located underneath the four wire-bonding boards, carries the RC network for the bias voltages.}
 \includegraphics[width=\linewidth]{tpc_apa_x_cr_boards.png}
 \end{cdrfigure}
 
-The wire boards \fixme{introduce the terms `wire board' and `wire-bonding board', better to just use wire-bonding board I think.  AH} are the interface between the wires and the data acquisition electronics.  Also, they physically anchor the wires at the top end of the APA.  The four planes of wires are attached to their respective wire boards through a combination of epoxy and solder. During winding of the X layer onto the APA the wires are placed across the top surface of the X wire board. The wires are then glued down with a strip of epoxy at the leading edge of the board.  After the epoxy has cured, the wires are soldered onto the copper pads under each wire, and then the wires are cut beyond the pads. The V, U and G planes are attached on top of the X boards and similarly populated with wires, one layer at a time. An array of pins is pushed through holes in the stack of wire boards, making electrical connections between the wires and the CR board.   
-Figure~\ref{fig:tpc-wire-board-x} shows one of the X boards and an intermediate board, the capacitor-resistor (or CR) board, which is located between the wire boards and the front end electronics boards.  
+The wire-bonding boards \fixme{introduce the terms `wire-bonding board' and `wire-bonding board', better to just use wire-bonding board I think.  AH} are the interface between the wires and the front-end electronics.  Also, they physically anchor the wires at the top end of the APA.  The four planes of wires are attached to their respective wire-bonding boards through a combination of epoxy and solder. During winding of the X layer onto the APA the wires are placed across the top surface of the X wire-bonding board. The wires are then glued down with a strip of epoxy at the leading edge of the board.  After the epoxy has cured, the wires are soldered onto the copper pads under each wire, and then the wires are cut beyond the pads. The V, U and G planes are attached on top of the X boards and similarly populated with wires, one layer at a time. An array of pins is pushed through holes in the stack of wire-bonding boards, making electrical connections between the wires and the CR board.   
+Figure~\ref{fig:tpc-wire-board-x} shows one of the X boards and an intermediate board, the capacitor-resistor (or CR) board, which is located between the wire-bonding boards and the front end electronics boards.  
 
-In this way the wire boards are connected to the bias voltage supply through the resistor-capacitor network on the CR board. The resistors in this network have values around 20 M$\Omega$, so that in the event that a wire from a different plane breaks and is shorted to these wires, the bias voltages on the rest of the wires will not be affected. The AC-coupled signals from the RC network are connected to sockets that will mate with the front-end readout boards.
+In this way the wire-bonding boards are connected to the bias voltage supply through the resistor-capacitor network on the CR board. The resistors in this network have values around 20 M$\Omega$, so that in the event that a wire from a different plane breaks and is shorted to these wires, the bias voltages on the rest of the wires will not be affected. The AC-coupled signals from the RC network are connected to sockets that will mate with the front-end readout boards.
 
 These readout boards, as described in Chapter~\ref{ch:ce}, process the analog signals from the wires and transmit the digital information via feedthroughs to the DAQ system outside the cryostat. The electronics on the readout boards generate an estimated $\sim$160 W of heat per APA which may produce a small quantity of argon bubbles.  Stainless-steel covers are placed over the readout boards to contain the bubbles and direct them to the gas volume of the cryostat. In the case of the lower APAs, the bubbles, if not already re-condensed, will be funneled through the vertical hollow frame members to the top of the cryostat.
 
 
-Figure \ref{fig:tpc-APA-corner} is a close-up view of a corner of an APA frame with some wires and various wire boards to demonstrate the assembly.
+Figure \ref{fig:tpc-APA-corner} is a close-up view of a corner of an APA frame with some wires and various wire-bonding boards to demonstrate the assembly.
 
 After the grid plane wires are placed on the APA, and fiberglass cover sheets placed over the edge boards, metal guards are placed along the three wrapped edges of an APA. These guards protect the fragile wires during APA handling, storage and transport.
 
@@ -222,7 +223,7 @@ After the grid plane wires are placed on the APA, and fiberglass cover sheets pl
 \end{cdrfigure}
 
 
-\begin{cdrfigure}[Closeup view of a partially assembled corner of an APA]{tpc-APA-corner}{A close-up view of a partially assembled corner of an APA.  The wire boards and CR boards are shown but the ``cold electronics boards'', for data acquisition, are not shown.  They mount on the electronics plate and connect electrically to the CR boards.}
+\begin{cdrfigure}[Closeup view of a partially assembled corner of an APA]{tpc-APA-corner}{A close-up view of a partially assembled corner of an APA.  The wire-bonding boards and CR boards are shown but the ``cold electronics boards'', for data acquisition, are not shown.  They mount on the electronics plate and connect electrically to the CR boards.}
 \includegraphics[width=\linewidth]{tpc_apa_module_corner.png}
 \end{cdrfigure}
 
@@ -252,7 +253,7 @@ The support structure is composed of strips of thin G10 sheet, with notches mach
 A winding machine will be constructed to lay the 3520 wires onto each APA. It has sufficient versatility that the same mechanism can wind both the angled and the longitudinal layers.  This was not a deliberate goal in the beginning but it has turned out that the method chosen for winding the angled layers will work for the longitudinal layers as well.
  
 Its working concepts are illustrated in Figure~\ref{fig:tpc-winding-machine}. 
-The wire tensioner is a self-contained unit that includes the wire spool.  It is designed so that tension is maintained, not just when wire is pulled out, but also if wire is let back into the tensioner.  The APA is held off the ground by a couple of posts, with one of its long edges down.  There are X-Y positioners on either side of the APA; the tensioner is moved across the face of the APA by one of these positioners --- unspooling tensioned wire as it moves.  When the tensioner arrives at the edge of the APA it is passed across to the positioner on the other side of APA.  This is done in the correct position so that wire is placed into the appropriate slots of the edge boards. The new positioner then moves it to the next location on the edge --- where it is passed back around the edge of the APA.  In this way the entire layer of wire can be placed on the frame.  There will be a couple of supports on the long side of the APA nearest the floor and one or two on the long side at the top.  At some point in the winding of the angled layers, the machine will have to be stopped and the supports moved out of the way -- to locations that have already been covered with wire. \fixme{why?}
+The wire tensioner is a self-contained unit that includes the wire spool. It is designed so that tension is maintained, not just when wire is pulled out, but also if wire is let back into the tensioner. The APA is held off the ground by a couple of posts, with one of its long edges down. There are X-Y positioners on either side of the APA; the tensioner is moved across the face of the APA by one of these positioners --- unspooling tensioned wire as it moves. When the tensioner arrives at the edge of the APA it is passed across to the positioner on the other side of APA. This is done in the correct position so that wire is placed into the appropriate slots of the edge boards. The new positioner then moves it to the next location on the edge --- where it is passed back around the edge of the APA. In this way half the wires in a layer can be wound on with only occasional stops for temporary soldering to prevent loosening in case of a broken wire.  After the supports at the end of the APA are relocated out of the winding path, the rest of the wires in the layer can be wound on in the same manner.  (A layer in this case refers to the pair of identical wire planes in an APA - one on each side.)
 
 Although a large part of an entire plane of wires can be wound in one continuous process, a more fault-tolerant procedure would be to pause the winding machine periodically and solder the last wire. This intermediate soldering step will prevent the unwinding of a large section due to an accidental broken wire.  An automatic soldering robot will solder the wire ends after the wires have been laid down on the APA. A wire-tension measuring device will scan the newly placed wires and record the wire tension of each wire. Any wires with abnormal tension will be replaced manually.
 
@@ -272,7 +273,7 @@ Although a large part of an entire plane of wires can be wound in one continuous
 There are three walls of cathodes in each TPC.  Each wall is tiled from a four-unit-high by 13-unit-wide array of cathode plane assemblies (CPAs). Figure~\ref{fig:tpc-cathode-model} shows a corner of a cathode plane.  Each CPA is 2.3~m wide (identical to the APA width) and 3~m tall (half of APA height) for ease of fabrication, assembly and handling.  Each CPA is made of a stainless-steel framework, 
 with panels of solid stainless steel sheets mounted between the from openings.  Along each vertical  column of the four CPAs, there are two slightly different versions, one for the edge CPAs (top and bottom rows), and one for the non-edge CPAs (2nd and 3rd rows).  The non-edge CPAs use all square tubes for the frame structure, while the edge CPAs use a round tube on the %outside 
 floor- or ceiling-facing edge of the CPA %that faces the of the cryostat 
-to minimize the surface electric field.  Two sets of field-shaping end pieces are installed at the two ends of the CPA wall to properly terminate the cathode wall with rounded edges.  All CPAs are suspended from the ceiling using G10 hangers to \fixme{electrically?} insulate the CPA from the cryostat.
+to minimize the surface electric field.  Two sets of field-shaping end pieces are installed at the two ends of the CPA wall to properly terminate the cathode wall with rounded edges.  All CPAs are suspended from the ceiling using G10 hangers to electrically insulate the CPA from the cryostat.
 
 The impact of the square tube frame on the drift field near the cathode will be evaluated in the 35-ton TPC study (see Section~\ref{35tonprototype}.  If necessary, strips of field shaping electrodes with a suitable bias voltage can be attached to the raised square tube surfaces to correct the field distortions.  
 
@@ -285,7 +286,7 @@ This CPA design forms a highly conductive wall at $-$170~kV facing the grounded 
 \section{Field Cage}
 \label{subsec:v5-tpc-chamber-fieldcage}
 
-Each facing pair of cathode and anode \fixme{``CPA and APA rows'' better?} rows forms an electron-drift region. A field cage  completely surrounds the four open sides of this region
+Each facing pair of CPA and APA rows forms an electron-drift region. A field cage  completely surrounds the four open sides of this region
 to provide the necessary boundary conditions to ensure a uniform electric field within, unaffected by the presence of the cryostat walls.
 
 
@@ -361,9 +362,8 @@ mounted on the ceiling of the cryostat, their cold ends reaching
 through the gas ullage space and submerging into the liquid argon. 
 The center conductor on the cold side of a feedthrough will be 
 insulated and shielded by a grounded shroud at least 50~cm below the 
-surface of the liquid. Connections between the feedthroughs 
-and the CPA rows will be made through stainless-steel pipes in the 
-liquid argon. Figure~\ref{fig:tpc-UCLA-feedthrough} shows an example 
+surface of the liquid. Connections between a feedthrough 
+and a CPA row is made through a specially designed high voltage receptacle attached to the end of a CPA row and the retractable tip located at the end of the feedthrough to ensure good electrical contact throughout the temperature range. Figure~\ref{fig:tpc-UCLA-feedthrough} shows an example 
 of the feedthrough and filter box made by the UCLA group for the 35-ton TPC, as well as the conceptual design of a feedthrough suitable for the far detector TPCs.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
